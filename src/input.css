@@ -58,3 +58,13 @@
   @media (min-width: 1920px) { html { font-size: 106.25%; } }
   @media (min-width: 2400px) { html { font-size: 118.75%; } }
 }
+
+/* Demo request form */
+@layer components {
+  .form-label { @apply mb-1.5 block text-sm font-medium text-navy; }
+  .form-input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-[15px] text-navy placeholder:text-slate-400 transition outline-none focus:border-navy focus:ring-2 focus:ring-navy/15;
+  }
+  .form-input[aria-invalid="true"] { @apply border-red-500 focus:border-red-500 focus:ring-red-500/20; }
+  .form-error { @apply mt-1.5 text-sm text-red-600; }
+}

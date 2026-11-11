@@ -290,11 +290,66 @@
       <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
 
       <div class="mt-6" id="hubspot-form">
-        <!-- ====== PASTE HUBSPOT FORM EMBED CODE HERE (replace the placeholder below) ====== -->
-        <div class="rounded-lg border-2 border-dashed border-slate-300 p-8 text-center text-sm text-slate-500">
-          HubSpot form will appear here.
+        <!-- Demo request form (validation + business-email check in script.js).
+             To switch to HubSpot later, replace this <form> and the success block with the HubSpot embed code. -->
+        <form id="demo-form" class="space-y-4" novalidate>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="df-first" class="form-label">First name <span class="text-brand-pink">*</span></label>
+              <input id="df-first" name="firstName" type="text" autocomplete="given-name" required maxlength="50" class="form-input" aria-describedby="df-first-err">
+              <p id="df-first-err" class="form-error" hidden></p>
+            </div>
+            <div>
+              <label for="df-last" class="form-label">Last name <span class="text-brand-pink">*</span></label>
+              <input id="df-last" name="lastName" type="text" autocomplete="family-name" required maxlength="50" class="form-input" aria-describedby="df-last-err">
+              <p id="df-last-err" class="form-error" hidden></p>
+            </div>
+          </div>
+          <div>
+            <label for="df-email" class="form-label">Business email <span class="text-brand-pink">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="you@company.com" class="form-input" aria-describedby="df-email-err">
+            <p id="df-email-err" class="form-error" hidden></p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="df-company" class="form-label">Company <span class="text-brand-pink">*</span></label>
+              <input id="df-company" name="company" type="text" autocomplete="organization" required maxlength="100" class="form-input" aria-describedby="df-company-err">
+              <p id="df-company-err" class="form-error" hidden></p>
+            </div>
+            <div>
+              <label for="df-title" class="form-label">Job title <span class="text-brand-pink">*</span></label>
+              <input id="df-title" name="jobTitle" type="text" autocomplete="organization-title" required maxlength="100" class="form-input" aria-describedby="df-title-err">
+              <p id="df-title-err" class="form-error" hidden></p>
+            </div>
+          </div>
+          <div>
+            <label for="df-phone" class="form-label">Phone <span class="font-normal text-slate-500">(optional)</span></label>
+            <input id="df-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" class="form-input" aria-describedby="df-phone-err">
+            <p id="df-phone-err" class="form-error" hidden></p>
+          </div>
+          <div>
+            <label for="df-message" class="form-label">How can we help? <span class="font-normal text-slate-500">(optional)</span></label>
+            <textarea id="df-message" name="message" rows="3" maxlength="1000" class="form-input resize-y"></textarea>
+          </div>
+          <!-- spam trap: real people never see or fill this -->
+          <div class="hidden" aria-hidden="true">
+            <label for="df-website">Website</label>
+            <input id="df-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" data-form-status role="alert"></p>
+          <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange py-3 font-medium text-navy-deep transition hover:brightness-105 disabled:cursor-wait disabled:opacity-70">
+            <span data-submit-label>Request a Demo</span>
+          </button>
+          <p class="text-center text-xs text-slate-500">By submitting, you agree to our <a href="privacy-policy/" class="underline hover:text-navy">Privacy Policy</a>.</p>
+        </form>
+
+        <div id="demo-success" class="hidden py-8 text-center" role="status" tabindex="-1">
+          <div class="mx-auto flex size-14 items-center justify-center rounded-full bg-brand-green/15 text-brand-green">
+            <svg class="size-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="mt-4 text-xl font-semibold">Thank you!</h3>
+          <p class="mt-2 text-slate-600">We’ve received your request. Our team will reach out shortly to schedule your demo.</p>
         </div>
-        <!-- ====== END HUBSPOT ====== -->
       </div>
     </div>
   </div>
