@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand colours taken from the original theme (main.min.css :root) */
+  --color-navy: #1e305f;        /* --color4 */
+  --color-navy-deep: #0d1a2b;
+  --color-brand-blue: #297bc0;  /* --color8 */
+  --color-brand-orange: #ffb247;/* --color1 */
+  --color-brand-pink: #dd4a78;  /* --color2 */
+  --color-brand-green: #93bc42; /* --color3 */
+  --color-brand-teal: #25bec6;
+  --color-soft: #f5f5f5;
+
+  --color-atlas: #ffb247;
+  --color-atlas-light: #fff0c9;
+  --color-nexus: #dd4a78;
+  --color-nexus-light: #f6d3e1;
+  --color-maestro: #93bc42;
+  --color-maestro-light: #dcefb9;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+  .btn::after {
+    content: "";
+    @apply size-1.5 rotate-45 border-t-2 border-r-2 border-current;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  /* Grey stand-in for an image until the real file is added */
+  .img-slot {
+    @apply flex items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 text-center text-xs font-medium text-slate-500;
+  }
+}
+
+/* HubSpot newsletter form in the footer (matches the original site's look) */
+@layer components {
+  .footer-newsletter .hs-form label:not(.hs-error-msg) { @apply sr-only; }
+  .footer-newsletter .hs-input {
+    @apply h-10 w-full rounded-full border border-[#dbd3d3] bg-white px-4 text-center text-sm text-navy;
+  }
+  .footer-newsletter .hs-form-field { @apply mb-3; }
+  .footer-newsletter .hs-button,
+  .footer-newsletter .actions input[type="submit"] {
+    @apply h-10 w-full cursor-pointer rounded-full border-0 bg-brand-green text-sm font-medium text-black transition hover:brightness-110;
+  }
+  .footer-newsletter .hs-error-msgs { @apply mt-1 list-none px-2.5 text-center text-xs text-[#e70e0d]; }
+  .footer-newsletter .submitted-message { @apply text-center text-sm text-brand-green; }
+}
+
+/* Big screens: scale the whole layout up a little (everything is in rem) */
+@layer base {
+  @media (min-width: 1920px) { html { font-size: 106.25%; } }
+  @media (min-width: 2400px) { html { font-size: 118.75%; } }
+}
