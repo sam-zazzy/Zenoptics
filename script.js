@@ -105,8 +105,8 @@ document.querySelectorAll("[data-tabs]").forEach((tabList) => {
 });
 
 // ---------- Testimonials ----------
-// summary = first sentence(s), shown slightly darker; quote = the customer quote.
-// PLACEHOLDER: GAP Group, Brown Forman and Bimbo Bakeries USA still need their real text.
+// summary = intro text (slightly darker italic); quote = the customer's own words (lighter italic).
+// Text is copied exactly from the original site.
 const testimonials = [
   {
     company: "Sysco Canada",
@@ -114,53 +114,58 @@ const testimonials = [
     role: "Senior Director of Business Intelligence",
     photo: "assets/images/imgi_58_Jade-Hollenbeck.webp",
     summary:
-      "Sysco Canada’s complex reporting environment made tracking catalogues, managing versions, and ensuring compliance time-consuming. Users struggled to find reports across multiple platforms, slowing access to trusted insights.",
+      "Sysco Canada's complex reporting environment made tracking catalogues, managing versions, and ensuring compliance time-consuming. Users struggled to find reports across multiple platforms, slowing access to trusted insights.",
     quote:
-      "“ZenOptics created a single, secure hub with intuitive search, one-click workflows, and collaborative features—enforcing security policies without impacting experience. The result: 26% of redundant reports retired, stronger governance, and an estimated 15–20% time savings. ZenOptics empowers our teams to focus on insights, not searching for reports.”",
+      "\"ZenOptics created a single, secure hub with intuitive search, one-click workflows, and collaborative features—enforcing security policies without impacting experience. The result: 26% of redundant reports retired, stronger governance, and an estimated 15–20% time savings. ZenOptics empowers our teams to focus on insights, not searching for reports.\"",
   },
   {
     company: "GAP Group",
-    name: "[Name]",
-    role: "[Role]",
+    name: "Mark Emery",
+    role: "Group Data & Analytics Manager",
     photo: "assets/images/imgi_59_slide-1-charles.webp",
-    summary: "[Placeholder] Add the GAP Group testimonial here.",
-    quote: "",
+    summary:
+      "With the ZenOptics platform, GAP Group curated and streamlined their analytics environment to create a centralized place for business users to find and access trusted assets while improving the user experience.",
+    quote:
+      "\"GAP Group has been progressing through a data modernisation journey, transitioning from on-premises legacy systems to hybrid cloud solutions. Our previous reporting platform consisted of over 1,600 reports aggregating data from multiple systems. However, it was inflexible, outdated, and lacked user-friendliness.\"",
   },
   {
     company: "Brown Forman",
-    name: "[Name]",
-    role: "[Role]",
+    name: "Gina Thornton",
+    role: "Manager of Commercial Reporting and BI",
     photo: "assets/images/imgi_60_slide-3.webp",
-    summary: "[Placeholder] Add the Brown Forman testimonial here.",
-    quote: "",
+    summary:
+      "Our ongoing management of content is driven by ZenOptics… we use ZenOptics and the process we've built to keep everything in check. The process allowed us to identify important reports and how to make them more valuable and useful for users,”",
+    quote:
+      "“The benefits of this process are consistency and governance of reports, and eased discovery and access for end users.”",
   },
   {
     company: "Bimbo Bakeries USA",
-    name: "[Name]",
-    role: "[Role]",
+    name: "Mike Katz",
+    role: "Director of Business Intelligence Bimbo Bakeries",
     photo: "assets/images/imgi_61_zen-slide.webp",
-    summary: "[Placeholder] Add the Bimbo Bakeries USA testimonial here.",
-    quote: "",
-  },
-  {
-    company: "Janney Montgomery Scott",
-    name: "Eric Seel",
-    role: "BI manager at Janney Montgomery Scott",
-    photo: "assets/images/imgi_62_zen-slide-2.webp",
-    summary:
-      "ZenOptics improved discovery and access of reports and dashboards for end users at Janney Montgomery Scott. Further, Janney realized increased analytics governance and standardization.",
+    summary: "",
     quote:
-      "“Prior to ZenOptics, we didn’t really have a way for colleagues to discover content, and those resources were isolated across multiple silos by application or department… We really wanted to simplify access for our users and essentially create one-stop-shopping. We needed a centralized catalog so users could find all our content, and we wanted to better manage and govern both our BI content and the underlying data terms, attributes, metrics, etc.”",
+      "\"By centralizing Manufacturing analytics into our One-Stop analytics intelligence platform powered by ZenOptics, we eliminated 25 separate SharePoint sites and created a single, consistent experience for 53 bakeries across Operations, Maintenance, Quality, HR, and Finance. Report discovery time improved by 5–10% for bakery teams and ~5% for the Operational Excellence team (OX), while publishing effort for OX was reduced by about 5 hours per month. The biggest win has been faster onboarding and training, giving teams reliable access to analytics with greater confidence in the data. ZenOptics helped improve our teams’ productivity by enabling them to work more efficiently, consistently, and with trust in their reporting.\"",
   },
   {
     company: "Illumina",
     name: "Obay Mouradi",
     role: "Director, Data Informatics",
-    photo: "assets/images/imgi_63_slide-6.webp",
+    photo: "assets/images/imgi_62_zen-slide-2.webp",
     summary:
       "With ZenOptics, Illumina cleaned up and streamlined their analytics environment to create a centralized place for business users to find and access trusted assets.",
     quote:
       "“We had more than 10,000+ reports but no way to evaluate relevance, freshness, and reliable key reports over time. The project team was given a challenging task – to implement a one-stop-shop to search and browse reports and quickly find reliable key reports….that vision has come to fruition with an accessible platform along with a process that has identified the high-quality reports, now totaling just over 4,000 with 100+ key reports featured.”",
+  },
+  {
+    company: "Janney",
+    name: "Eric Seel",
+    role: "BI manager at Janney Montgomery Scott",
+    photo: "assets/images/imgi_63_slide-6.webp",
+    summary:
+      "ZenOptics improved discovery and access of reports and dashboards for end users at Janney Montgomery Scott. Further, Janney realized increased analytics governance and standardization.",
+    quote:
+      "“Prior to ZenOptics, we didn’t really have a way for colleagues to discover content, and those resources were isolated across multiple silos by application or department… We really wanted to simplify access for our users and essentially create one-stop-shopping. We needed a centralized catalog so users could find all our content, and we wanted to better manage and govern both our BI content and the underlying data terms, attributes, metrics, etc.”",
   },
 ];
 
@@ -169,35 +174,38 @@ if (tSection) {
   const thumbs = tSection.querySelector("[data-t-thumbs]");
   let current = 0;
 
-  testimonials.forEach((t, i) => {
+  const buttons = testimonials.map((t, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className =
-      "relative flex h-32 w-[calc(50%-0.5rem)] shrink-0 snap-start items-end overflow-hidden rounded-xl bg-neutral-500 px-4 pb-4 text-left text-xl leading-tight text-white sm:h-[150px] sm:text-2xl md:w-[calc(25%-0.75rem)] lg:text-[26px]";
+      "relative flex h-32 w-[calc(50%-0.5rem)] shrink-0 items-end overflow-hidden rounded-xl bg-neutral-500 px-3 pb-3 text-left text-[15px] leading-tight whitespace-nowrap text-white sm:h-[150px] sm:px-4 sm:pb-4 sm:text-xl md:w-[calc(25%-0.75rem)] md:text-[15px] lg:text-xl xl:text-[22px]";
     btn.innerHTML = `
       <img src="${t.photo}" alt="" data-fallback="hide" class="absolute inset-0 size-full object-cover object-right">
       <span class="absolute inset-0 bg-neutral-600/60 transition hover:bg-neutral-600/40"></span>
       <span class="pointer-events-none relative">${t.company}</span>`;
+    btn.setAttribute("aria-label", "Show testimonial from " + t.company);
     btn.addEventListener("click", () => show(i));
-    thumbs.appendChild(btn);
     watchImage(btn.querySelector("img"));
+    return btn;
   });
 
   const photo = tSection.querySelector("[data-t-photo]");
 
   function show(i) {
-    current = (i + testimonials.length) % testimonials.length;
+    const n = testimonials.length;
+    current = (i + n) % n;
     const t = testimonials[current];
     tSection.querySelector("[data-t-name]").textContent = t.name;
     tSection.querySelector("[data-t-role]").textContent = t.role;
     tSection.querySelector("[data-t-summary]").textContent = t.summary;
-    tSection.querySelector("[data-t-quote]").textContent = t.quote ? " " + t.quote : "";
+    tSection.querySelector("[data-t-quote]").textContent = (t.summary && t.quote ? " " : "") + t.quote;
     photo.style.display = "";
     photo.alt = t.name;
     photo.onerror = () => (photo.style.display = "none");
     photo.src = t.photo;
-    const active = thumbs.children[current];
-    thumbs.scrollTo({ left: active.offsetLeft - thumbs.offsetLeft, behavior: "smooth" });
+    // Like the original: the selected company moves to the front, the rest follow in order.
+    for (let k = 0; k < n; k++) thumbs.appendChild(buttons[(current + k) % n]);
+    thumbs.scrollLeft = 0;
   }
 
   tSection.querySelector("[data-t-prev]").addEventListener("click", () => show(current - 1));

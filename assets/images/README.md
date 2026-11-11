@@ -21,7 +21,7 @@ Kaun si image website pe kahan lagi hai. Image badalni ho to **usi naam se file 
 | `imgi_59_slide-1-charles.webp` | Testimonial: GAP Group |
 | `imgi_60_slide-3.webp` | Testimonial: Brown Forman |
 | `imgi_61_zen-slide.webp` | Testimonial: Bimbo Bakeries USA |
-| `imgi_62_zen-slide-2.webp` | Testimonial: Janney Montgomery Scott |
-| `imgi_63_slide-6.webp` | Testimonial: Illumina |
+| `imgi_62_zen-slide-2.webp` | Testimonial: Illumina |
+| `imgi_63_slide-6.webp` | Testimonial: Janney |
 
 Baaki files folder mein hain, lekin abhi home page pe use nahi ho rahi.
