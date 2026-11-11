@@ -68,3 +68,19 @@
   .form-input[aria-invalid="true"] { @apply border-red-500 focus:border-red-500 focus:ring-red-500/20; }
   .form-error { @apply mt-1.5 text-sm text-red-600; }
 }
+
+/* Pointer cursor on every CTA, link and clickable control */
+@layer base {
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  [role="tab"],
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled),
+  select,
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+  button:disabled { cursor: not-allowed; }
+}
