@@ -369,3 +369,19 @@ if (counters.length && "IntersectionObserver" in window && !reduceMotion) {
   );
   counters.forEach((el) => io.observe(el));
 }
+
+// ---------- 404 page: count down, then go to the home page ----------
+const redirectCount = document.querySelector("[data-redirect-count]");
+if (redirectCount) {
+  let left = 5;
+  const anyModalOpen = () => document.querySelector("#demo-modal.flex, #contact-modal.flex");
+  const timer = setInterval(() => {
+    if (anyModalOpen()) return; // pause while the visitor is filling a form
+    left -= 1;
+    redirectCount.textContent = String(Math.max(left, 0));
+    if (left <= 0) {
+      clearInterval(timer);
+      window.location.replace("/");
+    }
+  }, 1000);
+}
