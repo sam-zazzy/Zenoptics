@@ -73,7 +73,12 @@ document.addEventListener("keydown", (e) => {
 const HUBSPOT = { portalId: "2836830", region: "na2" };
 const HUBSPOT_FORMS = {
   demo: { formId: "8ec5cc1d-26a6-4c4a-97ea-061625dac864", target: "#hubspot-demo-form" },
-  contact: { formId: "b172245c-51e8-4dea-b1a8-14e194863888", target: "#hubspot-contact-form" },
+  contact: {
+    formId: "b172245c-51e8-4dea-b1a8-14e194863888",
+    target: "#hubspot-contact-form",
+    // CSS injected into HubSpot's iframe: hide the logo image the form has at the top
+    iframeCss: ".hs-richtext:has(> img:only-child), .hs-richtext img { display: none !important; }",
+  },
   newsletter: { formId: "bda34fd6-4283-416e-9952-b786b04059fb", target: "#hubspot-newsletter" },
 };
 
@@ -96,6 +101,16 @@ function loadHubSpotScript() {
   return hubspotScript;
 }
 
+// Add CSS inside a HubSpot form iframe (it is same-origin, so this is allowed)
+function styleHubSpotIframe(box, css) {
+  const doc = box.querySelector("iframe.hs-form-iframe")?.contentDocument;
+  if (!doc || doc.getElementById("zo-iframe-css")) return;
+  const style = doc.createElement("style");
+  style.id = "zo-iframe-css";
+  style.textContent = css;
+  doc.head.appendChild(style);
+}
+
 const createdForms = new Set();
 function showHubSpotForm(key) {
   const cfg = HUBSPOT_FORMS[key];
@@ -105,7 +120,15 @@ function showHubSpotForm(key) {
   const loading = box.querySelector("[data-hs-loading]");
   loadHubSpotScript()
     .then(() =>
-      window.hbspt.forms.create({ ...HUBSPOT, formId: cfg.formId, target: cfg.target, onFormReady: () => loading?.remove() })
+      window.hbspt.forms.create({
+        ...HUBSPOT,
+        formId: cfg.formId,
+        target: cfg.target,
+        onFormReady: () => {
+          loading?.remove();
+          if (cfg.iframeCss) styleHubSpotIframe(box, cfg.iframeCss);
+        },
+      })
     )
     .catch(() => {
       createdForms.delete(key);
