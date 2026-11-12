@@ -38,35 +38,10 @@
   }
 }
 
-/* HubSpot newsletter form in the footer (matches the original site's look) */
-@layer components {
-  .footer-newsletter .hs-form label:not(.hs-error-msg) { @apply sr-only; }
-  .footer-newsletter .hs-input {
-    @apply h-10 w-full rounded-full border border-[#dbd3d3] bg-white px-4 text-center text-sm text-navy;
-  }
-  .footer-newsletter .hs-form-field { @apply mb-3; }
-  .footer-newsletter .hs-button,
-  .footer-newsletter .actions input[type="submit"] {
-    @apply h-10 w-full cursor-pointer rounded-full border-0 bg-brand-green text-sm font-medium text-black transition hover:brightness-110;
-  }
-  .footer-newsletter .hs-error-msgs { @apply mt-1 list-none px-2.5 text-center text-xs text-[#e70e0d]; }
-  .footer-newsletter .submitted-message { @apply text-center text-sm text-brand-green; }
-}
-
 /* Big screens: scale the whole layout up a little (everything is in rem) */
 @layer base {
   @media (min-width: 1920px) { html { font-size: 106.25%; } }
   @media (min-width: 2400px) { html { font-size: 118.75%; } }
-}
-
-/* Demo request form */
-@layer components {
-  .form-label { @apply mb-1.5 block text-sm font-medium text-navy; }
-  .form-input {
-    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-[15px] text-navy placeholder:text-slate-400 transition outline-none focus:border-navy focus:ring-2 focus:ring-navy/15;
-  }
-  .form-input[aria-invalid="true"] { @apply border-red-500 focus:border-red-500 focus:ring-red-500/20; }
-  .form-error { @apply mt-1.5 text-sm text-red-600; }
 }
 
 /* Pointer cursor on every CTA, link and clickable control */
@@ -83,4 +58,43 @@
     cursor: pointer;
   }
   button:disabled { cursor: not-allowed; }
+}
+
+/* HubSpot inline forms (Get Demo popup + footer newsletter) styled to match the site.
+   The Contact Us form renders in an iframe and keeps HubSpot's own styling. */
+@layer components {
+  .hs-form fieldset { max-width: none !important; }
+  .hs-form .input { margin-right: 0 !important; }
+  .hs-form .hs-error-msgs { @apply mt-1.5 list-none p-0 text-sm text-red-600; }
+  .hs-form .hs_error_rollup { @apply hidden; }
+
+  /* Get Demo popup */
+  #hubspot-demo-form .hs-form-field { @apply mb-4; }
+  #hubspot-demo-form label:not(.hs-error-msg) { @apply mb-1.5 block text-sm font-medium text-navy; }
+  #hubspot-demo-form .hs-form-required { @apply ml-0.5 text-brand-pink; }
+  #hubspot-demo-form .hs-input:not([type="checkbox"]):not([type="radio"]) {
+    @apply w-full! rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-[15px] text-navy outline-none transition placeholder:text-slate-400 focus:border-navy focus:ring-2 focus:ring-navy/15;
+  }
+  #hubspot-demo-form textarea.hs-input { @apply min-h-28 resize-y; }
+  #hubspot-demo-form .hs-input.invalid { @apply border-red-500 focus:border-red-500 focus:ring-red-500/20; }
+  #hubspot-demo-form .hs-richtext,
+  #hubspot-demo-form .legal-consent-container { @apply mb-4 text-xs text-slate-500; }
+  #hubspot-demo-form .hs-button {
+    @apply mt-2 w-full cursor-pointer rounded-full border-0 bg-brand-orange py-3 text-base font-medium text-navy-deep transition hover:brightness-105;
+  }
+  #hubspot-demo-form .submitted-message { @apply py-8 text-center text-slate-700; }
+
+  /* Footer newsletter (original look: white pill input, green pill button) */
+  #hubspot-newsletter label:not(.hs-error-msg) { @apply sr-only; }
+  #hubspot-newsletter .hs-form-field { @apply mb-3; }
+  #hubspot-newsletter .hs-input {
+    @apply h-10 w-full! rounded-full border border-[#dbd3d3] bg-white px-4 text-center text-sm text-navy outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-brand-green;
+  }
+  #hubspot-newsletter .hs-button {
+    @apply h-10 w-full cursor-pointer rounded-full border-0 bg-brand-green text-sm font-medium text-black transition hover:brightness-110;
+  }
+  #hubspot-newsletter .hs-error-msgs { @apply mt-1 px-2.5 text-center text-xs text-[#ff6b6b]; }
+  #hubspot-newsletter .hs-richtext,
+  #hubspot-newsletter .legal-consent-container { @apply mb-3 text-center text-xs text-white/60; }
+  #hubspot-newsletter .submitted-message { @apply text-center text-sm text-brand-green; }
 }

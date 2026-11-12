@@ -38,33 +38,102 @@ function watchImage(img) {
 
 document.querySelectorAll("img").forEach(watchImage);
 
-// ---------- Get Demo modal ----------
-const modal = document.getElementById("demo-modal");
+// ---------- Modals (Get Demo + Contact Us) ----------
 let lastFocus = null;
 
-function openModal() {
+function openModal(modal) {
   lastFocus = document.activeElement;
   modal.classList.remove("hidden");
   modal.classList.add("flex");
   document.body.style.overflow = "hidden";
-  modal.querySelector("[data-demo-close]").focus();
+  modal.querySelector("[data-modal-close]").focus();
 }
 
-function closeModal() {
+function closeModal(modal) {
   modal.classList.add("hidden");
   modal.classList.remove("flex");
   document.body.style.overflow = "";
   if (lastFocus) lastFocus.focus();
 }
 
-document.querySelectorAll("[data-demo-open]").forEach((btn) => btn.addEventListener("click", openModal));
-modal.querySelector("[data-demo-close]").addEventListener("click", closeModal);
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
+document.querySelectorAll("#demo-modal, #contact-modal").forEach((modal) => {
+  modal.querySelector("[data-modal-close]").addEventListener("click", () => closeModal(modal));
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal(modal);
+  });
 });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+  if (e.key !== "Escape") return;
+  document.querySelectorAll("#demo-modal.flex, #contact-modal.flex").forEach(closeModal);
 });
+
+// ---------- HubSpot forms ----------
+// Each form is created in its target element; HubSpot renders it in an iframe with its own styling.
+// Notifications, free-email blocking and spam protection are configured inside HubSpot.
+const HUBSPOT = { portalId: "2836830", region: "na2" };
+const HUBSPOT_FORMS = {
+  demo: { formId: "8ec5cc1d-26a6-4c4a-97ea-061625dac864", target: "#hubspot-demo-form" },
+  contact: { formId: "b172245c-51e8-4dea-b1a8-14e194863888", target: "#hubspot-contact-form" },
+  newsletter: { formId: "bda34fd6-4283-416e-9952-b786b04059fb", target: "#hubspot-newsletter" },
+};
+
+let hubspotScript = null;
+function loadHubSpotScript() {
+  if (window.hbspt?.forms) return Promise.resolve();
+  if (!hubspotScript) {
+    hubspotScript = new Promise((resolve, reject) => {
+      const el = document.createElement("script");
+      el.src = "https://js-na2.hsforms.net/forms/embed/v2.js";
+      el.charset = "utf-8";
+      el.onload = () => (window.hbspt?.forms ? resolve() : reject());
+      el.onerror = reject;
+      document.head.appendChild(el);
+    }).catch((e) => {
+      hubspotScript = null; // allow a retry
+      throw e;
+    });
+  }
+  return hubspotScript;
+}
+
+const createdForms = new Set();
+function showHubSpotForm(key) {
+  const cfg = HUBSPOT_FORMS[key];
+  const box = document.querySelector(cfg.target);
+  if (!box || createdForms.has(key)) return;
+  createdForms.add(key);
+  const loading = box.querySelector("[data-hs-loading]");
+  loadHubSpotScript()
+    .then(() =>
+      window.hbspt.forms.create({ ...HUBSPOT, formId: cfg.formId, target: cfg.target, onFormReady: () => loading?.remove() })
+    )
+    .catch(() => {
+      createdForms.delete(key);
+      if (loading) loading.textContent = "The form couldn’t load. Please check your connection and try again.";
+    });
+}
+
+const demoModal = document.getElementById("demo-modal");
+const contactModal = document.getElementById("contact-modal");
+document.querySelectorAll("[data-demo-open]").forEach((btn) =>
+  btn.addEventListener("click", () => { openModal(demoModal); showHubSpotForm("demo"); })
+);
+document.querySelectorAll("[data-contact-open]").forEach((btn) =>
+  btn.addEventListener("click", () => { openModal(contactModal); showHubSpotForm("contact"); })
+);
+
+// Footer newsletter: load when the footer comes near the screen
+const newsletterBox = document.querySelector(HUBSPOT_FORMS.newsletter.target);
+if (newsletterBox) {
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { showHubSpotForm("newsletter"); io.disconnect(); }
+    }, { rootMargin: "400px" });
+    io.observe(newsletterBox);
+  } else {
+    showHubSpotForm("newsletter");
+  }
+}
 
 // ---------- Case study carousel ----------
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
@@ -213,15 +282,6 @@ if (tSection) {
   show(0);
 }
 
-// ---------- Newsletter (no backend yet) ----------
-document.querySelectorAll("[data-newsletter]").forEach((form) => {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    form.querySelector("[data-newsletter-msg]").classList.remove("hidden");
-    form.reset();
-  });
-});
-
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // ---------- Client logo slider (one logo at a time, right to left) ----------
@@ -285,116 +345,4 @@ if (counters.length && "IntersectionObserver" in window && !reduceMotion) {
     { threshold: 0.5 }
   );
   counters.forEach((el) => io.observe(el));
-}
-
-// ---------- Demo request form ----------
-// Where submissions go. Leave empty until a service is connected
-// (e.g. a Formspree / Web3Forms URL, or swap the form for the HubSpot embed).
-// While empty, the form validates and shows "Thank you" but NOTHING IS SAVED OR SENT.
-const DEMO_FORM_ENDPOINT = "";
-
-// Personal / free / disposable email providers that are not accepted.
-const FREE_EMAIL_DOMAINS = new Set([
-  "gmail.com", "googlemail.com", "yahoo.com", "ymail.com", "rocketmail.com", "hotmail.com", "outlook.com",
-  "live.com", "msn.com", "aol.com", "icloud.com", "me.com", "mac.com", "protonmail.com", "proton.me", "pm.me",
-  "gmx.com", "gmx.net", "mail.com", "email.com", "yandex.com", "yandex.ru", "zoho.com", "zohomail.com",
-  "rediffmail.com", "rediff.com", "inbox.com", "fastmail.com", "hey.com", "tutanota.com", "tuta.io",
-  "qq.com", "163.com", "126.com", "sina.com", "naver.com", "daum.net", "mail.ru", "web.de", "t-online.de",
-  "orange.fr", "free.fr", "laposte.net", "libero.it", "comcast.net", "verizon.net", "att.net", "sbcglobal.net",
-  "bellsouth.net", "cox.net", "charter.net", "btinternet.com", "sky.com", "shaw.ca", "rogers.com",
-  "yopmail.com", "mailinator.com", "guerrillamail.com", "sharklasers.com", "10minutemail.com",
-  "tempmail.com", "temp-mail.org", "trashmail.com", "getnada.com", "dispostable.com", "maildrop.cc",
-  "throwawaymail.com", "fakeinbox.com", "mintemail.com", "emailondeck.com",
-]);
-// Country variants such as yahoo.co.in, hotmail.co.uk, outlook.de, live.in
-const FREE_EMAIL_FAMILIES = /^(yahoo|ymail|hotmail|outlook|live|msn|aol|gmx|yandex|icloud|zoho|rediffmail)\.[a-z.]{2,}$/;
-
-function isFreeEmail(email) {
-  const domain = email.split("@")[1]?.toLowerCase() || "";
-  return FREE_EMAIL_DOMAINS.has(domain) || FREE_EMAIL_FAMILIES.test(domain);
-}
-
-const demoForm = document.getElementById("demo-form");
-if (demoForm) {
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
-  const NAME_RE = /^[\p{L}][\p{L}\p{M}' .-]*$/u;
-  const PHONE_RE = /^\+?[0-9\s().-]{7,20}$/;
-
-  const rules = {
-    firstName: (v) => !v ? "Please enter your first name." : !NAME_RE.test(v) ? "Please enter a valid name." : "",
-    lastName: (v) => !v ? "Please enter your last name." : !NAME_RE.test(v) ? "Please enter a valid name." : "",
-    email: (v) =>
-      !v ? "Please enter your business email."
-      : !EMAIL_RE.test(v) ? "Please enter a valid email address."
-      : isFreeEmail(v) ? "Please use your business email. Personal email addresses (Gmail, Yahoo, etc.) are not accepted."
-      : "",
-    company: (v) => (v.length < 2 ? "Please enter your company name." : ""),
-    jobTitle: (v) => (v.length < 2 ? "Please enter your job title." : ""),
-    phone: (v) => (v && (!PHONE_RE.test(v) || v.replace(/\D/g, "").length < 7) ? "Please enter a valid phone number." : ""),
-  };
-
-  function validateField(input) {
-    const rule = rules[input.name];
-    if (!rule) return true;
-    const msg = rule(input.value.trim());
-    const err = document.getElementById(input.id + "-err");
-    input.setAttribute("aria-invalid", msg ? "true" : "false");
-    if (err) { err.textContent = msg; err.hidden = !msg; }
-    return !msg;
-  }
-
-  const fields = [...demoForm.querySelectorAll("input[name], textarea[name]")].filter((el) => rules[el.name]);
-  fields.forEach((input) => {
-    input.addEventListener("blur", () => { if (input.value.trim()) validateField(input); });
-    input.addEventListener("input", () => { if (input.getAttribute("aria-invalid") === "true") validateField(input); });
-  });
-
-  const status = demoForm.querySelector("[data-form-status]");
-  const submitBtn = demoForm.querySelector('button[type="submit"]');
-  const submitLabel = demoForm.querySelector("[data-submit-label]");
-
-  function showSuccess() {
-    demoForm.classList.add("hidden");
-    const ok = document.getElementById("demo-success");
-    ok.classList.remove("hidden");
-    ok.focus();
-  }
-
-  demoForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    status.classList.add("hidden");
-    const invalid = fields.filter((f) => !validateField(f));
-    if (invalid.length) { invalid[0].focus(); return; }
-
-    // Bots fill the hidden field; pretend success and drop it.
-    if (demoForm.elements.website.value) { showSuccess(); return; }
-
-    const data = Object.fromEntries(
-      [...new FormData(demoForm)].filter(([k]) => k !== "website").map(([k, v]) => [k, String(v).trim()])
-    );
-
-    if (!DEMO_FORM_ENDPOINT) {
-      console.warn("Demo form is not connected to any service yet; this submission was not sent.", data);
-      showSuccess();
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitLabel.textContent = "Sending…";
-    try {
-      const res = await fetch(DEMO_FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      showSuccess();
-    } catch (err) {
-      status.textContent = "Something went wrong. Please try again in a moment.";
-      status.classList.remove("hidden");
-    } finally {
-      submitBtn.disabled = false;
-      submitLabel.textContent = "Request a Demo";
-    }
-  });
 }
