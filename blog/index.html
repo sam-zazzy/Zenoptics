@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | ZenOptics</title>
+  <meta name="description" content="Articles on analytics governance, AI context, and governed workflows from the ZenOptics team.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Blog | ZenOptics">
+  <meta property="og:description" content="Articles on analytics governance, AI context, and governed workflows from the ZenOptics team.">
+  <meta property="og:url" content="https://zenoptics.com/blog/">
+  <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it sits on its own row under the logo. -->
+      <nav aria-label="Main" class="order-last w-full md:order-none md:w-auto">
+        <ul class="flex items-center justify-center gap-8 pb-3 text-sm font-medium md:pb-0">
+          <li><a href="../atlas/" class="border-b-2 border-transparent py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../nexus/" class="border-b-2 border-transparent py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../maestro/" class="border-b-2 border-transparent py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="./" aria-current="page" class="border-b-2 border-brand-orange py-1">Blog</a></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-sm:px-3.5 max-sm:py-2.5 max-sm:text-xs max-sm:after:hidden">Get Demo</button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ INTRO ============ -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <!-- decorative arcs -->
+      <img src="../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-14 sm:py-16">
+        <h1 class="text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Blog</h1>
+        <p class="mt-4 max-w-2xl text-lg text-white/85">Articles on analytics governance, AI context, and governed workflows from the ZenOptics team.</p>
+      </div>
+    </section>
+
+    <!-- ============ LATEST POST ============ -->
+    <section class="container-x pt-12 lg:pt-16" aria-label="Latest post">
+      <article class="relative grid overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy lg:grid-cols-[1.25fr_1fr]">
+        <img src="https://picsum.photos/seed/measure-ai-impact-business-decisions/1200/675" alt="" width="1200" height="675" fetchpriority="high" decoding="async" class="aspect-video size-full object-cover lg:aspect-auto">
+        <div class="flex flex-col justify-center p-7 sm:p-10">
+          <time datetime="2026-10-19" class="text-sm text-navy/70">October 19, 2026</time>
+          <h2 class="mt-3 text-2xl leading-tight font-semibold sm:text-3xl"><a href="measure-ai-impact-business-decisions/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Measure AI’s Impact on Business Decisions</a></h2>
+          <p class="mt-4 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+          <p class="mt-6 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Read the article</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ ALL POSTS (newest first) ============ -->
+    <!-- Every card is in the page, so search engines see every post. script.js shows 12 at a time. -->
+    <section class="container-x py-14 lg:py-20">
+      <h2 class="text-2xl font-semibold sm:text-3xl">All posts</h2>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-post-list data-batch="12">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/semantic-layer-ai-business-context/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-16" class="text-sm text-navy/70">October 16, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="semantic-layer-ai-business-context/" class="after:absolute after:inset-0 focus-visible:outline-none">You Have a Semantic Layer. Why Does AI Still Misread Your Business?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/ai-ready-analytics/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-12" class="text-sm text-navy/70">October 12, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="ai-ready-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Can Your AI Agent Trust the Reports It Reads</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/agent-analytics-provenance-record/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-09" class="text-sm text-navy/70">October 9, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="agent-analytics-provenance-record/" class="after:absolute after:inset-0 focus-visible:outline-none">AI Agent Analytics Provenance Audit: Was the Report Certified When It Was Used?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/semantic-layer-downstream-reports/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-05" class="text-sm text-navy/70">October 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="semantic-layer-downstream-reports/" class="after:absolute after:inset-0 focus-visible:outline-none">A Semantic Layer Governs Your Model. It Does Not Govern Your Dashboards</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/authoritative-analytics-ai-agents/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-01" class="text-sm text-navy/70">October 1, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="authoritative-analytics-ai-agents/" class="after:absolute after:inset-0 focus-visible:outline-none">Authoritative Analytics for AI Agents Across Your BI Estate</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/insight-to-governed-execution/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-28" class="text-sm text-navy/70">September 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="insight-to-governed-execution/" class="after:absolute after:inset-0 focus-visible:outline-none">Insight to Action Isn’t Enough: Why Enterprise AI Needs Governed Execution</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/beyond-explainable-ai-decision-accountability/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-25" class="text-sm text-navy/70">September 25, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="beyond-explainable-ai-decision-accountability/" class="after:absolute after:inset-0 focus-visible:outline-none">Explainable AI Is Not Enough: Enterprises Must Explain the Decision</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/decision-governance-ai-agents/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-21" class="text-sm text-navy/70">September 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="decision-governance-ai-agents/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Decision Governance Matters in the Age of AI Agents</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/analytics-to-action-workflows/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-18" class="text-sm text-navy/70">September 18, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="analytics-to-action-workflows/" class="after:absolute after:inset-0 focus-visible:outline-none">From Analytics to Action: Embedding Intelligence into Business Workflows</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/ai-agent-pilots-production-governance/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-15" class="text-sm text-navy/70">September 15, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="ai-agent-pilots-production-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Agent Pilots Stall Before Production</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/enterprise-ai-analytics-metrics-wrong/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-11" class="text-sm text-navy/70">September 11, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="enterprise-ai-analytics-metrics-wrong/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Enterprise AI Gets Metrics Wrong Even When the Data Is Clean</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/grounding-copilot-governed-bi/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-07" class="text-sm text-navy/70">September 7, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="grounding-copilot-governed-bi/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Enterprise Copilots Need Governed BI Context</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/ai-needs-better-context/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-04" class="text-sm text-navy/70">September 4, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="ai-needs-better-context/" class="after:absolute after:inset-0 focus-visible:outline-none">Enterprise Analytics AI Doesn’t Need More Data. It Needs Better Context.</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/graphrag-vs-analytics-context/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-31" class="text-sm text-navy/70">August 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="graphrag-vs-analytics-context/" class="after:absolute after:inset-0 focus-visible:outline-none">GraphRAG vs. Analytics Context: What’s the Difference?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/ai-hallucinations-analytics-governance/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-28" class="text-sm text-navy/70">August 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="ai-hallucinations-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Hallucinations Are Often Analytics Governance Failures</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/certified-metrics-ai-grounding/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-24" class="text-sm text-navy/70">August 24, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="certified-metrics-ai-grounding/" class="after:absolute after:inset-0 focus-visible:outline-none">Defined Is Not Certified: Why AI Grounding Requires Governed Metrics</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/analytics-catalogs-beyond-metadata/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-21" class="text-sm text-navy/70">August 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="analytics-catalogs-beyond-metadata/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Analytics Catalogs Must Go Beyond Metadata</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/report-discovery-not-enough/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-17" class="text-sm text-navy/70">August 17, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="report-discovery-not-enough/" class="after:absolute after:inset-0 focus-visible:outline-none">Finding a Report Is Not the Same as Knowing You Can Trust It</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/duplicate-reports-elimination/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-14" class="text-sm text-navy/70">August 14, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="duplicate-reports-elimination/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Rationalize Duplicate Reports Across Power BI, Tableau, SAP BusinessObjects and Qlik</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/bi-tool-sprawl-cost/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-10" class="text-sm text-navy/70">August 10, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="bi-tool-sprawl-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of BI Tool Sprawl</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/cross-tool-bi-inventory/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-07" class="text-sm text-navy/70">August 7, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="cross-tool-bi-inventory/" class="after:absolute after:inset-0 focus-visible:outline-none">Your BI Tools Govern Themselves. But Who Governs the Analytics Estate?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/ai-breaks-analytics-portals/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-03" class="text-sm text-navy/70">August 3, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="ai-breaks-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Breaks Traditional Analytics Portals</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/analytics-system-of-record/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-31" class="text-sm text-navy/70">July 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="analytics-system-of-record/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Every Enterprise Needs an Analytics System of Record</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="https://picsum.photos/seed/analytics-portal-governance-layer/800/450" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-28" class="text-sm text-navy/70">July 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="analytics-portal-governance-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Modern Analytics Portals Fail Without a Governance Layer</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Sample excerpt for the layout review. Each post’s own meta description replaces this line when the posts are moved.</p>
+            </div>
+          </li>
+      </ul>
+      <div class="mt-12 hidden justify-center" data-show-more-wrap>
+        <button type="button" class="btn border border-navy text-navy hover:bg-navy hover:text-white" data-show-more>Show more posts</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../" class="inline-block" aria-label="ZenOptics home"><img src="../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="./" aria-current="page" class="font-medium text-white">Blog</a></li>
+        <li class="hidden"><a href="../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

@@ -385,3 +385,25 @@ if (redirectCount) {
     }
   }, 1000);
 }
+
+// ---------- Blog listing: show the first batch of posts, then one more batch per click ----------
+// Every post is in the HTML (search engines and visitors without JavaScript see them all).
+const postList = document.querySelector("[data-post-list]");
+const showMoreWrap = document.querySelector("[data-show-more-wrap]");
+if (postList && showMoreWrap) {
+  const batch = Number(postList.dataset.batch) || 12;
+  const items = Array.from(postList.children);
+  let shown = batch;
+  const update = () => {
+    items.forEach((item, i) => item.classList.toggle("hidden", i >= shown));
+    showMoreWrap.classList.toggle("hidden", shown >= items.length);
+    showMoreWrap.classList.toggle("flex", shown < items.length);
+  };
+  showMoreWrap.querySelector("[data-show-more]").addEventListener("click", () => {
+    const firstNew = items[shown];
+    shown += batch;
+    update();
+    if (firstNew) firstNew.querySelector("a").focus(); // keyboard users continue from the first new post
+  });
+  update();
+}
