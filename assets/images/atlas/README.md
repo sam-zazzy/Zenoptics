@@ -13,5 +13,6 @@ To add an image, save it here with the exact file name below. No code change is 
 | `atlas-5-lineage-view.webp` | "Usage intelligence and data lineage" | Lineage view tracing a data source to its datasets and downstream reports |
 | `illumina-logo.svg` | "Trusted by" row | Illumina logo |
 
-Screenshot size: 1600 x 1000 px (16:10), WebP format.
-The page crops each screenshot to 16:10 from the top, so keep the important part of the screen away from the bottom edge.
+Screenshot size: 1600 px wide, any height, WebP format.
+The page shows each screenshot at its own shape: the card is exactly the size of the image, nothing is cropped or padded.
+When you replace an image whose height changes, update the `width` and `height` on its `<img>` tag in the page so the layout does not jump while it loads.

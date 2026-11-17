@@ -12,6 +12,7 @@ To add an image, save it here with the exact file name below. No code change is 
 | `nexus-4-knowledge-graph.webp` | "See how your reports, KPIs, and business concepts connect" | Knowledge Graph view with reports, KPIs, and business concepts as linked nodes |
 | `nexus-5-question-context.webp` | "See the context behind an AI analytics question" | A verified demo of a net sales variance question, showing the KPI definition and source reports where the interface shows them |
 
-Screenshot size: 1600 x 1000 px (16:10), WebP format.
-The page crops each screenshot to 16:10 from the top, so keep the important part of the screen away from the bottom edge.
+Screenshot size: 1600 px wide, any height, WebP format.
+The page shows each screenshot at its own shape: the card is exactly the size of the image, nothing is cropped or padded.
+When you replace an image whose height changes, update the `width` and `height` on its `<img>` tag in the page so the layout does not jump while it loads.
 Do not show internal labels in a screenshot, such as "ZIVA" or "Query Plan". Do not show a confidence score or a declined answer until Product confirms that behavior.

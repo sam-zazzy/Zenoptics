@@ -12,7 +12,8 @@ To add an image, save it here with the exact file name below. No code change is 
 | `maestro-4-agent-step.webp` | "Review agent work before approving the next step" | An AI agent's output on a cash flow forecasting step, shown with the linked analytics for review |
 | `maestro-5-run-history.webp` | "See what informed a decision" | A workflow record with the analytics, actions, and approvals captured during a run |
 
-Screenshot size: 1600 x 1000 px (16:10), WebP format.
-The page crops each screenshot to 16:10 from the top, so keep the important part of the screen away from the bottom edge.
+Screenshot size: 1600 px wide, any height, WebP format.
+The page shows each screenshot at its own shape: the card is exactly the size of the image, nothing is cropped or padded.
+When you replace an image whose height changes, update the `width` and `height` on its `<img>` tag in the page so the layout does not jump while it loads.
 Do not show the internal "ZenMaestro" label, a customer's name, or a real person's name in a screenshot.
 Until Product confirms them, do not show Process Chains, Focus Mode, report filter presets, a live action log or a specific sign-off button.
