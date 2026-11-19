@@ -169,7 +169,7 @@ function showHubSpotForm(key) {
 const demoModal = document.getElementById("demo-modal");
 const contactModal = document.getElementById("contact-modal");
 document.querySelectorAll("[data-demo-open]").forEach((btn) =>
-  btn.addEventListener("click", () => { openModal(demoModal); showHubSpotForm("demo"); })
+  btn.addEventListener("click", (e) => { e.preventDefault(); openModal(demoModal); showHubSpotForm("demo"); })
 );
 document.querySelectorAll("[data-contact-open]").forEach((btn) =>
   btn.addEventListener("click", () => { openModal(contactModal); showHubSpotForm("contact"); })
