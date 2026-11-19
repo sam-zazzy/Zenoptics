@@ -38,6 +38,36 @@ function watchImage(img) {
 
 document.querySelectorAll("img").forEach(watchImage);
 
+// ---------- Mobile menu (burger) ----------
+// Below the md breakpoint the main menu is hidden behind the burger button.
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mainMenu = document.getElementById("main-menu");
+if (menuToggle && mainMenu) {
+  const setMenu = (open) => {
+    mainMenu.classList.toggle("hidden", !open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menuToggle.querySelector('[data-menu-icon="open"]').classList.toggle("hidden", open);
+    menuToggle.querySelector('[data-menu-icon="close"]').classList.toggle("hidden", !open);
+  };
+  const isOpen = () => menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.addEventListener("click", () => setMenu(!isOpen()));
+  // Close after choosing a link or the Get Demo button
+  mainMenu.addEventListener("click", (e) => {
+    if (e.target.closest("a, button")) setMenu(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) {
+      setMenu(false);
+      menuToggle.focus();
+    }
+  });
+  // Reset when the screen grows to desktop width
+  matchMedia("(min-width: 48rem)").addEventListener("change", (e) => {
+    if (e.matches) setMenu(false);
+  });
+}
+
 // ---------- Modals (Get Demo + Contact Us) ----------
 let lastFocus = null;
 
