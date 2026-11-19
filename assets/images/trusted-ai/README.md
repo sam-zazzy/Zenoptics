@@ -1,5 +1,3 @@
 # Images: trusted-ai page
 
-Ye images is folder mein isi naam se daal dijiye. Abhi ye purani WordPress site par thi, jo ab band hai.
-
-- `Trusted-AI-banner-image.webp`
+- `Trusted-AI-banner-image.webp` — hero banner (1254×1254, WebP q85). Used in trusted-ai/index.html.
