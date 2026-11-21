@@ -168,8 +168,20 @@ function showHubSpotForm(key) {
 
 const demoModal = document.getElementById("demo-modal");
 const contactModal = document.getElementById("contact-modal");
+// On /schedule-a-demo/ the demo form sits in the page (data-demo-inline): load it now,
+// and make the Get Demo buttons scroll to it instead of opening the popup.
+const demoInline = document.querySelector("[data-demo-inline]");
+if (demoInline) showHubSpotForm("demo");
 document.querySelectorAll("[data-demo-open]").forEach((btn) =>
-  btn.addEventListener("click", (e) => { e.preventDefault(); openModal(demoModal); showHubSpotForm("demo"); })
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (demoInline) {
+      demoInline.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    openModal(demoModal);
+    showHubSpotForm("demo");
+  })
 );
 document.querySelectorAll("[data-contact-open]").forEach((btn) =>
   btn.addEventListener("click", () => { openModal(contactModal); showHubSpotForm("contact"); })
