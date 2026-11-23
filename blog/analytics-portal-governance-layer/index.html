@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Modern Analytics Portals Fail Without a Governance Layer | ZenOptics</title>
+  <meta name="description" content="The build-vs.-buy analytics portal debate misses the real issue. Learn why lasting modernization requires a governed analytics system of record.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-portal-governance-layer/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why Modern Analytics Portals Fail Without a Governance Layer | ZenOptics">
+  <meta property="og:description" content="The build-vs.-buy analytics portal debate misses the real issue. Learn why lasting modernization requires a governed analytics system of record.">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-portal-governance-layer/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-portal-governance-layer/cover.webp">
+  <meta property="article:published_time" content="2026-07-28">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Modern Analytics Portals Fail Without a Governance Layer", "datePublished": "2026-07-28", "description": "The build-vs.-buy analytics portal debate misses the real issue. Learn why lasting modernization requires a governed analytics system of record.", "image": "https://zenoptics.com/assets/images/blog/analytics-portal-governance-layer/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-portal-governance-layer/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a commercial analytics portal solve that a homegrown portal does not?", "acceptedAnswer": {"@type": "Answer", "text": "A commercial portal solves the usability and implementation problem. It provides a more polished discovery interface, faster time to value from pre-built BI integrations, and a maintenance model where the vendor manages the portal code rather than internal engineering. What it does not solve is the governance problem: the catalog still requires manual curation, permissions still require manual synchronization across connected BI tools, and the certification layer that tells users which report to trust is not part of the portal's architecture in either the homegrown or commercial version."}}, {"@type": "Question", "name": "Is rebuilding a homegrown analytics portal worth the investment?", "acceptedAnswer": {"@type": "Answer", "text": "A portal rebuild addresses the user-facing layer and the engineering debt accumulated in the original implementation. It does not address the governance failures that typically prompt the rebuild conversation: undiscoverable reports, permission complexity across connected BI tools, and catalog debt that accumulates faster than teams can maintain it. If the rebuild re-implements the same manual curation and permission management model on a cleaner codebase, the governance failures return as the analytics estate grows. A rebuild is worth evaluating for the portal surface once the governance layer is defined. Rebuilding the portal surface to solve a governance problem is not the right sequence."}}, {"@type": "Question", "name": "What is the difference between an analytics portal and an analytics system of record?", "acceptedAnswer": {"@type": "Answer", "text": "An analytics portal is a display layer: it presents reports to users, applies access rules through integrations with connected BI tools, and provides a catalog interface. An analytics system of record is a governance layer: it maintains the catalog automatically by reading directly from connected BI platforms, certifies reports through a governed process, and holds access policy across the estate without requiring manual synchronization per tool. The two layers serve different functions and can coexist on the same architecture. Adding an analytics system of record does not require replacing the portal surface."}}, {"@type": "Question", "name": "How does an analytics system of record change the portal decision?", "acceptedAnswer": {"@type": "Answer", "text": "With a governance layer in place, the portal can focus on the user-facing experience: discovery, navigation, personalization, and report access, while the governance layer maintains inventory, certification, lifecycle controls, and access consistency. Organizations that add the governance layer first often find that the portal replacement they were evaluating is a smaller requirement than it appeared, because the manual catalog and ungoverned inventory that were failing are replaced by the governance layer rather than by a better portal."}}, {"@type": "Question", "name": "What should organizations evaluate before issuing an RFP for an analytics portal replacement?", "acceptedAnswer": {"@type": "Answer", "text": "Before evaluating portal replacements, organizations should define what governance function, if any, the new system is expected to provide. If the expectation is that the replacement portal will maintain its own catalog, manage permissions across connected BI tools, and certify report versions, those requirements should be tested against what commercial portals actually deliver. Many portal evaluations focus heavily on search and user experience while giving less attention to automated catalog maintenance, cross-platform access governance, certification, and analytics lifecycle management. Organizations that evaluate governance requirements first avoid procuring a portal that solves the user-facing problem while leaving the underlying governance failures in place. Before rebuilding or replacing your analytics portal, identify what is actually failing. Schedule a 15-minute ZenOptics Analytics Estate Assessment to uncover gaps in discovery, certification, lifecycle management, and access governance, and understand how they may be affecting decision quality and AI readiness."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why Modern Analytics Portals Fail Without a Governance Layer</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-28">July 28, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-portal-governance-layer/cover.webp" alt="" width="1600" height="836" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#why-rebuilding-the-portal-does-not-fix-what-broke" class="hover:underline">Why Rebuilding the Portal Does Not Fix What Broke</a></li>
+              <li><a href="#what-a-commercial-analytics-portal-actually-replaces" class="hover:underline">What a Commercial Analytics Portal Actually Replaces</a></li>
+              <li><a href="#the-governance-layer-is-what-the-business-case-is-for" class="hover:underline">The Governance Layer Is What the Business Case Is For</a></li>
+              <li><a href="#how-to-frame-the-decision-correctly" class="hover:underline">How to Frame the Decision Correctly</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#why-rebuilding-the-portal-does-not-fix-what-broke" class="hover:underline">Why Rebuilding the Portal Does Not Fix What Broke</a></li>
+              <li><a href="#what-a-commercial-analytics-portal-actually-replaces" class="hover:underline">What a Commercial Analytics Portal Actually Replaces</a></li>
+              <li><a href="#the-governance-layer-is-what-the-business-case-is-for" class="hover:underline">The Governance Layer Is What the Business Case Is For</a></li>
+              <li><a href="#how-to-frame-the-decision-correctly" class="hover:underline">How to Frame the Decision Correctly</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>The team agrees something has to change. The homegrown analytics portal built to connect users with the BI environment is no longer doing that reliably. Reports are difficult to find. Access questions take days to answer with confidence. The catalog that once felt like an organized inventory now reflects the analytics estate as it existed two years ago rather than as it exists today. The decision conversation has started, and it has narrowed, as it usually does, to two options: invest in a portal rebuild, or procure a commercial portal and migrate users to it.</p>
+<p>Both options feel like progress because both address something real. The portal does have usability problems. The portal architecture is showing its age. A replacement, built or purchased, would give users a better experience on day one. A replacement may improve the user experience, but unless it includes an enterprise governance layer, it will not automatically deliver a continuously current catalog, consistent access governance, or a certification process that distinguishes trusted reports from duplicates. These are governance functions, and a portal focused primarily on discovery and presentation is not sufficient to provide them at enterprise scale.</p>
+<h2 id="why-rebuilding-the-portal-does-not-fix-what-broke">Why Rebuilding the Portal Does Not Fix What Broke</h2>
+<p>At first, rebuilding appears to be the more conservative choice. The organization knows its BI environment. The team that built the original portal understands how the BI tools connect, which reports matter to which user groups, and what the integration points require. Starting over from the existing foundation seems less disruptive than migrating to a vendor platform.</p>
+<p>The deeper problem is that many of the failures prompting the rebuild are not engineering problems alone. As a homegrown analytics portal grows, the first thing to break is not performance or code quality. It is discovery: the ability to find and trust the right report. Then permission management degrades, as each BI tool added to the portal introduces a separate access model that must be manually synchronized with every organizational change. As explored in When Does a Homegrown Analytics Portal Stop Scaling?, these failure modes often emerge earlier than organizations expect and compound over time.</p>
+<p>These are governance failures, not UI failures. A rebuilt portal is still a display layer: it surfaces reports, applies access rules through its integrations with connected BI tools, and presents a catalog interface to users. What keeps the catalog accurate and the permissions current is not the portal; it is the manual effort of a team that maintains both. That maintenance burden scales with the size of the analytics estate. The estate does not stop growing because the portal is new.</p>
+<h2 id="what-a-commercial-analytics-portal-actually-replaces">What a Commercial Analytics Portal Actually Replaces</h2>
+<p>A commercial analytics portal addresses the usability problem. It offers a more polished discovery interface, faster search, a cleaner user experience, and pre-built integrations with common BI platforms that reduce the initial engineering effort. For organizations that evaluated building those features from scratch and found the cost prohibitive, a commercial portal is a genuine improvement on what they have.</p>
+<p>However, a commercial portal does not automatically eliminate the governance burden, particularly when certification, lifecycle management, and access controls remain distributed across multiple BI platforms. A commercial portal that connects to Power BI, Tableau, and SAP Business Objects still requires someone to determine which reports in each platform are current and which are deprecated. It still requires administrators to maintain role definitions across each tool&#x27;s independent access model. When a business unit is restructured and user access needs to be updated across five BI platforms, unless cross-platform governance is built into the solution, much of that work remains dependent on administrators, while the portal primarily improves how governed content is presented to users.</p>
+<p>The ongoing maintenance cost of a homegrown analytics portal is not primarily the engineering cost of maintaining portal code. As explored in The Hidden Cost of Maintaining a Homegrown Analytics Portal, the dominant cost is the labor required to keep the catalog and permission model current as the estate grows. A replacement portal inherits that cost. The total cost comparison for portal A versus portal B answers a different question than the one the organization actually needs to answer.</p>
+<h2 id="the-governance-layer-is-what-the-business-case-is-for">The Governance Layer Is What the Business Case Is For</h2>
+<p>The question the organization should be asking is not &quot;which portal gives us better features at lower cost?&quot; It is &quot;what function are we actually trying to buy?&quot; If the answer is a better interface for report discovery and access, a commercial portal delivers it. If the answer is a catalog that stays current without manual maintenance, permissions that hold across the estate as the organization changes, and a certification layer that tells users which report version to trust, neither a rebuilt portal nor a commercial replacement delivers it. That is a governance function, and it requires a governance layer.</p>
+<p>This is where an analytics system of record becomes essential. ZenOptics <a href="../../atlas/">Atlas</a> provides the governed foundation for managing analytics inventory, metadata, certification, lifecycle, and access across a fragmented BI estate. Atlas connects across BI environments through Smart Connectors that read inventory, certification status, usage patterns, and metadata directly from each connected platform. When a new report is published in a connected BI platform, Atlas can ingest its metadata into the governed inventory according to the organization&#x27;s configured synchronization and governance policies. As metadata and connected analytics assets change, Smart Connectors help keep the governed inventory aligned with the latest information available from supported BI platforms.</p>
+<p>The certification layer is where the discovery problem at scale is resolved. Reports are marked authoritative through a governed process, making the distinction between the current version and the duplicate visible to any user who searches the catalog. By identifying duplicate, conflicting, unused, and orphaned assets, ZenOptics helps organizations reduce analytics sprawl and move outdated content through a governed lifecycle.</p>
+<p>The permission model follows the same principle. The governance layer provides a centralized view and control framework for access policy, while permissions continue to be enforced through the connected BI platforms and enterprise identity systems. Centralized access governance can streamline deprovisioning and reduce the need to investigate permissions independently across multiple BI platforms. A compliance question about who has access to a specific dataset is answered from a central record rather than reconstructed by checking each tool independently. By making analytics content searchable across connected platforms and distinguishing certified assets from duplicates, ZenOptics helps users find trusted reports faster.</p>
+<p>This distinction becomes even more important as enterprises introduce AI agents and natural-language analytics. AI cannot reliably answer business questions when KPI definitions, report certifications, ownership, lineage, and access context remain fragmented across BI tools. A governed analytics system of record creates the trusted foundation needed to transform the existing BI estate into reliable, traceable, and AI-ready context.</p>
+<h2 id="how-to-frame-the-decision-correctly">How to Frame the Decision Correctly</h2>
+<p>The practical reframe of the build vs. buy question is to define what the governance layer will be before evaluating portal options.</p>
+<p>With a governance layer in place, the portal is responsible for the user-facing surface: how users find, navigate, and access reports. The governance layer is responsible for maintaining inventory, certifying report versions, and holding access policy across the estate. Both layers can coexist on the same architecture. Adding a governance layer does not require retiring the existing portal surface or replacing the BI tools in active use.</p>
+<p>Organizations that sequence the decision this way often find that the portal replacement they were considering is a smaller requirement than it appeared. When the catalog is maintained automatically and certified versions are distinguishable at search time, the discovery interface needs to do less work to deliver a reliable result. The portion of the original portal that was failing, including the manual catalog and the ungoverned inventory, is replaced by the governance layer, not by a better portal.</p>
+<p>As explored in <a href="../intranet-vs-analytics-portal/">Your Intranet Isn&#x27;t Your Analytics Portal</a>, the architectural distinction between the intranet access layer and the analytics portal layer applies at the level above as well: between the portal display layer and the governance layer that makes it accurate. For a full account of the transition sequence, including how organizations introduce a governance layer while leaving the user-facing portal surface in place, see <a href="../modernizing-homegrown-analytics-portals/">Modernizing Homegrown Analytics Portals: A Reference Architecture for SharePoint, .NET &amp; Custom Intranets</a>.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-does-a-commercial-analytics-portal-solve-that-a-homegrown-portal-does-not">What does a commercial analytics portal solve that a homegrown portal does not?</h3>
+<p>A commercial portal solves the usability and implementation problem. It provides a more polished discovery interface, faster time to value from pre-built BI integrations, and a maintenance model where the vendor manages the portal code rather than internal engineering. What it does not solve is the governance problem: the catalog still requires manual curation, permissions still require manual synchronization across connected BI tools, and the certification layer that tells users which report to trust is not part of the portal&#x27;s architecture in either the homegrown or commercial version.</p>
+<h3 id="is-rebuilding-a-homegrown-analytics-portal-worth-the-investment">Is rebuilding a homegrown analytics portal worth the investment?</h3>
+<p>A portal rebuild addresses the user-facing layer and the engineering debt accumulated in the original implementation. It does not address the governance failures that typically prompt the rebuild conversation: undiscoverable reports, permission complexity across connected BI tools, and catalog debt that accumulates faster than teams can maintain it. If the rebuild re-implements the same manual curation and permission management model on a cleaner codebase, the governance failures return as the analytics estate grows. A rebuild is worth evaluating for the portal surface once the governance layer is defined. Rebuilding the portal surface to solve a governance problem is not the right sequence.</p>
+<h3 id="what-is-the-difference-between-an-analytics-portal-and-an-analytics-system-of-re">What is the difference between an analytics portal and an analytics system of record?</h3>
+<p>An analytics portal is a display layer: it presents reports to users, applies access rules through integrations with connected BI tools, and provides a catalog interface. An analytics system of record is a governance layer: it maintains the catalog automatically by reading directly from connected BI platforms, certifies reports through a governed process, and holds access policy across the estate without requiring manual synchronization per tool. The two layers serve different functions and can coexist on the same architecture. Adding an analytics system of record does not require replacing the portal surface.</p>
+<h3 id="how-does-an-analytics-system-of-record-change-the-portal-decision">How does an analytics system of record change the portal decision?</h3>
+<p>With a governance layer in place, the portal can focus on the user-facing experience: discovery, navigation, personalization, and report access, while the governance layer maintains inventory, certification, lifecycle controls, and access consistency. Organizations that add the governance layer first often find that the portal replacement they were evaluating is a smaller requirement than it appeared, because the manual catalog and ungoverned inventory that were failing are replaced by the governance layer rather than by a better portal.</p>
+<h3 id="what-should-organizations-evaluate-before-issuing-an-rfp-for-an-analytics-portal">What should organizations evaluate before issuing an RFP for an analytics portal replacement?</h3>
+<p>Before evaluating portal replacements, organizations should define what governance function, if any, the new system is expected to provide. If the expectation is that the replacement portal will maintain its own catalog, manage permissions across connected BI tools, and certify report versions, those requirements should be tested against what commercial portals actually deliver. Many portal evaluations focus heavily on search and user experience while giving less attention to automated catalog maintenance, cross-platform access governance, certification, and analytics lifecycle management. Organizations that evaluate governance requirements first avoid procuring a portal that solves the user-facing problem while leaving the underlying governance failures in place.</p>
+<p>Before rebuilding or replacing your analytics portal, identify what is actually failing. <a href="../../schedule-a-demo/">Schedule a 15-minute ZenOptics Analytics Estate Assessment</a> to uncover gaps in discovery, certification, lifecycle management, and access governance, and understand how they may be affecting decision quality and AI readiness.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-breaks-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-03" class="text-sm text-navy/70">August 3, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-breaks-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Breaks Traditional Analytics Portals</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics portal AI integration fails not because of AI limitations, but because the portal was never a context layer. Here is what AI actually needs.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-system-of-record/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-31" class="text-sm text-navy/70">July 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-system-of-record/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Every Enterprise Needs an Analytics System of Record</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/intranet-vs-analytics-portal/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-24" class="text-sm text-navy/70">July 24, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../intranet-vs-analytics-portal/" class="after:absolute after:inset-0 focus-visible:outline-none">Your Intranet Isn&#x27;t Your Analytics Portal</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An intranet can publish BI reports. An analytics portal helps users discover them. Learn why enterprise AI also needs a governed analytics system of record.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

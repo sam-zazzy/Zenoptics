@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can Your AI Agent Trust the Reports It Reads | ZenOptics</title>
+  <meta name="description" content="An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/ai-ready-analytics/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Can Your AI Agent Trust the Reports It Reads | ZenOptics">
+  <meta property="og:description" content="An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…">
+  <meta property="og:url" content="https://zenoptics.com/blog/ai-ready-analytics/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/ai-ready-analytics/cover.webp">
+  <meta property="article:published_time" content="2026-10-12">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Can Your AI Agent Trust the Reports It Reads", "datePublished": "2026-10-12", "description": "An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…", "image": "https://zenoptics.com/assets/images/blog/ai-ready-analytics/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/ai-ready-analytics/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do read only agents need authoritative analytics sources", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Read-only access prevents some actions, but an incorrect answer can still influence a business decision. Appropriate sources and clear definitions remain necessary."}}, {"@type": "Question", "name": "Does certification guarantee an accurate answer", "acceptedAnswer": {"@type": "Answer", "text": "No. The report must fit the question, and the agent must apply the correct period, filters, and definition. Certification supports source selection; it does not replace evaluation."}}, {"@type": "Question", "name": "Is a complete enterprise inventory required before a pilot", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot needs an inventory of the sources it uses. A wider inventory can develop as additional domains and platforms are connected."}}, {"@type": "Question", "name": "Is this a broader AI governance framework", "acceptedAnswer": {"@type": "Answer", "text": "The focus is analytics readiness: knowing which reports and metrics to use and supplying their business meaning. This work supports enterprise AI controls alongside security, permissions, and operational safeguards."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Can Your AI Agent Trust the Reports It Reads</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-12">October 12, 2026</time></span>
+          <span>6 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/ai-ready-analytics/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#access-to-a-report-does-not-establish-its-authority" class="hover:underline">Access to a report does not establish its authority</a></li>
+              <li><a href="#what-gartner-means-for-analytics-teams" class="hover:underline">What Gartner means for analytics teams</a></li>
+              <li><a href="#establish-a-clear-view-of-the-connected-bi-estate" class="hover:underline">Establish a clear view of the connected BI estate</a></li>
+              <li><a href="#make-approval-specific-to-a-business-purpose" class="hover:underline">Make approval specific to a business purpose</a></li>
+              <li><a href="#supply-the-business-context-behind-the-metric" class="hover:underline">Supply the business context behind the metric</a></li>
+              <li><a href="#how-atlas-and-nexus-support-analytics-readiness" class="hover:underline">How Atlas and Nexus support analytics readiness</a></li>
+              <li><a href="#a-practical-example-for-a-finance-team" class="hover:underline">A practical example for a finance team</a></li>
+              <li><a href="#where-to-start-before-the-next-deployment" class="hover:underline">Where to start before the next deployment</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#build-ai-readiness-into-the-analytics-foundation" class="hover:underline">Build AI readiness into the analytics foundation</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#access-to-a-report-does-not-establish-its-authority" class="hover:underline">Access to a report does not establish its authority</a></li>
+              <li><a href="#what-gartner-means-for-analytics-teams" class="hover:underline">What Gartner means for analytics teams</a></li>
+              <li><a href="#establish-a-clear-view-of-the-connected-bi-estate" class="hover:underline">Establish a clear view of the connected BI estate</a></li>
+              <li><a href="#make-approval-specific-to-a-business-purpose" class="hover:underline">Make approval specific to a business purpose</a></li>
+              <li><a href="#supply-the-business-context-behind-the-metric" class="hover:underline">Supply the business context behind the metric</a></li>
+              <li><a href="#how-atlas-and-nexus-support-analytics-readiness" class="hover:underline">How Atlas and Nexus support analytics readiness</a></li>
+              <li><a href="#a-practical-example-for-a-finance-team" class="hover:underline">A practical example for a finance team</a></li>
+              <li><a href="#where-to-start-before-the-next-deployment" class="hover:underline">Where to start before the next deployment</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#build-ai-readiness-into-the-analytics-foundation" class="hover:underline">Build AI readiness into the analytics foundation</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the business needs to know whether the report is current, which definition it uses, and who has approved it for that purpose.</p>
+<p>This is a practical BI readiness challenge. Connecting an agent to analytics tools gives it access to information. Providing authoritative sources and business context helps it interpret that information appropriately.</p>
+<p>For enterprises preparing their BI estate for AI, the starting point is the analytics itself: what exists, which sources should be used, what the metrics mean, and who maintains those decisions.</p>
+<h2 id="access-to-a-report-does-not-establish-its-authority">Access to a report does not establish its authority</h2>
+<p>Consider an agent asked to retrieve quarterly revenue. It finds a dashboard labeled Revenue Overview and returns a figure. The dashboard may be an archived version, a departmental view, or a report built around booked contracts rather than recognized revenue.</p>
+<p>The retrieval worked. The source may still be wrong for the question.</p>
+<p>Two read-only agents can encounter different evidence. One retrieves information from a reviewed finance collection. Another searches a broader portal containing duplicate reports and assets with unclear status. Their permissions to act may be similar, while their ability to identify appropriate analytics differs.</p>
+<p>A small approved collection is not automatically reliable for every question. Its definitions, reporting period, filters, freshness, and intended use still matter. The goal is to help the agent select evidence the business can explain and defend.</p>
+<h2 id="what-gartner-means-for-analytics-teams">What Gartner means for analytics teams</h2>
+<p>In its <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure" target="_blank" rel="noopener">May 26 2026 press release</a>, Gartner recommends proportional controls that account for agent autonomy and access scope. It predicts that 40% of enterprises will demote or decommission autonomous agents by 2027 after production incidents expose governance gaps.</p>
+<p>Gartner distinguishes agents that observe, advise, act with human approval, and act autonomously. Observing and advising can both involve read-only access; recommendations can influence decisions even when a person executes the action.</p>
+<p>For analytics teams, the practical implication is to define which sources an agent may use and provide enough context to interpret them. That work complements the organization’s broader security and agent controls.</p>
+<h2 id="establish-a-clear-view-of-the-connected-bi-estate">Establish a clear view of the connected BI estate</h2>
+<p>Reports and dashboards can multiply across platforms, departments, acquisitions, and migrations. Similar titles may conceal different calculations. Copies may remain available after their replacements are introduced. Ownership can become unclear when teams change.</p>
+<p>Start by identifying the assets connected to the intended AI use case. Record their platform, identifier, business domain, owner, lifecycle status, and approval purpose. Include relevant metric definitions and relationships to underlying datasets where available.</p>
+<p>A bounded pilot does not require every report in the enterprise to be cataloged first. It does require a reliable view of the sources the pilot actually uses. Expand the inventory as the use case expands.</p>
+<p>This view gives analytics teams a practical way to distinguish current authoritative assets from duplicates, retired content, and reports that still need review.</p>
+<h2 id="make-approval-specific-to-a-business-purpose">Make approval specific to a business purpose</h2>
+<p>Microsoft documents <a href="https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-endorsement-overview" target="_blank" rel="noopener">promotion and certification in Power BI</a>, and Tableau documents <a href="https://help.tableau.com/current/server/en-us/datasource_certified.htm" target="_blank" rel="noopener">certification for supported data assets</a>. These endorsement mechanisms provide useful signals about reviewed content.</p>
+<p>Enterprises still need to decide how those signals relate to their business questions. A certified sales dashboard and an approved finance report can use different revenue definitions because they serve different purposes.</p>
+<p>Approval should identify the owner, intended use, definition, and review expectations. When two approved reports disagree, the responsible business owner should resolve which applies. An agent should surface an unresolved conflict rather than silently choose the more convenient number.</p>
+<p>Certifying everything is not the objective. Making status and purpose visible helps teams decide what is suitable, what needs review, and what should be excluded.</p>
+<h2 id="supply-the-business-context-behind-the-metric">Supply the business context behind the metric</h2>
+<p>Technical metadata can identify a field name or a report location. Business context explains what the field represents and how it should be used.</p>
+<p>For a revenue question, useful context might include whether revenue is recognized or booked, which currency applies, whether cancellations are excluded, and how the fiscal quarter is defined. For a margin question, it might identify the cost components included in the calculation.</p>
+<p>Context should connect business terms and synonyms to metric definitions, dimensions, filters, and relevant analytics assets. It should also describe limits: which comparisons are appropriate and which questions require another source.</p>
+<p>This makes the analytics foundation useful to AI systems and to the people reviewing their answers. A plausible explanation becomes easier to assess when its definitions and evidence are visible.</p>
+<h2 id="how-atlas-and-nexus-support-analytics-readiness">How Atlas and Nexus support analytics readiness</h2>
+<p><a href="../../atlas/">Atlas</a> provides a centralized analytics system of record across connected BI platforms. It catalogs reports, dashboards, and metrics and supports information about ownership, certification, definitions, lineage, and usage.</p>
+<p>That foundation helps teams identify what analytics exist, which assets have been reviewed, and who is accountable for their meaning. It supports the source-selection decisions that an analytics-aware agent needs.</p>
+<p><a href="../../nexus/">Nexus</a> uses governed analytics metadata to build business context through metadata onboarding, semantic curation, and a knowledge graph. It helps AI systems interpret metrics and relationships between assets and business domains.</p>
+<p>Together, Atlas and Nexus connect analytics discovery with business understanding. The deployment must still enforce access through the relevant source-system permissions and integration controls, and teams should evaluate whether the agent uses the context correctly.</p>
+<p>When insights enter a recurring business process, <a href="../../maestro/">Maestro</a> can support structured workflows with reviews, approvals, and action records. The analytics foundation remains the focus: appropriate evidence, understood definitions, and accountable use.</p>
+<h2 id="a-practical-example-for-a-finance-team">A practical example for a finance team</h2>
+<p>Suppose an agent prepares an explanation of quarterly revenue performance. A finance analyst reviews the explanation and decides whether the forecast needs adjustment.</p>
+<p>The team limits the agent to a current finance revenue dashboard and a relevant approved pipeline report. The source records identify the owners, reporting periods, definitions, currency treatment, and expected update schedule.</p>
+<p>The agent should distinguish recognized revenue from pipeline value, identify the sources used, and explain which period and filters support its answer. If a required report is stale or two definitions conflict, it should flag the issue for review.</p>
+<p>Test the scenario with a retired dashboard, a similarly named sales metric, a missing period, and an unauthorized request. The question is whether the agent selects appropriate evidence, respects access limits, and makes uncertainty visible.</p>
+<p>This example is illustrative. Its value is a repeatable way to check analytics readiness before expanding the use case.</p>
+<h2 id="where-to-start-before-the-next-deployment">Where to start before the next deployment</h2>
+<p>Begin with one business question and a named owner. Agree on what a useful answer should contain and which decisions it is intended to support.</p>
+<p>Identify the required reports and metrics, verify their status, and resolve material definition conflicts. Confirm that the intended users and integration have appropriate permissions.</p>
+<p>Then curate the business context and test realistic questions with domain experts. Include cases where the evidence is missing, outdated, contradictory, or outside the approved scope.</p>
+<p>Record the sources and context used, along with review outcomes where required. Revisit the setup when reports, definitions, owners, or connections change. A certification percentage alone cannot establish readiness; evaluate the evidence used for the actual business purpose.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="do-read-only-agents-need-authoritative-analytics-sources">Do read only agents need authoritative analytics sources</h3>
+<p>Yes. Read-only access prevents some actions, but an incorrect answer can still influence a business decision. Appropriate sources and clear definitions remain necessary.</p>
+<h3 id="does-certification-guarantee-an-accurate-answer">Does certification guarantee an accurate answer</h3>
+<p>No. The report must fit the question, and the agent must apply the correct period, filters, and definition. Certification supports source selection; it does not replace evaluation.</p>
+<h3 id="is-a-complete-enterprise-inventory-required-before-a-pilot">Is a complete enterprise inventory required before a pilot</h3>
+<p>A bounded pilot needs an inventory of the sources it uses. A wider inventory can develop as additional domains and platforms are connected.</p>
+<h3 id="is-this-a-broader-ai-governance-framework">Is this a broader AI governance framework</h3>
+<p>The focus is analytics readiness: knowing which reports and metrics to use and supplying their business meaning. This work supports enterprise AI controls alongside security, permissions, and operational safeguards.</p>
+<h2 id="build-ai-readiness-into-the-analytics-foundation">Build AI readiness into the analytics foundation</h2>
+<p>Before asking an agent to work across more dashboards, establish which sources are authoritative for its questions and what their metrics mean. Maintain ownership and review decisions as the BI estate evolves.</p>
+<p>For analytics teams, this is a concrete path from connected tools to useful AI-supported decisions. Atlas provides the analytics record; Nexus supplies the business context that helps AI interpret it.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Talk to ZenOptics about preparing trusted analytics and business context for AI</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/measure-ai-impact-business-decisions/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-19" class="text-sm text-navy/70">October 19, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../measure-ai-impact-business-decisions/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Measure AI’s Impact on Business Decisions</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Learn how to measure AI’s impact on business decisions with practical metrics, trusted analytics, and governed workflows supported by ZenOptics.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/semantic-layer-ai-business-context/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-16" class="text-sm text-navy/70">October 16, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../semantic-layer-ai-business-context/" class="after:absolute after:inset-0 focus-visible:outline-none">You Have a Semantic Layer. Why Does AI Still Misread Your Business?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">A semantic layer defines your metrics, but AI can still misinterpret the question. Learn how analytics context connects calculations to business meaning.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/agent-analytics-provenance-record/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-09" class="text-sm text-navy/70">October 9, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../agent-analytics-provenance-record/" class="after:absolute after:inset-0 focus-visible:outline-none">AI Agent Analytics Provenance Audit</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Agent traces record the call, the tool and the source. BI audit logs record the access. Neither records whether the asset was certified at the moment the…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

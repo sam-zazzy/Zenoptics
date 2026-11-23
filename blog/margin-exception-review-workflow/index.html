@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions | ZenOptics</title>
+  <meta name="description" content="Help finance and operations act on shared evidence. A CIO guide to margin review workflows, trusted measures and clear business accountability.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/margin-exception-review-workflow/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions | ZenOptics">
+  <meta property="og:description" content="Help finance and operations act on shared evidence. A CIO guide to margin review workflows, trusted measures and clear business accountability.">
+  <meta property="og:url" content="https://zenoptics.com/blog/margin-exception-review-workflow/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/margin-exception-review-workflow/cover.webp">
+  <meta property="article:published_time" content="2026-10-30">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions", "datePublished": "2026-10-30", "description": "Help finance and operations act on shared evidence. A CIO guide to margin review workflows, trusted measures and clear business accountability.", "image": "https://zenoptics.com/assets/images/blog/margin-exception-review-workflow/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/margin-exception-review-workflow/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often should a margin exception review run?", "acceptedAnswer": {"@type": "Answer", "text": "Use a cadence that matches the availability of meaningful evidence and the time available to act. Weekly is an example, not a universal requirement."}}, {"@type": "Question", "name": "Who should own the review?", "acceptedAnswer": {"@type": "Answer", "text": "A named business decision owner should lead it with finance, operations and commercial participation suited to the cases in scope."}}, {"@type": "Question", "name": "Can AI determine the cause of a margin movement?", "acceptedAnswer": {"@type": "Answer", "text": "It can help identify patterns and organize evidence. Treat proposed causes as hypotheses until suitable evidence and a responsible reviewer confirm them."}}, {"@type": "Question", "name": "Should the review automatically change prices?", "acceptedAnswer": {"@type": "Answer", "text": "Any action should follow the company’s decision authority and risk assessment. Preparing a case and approving a commercial change are separate responsibilities."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions</h1>
+        <p class="mt-4 max-w-3xl text-lg text-white/90">A practical approach to shared evidence and business ownership</p>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-30">October 30, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/margin-exception-review-workflow/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-cio-decision-behind-a-better-margin-review" class="hover:underline">The CIO decision behind a better margin review</a></li>
+              <li><a href="#start-with-the-margin-measure-the-decision-requires" class="hover:underline">Start with the margin measure the decision requires</a></li>
+              <li><a href="#choose-exceptions-that-deserve-discussion" class="hover:underline">Choose exceptions that deserve discussion</a></li>
+              <li><a href="#compare-performance-on-a-consistent-basis" class="hover:underline">Compare performance on a consistent basis</a></li>
+              <li><a href="#assemble-a-focused-evidence-packet" class="hover:underline">Assemble a focused evidence packet</a></li>
+              <li><a href="#work-through-an-illustrative-case" class="hover:underline">Work through an illustrative case</a></li>
+              <li><a href="#use-a-case-record-that-survives-the-meeting" class="hover:underline">Use a case record that survives the meeting</a></li>
+              <li><a href="#assign-finance-and-operations-complementary-roles" class="hover:underline">Assign finance and operations complementary roles</a></li>
+              <li><a href="#add-ai-assistance-to-preparation-and-triage" class="hover:underline">Add AI assistance to preparation and triage</a></li>
+              <li><a href="#move-approved-actions-into-the-operating-process" class="hover:underline">Move approved actions into the operating process</a></li>
+              <li><a href="#close-the-loop-on-the-next-review" class="hover:underline">Close the loop on the next review</a></li>
+              <li><a href="#build-a-useful-first-cycle" class="hover:underline">Build a useful first cycle</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-cio-decision-behind-a-better-margin-review" class="hover:underline">The CIO decision behind a better margin review</a></li>
+              <li><a href="#start-with-the-margin-measure-the-decision-requires" class="hover:underline">Start with the margin measure the decision requires</a></li>
+              <li><a href="#choose-exceptions-that-deserve-discussion" class="hover:underline">Choose exceptions that deserve discussion</a></li>
+              <li><a href="#compare-performance-on-a-consistent-basis" class="hover:underline">Compare performance on a consistent basis</a></li>
+              <li><a href="#assemble-a-focused-evidence-packet" class="hover:underline">Assemble a focused evidence packet</a></li>
+              <li><a href="#work-through-an-illustrative-case" class="hover:underline">Work through an illustrative case</a></li>
+              <li><a href="#use-a-case-record-that-survives-the-meeting" class="hover:underline">Use a case record that survives the meeting</a></li>
+              <li><a href="#assign-finance-and-operations-complementary-roles" class="hover:underline">Assign finance and operations complementary roles</a></li>
+              <li><a href="#add-ai-assistance-to-preparation-and-triage" class="hover:underline">Add AI assistance to preparation and triage</a></li>
+              <li><a href="#move-approved-actions-into-the-operating-process" class="hover:underline">Move approved actions into the operating process</a></li>
+              <li><a href="#close-the-loop-on-the-next-review" class="hover:underline">Close the loop on the next review</a></li>
+              <li><a href="#build-a-useful-first-cycle" class="hover:underline">Build a useful first cycle</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>When finance and operations review the same margin movement, they bring different knowledge to the decision. Finance understands the measure and its comparison basis. Operations understands the events behind production, delivery and service costs. The CIO can create a shared analytical environment that helps those perspectives lead to an informed response.</p>
+<p>A margin exception review is a practical way to apply that capability. It identifies profitability changes worth examining, connects them with relevant evidence and assigns an appropriate next step. The CIO sponsors the information and workflow foundation. Authorized finance, commercial and operating leaders own financial interpretation and business action.</p>
+<p>This guide uses an illustrative weekly review to show what the CIO should require from analytics and process teams. It includes a worked case, a review record and controlled uses of AI assistance. The figures, thresholds and cadence are examples to adapt to the organization’s accounting policies, operating cycle and decision authority.</p>
+<h2 id="the-cio-decision-behind-a-better-margin-review">The CIO decision behind a better margin review</h2>
+<p>Agree with the CFO and operations sponsor which recurring review would benefit from shared analytics. Ask the delivery team to establish suitable source assets, the relevant access rules and a handoff from analysis to authorized business action. Include the reporting cycle in the service requirements.</p>
+<p>Keep the ownership boundary explicit. The CIO enables dependable evidence and a maintainable workflow. Finance approves the measure and the relevant executives authorize commercial responses. This creates a practical business application for the analytics investment without transferring financial policy or pricing authority to the technology function.</p>
+<h2 id="start-with-the-margin-measure-the-decision-requires">Start with the margin measure the decision requires</h2>
+<p>Ask finance to identify the measure appropriate to the review. Gross margin, contribution margin and other management measures can serve different purposes. Record which costs are included, the relevant period and the scope of products or customers.</p>
+<p>Explain how provisional inputs are treated. An operational view might use estimated freight or an incomplete cost allocation. Reviewers should know whether a movement reflects a final result or an estimate that will be reconciled later.</p>
+<p>Link the measure with its approved source report and owner. ZenOptics Atlas supports analytics inventory and certification. The review team defines which assets are suitable for this management purpose and what additional checks are required.</p>
+<h2 id="choose-exceptions-that-deserve-discussion">Choose exceptions that deserve discussion</h2>
+<p>Set criteria that reflect business significance. The team might investigate movements above a defined value, a change beyond a tolerance or a sustained pattern over several periods. Use the criteria together where appropriate so small-volume fluctuations do not dominate the meeting.</p>
+<p>Explain why the threshold was chosen and who can change it. A threshold appropriate to a large product family may not suit a small but strategically important customer. Preserve a route for a business owner to raise a relevant case that the standard rule does not capture.</p>
+<p>Review the exception volume after the first cycles. If the list is too large to investigate, adjust the scope and prioritization with the owner. The objective is useful attention to material cases, not the largest possible set of alerts.</p>
+<h2 id="compare-performance-on-a-consistent-basis">Compare performance on a consistent basis</h2>
+<p>Specify whether the exception compares actual results with budget, a forecast or an earlier period. Explain the treatment of currency, product mix and organizational changes. Reviewers need to know which differences are comparable before discussing causes.</p>
+<p>AFP’s variance analysis guidance provides background on comparing planned and actual performance. The weekly process applies that discipline to a chosen set of profitability exceptions.</p>
+<p>Keep the comparison basis visible in every case. If one reviewer uses the latest forecast and another uses the original budget, the team may be answering different questions. Both comparisons can be useful when their purpose is stated.</p>
+<h2 id="assemble-a-focused-evidence-packet">Assemble a focused evidence packet</h2>
+<p>For each case, include the affected business area, the margin movement, the reporting period and the main supporting reports. Add relevant operational information such as order changes, freight adjustments or supplier events when access and evidence permit.</p>
+<p>Keep observations separate from explanations. A margin decline is observable in the measure. The view that a supplier issue caused it requires supporting evidence. Ask the person responsible for that operational area to validate the explanation.</p>
+<p>ZenOptics Nexus organizes business meaning and relationships from governed analytics metadata. In this process, that context helps reviewers select the applicable definition and understand relevant measures. Commercial causes still require business assessment.</p>
+<h2 id="work-through-an-illustrative-case">Work through an illustrative case</h2>
+<p>Assume a product group has revenue of $100,000 and included costs of $75,000 for the review period. Using the illustrative definition of revenue less those costs divided by revenue, its margin is 25 percent. Suppose the comparable planned margin is 30 percent.</p>
+<p>The difference is five percentage points. That observation starts the investigation. It does not identify the cause. Finance confirms the calculation and comparison. Operations checks whether the included costs reflect a genuine change or a timing issue. The commercial owner reviews price and mix information.</p>
+<p>If the team finds a provisional freight estimate, the next action might be reconciliation before a commercial change is considered. If it confirms a continuing cost increase, the business can evaluate responses within the appropriate approval process. These are example branches, not prescribed pricing decisions.</p>
+<h2 id="use-a-case-record-that-survives-the-meeting">Use a case record that survives the meeting</h2>
+<p>The following template keeps the discussion focused on evidence and the next decision. Add the level of detail required by the business process.</p>
+<p>W3C’s provenance overview offers general background for relating information to responsible activities. Keep the case record accessible to the people who need to understand the decision while respecting the relevant information controls.</p>
+<h2 id="assign-finance-and-operations-complementary-roles">Assign finance and operations complementary roles</h2>
+<p>Finance confirms the measure and comparison. Operations evaluates the processes and events that may explain the movement. Commercial leaders consider the implications for the customer or product. The decision owner approves the response within delegated authority.</p>
+<p>The roles should help the team reach a decision without moving accountability into the analytics team. Analysts provide the evidence and may identify useful questions. They should not inherit authority over commercial commitments merely because they maintain the reports.</p>
+<p>AFP’s finance business partnering overview provides context for collaboration between financial analysis and the business. The review gives that collaboration a specific cadence and work product.</p>
+<h2 id="add-ai-assistance-to-preparation-and-triage">Add AI assistance to preparation and triage</h2>
+<p>An assistant can help organize the permitted evidence, draft a summary of movements and identify missing information. Give it the approved measure and comparison basis. Ask it to label explanations that require confirmation.</p>
+<p>Keep calculated results grounded in the approved analytical source or a validated calculation path. A natural language explanation should not become the sole evidence for the number. Business reviewers need to be able to inspect the underlying result.</p>
+<p>NIST’s AI Risk Management Framework provides a voluntary risk reference. Test the assisted process with provisional inputs, contradictory sources and requests beyond the assistant’s permitted role. The review should remain usable when the assistant asks for clarification.</p>
+<h2 id="move-approved-actions-into-the-operating-process">Move approved actions into the operating process</h2>
+<p>Define how a review decision becomes work. An investigation may create a task for an operations owner. A proposed commercial change may enter a separate approval process. The record should show which action was actually authorized.</p>
+<p>ZenOptics Maestro supports analytical workflows, reviews and decision provenance. A margin review is an illustrative application that requires configuration around the company’s process and integrations.</p>
+<p>Preserve the evidence and conditions considered at approval. If the reporting inputs change later, a reviewer should still understand why the action appeared appropriate at the time. Choose a permitted version reference or snapshot approach suitable to the environment.</p>
+<h2 id="close-the-loop-on-the-next-review">Close the loop on the next review</h2>
+<p>Begin the following cycle with the actions due for review. Confirm whether the task was completed and whether the relevant evidence has changed. An investigation can be completed successfully even if it concludes that no commercial intervention is appropriate.</p>
+<p>Measure the review process through completed investigations, unresolved cases, repeated exceptions and material corrections. Assess financial outcomes separately, with an explanation of other factors that affect them. Avoid counting every subsequent margin improvement as a benefit produced by the workflow.</p>
+<p>The existing article on measuring AI’s impact on business decisions provides an evaluation foundation. This playbook adds the weekly case selection, role design and follow-through needed to operate one specific business process.</p>
+<h2 id="build-a-useful-first-cycle">Build a useful first cycle</h2>
+<p>Include a favorable exception as well as cases that need correction. An improvement may reveal a useful operating practice, a change in product mix or an input that still needs checking. Apply the same evidence discipline before deciding to repeat the apparent success elsewhere. A positive result deserves explanation just as much as an unexpected decline.</p>
+<p>Define how a case is carried between meetings. If an investigation remains open, preserve its original identifier and add new evidence to the same record. A newly generated alert should not create another owner and a second investigation for an existing issue. Reviewers can then see whether the case is progressing, which facts changed and whether the proposed response remains appropriate. The resulting record helps finance and operations use the weekly meeting for decisions instead of repeatedly reconstructing the same history.</p>
+<p>Start with one product family, business unit or review population whose owners can participate. Use a small set of real cases to test whether the evidence is sufficient and the proposed actions have clear owners. Include at least one case that needs further investigation.</p>
+<p>After the meeting, ask whether participants could understand the measure, distinguish a hypothesis and identify the next step. Improve the template based on those answers before expanding the population.</p>
+<p>To discuss the analytics foundation for a finance and operations review, contact ZenOptics with the reports, measures and handoffs involved. A specific recurring process gives the business and technology teams a practical basis for evaluating the required capabilities.</p>
+<h2 id="the-cio-action-agenda">The CIO action agenda</h2>
+<p>Review the process with the CFO and operations sponsor after the initial cycles. Ask whether reviewers could inspect the evidence, distinguish confirmed causes from hypotheses and route approved work to the right owner. Resolve information and workflow constraints through the technology roadmap. Let the business sponsors judge the usefulness of the resulting decisions and the appropriate scope for expansion.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="how-often-should-a-margin-exception-review-run">How often should a margin exception review run?</h3>
+<p>Use a cadence that matches the availability of meaningful evidence and the time available to act. Weekly is an example, not a universal requirement.</p>
+<h3 id="who-should-own-the-review">Who should own the review?</h3>
+<p>A named business decision owner should lead it with finance, operations and commercial participation suited to the cases in scope.</p>
+<h3 id="can-ai-determine-the-cause-of-a-margin-movement">Can AI determine the cause of a margin movement?</h3>
+<p>It can help identify patterns and organize evidence. Treat proposed causes as hypotheses until suitable evidence and a responsible reviewer confirm them.</p>
+<h3 id="should-the-review-automatically-change-prices">Should the review automatically change prices?</h3>
+<p>Any action should follow the company’s decision authority and risk assessment. Preparing a case and approving a commercial change are separate responsibilities.</p>
+<h2 id="references">References</h2>
+<div class="refs">
+<p>1. AFP Variance Analysis — comparison methods.</p>
+<p>2. AFP Finance Business Partnering — collaboration context.</p>
+<p>3. W3C PROV Overview — evidence relationships.</p>
+<p>4. NIST AI Risk Management Framework — AI risk reference.</p>
+<p>5. GAO AI Accountability Framework — accountability reference for the assisted workflow.</p>
+</div>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-investment-planning-portfolio/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-05" class="text-sm text-navy/70">November 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-investment-planning-portfolio/" class="after:absolute after:inset-0 focus-visible:outline-none">Where Should Your Next Analytics Dollar Go? A CIO’s Investment Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Decide where your next analytics dollar should go. A CIO playbook for investment choices, business value, dependencies and operating capacity.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/kpi-rollout-plan-business-teams/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-02" class="text-sm text-navy/70">November 2, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../kpi-rollout-plan-business-teams/" class="after:absolute after:inset-0 focus-visible:outline-none">Launching a New KPI? A CIO’s Plan for Business-Wide Adoption</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Launch a new KPI across business teams with a CIO led rollout plan covering ownership, testing, historical comparisons and adoption.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-assisted-quarterly-business-review/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-28" class="text-sm text-navy/70">October 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-assisted-quarterly-business-review/" class="after:absolute after:inset-0 focus-visible:outline-none">Better Quarterly Business Reviews: How CIOs Connect Analytics with Business Priorities</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Connect quarterly business reviews with business priorities. A CIO guide to trusted metrics, AI assisted preparation and accountable decisions.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

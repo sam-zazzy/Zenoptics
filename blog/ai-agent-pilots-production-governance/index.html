@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Agent Pilots Stall Before Production | ZenOptics</title>
+  <meta name="description" content="Learn why technically successful AI agent pilots can still stall before production and how governed workflows help enterprises move forward with confidence.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/ai-agent-pilots-production-governance/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why AI Agent Pilots Stall Before Production | ZenOptics">
+  <meta property="og:description" content="Learn why technically successful AI agent pilots can still stall before production and how governed workflows help enterprises move forward with confidence.">
+  <meta property="og:url" content="https://zenoptics.com/blog/ai-agent-pilots-production-governance/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/ai-agent-pilots-production-governance/cover.webp">
+  <meta property="article:published_time" content="2026-09-15">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why AI Agent Pilots Stall Before Production", "datePublished": "2026-09-15", "description": "Learn why technically successful AI agent pilots can still stall before production and how governed workflows help enterprises move forward with confidence.", "image": "https://zenoptics.com/assets/images/blog/ai-agent-pilots-production-governance/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/ai-agent-pilots-production-governance/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do AI agent pilots stall at the production approval stage?", "acceptedAnswer": {"@type": "Answer", "text": "AI agent pilots can stall for several reasons, including technical limitations, security concerns, unclear business value and insufficient governance. Even when technical performance is promising, production approval may be delayed if stakeholders cannot determine how the agent’s actions will be reviewed, governed and traced."}}, {"@type": "Question", "name": "What is the difference between IT governance and business decision governance for AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "IT governance addresses the AI system: access controls, API logs, model monitoring, and system audit trails. It documents what the agent accessed and invoked. Business decision governance addresses the business decision the agent makes: what certified analytics the agent referenced, what workflow step governed the action, what authorization condition was satisfied, and what the outcome was. Both are necessary. Business decision governance complements technical controls by connecting an agent’s actions with the relevant analytics, workflow, authorization and outcome."}}, {"@type": "Question", "name": "What does business decision governance require for AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "Business decision governance for AI agents requires four components: a certified analytics basis at each workflow step, a structured workflow that governs what the agent does at each step, a governance approval record captured as the step completes, and a decision provenance record connecting the certified analytics input to the agent's action to the measurable outcome."}}, {"@type": "Question", "name": "How does Maestro enable AI agent deployment to reach production?", "acceptedAnswer": {"@type": "Answer", "text": "Maestro provides structured workflows for analytics-driven enterprise processes. Decision steps can be mapped to governed analytics from Atlas, while Nexus provides business context that AI can interpret. Maestro allows reviews, approvals, rejections and escalations to be incorporated into execution, while recording actions and maintaining visibility across workflow steps."}}, {"@type": "Question", "name": "Is this a compliance requirement or an operational requirement?", "acceptedAnswer": {"@type": "Answer", "text": "It can be both. In regulated or high-risk use cases, organizations may face formal requirements related to record-keeping, transparency and human oversight. Even when a specific regulation does not apply, teams still need clear records of actions, approvals and ownership to manage operational risk. Business decision governance can support these requirements, but compliance depends on the use case, jurisdiction and applicable regulation."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why AI Agent Pilots Stall Before Production</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-09-15">September 15, 2026</time></span>
+          <span>9 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/ai-agent-pilots-production-governance/cover.webp" alt="" width="1600" height="836" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#why-technically-successful-ai-agent-pilots-still-stall" class="hover:underline">Why Technically Successful AI Agent Pilots Still Stall</a></li>
+              <li><a href="#the-question-finance-operations-and-legal-are-actually-asking" class="hover:underline">The Question Finance, Operations, and Legal Are Actually Asking</a></li>
+              <li><a href="#why-it-governance-alone-is-not-enough" class="hover:underline">Why IT Governance Alone Is Not Enough</a></li>
+              <li><a href="#what-business-decision-governance-requires-for-ai-agent-deployment" class="hover:underline">What Business Decision Governance Requires for AI Agent Deployment</a></li>
+              <li><a href="#how-maestro-supports-governed-ai-agent-execution" class="hover:underline">How Maestro Supports Governed AI Agent Execution</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#production-readiness-requires-more-than-model-performance" class="hover:underline">Production Readiness Requires More Than Model Performance</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#why-technically-successful-ai-agent-pilots-still-stall" class="hover:underline">Why Technically Successful AI Agent Pilots Still Stall</a></li>
+              <li><a href="#the-question-finance-operations-and-legal-are-actually-asking" class="hover:underline">The Question Finance, Operations, and Legal Are Actually Asking</a></li>
+              <li><a href="#why-it-governance-alone-is-not-enough" class="hover:underline">Why IT Governance Alone Is Not Enough</a></li>
+              <li><a href="#what-business-decision-governance-requires-for-ai-agent-deployment" class="hover:underline">What Business Decision Governance Requires for AI Agent Deployment</a></li>
+              <li><a href="#how-maestro-supports-governed-ai-agent-execution" class="hover:underline">How Maestro Supports Governed AI Agent Execution</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#production-readiness-requires-more-than-model-performance" class="hover:underline">Production Readiness Requires More Than Model Performance</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Many AI agent pilots perform well in controlled environments but struggle to progress into production. The challenge is not always technical. Enterprises must also determine how an agent’s actions will be governed, reviewed and explained once the agent becomes part of a consequential business process.</p>
+<p>Much of the discussion about stalled AI agent pilots focuses on technical explanations: models are not reliable enough, evaluation tooling is immature, data quality is insufficient. These are real challenges. They do not explain why AI agent pilots that technically work, that produce accurate outputs in controlled settings, still cannot get organizational approval to scale.</p>
+<p>Even after the technical questions have been addressed, another barrier remains: business accountability. Before approving an AI agent for an important business process, operations, finance and legal teams need to understand how its actions will be governed, reviewed and traced.</p>
+<h2 id="why-technically-successful-ai-agent-pilots-still-stall">Why Technically Successful AI Agent Pilots Still Stall</h2>
+<p>Gartner projects that 40% of enterprise applications will include task-specific AI agents by the end of 2026, up from under 5% in 2025. Many enterprise organizations are currently experimenting with AI agents in controlled environments.They have AI agents running in controlled settings: routing approvals, flagging variances, executing workflow steps in finance, operations, or HR. Initial results may look promising. The agent may perform well within the pilot’s defined scope, and the underlying data may already be governed.</p>
+<p>And then the request to scale hits operations. Or finance. Or legal. And it stalls.</p>
+<p>These functions are not only asking, “Is the model accurate enough?” The pilot may provide evidence of performance, but production introduces broader questions about control and accountability. The question is: &quot;When this agent makes a wrong call on a CapEx routing, marks the wrong close step as complete, or flags the wrong variance for escalation, what record do we have of what the agent did, on what basis it acted, and who is accountable for the outcome?&quot;</p>
+<p>This is a different question. Model monitoring, evaluation tools and data-governance logs provide important evidence, but they may not capture the complete business context behind an agent’s action. That requires a business decision record showing: what certified analytics the agent referenced, what workflow step governed its action, what authorization condition was satisfied or escalated, and what the measurable outcome was. Understanding the <a href="../ai-agent-governance-analytics/">governance requirements for enterprise AI agents</a> makes clear that the accountability question is a governance architecture question, not a model performance question.</p>
+<p>Deloitte’s 2026 research found that only 21% of surveyed organizations reported having a mature governance model for autonomous AI agents, while nearly three in four expected to use agentic AI at least moderately within two years. This gap between adoption plans and governance maturity helps explain why some pilots struggle to progress.</p>
+<h2 id="the-question-finance-operations-and-legal-are-actually-asking">The Question Finance, Operations, and Legal Are Actually Asking</h2>
+<p>Before any consequential automated process reaches production scale, the organizational functions responsible for that process ask a version of the same accountability question. The wording varies. The underlying concern does not.</p>
+<p>Finance asks it about budget variance reviews and month-end close steps: if an AI agent marks a reconciliation step complete and the close is later found to be in error, what is the audit record that shows what the agent referenced, what the agent did, and what process governed the action? A clean model output log does not answer this question. An API audit trail does not answer this question. A decision governance record does.</p>
+<p>Operations asks it about approval workflows and process exceptions: if an AI agent routes a CapEx request to the wrong approver or at the wrong threshold, what is the governance record that explains why the agent made that routing decision? Operations does not need to know what the model&#x27;s confidence score was. Operations needs to know what the agent referenced, what rule or workflow governed the action, and what the record shows.</p>
+<p>Legal asks about regulatory compliance and audit readiness. For organizations operating in regulated environments requirements around record-keeping, transparency and human oversight make traceability increasingly important. The EU AI Act, for example, introduces specific obligations for AI systems classified as high-risk. A model card explains how the agent was trained. It does not explain what business decision the agent made, what analytics governed it, and what process authorized it.</p>
+<p>What the decision record must contain answers this question at the architecture level: a certified analytics basis, a governed process record, an authorization record, and an outcome connection. From a ZenOptics perspective, a useful business decision record connects four elements: the governed analytics referenced, the process step executed, the applicable review or authorization, and the outcome that followed. These elements may exist across different systems, but they are rarely connected in a single business decision record.</p>
+<h2 id="why-it-governance-alone-is-not-enough">Why IT Governance Alone Is Not Enough</h2>
+<p>Many enterprise AI governance frameworks focus primarily on system-level controls: access management, API logging, SIEM integration, model monitoring, principle of least privilege, bias auditing, and explainability frameworks. These are appropriate, necessary controls at the system layer. They answer: &quot;What did the agent access? What tools did it invoke? What data did it read? What did the model output?&quot;</p>
+<p>These controls are essential, but they may not provide the complete business context that operations, finance and legal teams need. The system-layer audit trail documents agent behavior at the technical level. The business accountability question is at a different layer: what business decision did the agent make, on what certified analytical basis, within what governed process, with what authorization, and with what measurable outcome?</p>
+<p>These are different governance objects. An IT audit log documents a tool invocation. A business decision governance record documents a business action: the certified revenue metric that triggered a variance flag, the Maestro workflow step that governed the flagging action, the escalation threshold that was satisfied, and the outcome that followed.</p>
+<p>Understanding <a href="../decision-governance-ai-agents/">decision governance for AI agent workflows</a> makes the distinction precise: IT governance addresses the AI system. Decision governance addresses the business decision the AI system makes when it executes a workflow step. Both are necessary. IT governance addresses the system, while decision governance adds the business context needed to review and defend the actions that follow.</p>
+<h2 id="what-business-decision-governance-requires-for-ai-agent-deployment">What Business Decision Governance Requires for AI Agent Deployment</h2>
+<p>Business decision governance for AI agents operating in enterprise analytics workflows has four components. Together, these four elements can help operations, finance and legal evaluate an agent’s actions with greater clarity. Without this context, obtaining production approval becomes more difficult.</p>
+<p><strong>A certified analytics basis.</strong> When an AI agent references a metric or analytical threshold during a workflow step, that analytical input must be certified: reviewed and approved by a designated business owner, with a current certification status and a defined scope. <a href="../certified-metrics-ai-grounding/">What metric certification requires</a> goes beyond data governance. Certification is an analytics governance act that produces an ownership record, a scope definition, and a status. When the agent references a certified metric, the certification becomes part of the decision record. When the agent references an uncertified source, that is a governance signal requiring escalation rather than silent execution.</p>
+<p><strong>A structured workflow context.</strong> The agent must operate within a defined business process, not autonomously outside a governed structure. An AI agent executing a step within a governed workflow operates under defined process logic, defined ownership, and defined escalation paths. The <a href="../analytics-to-action-workflows/">governed workflow execution layer</a> is what converts an agent action from an autonomous decision into a governed process step. Without a workflow structure, the agent action has no process record and no auditable context.</p>
+<p><strong>A governance approval record at each step.</strong> Whether a workflow step is completed by a human analyst or an AI agent, the governance condition at that step (the required review, approval threshold, or escalation trigger) must be captured as part of the execution record. A step completed without a governance record is an unaccountable action at the business layer, regardless of what the system-layer audit log captures.</p>
+<p><strong>A decision provenance record that closes the accountability loop.</strong> The agent&#x27;s action must be connected to the certified analytics input that triggered it, the workflow step that structured it, the governance condition that was satisfied, and the measurable outcome that followed. Without this connection, organizational accountability for AI agent decisions rests on assertions: &quot;we believe the agent acted correctly.&quot; With it, accountability rests on records that can be retrieved, reviewed, and defended at audit.</p>
+<h2 id="how-maestro-supports-governed-ai-agent-execution">How Maestro Supports Governed AI Agent Execution</h2>
+<p>Maestro turns analytics into structured, governed workflows that guide teams from insight to action while preserving the context behind each decision. Its Business Process Workflow Library organizes workflows across functions such as Finance, Legal, HR, Sales and IT. It includes prebuilt and customizable workflows for processes such as CapEx approvals, cash-flow forecasting, month-end close, QBR preparation and vendor payments.</p>
+<p>When people and AI agents operate within Maestro workflows, governance and accountability can be built into execution instead of being added as documentation afterward.</p>
+<p>The <a href="../analytics-system-of-record/">certified analytics foundation</a> at each step is provided by <a href="../../atlas/">Atlas</a>: ZenOptics&#x27;s analytics system of record, where KPI definitions are governed, ownership is assigned, and certification status is maintained across the enterprise analytics estate. Maestro workflows can map decision steps to governed analytics from Atlas, giving teams a stronger foundation for consistent execution. Certification status is part of the context the agent operates within.</p>
+<p><a href="../../nexus/">Nexus</a>  transforms governed metadata from Atlas into business context that AI systems can interpret.This helps agents understand relevant metrics, business terminology and relationships as they participate in Maestro workflows.</p>
+<p>Maestro brings governance into execution by allowing reviews, approvals, rejections and escalations to be defined within the workflow. Actions are recorded and steps remain visible, helping teams understand what was done, by whom and when.</p>
+<p>By connecting analytics, workflow steps, actions and approvals, Maestro helps preserve the provenance behind a business decision. This gives operations, finance and legal teams a clearer record of the workflow, the actions taken, the people involved and the governed analytics connected to the process.</p>
+<p>This does not remove every barrier to production. It does, however, give stakeholders a clearer and more defensible record of how work was executed and governed.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="why-do-ai-agent-pilots-stall-at-the-production-approval-stage">Why do AI agent pilots stall at the production approval stage?</h3>
+<p>AI agent pilots can stall for several reasons, including technical limitations, security concerns, unclear business value and insufficient governance. Even when technical performance is promising, production approval may be delayed if stakeholders cannot determine how the agent’s actions will be reviewed, governed and traced.</p>
+<h3 id="what-is-the-difference-between-it-governance-and-business-decision-governance-fo">What is the difference between IT governance and business decision governance for AI agents?</h3>
+<p>IT governance addresses the AI system: access controls, API logs, model monitoring, and system audit trails. It documents what the agent accessed and invoked. Business decision governance addresses the business decision the agent makes: what certified analytics the agent referenced, what workflow step governed the action, what authorization condition was satisfied, and what the outcome was. Both are necessary. Business decision governance complements technical controls by connecting an agent’s actions with the relevant analytics, workflow, authorization and outcome.</p>
+<h3 id="what-does-business-decision-governance-require-for-ai-agents">What does business decision governance require for AI agents?</h3>
+<p>Business decision governance for AI agents requires four components: a certified analytics basis at each workflow step, a structured workflow that governs what the agent does at each step, a governance approval record captured as the step completes, and a decision provenance record connecting the certified analytics input to the agent&#x27;s action to the measurable outcome.</p>
+<h3 id="how-does-maestro-enable-ai-agent-deployment-to-reach-production">How does Maestro enable AI agent deployment to reach production?</h3>
+<p>Maestro provides structured workflows for analytics-driven enterprise processes. Decision steps can be mapped to governed analytics from Atlas, while Nexus provides business context that AI can interpret. Maestro allows reviews, approvals, rejections and escalations to be incorporated into execution, while recording actions and maintaining visibility across workflow steps.</p>
+<h3 id="is-this-a-compliance-requirement-or-an-operational-requirement">Is this a compliance requirement or an operational requirement?</h3>
+<p>It can be both. In regulated or high-risk use cases, organizations may face formal requirements related to record-keeping, transparency and human oversight. Even when a specific regulation does not apply, teams still need clear records of actions, approvals and ownership to manage operational risk. Business decision governance can support these requirements, but compliance depends on the use case, jurisdiction and applicable regulation.</p>
+<h2 id="production-readiness-requires-more-than-model-performance">Production Readiness Requires More Than Model Performance</h2>
+<p>Strong model performance is only one part of production readiness. Enterprises must also understand what an agent did, what information informed its action, what process governed it and who remained accountable. Model monitoring, data governance and IT audit logs remain essential, but they may not provide the full business context behind an agent’s actions. A business decision governance layer helps connect those actions with governed analytics, workflows and accountability.</p>
+<p>Atlas governs the analytics foundation. Nexus makes that context interpretable to AI.Maestro brings governance into the workflows and decisions that follow. Together, they build the business decision governance infrastructure that turns a technically successful pilot into a production-ready deployment.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Explore Governed AI Agent Workflows with ZenOptics</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/decision-governance-ai-agents/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-21" class="text-sm text-navy/70">September 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../decision-governance-ai-agents/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Decision Governance Matters in the Age of AI Agents</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Learn how decision governance connects trusted analytics, accountable workflows, AI agent actions, and measurable business outcomes.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-to-action-workflows/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-18" class="text-sm text-navy/70">September 18, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-to-action-workflows/" class="after:absolute after:inset-0 focus-visible:outline-none">From Analytics to Action: Embedding Intelligence into Business Workflows</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">The analytics-to-action gap is a workflow governance problem. Learn what governed analytics-to-action workflows require for enterprise operations.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/enterprise-ai-analytics-metrics-wrong/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-09-11" class="text-sm text-navy/70">September 11, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../enterprise-ai-analytics-metrics-wrong/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Enterprise AI Gets Metrics Wrong Even When the Data Is Clean</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Learn why governed data alone cannot ensure accurate AI analytics and how certified metrics and analytics context help AI interpret business information…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

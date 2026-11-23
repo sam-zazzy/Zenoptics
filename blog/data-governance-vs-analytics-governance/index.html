@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Governance vs. Analytics Governance: Why Enterprise AI Needs Both and Why They Are Not the Same | ZenOptics</title>
+  <meta name="description" content="Most enterprise AI programs are built on data governance. Data governance is necessary. It does not govern the analytics layer where AI most commonly fails.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/data-governance-vs-analytics-governance/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Data Governance vs. Analytics Governance: Why Enterprise AI Needs Both and Why They Are Not the Same | ZenOptics">
+  <meta property="og:description" content="Most enterprise AI programs are built on data governance. Data governance is necessary. It does not govern the analytics layer where AI most commonly fails.">
+  <meta property="og:url" content="https://zenoptics.com/blog/data-governance-vs-analytics-governance/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/data-governance-vs-analytics-governance/cover.webp">
+  <meta property="article:published_time" content="2026-06-15">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Data Governance vs. Analytics Governance: Why Enterprise AI Needs Both and Why They Are Not the Same", "datePublished": "2026-06-15", "description": "Most enterprise AI programs are built on data governance. Data governance is necessary. It does not govern the analytics layer where AI most commonly fails.", "image": "https://zenoptics.com/assets/images/blog/data-governance-vs-analytics-governance/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/data-governance-vs-analytics-governance/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between data governance and analytics governance?", "acceptedAnswer": {"@type": "Answer", "text": "Data governance manages the infrastructure layer: raw data quality, schema documentation, lineage, and data handling compliance. Analytics governance manages the analytics layer: whether business metrics are certified as authoritative, whether KPI definitions are consistent across teams, whether AI systems can act on analytics assets with appropriate governance, and whether AI-influenced decisions are traceable. The two programs address different layers and require different tools and practices, though they are complementary rather than competing."}}, {"@type": "Question", "name": "Can data governance replace analytics governance?", "acceptedAnswer": {"@type": "Answer", "text": "No. Data governance addresses raw data and infrastructure; analytics governance addresses certified metrics and the business intelligence layer. Organizations with strong data governance but no analytics governance typically find that their AI tools have access to well-managed data but inconsistent business metric definitions, uncertified analytics assets, and no governance framework for what AI systems can act on. The gap between clean data and trusted AI outputs is where analytics governance operates."}}, {"@type": "Question", "name": "Why does enterprise AI need analytics governance specifically?", "acceptedAnswer": {"@type": "Answer", "text": "Enterprise AI operates primarily at the analytics layer: it queries business metrics, synthesizes KPI data, and influences decisions based on certified analytics. For those outputs to be trusted, the analytics layer must be governed: metrics must be certified, definitions must be consistent, and AI actions must be traceable to authoritative sources. Data governance ensures the underlying data is accurate; analytics governance ensures the business metrics built on that data are defined and governed correctly for AI use."}}, {"@type": "Question", "name": "Has Gartner recognized analytics governance as a distinct category?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In 2025, Gartner published a Magic Quadrant for \"Data AND Analytics Governance Platforms,\" explicitly treating analytics governance as a named, distinct category alongside data governance. The 2026 expansion of coverage validated that enterprise buyers are seeking governance solutions that address the analytics layer specifically, in ways that data-only governance platforms do not provide."}}, {"@type": "Question", "name": "How do data governance and analytics governance programs connect?", "acceptedAnswer": {"@type": "Answer", "text": "They connect at the boundary between raw data and business analytics. Data governance ensures the underlying data is accurate, documented, and policy-compliant. Analytics governance ensures the metrics built on that data are certified as authoritative, consistently defined, and appropriately governed for AI use. The output of data governance (clean, documented data) is the input to the analytics estate that analytics governance then governs. Both programs must be in place for enterprise AI to produce outputs that are both accurate at the data level and trusted at the business level."}}, {"@type": "Question", "name": "What does an analytics governance program require that data governance does not?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics governance requires four capabilities that are typically outside data governance scope: systematic certification of analytics assets (designating which version of each metric is authoritative), KPI definition ownership (assigning an accountable human to every certified metric's business definition), analytics estate inventory (continuous visibility into all BI assets across tools), and AI readiness governance (clear policies for which AI systems can act on which certified metrics and under what conditions). Data governance frameworks rarely address any of these four at the analytics layer."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Data Governance vs. Analytics Governance: Why Enterprise AI Needs Both and Why They Are Not the Same</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-06-15">June 15, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/data-governance-vs-analytics-governance/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-data-governance-was-built-to-do" class="hover:underline">What Data Governance Was Built to Do</a></li>
+              <li><a href="#what-analytics-governance-adds" class="hover:underline">What Analytics Governance Adds</a></li>
+              <li><a href="#the-gap-that-develops-between-the-two" class="hover:underline">The Gap That Develops Between the Two</a></li>
+              <li><a href="#why-gartner-now-treats-them-as-distinct-categories" class="hover:underline">Why Gartner Now Treats Them as Distinct Categories</a></li>
+              <li><a href="#what-running-both-programs-actually-requires" class="hover:underline">What Running Both Programs Actually Requires</a></li>
+              <li><a href="#how-zenoptics-addresses-the-analytics-governance-layer" class="hover:underline">How ZenOptics Addresses the Analytics Governance Layer</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-data-governance-was-built-to-do" class="hover:underline">What Data Governance Was Built to Do</a></li>
+              <li><a href="#what-analytics-governance-adds" class="hover:underline">What Analytics Governance Adds</a></li>
+              <li><a href="#the-gap-that-develops-between-the-two" class="hover:underline">The Gap That Develops Between the Two</a></li>
+              <li><a href="#why-gartner-now-treats-them-as-distinct-categories" class="hover:underline">Why Gartner Now Treats Them as Distinct Categories</a></li>
+              <li><a href="#what-running-both-programs-actually-requires" class="hover:underline">What Running Both Programs Actually Requires</a></li>
+              <li><a href="#how-zenoptics-addresses-the-analytics-governance-layer" class="hover:underline">How ZenOptics Addresses the Analytics Governance Layer</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Most enterprise AI programs are built on a data governance foundation. Organizations have invested in data catalogs, data quality frameworks, metadata management, lineage tracking, and data stewardship programs. When AI deployments underperform or produce outputs that are inconsistently trusted, data governance is often the first program leaders review. Strengthening it is a common first response.</p>
+<p>In most cases, strengthening data governance does not fix the AI trust problem. The reason is that the problem is not at the data governance layer. It is at the analytics governance layer, a distinct program that governs how metrics are defined, certified, owned, and made available to AI systems. Most enterprises have the first program and have not built the second. That gap is where <a href="../analytics-ai-value-gap/">analytics AI investments stall</a>.</p>
+<h2 id="what-data-governance-was-built-to-do">What Data Governance Was Built to Do</h2>
+<p>Data governance addresses the infrastructure layer: the raw data, pipelines, schemas, and datasets that form the foundation of enterprise analytics. A mature data governance program establishes clear ownership for data assets, enforces data quality standards at the record level, manages data lineage from source to destination, and ensures compliance with data handling requirements. These are the programs that ensure clean, accessible, well-documented data is available to the analysts and tools that need it.</p>
+<p>Data governance operates at the level of data: tables, schemas, records, fields, and the policies that govern how they are maintained and used. Its primary audiences are data engineers, data platform teams, compliance functions, and the governance roles responsible for data quality and data privacy.</p>
+<p>Data governance is necessary infrastructure. Without it, enterprise AI has no reliable data foundation. Organizations that have not built data governance programs face data quality problems that propagate into AI outputs and are difficult to diagnose. A mature data governance program is a prerequisite for reliable AI.</p>
+<p>It is not sufficient on its own. Data governance answers the question of whether the data is accurate and well-maintained. It does not answer the question that determines whether AI outputs are trusted: whether the metrics and KPIs that AI acts on are defined consistently, certified as authoritative, and governed at the analytics layer where business decisions are made.</p>
+<h2 id="what-analytics-governance-adds">What Analytics Governance Adds</h2>
+<p>Analytics governance operates at the analytics layer: the dashboards, reports, KPIs, and certified metrics that business users and AI systems use to make decisions. Its scope is distinct from data governance in both the assets it governs and the questions it answers.</p>
+<p>Where data governance manages raw data quality, analytics governance manages analytics asset quality: whether reports are certified as authoritative, whether KPI definitions are consistent across business units, whether metrics have active owners who are accountable for their definitions, and whether the analytics assets available to AI systems are trustworthy enough to ground AI recommendations and actions.</p>
+<p>Where data governance tracks data lineage from source to table, analytics governance tracks decision lineage from metric to recommendation to outcome: ensuring that every AI-driven action can be traced back to the certified analytics that informed it.</p>
+<p>Where data governance enforces data handling policies, analytics governance enforces usage policies for certified analytics: which AI systems can act on which metrics, what process governs each use, and what documentation is required for AI-influenced decisions.</p>
+<p>For a detailed treatment of analytics governance in the context of AI agent deployment, <a href="../autonomous-analytics-ai-governance/">Governing Autonomous Analytics AI at Enterprise Scale</a> covers the governance requirements specific to AI agents operating in analytics environments.</p>
+<h2 id="the-gap-that-develops-between-the-two">The Gap That Develops Between the Two</h2>
+<p>In most enterprise organizations, the data governance program and the analytics governance program are not formally separated. Data governance typically expands over time to include some governance of analytics assets, but the expansion is usually incomplete: certification processes are inconsistent, KPI ownership is informal, and the governance of what AI can act on is either absent or handled case-by-case.</p>
+<p>This gap becomes visible in AI deployments in a predictable way. The AI tool has access to well-governed data: accurate, documented, lineage-tracked. When the tool queries a business metric, it finds multiple versions of the same metric with the same name, because data governance does not resolve the question of which version is authoritative for analytics purposes. It finds metrics without clear business definitions, because data governance documents technical fields rather than the business meaning those fields carry. It finds no mechanism for knowing whether a metric is currently in active use, who owns its definition, or what governance rules apply when an AI system acts on it.</p>
+<p>The data governance layer is sound. The analytics governance layer is absent. The AI outputs are inconsistent. Organizations implementing ZenOptics typically find that 30 to 40 percent of their analytics estate consists of duplicate or conflicting reports, assets that data governance has not reached because its scope ends at the data level. Resolving this requires a governance program that addresses the analytics layer specifically.</p>
+<h2 id="why-gartner-now-treats-them-as-distinct-categories">Why Gartner Now Treats Them as Distinct Categories</h2>
+<p>The distinction between data governance and analytics governance is not a positioning claim. It is a market reality that Gartner has formally recognized. In 2025, Gartner published a Magic Quadrant specifically for &quot;Data AND Analytics Governance Platforms,&quot; an expansion that explicitly treats analytics governance as a named category alongside but distinct from data governance. The 2026 coverage expanded further, validating that enterprise organizations are seeking governance solutions that address the analytics layer in ways that existing data governance platforms do not.</p>
+<p>The Gartner category separation reflects what enterprise buyers have been discovering in practice: data governance platforms that excel at raw data quality, lineage, and compliance do not provide the certified metrics governance, KPI ownership frameworks, and analytics-specific AI readiness that the analytics layer requires. These are different programs, different tools, and different organizational capabilities.</p>
+<h2 id="what-running-both-programs-actually-requires">What Running Both Programs Actually Requires</h2>
+<p>Running both programs does not require duplication of effort. Data governance and analytics governance address different layers and use different inputs. They are complementary, not competing.</p>
+<p>Data governance owns the infrastructure layer: data quality, schema documentation, data lineage, and data handling compliance. Its inputs are raw data systems, pipelines, and schemas. Its outputs are clean, documented, policy-compliant data.</p>
+<p>Analytics governance owns the meaning layer: metric certification, KPI definition ownership, analytics estate inventory, and the governance of what AI systems can act on. Its inputs are BI tools, analytics assets, and the business definitions that determine what certified metrics mean. Its outputs are a trusted, certified analytics estate with clear ownership, consistent definitions, and the governance infrastructure that AI systems need to produce reliable outputs.</p>
+<p>Where the two programs connect is at the boundary between clean data and meaningful analytics: data governance ensures the underlying data is accurate; analytics governance ensures that the business metrics built on that data are defined correctly, certified as authoritative, and governed appropriately for AI use. Both are required for enterprise AI that produces trusted intelligence.</p>
+<p>The analytics governance program also connects directly to <a href="../analytics-context-layer-enterprise/">the analytics context layer</a>: the machine-readable representation of certified business meaning that AI systems consume. Analytics governance is the practice; the analytics context layer is what that practice produces.</p>
+<h2 id="how-zenoptics-addresses-the-analytics-governance-layer">How ZenOptics Addresses the Analytics Governance Layer</h2>
+<p><a href="../../atlas/">Atlas</a>, ZenOptics&#x27;s Analytics System of Record, is the foundation for analytics governance. Atlas continuously inventories analytics assets across the enterprise&#x27;s BI tools, establishes and maintains certification records for authoritative metrics and reports, assigns and tracks ownership of every analytics asset, and monitors the estate as it evolves. The governance program Atlas supports is analytics governance, not data governance, and not a replacement for the data governance programs organizations already have.</p>
+<p><a href="../../nexus/">Nexus</a>, ZenOptics&#x27;s AI Context Layer for Analytics, translates the certified analytics estate that Atlas governs into machine-readable business context that AI systems can consume. The context layer Nexus generates is the bridge between analytics governance practice and AI deployment readiness: it takes the certified definitions, ownership records, and KPI relationships that Atlas governs and makes them available to AI tools, copilots, and agents, grounding every AI output in the organization&#x27;s certified business logic rather than statistical inference.</p>
+<p>Together, Atlas and Nexus operationalize the analytics governance layer: the one that data governance programs do not reach, that Gartner has formally recognized as a distinct category, and that determines whether enterprise AI produces inconsistent outputs or trusted intelligence.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-data-governance-and-analytics-governance">What is the difference between data governance and analytics governance?</h3>
+<p>Data governance manages the infrastructure layer: raw data quality, schema documentation, lineage, and data handling compliance. Analytics governance manages the analytics layer: whether business metrics are certified as authoritative, whether KPI definitions are consistent across teams, whether AI systems can act on analytics assets with appropriate governance, and whether AI-influenced decisions are traceable. The two programs address different layers and require different tools and practices, though they are complementary rather than competing.</p>
+<h3 id="can-data-governance-replace-analytics-governance">Can data governance replace analytics governance?</h3>
+<p>No. Data governance addresses raw data and infrastructure; analytics governance addresses certified metrics and the business intelligence layer. Organizations with strong data governance but no analytics governance typically find that their AI tools have access to well-managed data but inconsistent business metric definitions, uncertified analytics assets, and no governance framework for what AI systems can act on. The gap between clean data and trusted AI outputs is where analytics governance operates.</p>
+<h3 id="why-does-enterprise-ai-need-analytics-governance-specifically">Why does enterprise AI need analytics governance specifically?</h3>
+<p>Enterprise AI operates primarily at the analytics layer: it queries business metrics, synthesizes KPI data, and influences decisions based on certified analytics. For those outputs to be trusted, the analytics layer must be governed: metrics must be certified, definitions must be consistent, and AI actions must be traceable to authoritative sources. Data governance ensures the underlying data is accurate; analytics governance ensures the business metrics built on that data are defined and governed correctly for AI use.</p>
+<h3 id="has-gartner-recognized-analytics-governance-as-a-distinct-category">Has Gartner recognized analytics governance as a distinct category?</h3>
+<p>Yes. In 2025, Gartner published a Magic Quadrant for &quot;Data AND Analytics Governance Platforms,&quot; explicitly treating analytics governance as a named, distinct category alongside data governance. The 2026 expansion of coverage validated that enterprise buyers are seeking governance solutions that address the analytics layer specifically, in ways that data-only governance platforms do not provide.</p>
+<h3 id="how-do-data-governance-and-analytics-governance-programs-connect">How do data governance and analytics governance programs connect?</h3>
+<p>They connect at the boundary between raw data and business analytics. Data governance ensures the underlying data is accurate, documented, and policy-compliant. Analytics governance ensures the metrics built on that data are certified as authoritative, consistently defined, and appropriately governed for AI use. The output of data governance (clean, documented data) is the input to the analytics estate that analytics governance then governs. Both programs must be in place for enterprise AI to produce outputs that are both accurate at the data level and trusted at the business level.</p>
+<h3 id="what-does-an-analytics-governance-program-require-that-data-governance-does-not">What does an analytics governance program require that data governance does not?</h3>
+<p>Analytics governance requires four capabilities that are typically outside data governance scope: systematic certification of analytics assets (designating which version of each metric is authoritative), KPI definition ownership (assigning an accountable human to every certified metric&#x27;s business definition), analytics estate inventory (continuous visibility into all BI assets across tools), and AI readiness governance (clear policies for which AI systems can act on which certified metrics and under what conditions). Data governance frameworks rarely address any of these four at the analytics layer.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Ready to build the analytics governance program your data governance framework doesn&#x27;t cover? Schedule a conversation with the ZenOptics team</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/enterprise-ai-hallucination-analytics-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-22" class="text-sm text-navy/70">June 22, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../enterprise-ai-hallucination-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Enterprise AI Doesn&#x27;t Hallucinate. It Reads Ungoverned Analytics.</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">The word &quot;hallucination&quot; has become the default explanation for enterprise AI outputs that cannot be reconciled with what the business knows to be true.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-knowledge-graph-enterprise-ai/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-19" class="text-sm text-navy/70">June 19, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-knowledge-graph-enterprise-ai/" class="after:absolute after:inset-0 focus-visible:outline-none">How Enterprise AI Reasons Across Metrics: The Role of the Analytics Knowledge Graph</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise analytics teams now understand that AI needs certified metric definitions to produce trusted outputs.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-context-engineering/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-12" class="text-sm text-navy/70">June 12, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-context-engineering/" class="after:absolute after:inset-0 focus-visible:outline-none">What Is Analytics Context Engineering? The Discipline Enterprise AI Teams Are Missing</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Enterprise AI teams have data engineers and prompt engineers. Most are missing the function that sits between the two.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

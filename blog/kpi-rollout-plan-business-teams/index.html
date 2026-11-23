@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launching a New KPI? A CIO’s Plan for Business-Wide Adoption | ZenOptics</title>
+  <meta name="description" content="Launch a new KPI across business teams with a CIO led rollout plan covering ownership, testing, historical comparisons and adoption.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/kpi-rollout-plan-business-teams/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Launching a New KPI? A CIO’s Plan for Business-Wide Adoption | ZenOptics">
+  <meta property="og:description" content="Launch a new KPI across business teams with a CIO led rollout plan covering ownership, testing, historical comparisons and adoption.">
+  <meta property="og:url" content="https://zenoptics.com/blog/kpi-rollout-plan-business-teams/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/kpi-rollout-plan-business-teams/cover.webp">
+  <meta property="article:published_time" content="2026-11-02">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Launching a New KPI? A CIO’s Plan for Business-Wide Adoption", "datePublished": "2026-11-02", "description": "Launch a new KPI across business teams with a CIO led rollout plan covering ownership, testing, historical comparisons and adoption.", "image": "https://zenoptics.com/assets/images/blog/kpi-rollout-plan-business-teams/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/kpi-rollout-plan-business-teams/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who should approve a new KPI?", "acceptedAnswer": {"@type": "Answer", "text": "A business owner with authority over its meaning and intended use should approve it, supported by technical validation and relevant process owners."}}, {"@type": "Question", "name": "Should historical data be recalculated?", "acceptedAnswer": {"@type": "Answer", "text": "The choice depends on purpose, available evidence and business requirements. Whatever approach is selected should be explicit in the comparison."}}, {"@type": "Question", "name": "What should users receive at launch?", "acceptedAnswer": {"@type": "Answer", "text": "Provide the purpose, approved definition, effective date, historical treatment, source location and contact for questions, with practical examples."}}, {"@type": "Question", "name": "How does a KPI change affect AI assistants?", "acceptedAnswer": {"@type": "Answer", "text": "Update the applicable definitions and aliases, then test current and historical questions. The assistant needs a reliable way to identify which version applies."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Launching a New KPI? A CIO’s Plan for Business-Wide Adoption</h1>
+        <p class="mt-4 max-w-3xl text-lg text-white/90">A rollout plan from approved definition to everyday use</p>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-11-02">November 2, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/kpi-rollout-plan-business-teams/cover.webp" alt="" width="1600" height="836" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-enterprise-release-decision-the-cio-owns" class="hover:underline">The enterprise release decision the CIO owns</a></li>
+              <li><a href="#begin-with-the-management-choice" class="hover:underline">Begin with the management choice</a></li>
+              <li><a href="#write-the-definition-with-examples" class="hover:underline">Write the definition with examples</a></li>
+              <li><a href="#establish-ownership-for-the-full-lifecycle" class="hover:underline">Establish ownership for the full lifecycle</a></li>
+              <li><a href="#map-every-place-the-kpi-will-appear" class="hover:underline">Map every place the KPI will appear</a></li>
+              <li><a href="#validate-the-calculation-through-business-cases" class="hover:underline">Validate the calculation through business cases</a></li>
+              <li><a href="#decide-how-historical-comparisons-will-work" class="hover:underline">Decide how historical comparisons will work</a></li>
+              <li><a href="#keep-a-launch-record-that-users-can-find" class="hover:underline">Keep a launch record that users can find</a></li>
+              <li><a href="#introduce-the-kpi-through-the-operating-process" class="hover:underline">Introduce the KPI through the operating process</a></li>
+              <li><a href="#update-the-business-context-available-to-ai" class="hover:underline">Update the business context available to AI</a></li>
+              <li><a href="#coordinate-the-release-with-dependent-workflows" class="hover:underline">Coordinate the release with dependent workflows</a></li>
+              <li><a href="#review-adoption-after-the-first-cycles" class="hover:underline">Review adoption after the first cycles</a></li>
+              <li><a href="#prepare-the-next-change-while-the-launch-is-fresh" class="hover:underline">Prepare the next change while the launch is fresh</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-enterprise-release-decision-the-cio-owns" class="hover:underline">The enterprise release decision the CIO owns</a></li>
+              <li><a href="#begin-with-the-management-choice" class="hover:underline">Begin with the management choice</a></li>
+              <li><a href="#write-the-definition-with-examples" class="hover:underline">Write the definition with examples</a></li>
+              <li><a href="#establish-ownership-for-the-full-lifecycle" class="hover:underline">Establish ownership for the full lifecycle</a></li>
+              <li><a href="#map-every-place-the-kpi-will-appear" class="hover:underline">Map every place the KPI will appear</a></li>
+              <li><a href="#validate-the-calculation-through-business-cases" class="hover:underline">Validate the calculation through business cases</a></li>
+              <li><a href="#decide-how-historical-comparisons-will-work" class="hover:underline">Decide how historical comparisons will work</a></li>
+              <li><a href="#keep-a-launch-record-that-users-can-find" class="hover:underline">Keep a launch record that users can find</a></li>
+              <li><a href="#introduce-the-kpi-through-the-operating-process" class="hover:underline">Introduce the KPI through the operating process</a></li>
+              <li><a href="#update-the-business-context-available-to-ai" class="hover:underline">Update the business context available to AI</a></li>
+              <li><a href="#coordinate-the-release-with-dependent-workflows" class="hover:underline">Coordinate the release with dependent workflows</a></li>
+              <li><a href="#review-adoption-after-the-first-cycles" class="hover:underline">Review adoption after the first cycles</a></li>
+              <li><a href="#prepare-the-next-change-while-the-launch-is-fresh" class="hover:underline">Prepare the next change while the launch is fresh</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>A new KPI can turn an enterprise priority into something managers can monitor and act on. For the CIO, a successful rollout connects the approved business definition with every relevant reporting channel, review process and AI-assisted experience. The leadership task is to make the change usable across teams while preserving clear business ownership.</p>
+<p>Consider a service organization introducing an on-time completion measure. The business needs to agree what completion means and how rescheduled work is treated. Technology teams need an effective date, a tested calculation and a plan for dependent reports. Managers need to understand how the new indicator changes their decisions.</p>
+<p>This guide explains how the CIO can sponsor that rollout without becoming the owner of the underlying business policy. It provides a launch record, practical tests and an adoption plan. Finance, operations and BI leaders carry out the detailed work within the enterprise requirements the CIO establishes.</p>
+<h2 id="the-enterprise-release-decision-the-cio-owns">The enterprise release decision the CIO owns</h2>
+<p>Agree the technology release scope with the business sponsor. Identify the systems and consumption channels that must reflect the new indicator, then appoint a delivery owner to coordinate them. The business owner approves meaning and intended use. The CIO ensures that the release has an accountable technical plan and adequate support.</p>
+<p>Make readiness visible before the launch date. Ask for test evidence, the historical comparison approach, the affected workflows and the communication plan. Where a channel cannot change at the same time, require a clearly labeled transition arrangement. This gives teams a coherent release rather than a collection of independent dashboard edits.</p>
+<h2 id="begin-with-the-management-choice">Begin with the management choice</h2>
+<p>Ask what decision the KPI will improve. An on-time completion measure might inform staffing, process improvement or a customer service review. Different purposes can require different definitions and reporting frequencies.</p>
+<p>Identify the decision owner and the people affected by the measure. Include managers who will use it, analysts who maintain it and the operations staff whose work determines the result. Early participation can reveal practical conditions that a calculation workshop misses.</p>
+<p>APQC’s guidance on developing KPIs discusses alignment with organizational objectives. The rollout should preserve that purpose throughout implementation so the chosen metric remains connected to a useful management decision.</p>
+<h2 id="write-the-definition-with-examples">Write the definition with examples</h2>
+<p>Document the calculation, population, time period and relevant exclusions. Explain the terms in language the intended users understand. Where a term has a specific operational meaning, link it with the relevant policy or source definition.</p>
+<p>Use examples to test interpretation. For an on-time measure, consider an order completed on the requested date, an order rescheduled by the customer and a partially completed order. Ask the relevant owner how each should be classified.</p>
+<p>Capture unresolved questions in a decision list with named owners. The team can continue preparing reports while a question is investigated, but it should not present the definition as approved until the responsible business authority settles the material conditions.</p>
+<h2 id="establish-ownership-for-the-full-lifecycle">Establish ownership for the full lifecycle</h2>
+<p>Assign a business owner who approves meaning and intended use. Assign a technical owner who maintains the calculation and reporting path. Name the people who can propose a change and the person who approves its release.</p>
+<p>The roles should remain clear after the launch team disbands. If a business process changes, the KPI may need review even when the data pipeline still operates correctly. Set a review trigger for changes to products, systems or organizational scope.</p>
+<p>ZenOptics Atlas supports ownership and certification of analytics assets. Those capabilities can help make the responsible people and reviewed status visible, provided the enterprise defines and maintains the governance process.</p>
+<h2 id="map-every-place-the-kpi-will-appear">Map every place the KPI will appear</h2>
+<p>List the dashboards, reports, extracts and business reviews that will use the indicator. Include scheduled emails, embedded content and manually maintained briefing packs. A new definition can reach users through more channels than the primary dashboard.</p>
+<p>Record which assets will change at launch and which will remain temporarily on the previous definition. Explain how users will distinguish them. A phased rollout can be appropriate when its boundaries are visible and its owners agree.</p>
+<p>Include AI-assisted tools in the dependency review. If an assistant can retrieve a description of the old KPI, update the applicable context and test the questions users are likely to ask. The launch reaches beyond a single formula or dashboard label.</p>
+<h2 id="validate-the-calculation-through-business-cases">Validate the calculation through business cases</h2>
+<p>Prepare a test set containing ordinary records and the edge cases identified during definition. Compare the results with independently reviewed expectations. Test the relevant time boundaries, classifications and changes in scope.</p>
+<p>Ask business users to interpret the result in a realistic scenario. A calculation can pass a technical test while the displayed label encourages a different interpretation. Review the title, units, denominator and comparison notes together.</p>
+<p>Preserve the test evidence and approvals. W3C’s provenance overview provides background for connecting information with the activities and people involved in producing it. The rollout team should be able to explain which version passed which review.</p>
+<h2 id="decide-how-historical-comparisons-will-work">Decide how historical comparisons will work</h2>
+<figure><img src="../../assets/images/blog/kpi-rollout-plan-business-teams/historical-comparison.webp" alt="Previous and updated KPI definitions bridged by an effective date for historical comparison" width="1600" height="900" loading="lazy" decoding="async"></figure>
+<p>Choose whether historical periods will be recalculated under the new definition, shown under the old definition or presented with a bridge. The answer depends on available data, reporting purpose and the business owner’s requirements.</p>
+<p>Make the choice visible wherever users compare performance. A new measure might show a different trend because the definition changed, rather than because operations changed. Avoid placing the series side by side without an explanation.</p>
+<p>AFP’s variance analysis guidance provides context for interpreting comparisons. For the KPI launch, the team’s responsibility is to establish that the periods represent a meaningful basis for the question being asked.</p>
+<h2 id="keep-a-launch-record-that-users-can-find">Keep a launch record that users can find</h2>
+<p>The following record can accompany the KPI in the analytics catalog and the launch communication. It makes the most important release choices visible.</p>
+<p>Include a link to the detailed definition and the approved source. Keep the record concise enough for ordinary users to consult without needing to read the project’s entire implementation history.</p>
+<h2 id="introduce-the-kpi-through-the-operating-process">Introduce the KPI through the operating process</h2>
+<p>Explain the measure in the business review where it will be used. Show one ordinary example and one boundary case. Ask managers to describe what a change in the KPI would mean for their next decision.</p>
+<p>Provide a short guide to the actions the measure can inform. An indicator may justify investigation rather than an immediate intervention. State those limits so users can apply judgment appropriately.</p>
+<p>APQC’s overview of KPIs provides general performance management background. The launch communication should go further by showing the organization’s own definition and decision context. A generic training presentation cannot substitute for those details.</p>
+<h2 id="update-the-business-context-available-to-ai">Update the business context available to AI</h2>
+<p>Identify the approved name, common aliases and the definition that applies from the effective date. Explain how the new KPI relates to a predecessor or a similarly named measure. Retain a clear reference to earlier versions where historical questions require it.</p>
+<p>ZenOptics Nexus organizes business context from governed analytics metadata. In a KPI rollout, that context can help an assistant identify the appropriate measure and its relationships. Confirm the actual curation and retrieval behavior in the deployment.</p>
+<p>Test questions before release. Ask for the current definition, a historical comparison and a case that spans the effective date. The assistant should explain the relevant change or request clarification rather than silently join incompatible periods.</p>
+<h2 id="coordinate-the-release-with-dependent-workflows">Coordinate the release with dependent workflows</h2>
+<p>If the KPI triggers a review or approval, confirm whether the threshold and escalation rules need to change. A revised denominator can alter the distribution of results even when the name remains the same.</p>
+<p>ZenOptics Maestro supports structured analytical workflows. The process owner should review dependent steps and approvals as part of the KPI release, rather than assuming the workflow remains appropriate after the calculation changes.</p>
+<p>NIST’s AI Risk Management Framework is a reference for evaluating the assisted portions of that process. The rollout tests should reflect the specific way the organization uses the KPI and the consequences of an incorrect interpretation.</p>
+<h2 id="review-adoption-after-the-first-cycles">Review adoption after the first cycles</h2>
+<p>Collect questions from users and record the cases that required clarification. Check whether managers use the approved source and understand the comparison basis. Review any alternative spreadsheet versions that appear, because they may reveal an unmet need.</p>
+<p>Assess whether the KPI supports the decision it was introduced to improve. If users consistently need another measure alongside it, document the relationship rather than treating the supporting measure as competition. The indicator belongs in a decision context with other relevant evidence.</p>
+<p>Keep the existing article on analytics governance across the BI estate as supporting reading. It explains the broader governance foundation. This launch plan focuses on the practical release and adoption of one new indicator.</p>
+<h2 id="prepare-the-next-change-while-the-launch-is-fresh">Prepare the next change while the launch is fresh</h2>
+<p>Ask how the new KPI might influence behavior. If managers are assessed against the indicator, consider whether they could improve the score while weakening another important outcome. An on-time measure, for example, may need to be read alongside completion quality or an explanation of customer-requested changes. The purpose is to make the management interpretation explicit, rather than adding more measures automatically. Ask the operating owner to review a scenario where the KPI improves but the broader service outcome does not. Use that discussion to clarify the decision guidance before linking the indicator to performance targets or incentives.</p>
+<p>For a practical discussion, bring one proposed KPI, the decisions it will inform and the reports that need to change. Contact ZenOptics to explore how analytics ownership, business context and workflow coordination could support the rollout.</p>
+<h2 id="the-cio-action-agenda">The CIO action agenda</h2>
+<p>Before release, ask the business sponsor and delivery owner to confirm that the approved definition, dependent channels and user communication are ready. After launch, review actual questions and unresolved comparisons. Keep a named owner for subsequent changes and make the active version easy to identify. This turns a KPI introduction into an enterprise release the organization can sustain.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="who-should-approve-a-new-kpi">Who should approve a new KPI?</h3>
+<p>A business owner with authority over its meaning and intended use should approve it, supported by technical validation and relevant process owners.</p>
+<h3 id="should-historical-data-be-recalculated">Should historical data be recalculated?</h3>
+<p>The choice depends on purpose, available evidence and business requirements. Whatever approach is selected should be explicit in the comparison.</p>
+<h3 id="what-should-users-receive-at-launch">What should users receive at launch?</h3>
+<p>Provide the purpose, approved definition, effective date, historical treatment, source location and contact for questions, with practical examples.</p>
+<h3 id="how-does-a-kpi-change-affect-ai-assistants">How does a KPI change affect AI assistants?</h3>
+<p>Update the applicable definitions and aliases, then test current and historical questions. The assistant needs a reliable way to identify which version applies.</p>
+<h2 id="references">References</h2>
+<div class="refs">
+<p>1. APQC How to Develop KPIs — objective alignment.</p>
+<p>2. APQC What Are KPIs — performance management background.</p>
+<p>3. AFP Variance Analysis — comparison context.</p>
+<p>4. W3C PROV Overview — evidence and version relationships.</p>
+<p>5. NIST AI Risk Management Framework — assisted workflow risk reference.</p>
+</div>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/bi-software-renewal-planning/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-09" class="text-sm text-navy/70">November 9, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../bi-software-renewal-planning/" class="after:absolute after:inset-0 focus-visible:outline-none">Turn Your Next BI Renewal into a Strategic Advantage: A CIO’s 60-Day Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Make your next BI renewal a strategic decision. A CIO playbook covering business needs, usage evidence, commercial options and continuity.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-investment-planning-portfolio/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-05" class="text-sm text-navy/70">November 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-investment-planning-portfolio/" class="after:absolute after:inset-0 focus-visible:outline-none">Where Should Your Next Analytics Dollar Go? A CIO’s Investment Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Decide where your next analytics dollar should go. A CIO playbook for investment choices, business value, dependencies and operating capacity.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/margin-exception-review-workflow/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-30" class="text-sm text-navy/70">October 30, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../margin-exception-review-workflow/" class="after:absolute after:inset-0 focus-visible:outline-none">Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Help finance and operations act on shared evidence. A CIO guide to margin review workflows, trusted measures and clear business accountability.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Every Enterprise Needs an Analytics System of Record | ZenOptics</title>
+  <meta name="description" content="Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-system-of-record/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why Every Enterprise Needs an Analytics System of Record | ZenOptics">
+  <meta property="og:description" content="Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-system-of-record/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-system-of-record/cover.webp">
+  <meta property="article:published_time" content="2026-07-31">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Every Enterprise Needs an Analytics System of Record", "datePublished": "2026-07-31", "description": "Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.", "image": "https://zenoptics.com/assets/images/blog/analytics-system-of-record/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-system-of-record/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an analytics system of record?", "acceptedAnswer": {"@type": "Answer", "text": "An analytics system of record is a governed inventory of the full analytics estate: all reports, metrics, and KPIs across connected BI tools, with certification status, ownership, lineage, lifecycle state, and access policy maintained for each. It is the authoritative source for what exists in the analytics estate, which version of any metric is certified, who owns it, and who can see it, maintained as a single governed layer above the individual BI tools."}}, {"@type": "Question", "name": "How is an analytics system of record different from a data catalog?", "acceptedAnswer": {"@type": "Answer", "text": "A data catalog governs metadata about data assets at the data layer: tables, schemas, columns, and data lineage within pipelines. An analytics system of record governs business analytics content at the report and KPI layer: which reports are certified, who owns each metric definition, what data feeds each report, and who has access to it across BI tools. The two layers are complementary. A data catalog addresses what data exists; an analytics system of record addresses what the organization does with that data in its BI tools and whether those outputs can be trusted."}}, {"@type": "Question", "name": "How is an analytics system of record different from data governance?", "acceptedAnswer": {"@type": "Answer", "text": "Data governance addresses the data layer: data quality, pipelines, schema management, and master data. An analytics system of record addresses the analytics layer that sits above the data: the certified reports, KPI definitions, ownership records, and cross-tool access policies that users and AI agents actually consume. An organization can have strong data governance and a fully ungoverned analytics estate simultaneously, because the two layers address different problems."}}, {"@type": "Question", "name": "What does an analytics system of record do for AI?", "acceptedAnswer": {"@type": "Answer", "text": "AI agents and copilots deployed on an analytics estate without a system of record search across all available content and return whatever they find, without distinguishing certified from deprecated, current from outdated, or permissioned from restricted. An analytics system of record provides the governed context layer that AI queries before returning any answer: which version of a metric is authoritative, where the data comes from, and whether the requesting user is permitted to see the result. It is the layer that makes AI on the analytics estate reliable rather than fast-but-unreliable."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why Every Enterprise Needs an Analytics System of Record</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-31">July 31, 2026</time></span>
+          <span>10 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-system-of-record/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#every-major-data-domain-has-a-system-of-record-analytics-doesn-t" class="hover:underline">Every Major Data Domain Has a System of Record. Analytics Doesn&#x27;t.</a></li>
+              <li><a href="#what-the-analytics-estate-looks-like-without-one" class="hover:underline">What the Analytics Estate Looks Like Without One</a></li>
+              <li><a href="#what-an-analytics-system-of-record-provides" class="hover:underline">What an Analytics System of Record Provides</a></li>
+              <li><a href="#what-changes-when-the-analytics-estate-has-a-system-of-record" class="hover:underline">What Changes When the Analytics Estate Has a System of Record</a></li>
+              <li><a href="#how-zenoptics-implements-the-analytics-system-of-record" class="hover:underline">How ZenOptics Implements the Analytics System of Record</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#see-the-analytics-system-of-record-in-action" class="hover:underline">See the Analytics System of Record in Action</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#every-major-data-domain-has-a-system-of-record-analytics-doesn-t" class="hover:underline">Every Major Data Domain Has a System of Record. Analytics Doesn&#x27;t.</a></li>
+              <li><a href="#what-the-analytics-estate-looks-like-without-one" class="hover:underline">What the Analytics Estate Looks Like Without One</a></li>
+              <li><a href="#what-an-analytics-system-of-record-provides" class="hover:underline">What an Analytics System of Record Provides</a></li>
+              <li><a href="#what-changes-when-the-analytics-estate-has-a-system-of-record" class="hover:underline">What Changes When the Analytics Estate Has a System of Record</a></li>
+              <li><a href="#how-zenoptics-implements-the-analytics-system-of-record" class="hover:underline">How ZenOptics Implements the Analytics System of Record</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#see-the-analytics-system-of-record-in-action" class="hover:underline">See the Analytics System of Record in Action</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Every major enterprise data domain has a system of record. Analytics is the exception—and that gap is becoming impossible to ignore in the age of AI. Customer data has CRM: one authoritative record of every customer, their history, and their current status. Financial data has ERP: one record of every transaction, every account balance, every period close. HR data has HRIS: one record of every employee, their role, compensation, and employment history. When a question arises about any of these domains, the enterprise knows where to look. It knows which system holds the authoritative answer and which answer to act on.</p>
+<p>The analytics estate has never had this. Across Tableau, Power BI, SAP BusinessObjects, Qlik, Looker, and whatever homegrown portals sit alongside them, the enterprise holds thousands of reports, hundreds of KPI definitions, and dozens of versions of the same metric, with no authoritative record of which version is certified, who owns each report, what data feeds it, or who should have access to it. The result is the persistent background problem of enterprise analytics: the revenue figure that differs by $2M depending on which dashboard a user opens, the report that no one is certain is still current, the AI copilot that returns a confident answer sourced from a deprecated dataset. These are not individual failures. They are the predictable output of an analytics estate with no system of record.</p>
+<h2 id="every-major-data-domain-has-a-system-of-record-analytics-doesn-t">Every Major Data Domain Has a System of Record. Analytics Doesn&#x27;t.</h2>
+<p>The concept of a system of record is not new. Enterprises solved the authoritative-source problem for customer data decades ago by centralizing customer records in CRM. They solved it for financial data with ERP. They solved it for people data with HRIS. In each case, the solution followed the same pattern: a single governed layer above the individual transactions and activities, where the authoritative version of each record is maintained, certified, and auditable.</p>
+<p>The analytics estate followed a different path. BI tools evolved as display layers built to surface dashboards and reports to users who already knew what they were looking for. Each tool maintained its own inventory of reports and metrics. Each enforced its own access rules. Governance was not the design intent; delivery was. The result is that most enterprise analytics estates are not governed at all at the analytics layer. Reports exist in BI tools. KPI definitions live in dashboards. Ownership is maintained in email threads and team memory. Nobody owns a certified version of &quot;revenue&quot; across the full estate, because no layer exists to hold and enforce that certification.</p>
+<p>For most of the history of enterprise BI, this was tolerable. Human users exercised judgment. They knew which team owned the revenue dashboard, which version of the metric their team used, and who to escalate to when two reports disagreed. The absence of a system of record created friction and inconsistency, but experienced users could navigate around it.</p>
+<p>That tolerance has a time limit. AI agents and copilots do not exercise judgment. When deployed on an ungoverned analytics estate, they search across all available content and return whatever they find, without distinguishing a certified report from a deprecated one, a current metric from an outdated definition, or a result the requesting user should see from one that violates their access policy. The governance gap that human users navigated around becomes an AI reliability problem that stakeholders notice immediately. The analytics estate needs a system of record for the same reason customer data needed CRM: without one, the organization cannot trust the answers it gets. AI can only be as trustworthy as the system that defines what is trusted.</p>
+<h2 id="what-the-analytics-estate-looks-like-without-one">What the Analytics Estate Looks Like Without One</h2>
+<p>The absence of a system of record at the analytics layer produces a predictable set of conditions. They are familiar to any analytics leader who has managed a multi-tool BI estate for more than a few years.</p>
+<p>The typical enterprise analytics estate runs multiple BI platforms simultaneously. Power BI, Tableau, SAP BusinessObjects, Qlik, and Looker frequently coexist, each adopted by different teams or business units at different points in time. Homegrown portals and SharePoint-based report libraries add additional inventory. Each platform holds its own catalog of reports and dashboards. No layer above them knows what all of them contain in aggregate. As <a href="../analytics-sprawl-cost/">The Hidden Cost of Analytics Sprawl</a> covers, this proliferation compounds over time: reports are created faster than they are decommissioned, KPI definitions diverge across tools, and the estate grows less navigable as it grows larger.</p>
+<p>Metric divergence is the most visible symptom. Revenue, churn rate, pipeline coverage, customer count: these business concepts will be defined differently across teams, tools, and time periods in a typical ungoverned analytics estate. Each definition may be correct for the context in which it was created. None is marked as authoritative for the organization. When two reports show different revenue figures and both can be explained as technically correct, the analytics estate has a governance problem, not a data problem. As <a href="../analytics-portal-governance-layer/">Why Modern Analytics Portals Fail Without a Governance Layer</a> establishes, a display layer cannot resolve this: governance is a distinct architectural function that the portal was never designed to perform.</p>
+<p>Report lifecycle debt accumulates in parallel. Reports built for a project, a quarter, or a departed team member persist in the estate indefinitely. They show up in search results. They surface in AI responses. Users opening them cannot tell from the report itself whether it is current, deprecated, or orphaned. Without a governed inventory that tracks certification status and lifecycle state, there is no mechanism to identify and retire these assets.</p>
+<p>Access policy is fragmented across tools. Each BI platform enforces its own access model: roles defined in Power BI have no relationship to roles defined in Tableau. When a user changes roles or leaves the organization, access revocation must be performed separately in each connected tool. There is no consolidated record of what each user is permitted to see across the full analytics estate.</p>
+<h2 id="what-an-analytics-system-of-record-provides">What an Analytics System of Record Provides</h2>
+<p>An analytics system of record is a governed inventory of the full analytics estate: every report, metric, and KPI across all connected BI tools, with certification status, ownership, lineage, lifecycle state, and access policy maintained for each. It is the layer that tells the organization which version of a metric is authoritative, who owns it, when it was last validated, what data feeds it, and who has access to it, maintained consistently across whatever BI tools the organization already uses.</p>
+<p>This is a meaningfully different thing from the governance and catalog layers enterprises have already invested in.</p>
+<p>Data governance addresses the data layer: data quality, data pipelines, schema management, and master data. It ensures that the data flowing into BI tools is accurate and well-structured. What an analytics system of record addresses is the layer above the data: the reports and KPIs that BI tools produce from that data. An organization can have excellent data governance and still have a fully ungoverned analytics estate, because the governance problem at the report and KPI layer is structurally distinct. <a href="../data-governance-vs-analytics-governance/">Data Governance vs. Analytics Governance</a> covers this distinction in full; for the purposes of this argument, the key point is that fixing the data layer does not fix the analytics layer.</p>
+<p>Data catalogs address metadata about data assets: tables, schemas, columns, data lineage within the data pipeline. A data catalog tells the organization what data assets exist and how they relate to each other at the data layer. An analytics system of record governs business analytics content: the certified reports, metric definitions, KPI ownership, and cross-tool access policy that sit above the data and that users and AI agents actually consume. The two layers are complementary, not substitutes for each other.</p>
+<p>BI tools are display layers. They surface reports and dashboards to users. They enforce their own access rules. They do not govern the analytics estate in aggregate, because that was never the design intent. An analytics system of record does not replace BI tools. It provides the governance layer above them that determines which of their contents is certified, owned, current, and accessible.</p>
+<p>A governed inventory is what makes an AI context layer possible. When an analytics system of record exists, AI agents and copilots can query it before returning any answer, checking whether a report is certified, who owns it, whether it is still active, and whether the requesting user is permitted to see the result. Without that layer, AI searches across the ungoverned estate and returns whatever it finds. <a href="../ai-breaks-analytics-portals/">Why AI Breaks Traditional Analytics Portals</a> covers how this failure mode plays out in production deployments.</p>
+<h2 id="what-changes-when-the-analytics-estate-has-a-system-of-record">What Changes When the Analytics Estate Has a System of Record</h2>
+<p>An Analytics System of Record doesn&#x27;t replace existing BI investments. It makes them governable, trustworthy, and AI-ready.</p>
+<p>Metric trust becomes operational rather than aspirational. When a governed inventory holds the certified version of each KPI across all connected BI tools, users can identify the authoritative version of any metric without escalating to the team that owns it. The report that differs by $2M from another dashboard is no longer an ambiguous situation: the certified version is marked, its lineage is traceable, and the resolution is not a judgment call.</p>
+<p>Report lifecycle becomes visible and manageable. Governance teams can see the full inventory of the analytics estate, identify deprecated and orphaned reports, and act on them. The estate stops growing without bound as new reports are created without old ones being retired. The cost of carrying ungoverned analytics content, including the review cycles, the stakeholder confusion, and the AI responses grounded in stale data, is covered in <a href="../ungoverned-analytics-estate-cost/">The Hidden Cost of an Ungoverned Analytics Estate</a>.</p>
+<p>AI reliability follows directly. AI deployed on a governed analytics system of record returns answers from the certified layer: it can identify the authoritative version of any metric, disclose the provenance of any answer, and check consolidated access policy before surfacing any result. The AI initiative and the analytics governance initiative are not competing investments: one depends on the other.</p>
+<p>Access policy consolidation reduces both compliance risk and administrative burden. A single governance layer holds what each user can see across the full analytics estate. Access changes can be applied at the governance layer and propagated to connected BI tools, rather than being performed independently in each platform.</p>
+<p>The analytics estate moves from something that the organization navigates by tribal knowledge and accumulated experience to something that it can govern, audit, and improve systematically. That shift is what a system of record provides, in every domain where one has been implemented.</p>
+<h2 id="how-zenoptics-implements-the-analytics-system-of-record">How ZenOptics Implements the Analytics System of Record</h2>
+<p><a href="../../atlas/">Atlas</a> is ZenOptics&#x27; Analytics System of Record, providing a governed inventory across the enterprise analytics estate. Smart Connectors read directly from each connected BI platform, including Power BI, Tableau, SAP BusinessObjects, Qlik, and Looker, and maintain certification status, ownership, lineage, and lifecycle state for every report, metric, and KPI across the estate. Atlas does not require BI tool replacement or migration. It connects to the tools the organization already uses and builds the governance layer on top.</p>
+<p><a href="../../nexus/">Nexus</a> transforms the Analytics System of Record into trusted business context that AI agents and copilots can understand and act on. It makes the governed inventory consumable for AI agents, copilots, and natural-language query interfaces, so that every AI response is grounded in certified, traceable, access-aware context rather than raw search across an ungoverned estate. Nexus is the layer that makes AI on the analytics estate reliable, because it gives AI access to the system of record before it surfaces any answer.</p>
+<p>Together, Atlas and Nexus establish the foundation for AI-ready analytics—where every report, KPI, and AI-generated answer is grounded in governed, trusted business context.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-an-analytics-system-of-record">What is an analytics system of record?</h3>
+<p>An analytics system of record is a governed inventory of the full analytics estate: all reports, metrics, and KPIs across connected BI tools, with certification status, ownership, lineage, lifecycle state, and access policy maintained for each. It is the authoritative source for what exists in the analytics estate, which version of any metric is certified, who owns it, and who can see it, maintained as a single governed layer above the individual BI tools.</p>
+<h3 id="how-is-an-analytics-system-of-record-different-from-a-data-catalog">How is an analytics system of record different from a data catalog?</h3>
+<p>A data catalog governs metadata about data assets at the data layer: tables, schemas, columns, and data lineage within pipelines. An analytics system of record governs business analytics content at the report and KPI layer: which reports are certified, who owns each metric definition, what data feeds each report, and who has access to it across BI tools. The two layers are complementary. A data catalog addresses what data exists; an analytics system of record addresses what the organization does with that data in its BI tools and whether those outputs can be trusted.</p>
+<h3 id="how-is-an-analytics-system-of-record-different-from-data-governance">How is an analytics system of record different from data governance?</h3>
+<p>Data governance addresses the data layer: data quality, pipelines, schema management, and master data. An analytics system of record addresses the analytics layer that sits above the data: the certified reports, KPI definitions, ownership records, and cross-tool access policies that users and AI agents actually consume. An organization can have strong data governance and a fully ungoverned analytics estate simultaneously, because the two layers address different problems.</p>
+<h3 id="what-does-an-analytics-system-of-record-do-for-ai">What does an analytics system of record do for AI?</h3>
+<p>AI agents and copilots deployed on an analytics estate without a system of record search across all available content and return whatever they find, without distinguishing certified from deprecated, current from outdated, or permissioned from restricted. An analytics system of record provides the governed context layer that AI queries before returning any answer: which version of a metric is authoritative, where the data comes from, and whether the requesting user is permitted to see the result. It is the layer that makes AI on the analytics estate reliable rather than fast-but-unreliable.</p>
+<h2 id="see-the-analytics-system-of-record-in-action">See the Analytics System of Record in Action</h2>
+<p>ZenOptics Atlas builds a governed inventory across your existing BI tools, without replacing them. Nexus makes that inventory available to AI agents and copilots so that every answer is grounded in certified, traceable context.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request a demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/cross-tool-bi-inventory/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-07" class="text-sm text-navy/70">August 7, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../cross-tool-bi-inventory/" class="after:absolute after:inset-0 focus-visible:outline-none">Your BI Tools Govern Themselves. But Who Governs the Analytics Estate?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Individual BI tools govern their own content, but enterprise analytics governance requires a unified inventory across the entire analytics estate.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-breaks-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-03" class="text-sm text-navy/70">August 3, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-breaks-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Breaks Traditional Analytics Portals</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics portal AI integration fails not because of AI limitations, but because the portal was never a context layer. Here is what AI actually needs.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-portal-governance-layer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-28" class="text-sm text-navy/70">July 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-portal-governance-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Modern Analytics Portals Fail Without a Governance Layer</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">The build-vs.-buy analytics portal debate misses the real issue. Learn why lasting modernization requires a governed analytics system of record.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

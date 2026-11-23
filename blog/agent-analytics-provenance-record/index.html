@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Analytics Provenance Audit | ZenOptics</title>
+  <meta name="description" content="Agent traces record the call, the tool and the source. BI audit logs record the access. Neither records whether the asset was certified at the moment the…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/agent-analytics-provenance-record/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="AI Agent Analytics Provenance Audit | ZenOptics">
+  <meta property="og:description" content="Agent traces record the call, the tool and the source. BI audit logs record the access. Neither records whether the asset was certified at the moment the…">
+  <meta property="og:url" content="https://zenoptics.com/blog/agent-analytics-provenance-record/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/agent-analytics-provenance-record/cover.webp">
+  <meta property="article:published_time" content="2026-10-09">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Agent Analytics Provenance Audit", "datePublished": "2026-10-09", "description": "Agent traces record the call, the tool and the source. BI audit logs record the access. Neither records whether the asset was certified at the moment the…", "image": "https://zenoptics.com/assets/images/blog/agent-analytics-provenance-record/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/agent-analytics-provenance-record/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Isn't this what agent observability tools are for?", "acceptedAnswer": {"@type": "Answer", "text": "Observability tools record system behavior well, and the OpenTelemetry conventions are a reasonable standard for it. They record which source was reached. They do not record whether that source was approved, because that is a business fact rather than a system event."}}, {"@type": "Question", "name": "Our BI platform has audit logs. Why is that not enough?", "acceptedAnswer": {"@type": "Answer", "text": "Platform logs record access events and, separately, changes to endorsement. Establishing the certification state at the moment of access means correlating those two across a timeline. That is possible and slow, and only as reliable as the retention window."}}, {"@type": "Question", "name": "What is the difference between this and model explainability?", "acceptedAnswer": {"@type": "Answer", "text": "Model explainability addresses how an output was produced. This addresses whether the inputs were approved for the question. An explainable answer drawn from an uncertified asset is still an answer nobody can defend."}}, {"@type": "Question", "name": "Does certification have to be captured at read time?", "acceptedAnswer": {"@type": "Answer", "text": "It is far easier. Certification changes, owners move, and definitions get revised. A status looked up today tells you about today, not about the day the answer was given."}}, {"@type": "Question", "name": "How far back should we be able to reconstruct?", "acceptedAnswer": {"@type": "Answer", "text": "As far back as the decisions the answers informed. A forecast or a filing has a longer tail than an operational query, and the retention window should reflect the longest one rather than the average."}}, {"@type": "Question", "name": "Where does grounding fit?", "acceptedAnswer": {"@type": "Answer", "text": "Grounding in certified metrics reduces the chance of an uncertified asset being used at all. Recording what was used is the separate question of proving it afterwards. A deployment needs both, and governed execution covers what happens once an answer becomes an action."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">AI Agent Analytics Provenance Audit</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-09">October 9, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/agent-analytics-provenance-record/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#two-records-kept-by-different-systems" class="hover:underline">Two Records, Kept by Different Systems</a></li>
+              <li><a href="#what-the-agent-side-records" class="hover:underline">What the Agent Side Records</a></li>
+              <li><a href="#what-the-platform-side-records" class="hover:underline">What the Platform Side Records</a></li>
+              <li><a href="#the-question-neither-record-answers" class="hover:underline">The Question Neither Record Answers</a></li>
+              <li><a href="#why-this-surfaces-later-than-you-would-like" class="hover:underline">Why This Surfaces Later Than You Would Like</a></li>
+              <li><a href="#what-a-complete-record-would-hold" class="hover:underline">What a Complete Record Would Hold</a></li>
+              <li><a href="#where-this-record-comes-from" class="hover:underline">Where This Record Comes From</a></li>
+              <li><a href="#what-to-do-before-the-next-audit-question" class="hover:underline">What to Do Before the Next Audit Question</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#record-it-when-you-read-it" class="hover:underline">Record It When You Read It</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#two-records-kept-by-different-systems" class="hover:underline">Two Records, Kept by Different Systems</a></li>
+              <li><a href="#what-the-agent-side-records" class="hover:underline">What the Agent Side Records</a></li>
+              <li><a href="#what-the-platform-side-records" class="hover:underline">What the Platform Side Records</a></li>
+              <li><a href="#the-question-neither-record-answers" class="hover:underline">The Question Neither Record Answers</a></li>
+              <li><a href="#why-this-surfaces-later-than-you-would-like" class="hover:underline">Why This Surfaces Later Than You Would Like</a></li>
+              <li><a href="#what-a-complete-record-would-hold" class="hover:underline">What a Complete Record Would Hold</a></li>
+              <li><a href="#where-this-record-comes-from" class="hover:underline">Where This Record Comes From</a></li>
+              <li><a href="#what-to-do-before-the-next-audit-question" class="hover:underline">What to Do Before the Next Audit Question</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#record-it-when-you-read-it" class="hover:underline">Record It When You Read It</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Six months after an analytics agent gives a number that turns out to be wrong, somebody has to explain it. Not the model behavior. The number.</p>
+<p>Which asset produced it, whether the business had approved that asset for the question, who owned the definition, and whether any of that has changed since. Most enterprises can answer the first part and not the rest. An AI agent analytics provenance audit asks all four at once, and the systems doing the recording were never built to answer them together.</p>
+<h2 id="two-records-kept-by-different-systems">Two Records, Kept by Different Systems</h2>
+<p>An AI agent reading enterprise analytics produces logging on both sides of the transaction. The agent side records execution. The platform side records access. Neither side records approval.</p>
+<p>This matters because the question an auditor asks sits between them.</p>
+<h2 id="what-the-agent-side-records">What the Agent Side Records</h2>
+<p>The OpenTelemetry GenAI semantic conventions are the closest thing to a standard here, and they are specific about what an agent trace carries. The <a href="https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/" target="_blank" rel="noopener">attribute registry</a> defines roughly fifty attributes.</p>
+<p>They cover the model and the request thoroughly. The agent that ran, the model it used, the tokens it consumed, the operation it performed. They cover tool use, including which tool was called, what it was asked and what it returned. For retrieval they identify the data source and the documents that came back.</p>
+<p>That is a thorough record of what ran. You can reconstruct which agent was called, which tool it used, what it asked and what came back.</p>
+<p><strong>What the registry does not define is any attribute for the governance status of what was retrieved.</strong> There is no certification field, no owner field, no approval field. The data source is identified. Nothing records whether that source was one the business stands behind.</p>
+<p>This is not an oversight in the standard. Observability conventions describe system behavior. Whether a report is authoritative is a business fact about the asset, held somewhere else entirely. What agent logs do not record is not a defect in the logging. It is a boundary between two kinds of fact.</p>
+<h2 id="what-the-platform-side-records">What the Platform Side Records</h2>
+<p>The BI platform keeps its own log, and the shape of the gap there is more specific than it first appears.</p>
+<p>Microsoft documents the audited operations for Power BI and Fabric in a <a href="https://learn.microsoft.com/en-us/fabric/admin/operation-list" target="_blank" rel="noopener">public operation list</a>. Report activity appears as named operations, one each for downloading a report, editing it, copying it and opening it in Excel.</p>
+<p>Endorsement appears too, but as a different kind of event. The list carries operations that log somebody <strong>changing</strong> a report&#x27;s endorsement. That is a change record, not a state record.</p>
+<p>The distinction is the whole problem. The platform log tells you that a report was read on Tuesday. It separately tells you that the report&#x27;s endorsement was edited at some point. It does not tell you what the endorsement was on Tuesday.</p>
+<p>Answering that means joining two logs, reconstructing a timeline backwards from the change events, and trusting that no change went unlogged and no retention window expired in between. That is a forensic exercise, not a lookup.</p>
+<h2 id="the-question-neither-record-answers">The Question Neither Record Answers</h2>
+<p>Put the two together and the shape of the gap is clear.</p>
+<p>The agent trace knows it retrieved a source. It does not know whether that source was certified.</p>
+<p>The platform log knows the report was accessed. It does not know what the certification state was at that moment.</p>
+<p>So the question &quot;was the asset this answer came from approved for this purpose at the time it was used&quot; has no single system that can answer it. Reconstructing an AI answer currently means correlating an execution trace with an access log and a change history, across tools, after the fact.</p>
+<p>Agent trace analytics governance is the join between those records, and nothing in either stack performs it by default.</p>
+<p>Certification status at time of access is the missing field. It is not hard to record. It is simply not anybody&#x27;s job in the current architecture.</p>
+<h2 id="why-this-surfaces-later-than-you-would-like">Why This Surfaces Later Than You Would Like</h2>
+<p>The gap is invisible while everything is working. It appears at the worst moment.</p>
+<p>A number reaches a board pack or a regulatory filing. Someone asks where it came from. The team pulls the agent trace and finds the source it used. Then they open that source and find it was retired four months ago, or that its definition changed in a release nobody connected to this question.</p>
+<p>By then the people involved have moved on, and the evidence required to close the question is scattered across systems with different retention policies.</p>
+<p>This is the practical difference between explaining a model and <a href="../beyond-explainable-ai-decision-accountability/">explaining a decision</a>. Model explainability tells you how the output was generated. It does not tell you whether the inputs were ones the business had approved.</p>
+<h2 id="what-a-complete-record-would-hold">What a Complete Record Would Hold</h2>
+<p>Three things, captured at the moment the agent reads the asset rather than reconstructed afterwards.</p>
+<p><strong>The asset identity.</strong> Not just the source system, but the specific report, dashboard or metric the answer resolved to.</p>
+<p><strong>Its governance state at that moment.</strong> Certification status, the accountable owner, and the version of the definition in force. Captured as a snapshot, because all three change.</p>
+<p><strong>What changed afterwards.</strong> Whether the asset has since been edited, recertified or retired, so a later reviewer can tell whether the answer still stands or only stood at the time.</p>
+<p>The third is the one teams skip, and it is the one that decides whether a six-month-old answer can be defended or only described.</p>
+<p>None of this requires new infrastructure in the agent. The agent already reports which source it reached. What has to exist is a system that can be asked what that source was approved for on that date, and can answer without a reconstruction.</p>
+<h2 id="where-this-record-comes-from">Where This Record Comes From</h2>
+<p>None of that lives in an agent framework, and none of it lives in a BI platform&#x27;s activity log. It lives wherever the enterprise holds governance state about its analytics assets.</p>
+<p><a href="../../atlas/">Atlas</a> is the analytics system of record. It catalogs analytics assets across BI platforms and holds certification status, ownership, lineage and usage for each one. That is the record a provenance question has to resolve against, which is why <a href="../analytics-system-of-record/">the system of record</a> comes before the agent rather than after the incident. A <a href="../cross-tool-bi-inventory/">cross-tool inventory</a> is where it starts.</p>
+<p><a href="../../nexus/">Nexus</a> uses that governed record to determine which assets an agent may draw on for a given domain. It also keeps a per-answer record of which agent ran, why it was selected, which approved set it drew from, and how it reached the conclusion. That is the analytics-side half of the picture an agent trace cannot supply on its own.</p>
+<p>Maestro handles what happens after the answer, where an action is reviewed, authorized and recorded. That is a separate layer from the question here.</p>
+<h2 id="what-to-do-before-the-next-audit-question">What to Do Before the Next Audit Question</h2>
+<p>Start by testing it rather than assuming. Take an answer an agent gave last quarter and try to name the asset behind it, its certification status on that date, and its owner. If that takes more than a few minutes, the record does not exist yet.</p>
+<p>Then check retention. Agent traces and platform audit logs often have different retention windows, and the shorter one sets how far back any reconstruction can go.</p>
+<p>Then decide what gets captured at read time rather than looked up later. Asset identity, certification status and owner are cheap to snapshot and expensive to reconstruct.</p>
+<p>Then agree who answers the question when it comes. Analytics provenance for AI agents tends to fall between the data platform team, the BI team and whoever owns the agent. In practice that means it falls to nobody until an incident assigns it.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="isn-t-this-what-agent-observability-tools-are-for">Isn&#x27;t this what agent observability tools are for?</h3>
+<p>Observability tools record system behavior well, and the OpenTelemetry conventions are a reasonable standard for it. They record which source was reached. They do not record whether that source was approved, because that is a business fact rather than a system event.</p>
+<h3 id="our-bi-platform-has-audit-logs-why-is-that-not-enough">Our BI platform has audit logs. Why is that not enough?</h3>
+<p>Platform logs record access events and, separately, changes to endorsement. Establishing the certification state at the moment of access means correlating those two across a timeline. That is possible and slow, and only as reliable as the retention window.</p>
+<h3 id="what-is-the-difference-between-this-and-model-explainability">What is the difference between this and model explainability?</h3>
+<p>Model explainability addresses how an output was produced. This addresses whether the inputs were approved for the question. An explainable answer drawn from an uncertified asset is still an answer nobody can defend.</p>
+<h3 id="does-certification-have-to-be-captured-at-read-time">Does certification have to be captured at read time?</h3>
+<p>It is far easier. Certification changes, owners move, and definitions get revised. A status looked up today tells you about today, not about the day the answer was given.</p>
+<h3 id="how-far-back-should-we-be-able-to-reconstruct">How far back should we be able to reconstruct?</h3>
+<p>As far back as the decisions the answers informed. A forecast or a filing has a longer tail than an operational query, and the retention window should reflect the longest one rather than the average.</p>
+<h3 id="where-does-grounding-fit">Where does grounding fit?</h3>
+<p><a href="../certified-metrics-ai-grounding/">Grounding in certified metrics</a> reduces the chance of an uncertified asset being used at all. Recording what was used is the separate question of proving it afterwards. A deployment needs both, and <a href="../insight-to-governed-execution/">governed execution</a> covers what happens once an answer becomes an action.</p>
+<h2 id="record-it-when-you-read-it">Record It When You Read It</h2>
+<p>Agent traces and BI audit logs are both doing their jobs. Neither job is the one an auditor needs done.</p>
+<p>The question is always the same. Which asset produced this number, was it approved for this purpose at the time, and who owned that decision. Nothing in the current stack answers it unless the governance state is captured alongside the answer.</p>
+<p>Before the next agent goes live, work out whether you could reconstruct one of its answers six months from now. <a href="../authoritative-analytics-ai-agents/">Authoritative analytics for AI agents</a> covers how to scope what it reaches in the first place.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Talk to our experts about building the analytics record your agent traces are missing</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/semantic-layer-ai-business-context/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-16" class="text-sm text-navy/70">October 16, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../semantic-layer-ai-business-context/" class="after:absolute after:inset-0 focus-visible:outline-none">You Have a Semantic Layer. Why Does AI Still Misread Your Business?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">A semantic layer defines your metrics, but AI can still misinterpret the question. Learn how analytics context connects calculations to business meaning.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-ready-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-12" class="text-sm text-navy/70">October 12, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-ready-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Can Your AI Agent Trust the Reports It Reads</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/semantic-layer-downstream-reports/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-05" class="text-sm text-navy/70">October 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../semantic-layer-downstream-reports/" class="after:absolute after:inset-0 focus-visible:outline-none">A Semantic Layer Governs Your Model, Not Your Dashboards</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">A governed semantic model enforces definitions, row-level security and access control wherever it is queried.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

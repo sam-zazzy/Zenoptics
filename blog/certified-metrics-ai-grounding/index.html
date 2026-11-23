@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defined Is Not Certified | ZenOptics</title>
+  <meta name="description" content="Defining a metric and certifying one are different acts. Learn why only certified metrics are reliable AI grounding inputs, and what certification actually…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/certified-metrics-ai-grounding/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Defined Is Not Certified | ZenOptics">
+  <meta property="og:description" content="Defining a metric and certifying one are different acts. Learn why only certified metrics are reliable AI grounding inputs, and what certification actually…">
+  <meta property="og:url" content="https://zenoptics.com/blog/certified-metrics-ai-grounding/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/certified-metrics-ai-grounding/cover.webp">
+  <meta property="article:published_time" content="2026-08-24">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Defined Is Not Certified", "datePublished": "2026-08-24", "description": "Defining a metric and certifying one are different acts. Learn why only certified metrics are reliable AI grounding inputs, and what certification actually…", "image": "https://zenoptics.com/assets/images/blog/certified-metrics-ai-grounding/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/certified-metrics-ai-grounding/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a defined metric and a certified metric?", "acceptedAnswer": {"@type": "Answer", "text": "A defined metric specifies the calculation logic in a semantic or metric layer tool: the SQL, the business rules, the grain, the applicable filters. A certified metric has also been validated by a designated authority who confirmed the definition aligns with the organization's current authoritative business standard, with a current owner assigned and a validation record maintained. Defined metrics provide calculation consistency across queries. Certified metrics provide governance accountability for what those calculations represent."}}, {"@type": "Question", "name": "Can a semantic layer provide certified metrics for AI grounding?", "acceptedAnswer": {"@type": "Answer", "text": "A semantic layer can store metric definitions and enforce calculation consistency across queries. It cannot perform the governance acts that certification requires: designating a review authority, recording a validation outcome, assigning and tracking current ownership, or scheduling and executing a review cycle. Certification requires a governance layer above the semantic layer that manages those processes. Atlas provides that governance layer; the semantic layer provides the definition that certification validates."}}, {"@type": "Question", "name": "Why does metric lifecycle governance matter for AI grounding specifically?", "acceptedAnswer": {"@type": "Answer", "text": "AI agents use metric definitions as grounding inputs across every session, query, and workflow. If a metric definition was accurate when written but has since drifted from the organization's current business standard, the AI will continue grounding on the outdated definition until someone corrects it. Unlike a human analyst who might notice that something seems off, an AI agent has no mechanism to question a definition it was given. A review cycle catches definition drift before stale grounding inputs reach decision-makers."}}, {"@type": "Question", "name": "What does Nexus do that a semantic layer does not?", "acceptedAnswer": {"@type": "Answer", "text": "Nexus provides AI agents with the governance context surrounding each metric: the Atlas certification record, ownership, lineage, and the relational structure connecting certified metrics across business domains. A semantic layer tells an AI agent what a metric means. Nexus tells it whether that meaning has been validated, who is accountable for it, and whether the certification is current. That governance context is what makes an AI analytics answer traceable to an accountable source."}}, {"@type": "Question", "name": "Which metrics need to be certified first?", "acceptedAnswer": {"@type": "Answer", "text": "Certification matters most for the metrics AI agents use in high-stakes analytical reasoning: KPIs that appear in executive reporting, measures that drive financial or operational decisions, and metrics used in regulatory or compliance contexts. Organizations typically begin metric certification programs with tier-one KPIs and expand governance coverage over time. Nexus can surface certification status for every metric an AI agent accesses, so analysts understand the governance standing of every grounding input behind each AI answer."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Defined Is Not Certified</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-08-24">August 24, 2026</time></span>
+          <span>9 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/certified-metrics-ai-grounding/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#how-semantic-layers-approach-ai-grounding-and-where-they-stop" class="hover:underline">How Semantic Layers Approach AI Grounding and Where They Stop</a></li>
+              <li><a href="#three-reasons-a-defined-metric-is-not-a-certified-metric" class="hover:underline">Three Reasons a Defined Metric Is Not a Certified Metric</a></li>
+              <li><a href="#what-metric-certification-requires" class="hover:underline">What Metric Certification Requires</a></li>
+              <li><a href="#how-atlas-certification-and-nexus-grounding-work-together" class="hover:underline">How Atlas Certification and Nexus Grounding Work Together</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#from-metric-definition-to-certified-ai-grounding" class="hover:underline">From Metric Definition to Certified AI Grounding</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#how-semantic-layers-approach-ai-grounding-and-where-they-stop" class="hover:underline">How Semantic Layers Approach AI Grounding and Where They Stop</a></li>
+              <li><a href="#three-reasons-a-defined-metric-is-not-a-certified-metric" class="hover:underline">Three Reasons a Defined Metric Is Not a Certified Metric</a></li>
+              <li><a href="#what-metric-certification-requires" class="hover:underline">What Metric Certification Requires</a></li>
+              <li><a href="#how-atlas-certification-and-nexus-grounding-work-together" class="hover:underline">How Atlas Certification and Nexus Grounding Work Together</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#from-metric-definition-to-certified-ai-grounding" class="hover:underline">From Metric Definition to Certified AI Grounding</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Semantic layers have made a compelling case for themselves as the foundation for enterprise AI analytics. Define your business metrics once: the right SQL, the correct business rules, the appropriate grain. AI agents then reason from those definitions rather than reconstructing calculation logic from raw schema on every query. The case is accurate. Metric definition solves a real problem.</p>
+<p>The limitation is that &quot;defined&quot; is not the same as &quot;certified.&quot; A metric that has been accurately defined can still carry the wrong calculation if the definition was never validated against the organization&#x27;s authoritative business standard. It can reflect outdated logic if the analyst who wrote it has since left and no one has reviewed it. It can drift from current standards if the underlying business rule changed and the definition was not updated. AI grounding on an uncertified definition does not hallucinate in the generative sense. It returns precisely what the definition says, consistently and without deviation. If the definition is wrong, the AI answer is wrong, delivered with complete confidence, because the AI has no mechanism to question a definition it was told to treat as authoritative.</p>
+<p>For enterprise organizations building AI analytics on top of semantic infrastructure, certified metrics for AI grounding are not an optimization. They are the condition under which AI analytics answers can be trusted.</p>
+<h2 id="how-semantic-layers-approach-ai-grounding-and-where-they-stop">How Semantic Layers Approach AI Grounding and Where They Stop</h2>
+<p>A semantic layer addresses one specific failure mode in AI analytics: inconsistency from re-derivation. Without a layer that encodes what &quot;revenue&quot; means, an AI agent constructing queries against a raw data warehouse will derive its own interpretation each time, drawing on schema structure, column names, and whatever context the query carries. Different agents, different sessions, different phrasings of the same question produce different revenue numbers. The semantic layer eliminates that class of failure by specifying the calculation once, making every query use the same definition.</p>
+<p>This is a meaningful improvement for enterprise AI analytics. Consistent metric definitions prevent the most common source of AI analytics inconsistency. Organizations that deploy governed semantic layers report more repeatable AI outputs than those running AI against raw warehouses directly.</p>
+<p>But repeatability is not accuracy. A metric definition that consistently encodes the wrong logic produces consistent wrong answers. A definition written to match last year&#x27;s revenue recognition policy produces repeatable outputs that diverge from this year&#x27;s audited P&amp;L. A definition written by an analyst who has since moved to a different team may reflect that analyst&#x27;s interpretation of the metric rather than the finance function&#x27;s authoritative standard. Semantic layers store and enforce what was defined. They have no mechanism for validating that what was defined is correct, that the definition is current, or that anyone with organizational authority is accountable for it today.</p>
+<p>Gartner identified AI agent decision governance as one of the top data and analytics trends for 2026, noting that as AI agents execute more strategic and operational decisions, &quot;ungoverned decision-making increases exposure to legal, operational and reputational risk.&quot; Metric definitions that have never been validated, never been assigned an accountable owner, and carry no review record represent exactly that class of ungoverned exposure. Most <a href="../enterprise-ai-hallucination-analytics-governance/">enterprise AI analytics failures traced to governance gaps</a> begin at exactly this point. The semantic layer did its job. The definition it stored was the problem.</p>
+<h2 id="three-reasons-a-defined-metric-is-not-a-certified-metric">Three Reasons a Defined Metric Is Not a Certified Metric</h2>
+<p>Three distinct gaps separate a defined metric from a certified metric. Each produces a class of AI grounding failure that metric definition cannot prevent.</p>
+<p>The first is the validation gap. A metric definition records what someone believed the metric should be when they wrote it. A certified metric has been reviewed by a designated authority who confirmed that the definition aligns with the organization&#x27;s current business standard: that the revenue calculation matches the finance team&#x27;s audited methodology, that the churn definition matches customer success&#x27;s authoritative measure, that the calculation grain is appropriate for the reporting context in which the metric will be used. Validation is an organizational act. It requires authority, a review process, and a record of what was confirmed and when. Definition tools store definitions. They do not produce validation records.</p>
+<p>The second is the ownership gap. A defined metric has an author: the person or team who wrote it. A certified metric has a current owner: a designated person accountable for its accuracy today, responsible for flagging when the underlying business logic changes, and reachable when an AI output based on that metric needs to be investigated. When an AI analytics answer is questioned, &quot;who wrote this definition&quot; is the wrong question. &quot;Who is accountable for this metric right now&quot; is the governance question. Ownership is a responsibility that must be tracked, transferred, and maintained as the organization changes. The metric definition does not update when the original author changes roles or leaves. <a href="../analytics-catalogs-beyond-metadata/">Analytics catalogs face the same gap</a> when they record creation history rather than current accountability.</p>
+<p>The third is the lifecycle gap. Business logic changes. Revenue recognition policies are revised. Customer definitions are reorganized. Product lines are reclassified. A metric definition that was accurate when written drifts from organizational standards as the business evolves. Without a review cycle, that drift goes undetected until AI answers based on a stale definition reach decision-makers, which is the worst possible moment to discover the grounding input was outdated. A certified metric has a review cadence: a scheduled process that confirms the definition remains aligned with the current standard, or triggers an update when it does not. A defined metric persists as written until someone notices something is wrong.</p>
+<p>These three gaps compound each other. An unvalidated definition with no accountable owner and no review cycle is not a reliable AI grounding input. It is an assertion that AI will treat as authoritative because the semantic layer presented it as such.</p>
+<h2 id="what-metric-certification-requires">What Metric Certification Requires</h2>
+<p>Certification is a governance process, not a quality label applied to a definition. Gartner predicted in January 2026 that 50% of organizations will implement a zero-trust posture for data governance by 2028, driven by the proliferation of unverified AI-generated data, and the same principle applies to the metrics AI systems consume: trust can no longer be assumed from the fact that a definition exists. It must be established through an explicit verification process. Three elements distinguish a certified metric from one that has only been defined.</p>
+<p>A designated certification authority is the first requirement. Someone with organizational standing must be able to declare that a metric definition is authoritative for a specific reporting context. This is not the analyst who wrote the definition. It is the finance lead who confirms the revenue calculation aligns with the audited P&amp;L methodology, or the <a href="../data-governance-vs-analytics-governance/">analytics governance</a> function that validates KPI definitions before they enter the governed analytics layer. Authority is what makes certification meaningful. Without it, a certification status is self-certification, which provides no governance guarantee.</p>
+<p>A recorded validation act is the second requirement. The certification record must capture more than the metric definition itself: it must document who validated it, what was confirmed, including definition correctness, data lineage alignment, and the reporting contexts the metric governs, and when the validation occurred. This record is what makes an AI grounding input traceable. When an AI analytics answer is questioned, the certification record is the governance trail that shows the answer was derived from a validated, accountable source. <a href="../analytics-context-engineering/">Context engineering</a> builds the organizational processes that generate and maintain those records: who certifies, what the review confirms, and how certification status flows to the AI systems that consume certified metrics as grounding inputs.</p>
+<p>An ownership and review cycle is the third requirement. A current owner holds ongoing accountability for the certified metric. A defined review cadence confirms the definition remains accurate as business logic evolves. When a review reveals that the underlying standard has changed, the certification is updated or suspended until the definition is corrected. Without these two elements, even a metric that was correctly certified at initial review can carry stale logic within months.</p>
+<h2 id="how-atlas-certification-and-nexus-grounding-work-together">How Atlas Certification and Nexus Grounding Work Together</h2>
+<p><a href="../../atlas/">Atlas</a>, the ZenOptics <a href="../analytics-system-of-record/">Analytics System of Record</a>, provides the certification governance layer that operates above the semantic layer: the workflow for initiating a metric review, the organizational authority structure, the validation record, and the ownership tracking that maintains certification currency over time. Atlas does not replace the semantic layer. It provides the governance process that makes semantic layer definitions trustworthy as AI grounding inputs.</p>
+<p><a href="../../nexus/">Nexus</a>, the ZenOptics AI context layer, grounds AI reasoning in Atlas-certified metrics rather than in raw semantic layer definitions. The practical difference is governance context delivered alongside the definition. When an AI agent accesses a metric through Nexus, it receives not only the calculation logic but the Atlas certification record: which version of the metric is authoritative for the reporting context, who validated it, and when the certification was last confirmed. If a metric&#x27;s certification is lapsed or under active review, that status surfaces before the AI uses it as a grounding input, rather than after an answer has already been delivered.</p>
+<p>The coverage is cross-platform. Atlas maintains its inventory across Power BI, Tableau, SAP BusinessObjects, Qlik, and other connected platforms. Certified metrics are available as grounding inputs wherever they exist in the analytics estate, not only within a single semantic layer deployment. The <a href="../analytics-context-layer-enterprise/">analytics context layer</a> is the infrastructure that combines the definition the semantic layer provides with the certification record Atlas maintains, and surfaces both to AI systems through Nexus.</p>
+<p>The distinction this post opened with becomes operational here. Semantic layers deliver calculation consistency. Certified metrics deliver governance accountability. Enterprise AI analytics requires both. Nexus is where those two requirements meet.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-a-defined-metric-and-a-certified-metric">What is the difference between a defined metric and a certified metric?</h3>
+<p>A defined metric specifies the calculation logic in a semantic or metric layer tool: the SQL, the business rules, the grain, the applicable filters. A certified metric has also been validated by a designated authority who confirmed the definition aligns with the organization&#x27;s current authoritative business standard, with a current owner assigned and a validation record maintained. Defined metrics provide calculation consistency across queries. Certified metrics provide governance accountability for what those calculations represent.</p>
+<h3 id="can-a-semantic-layer-provide-certified-metrics-for-ai-grounding">Can a semantic layer provide certified metrics for AI grounding?</h3>
+<p>A semantic layer can store metric definitions and enforce calculation consistency across queries. It cannot perform the governance acts that certification requires: designating a review authority, recording a validation outcome, assigning and tracking current ownership, or scheduling and executing a review cycle. Certification requires a governance layer above the semantic layer that manages those processes. Atlas provides that governance layer; the semantic layer provides the definition that certification validates.</p>
+<h3 id="why-does-metric-lifecycle-governance-matter-for-ai-grounding-specifically">Why does metric lifecycle governance matter for AI grounding specifically?</h3>
+<p>AI agents use metric definitions as grounding inputs across every session, query, and workflow. If a metric definition was accurate when written but has since drifted from the organization&#x27;s current business standard, the AI will continue grounding on the outdated definition until someone corrects it. Unlike a human analyst who might notice that something seems off, an AI agent has no mechanism to question a definition it was given. A review cycle catches definition drift before stale grounding inputs reach decision-makers.</p>
+<h3 id="what-does-nexus-do-that-a-semantic-layer-does-not">What does Nexus do that a semantic layer does not?</h3>
+<p>Nexus provides AI agents with the governance context surrounding each metric: the Atlas certification record, ownership, lineage, and the relational structure connecting certified metrics across business domains. A semantic layer tells an AI agent what a metric means. Nexus tells it whether that meaning has been validated, who is accountable for it, and whether the certification is current. That governance context is what makes an AI analytics answer traceable to an accountable source.</p>
+<h3 id="which-metrics-need-to-be-certified-first">Which metrics need to be certified first?</h3>
+<p>Certification matters most for the metrics AI agents use in high-stakes analytical reasoning: KPIs that appear in executive reporting, measures that drive financial or operational decisions, and metrics used in regulatory or compliance contexts. Organizations typically begin metric certification programs with tier-one KPIs and expand governance coverage over time. Nexus can surface certification status for every metric an AI agent accesses, so analysts understand the governance standing of every grounding input behind each AI answer.</p>
+<h2 id="from-metric-definition-to-certified-ai-grounding">From Metric Definition to Certified AI Grounding</h2>
+<p>Semantic layers define your metrics. Atlas certifies them. Nexus grounds AI in the certified layer, so every AI analytics answer traces back to a validated, accountable source.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request an Atlas Demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/graphrag-vs-analytics-context/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-31" class="text-sm text-navy/70">August 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../graphrag-vs-analytics-context/" class="after:absolute after:inset-0 focus-visible:outline-none">GraphRAG vs. Analytics Context: What&#x27;s the Difference?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">GraphRAG was built for unstructured document intelligence. Enterprise analytics AI needs governed analytics context. Here is how the two differ.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-hallucinations-analytics-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-28" class="text-sm text-navy/70">August 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-hallucinations-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Hallucinations Are Governance Failures</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise AI analytics trust failures trace to one of four analytics governance failures, not model behavior.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-catalogs-beyond-metadata/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-21" class="text-sm text-navy/70">August 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-catalogs-beyond-metadata/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Analytics Catalogs Must Go Beyond Metadata</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

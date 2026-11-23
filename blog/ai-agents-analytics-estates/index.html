@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates. | ZenOptics</title>
+  <meta name="description" content="Enterprise AI agents don&#x27;t query the data warehouse. They read from analytics estates: the certified reports, dashboards, and metrics that sit above the data.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/ai-agents-analytics-estates/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates. | ZenOptics">
+  <meta property="og:description" content="Enterprise AI agents don&#x27;t query the data warehouse. They read from analytics estates: the certified reports, dashboards, and metrics that sit above the data.">
+  <meta property="og:url" content="https://zenoptics.com/blog/ai-agents-analytics-estates/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/ai-agents-analytics-estates/cover.webp">
+  <meta property="article:published_time" content="2026-07-10">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Agents Don't Read Data Warehouses. They Read Analytics Estates.", "datePublished": "2026-07-10", "description": "Enterprise AI agents don't query the data warehouse. They read from analytics estates: the certified reports, dashboards, and metrics that sit above the data.", "image": "https://zenoptics.com/assets/images/blog/ai-agents-analytics-estates/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/ai-agents-analytics-estates/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do enterprise AI agents query the data warehouse or the analytics layer?", "acceptedAnswer": {"@type": "Answer", "text": "In most enterprise AI deployments in 2026, AI copilots and agents read from the analytics layer: the reports, dashboards, metric definitions, and certified datasets that sit above the data warehouse. The data warehouse feeds the analytics layer. The analytics layer is the direct input to AI. An AI agent answering a business question reads from whatever analytics assets it can reach, not from the raw data tables below them. This is why data readiness and analytics estate readiness are separate problems."}}, {"@type": "Question", "name": "What is the analytics estate in the context of AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "The analytics estate is the full collection of reports, dashboards, certified KPIs, and business context that sits above the data layer and represents how the business measures itself. It is the layer AI agents read from when answering business questions. It is distinct from the data layer below it and from the AI application layer above it. Standard AI readiness frameworks assess the data layer. The analytics estate requires a separate assessment. The full framework is in Your Analytics Estate Isn't AI Ready. Here's How to Fix It."}}, {"@type": "Question", "name": "Why does it matter if AI reads from uncertified reports?", "acceptedAnswer": {"@type": "Answer", "text": "An uncertified report carries no machine-readable signal that it is authoritative. When an AI agent finds multiple versions of the same metric or report, it has no basis to distinguish the certified version from an outdated or incorrect one. It surfaces whichever it locates. The result is AI outputs that read plausibly but are drawn from an unverified source. The business acts on them. The error reaches the decision, not the dashboard. Certification coverage across the analytics estate is what gives AI the signal it needs to distinguish trusted from untrusted sources."}}, {"@type": "Question", "name": "How is the analytics estate different from a semantic layer?", "acceptedAnswer": {"@type": "Answer", "text": "A semantic layer translates database structures into business-readable terms inside a single BI tool or data platform. The analytics estate is broader: the entire collection of reports, dashboards, certified metrics, and business context an organization has built across all BI tools over time. It extends beyond semantic layers to include certification, ownership, governance, and encoded metric relationships that determine whether AI can read from the estate reliably. An analytics estate without those governance layers is not AI-ready even if it has well-built semantic layers within individual tools."}}, {"@type": "Question", "name": "What does an AI-ready analytics estate look like?", "acceptedAnswer": {"@type": "Answer", "text": "An AI-ready analytics estate has a complete cross-tool inventory of every active report and dashboard, machine-readable certification status on analytics assets, documented metric ownership and calculation logic with a current review cadence, and metric relationships encoded in a machine-readable context layer rather than held informally. These four properties (Inventory Completeness, Certification Coverage, Metric Governance, and Context Encoding) define what it means for the analytics estate to be in a condition that AI agents can read from reliably. The self-assessment is in The AI Readiness Checklist Every Analytics Leader Should Complete. The analytics estate assessment identifies where the layer your AI reads from stands today. Schedule a 15-minute session to run it with ZenOptics."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates.</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-10">July 10, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/ai-agents-analytics-estates/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-mental-model-most-analytics-leaders-are-working-with" class="hover:underline">The Mental Model Most Analytics Leaders Are Working With</a></li>
+              <li><a href="#what-enterprise-ai-agents-actually-do" class="hover:underline">What Enterprise AI Agents Actually Do</a></li>
+              <li><a href="#why-the-analytics-layer-and-the-data-layer-are-not-the-same-problem" class="hover:underline">Why the Analytics Layer and the Data Layer Are Not the Same Problem</a></li>
+              <li><a href="#what-this-changes-about-ai-readiness" class="hover:underline">What This Changes About AI Readiness</a></li>
+              <li><a href="#what-the-analytics-estate-needs-to-be-ai-ready-for-agents" class="hover:underline">What the Analytics Estate Needs to Be AI-Ready for Agents</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-mental-model-most-analytics-leaders-are-working-with" class="hover:underline">The Mental Model Most Analytics Leaders Are Working With</a></li>
+              <li><a href="#what-enterprise-ai-agents-actually-do" class="hover:underline">What Enterprise AI Agents Actually Do</a></li>
+              <li><a href="#why-the-analytics-layer-and-the-data-layer-are-not-the-same-problem" class="hover:underline">Why the Analytics Layer and the Data Layer Are Not the Same Problem</a></li>
+              <li><a href="#what-this-changes-about-ai-readiness" class="hover:underline">What This Changes About AI Readiness</a></li>
+              <li><a href="#what-the-analytics-estate-needs-to-be-ai-ready-for-agents" class="hover:underline">What the Analytics Estate Needs to Be AI-Ready for Agents</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Most enterprise AI readiness programs rest on one assumption: the AI queries the data warehouse, and better data means better AI answers. That assumption held for one era of enterprise AI. It does not hold for the AI copilots and agents most enterprises are deploying in 2026. Those systems do not query the data warehouse. They read from the analytics estate. The difference explains why most enterprise AI deployments underperform even when the underlying data is clean.</p>
+<h2 id="the-mental-model-most-analytics-leaders-are-working-with">The Mental Model Most Analytics Leaders Are Working With</h2>
+<p>When enterprise AI investments started scaling, the dominant enterprise AI pattern was training and deploying machine learning models on data in warehouses, lakes, and databases. That made data the direct input to AI. Improving data quality, building better pipelines, and governing data at the warehouse level translated directly into better model outputs. The investment logic was sound (and it still is, for the data layer it addresses): cleaner data produces more reliable models.</p>
+<p>That model shaped how analytics leaders think about AI readiness. Most readiness programs assess data quality, pipeline governance, lineage documentation, and infrastructure: the conditions that need to be in place before AI can be built on data. Most organizations have invested significantly here, and many have strong data foundations to show for it.</p>
+<p>The problem is that this mental model does not describe how most enterprise AI works in 2026.</p>
+<h2 id="what-enterprise-ai-agents-actually-do">What Enterprise AI Agents Actually Do</h2>
+<p>Consider a supply chain leader who asks an AI agent: &quot;Which of our suppliers are at risk this quarter?&quot; The agent does not write a query against the raw supply chain database. It reads from whatever supplier risk report or KPI dashboard it can find in the organization&#x27;s analytics estate: the certified reports, dashboards, and metric definitions that sit above the data and represent how the business measures itself.</p>
+<p>If that supplier risk report is outdated, or if there are three conflicting versions across different BI tools with no certified source of truth, the agent returns whichever it locates first. The underlying database may be current and well-maintained. The analytics layer is not. The agent reads from the layer it can reach, and that layer is the analytics estate.</p>
+<p>This architecture applies across the most common enterprise AI deployment pattern in 2026: copilots and agents answering business questions from existing analytics. When a finance leader asks an AI copilot about gross margin by region, the copilot reads from whatever gross margin report or metric definition it can locate in the available analytics assets. When a revenue operations leader asks an AI agent about pipeline coverage, the agent reads from pipeline reports and certified metrics. In each case, the direct input to AI is not raw data. It is the analytics estate.</p>
+<h2 id="why-the-analytics-layer-and-the-data-layer-are-not-the-same-problem">Why the Analytics Layer and the Data Layer Are Not the Same Problem</h2>
+<p>This distinction matters because the data layer and the analytics estate are governed differently, owned by different people, and fail in different ways.</p>
+<p>Data governance programs address the data layer: whether pipelines are documented, whether data tables have defined owners, whether quality thresholds are enforced. The people responsible are data engineers, data platform leaders, and data governance teams. The failure modes are data quality issues, lineage gaps, and stale pipelines.</p>
+<p>Analytics estate governance addresses a different layer: whether reports and dashboards are certified as authoritative, whether every active metric has a documented definition and a current owner, and whether the full estate is inventoried across every BI tool in use (Power BI, Tableau, SAP BO, Qlik, and others). The people responsible are analytics and BI leaders, metric owners, and data leaders. The failure modes are duplicate reports, uncertified metrics, and fragmented inventories. Metric relationships (how gross margin connects to revenue mix, how pipeline coverage connects to forecast accuracy) are typically encoded nowhere in machine-readable form. They exist in the heads of senior analysts who have been at the organization long enough to just know.</p>
+<p>Clean data feeding an ungoverned analytics estate produces the same inconsistent AI outputs as dirty data. The failure point shifts up a layer. An organization can have a strong data foundation and still see its AI copilots returning conflicting answers, because the problem is not the data. It is the layer the AI is actually reading from.</p>
+<h2 id="what-this-changes-about-ai-readiness">What This Changes About AI Readiness</h2>
+<p>If enterprise AI agents read from the analytics estate, then analytics estate readiness is not a sub-category of data readiness. It is a separate, additive assessment.</p>
+<p>An organization can score well on every dimension of a standard AI readiness assessment (data quality, pipeline governance, infrastructure, talent, leadership alignment) and then deploy AI copilots into an analytics estate that is entirely unprepared to be read. The standard assessment did not assess the layer that is failing, because standard frameworks were built for a different architecture of enterprise AI. The full analysis is in <a href="../ai-readiness-assessments-analytics-layer/">Why Most AI Readiness Assessments Miss the Analytics Layer</a>.</p>
+<p>The practical implication is straightforward: data readiness work is necessary, and it should continue. But it does not substitute for analytics estate readiness. Both layers need to be assessed and governed independently, because they address different problems with different tools and different owners. In most enterprise AI programs today, that parallel track is not yet in place.</p>
+<h2 id="what-the-analytics-estate-needs-to-be-ai-ready-for-agents">What the Analytics Estate Needs to Be AI-Ready for Agents</h2>
+<p>Four dimensions determine whether AI agents can read from the estate and return trusted answers.</p>
+<p><strong>Inventory Completeness.</strong> AI agents can only surface what they can see. An incomplete inventory produces incomplete answers. Each BI tool maintains its own catalog, but none of those catalogs see across tools. An organization running four BI tools has four partial, disconnected inventories. A complete, cross-tool inventory of every active report and dashboard is the prerequisite for everything else.</p>
+<p><strong>Certification Coverage.</strong> When an AI agent finds multiple versions of the same metric or report, it needs a machine-readable certification status to know which one is authoritative. Certification stored in a SharePoint wiki or a governance document is not machine-readable. The agent cannot make the distinction. Certification coverage needs to extend across the full analytics estate and be encoded in a form AI can interpret at query time.</p>
+<p><strong>Metric Governance.</strong> AI agents rely on metric definitions to interpret the numbers they surface. When those definitions are informal, undocumented, or inconsistently applied across teams and tools, AI returns answers that are numerically derived but contextually wrong. Each certified metric needs a designated owner, documented calculation logic, and a review cadence tied to policy changes.</p>
+<p><strong>Context Encoding.</strong> When an AI agent answers a question that spans multiple KPIs, it needs the approved relationship between those metrics encoded as business logic, not approximated from co-occurrence patterns in historical queries. An <a href="../analytics-context-layer-enterprise/">analytics context layer</a> that encodes these relationships is what separates AI that follows the business&#x27;s own logic from AI that reconstructs it by inference.</p>
+<p><a href="../../atlas/">Atlas</a> addresses the first three dimensions: cross-tool inventory, certification status, metric ownership, and review cadence across Power BI, Tableau, SAP BO, Qlik, and 100+ Smart Connectors. <a href="../../nexus/">Nexus</a> addresses Context Encoding by capturing structural metadata from BI tools and deriving the analytics context layer automatically from the governed estate Atlas produces, without requiring manual rebuilds. Together they address the layer AI agents read from in 2026. Organizations that govern their analytics estate with Atlas and Nexus typically see a 20–40% improvement in analytics discovery speed and a 30–40% reduction in duplicate reports.</p>
+<p>The self-assessment for all four dimensions is in <a href="../analytics-readiness-checklist/">The AI Readiness Checklist Every Analytics Leader Should Complete</a>.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="do-enterprise-ai-agents-query-the-data-warehouse-or-the-analytics-layer">Do enterprise AI agents query the data warehouse or the analytics layer?</h3>
+<p>In most enterprise AI deployments in 2026, AI copilots and agents read from the analytics layer: the reports, dashboards, metric definitions, and certified datasets that sit above the data warehouse. The data warehouse feeds the analytics layer. The analytics layer is the direct input to AI. An AI agent answering a business question reads from whatever analytics assets it can reach, not from the raw data tables below them. This is why data readiness and analytics estate readiness are separate problems.</p>
+<h3 id="what-is-the-analytics-estate-in-the-context-of-ai-agents">What is the analytics estate in the context of AI agents?</h3>
+<p>The analytics estate is the full collection of reports, dashboards, certified KPIs, and business context that sits above the data layer and represents how the business measures itself. It is the layer AI agents read from when answering business questions. It is distinct from the data layer below it and from the AI application layer above it. Standard AI readiness frameworks assess the data layer. The analytics estate requires a separate assessment. The full framework is in <a href="../ai-ready-analytics-estate/">Your Analytics Estate Isn&#x27;t AI Ready. Here&#x27;s How to Fix It.</a></p>
+<h3 id="why-does-it-matter-if-ai-reads-from-uncertified-reports">Why does it matter if AI reads from uncertified reports?</h3>
+<p>An uncertified report carries no machine-readable signal that it is authoritative. When an AI agent finds multiple versions of the same metric or report, it has no basis to distinguish the certified version from an outdated or incorrect one. It surfaces whichever it locates. The result is AI outputs that read plausibly but are drawn from an unverified source. The business acts on them. The error reaches the decision, not the dashboard. Certification coverage across the analytics estate is what gives AI the signal it needs to distinguish trusted from untrusted sources.</p>
+<h3 id="how-is-the-analytics-estate-different-from-a-semantic-layer">How is the analytics estate different from a semantic layer?</h3>
+<p>A semantic layer translates database structures into business-readable terms inside a single BI tool or data platform. The analytics estate is broader: the entire collection of reports, dashboards, certified metrics, and business context an organization has built across all BI tools over time. It extends beyond semantic layers to include certification, ownership, governance, and encoded metric relationships that determine whether AI can read from the estate reliably. An analytics estate without those governance layers is not AI-ready even if it has well-built semantic layers within individual tools.</p>
+<h3 id="what-does-an-ai-ready-analytics-estate-look-like">What does an AI-ready analytics estate look like?</h3>
+<p>An AI-ready analytics estate has a complete cross-tool inventory of every active report and dashboard, machine-readable certification status on analytics assets, documented metric ownership and calculation logic with a current review cadence, and metric relationships encoded in a machine-readable context layer rather than held informally. These four properties (Inventory Completeness, Certification Coverage, Metric Governance, and Context Encoding) define what it means for the analytics estate to be in a condition that AI agents can read from reliably. The self-assessment is in <a href="../analytics-readiness-checklist/">The AI Readiness Checklist Every Analytics Leader Should Complete</a>.</p>
+<p>The analytics estate assessment identifies where the layer your AI reads from stands today. <a href="../../schedule-a-demo/">Schedule a 15-minute session</a> to run it with ZenOptics.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-estate-maturity/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-17" class="text-sm text-navy/70">July 17, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-estate-maturity/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Measure Analytics Estate Maturity</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Standard analytics maturity models measure what your organization does with data. Analytics estate maturity measures whether AI can reliably use your…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ungoverned-analytics-estate-cost/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-13" class="text-sm text-navy/70">July 13, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ungoverned-analytics-estate-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of an Ungoverned Analytics Estate</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An ungoverned analytics estate generates three hidden costs: AI waste, decision latency, and compounding remediation.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-readiness-assessments-analytics-layer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-06" class="text-sm text-navy/70">July 6, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-readiness-assessments-analytics-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Most AI Readiness Assessments Miss the Analytics Layer</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Standard AI readiness assessments check data quality, infrastructure, and talent. None assess the analytics estate your AI systems actually read from.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

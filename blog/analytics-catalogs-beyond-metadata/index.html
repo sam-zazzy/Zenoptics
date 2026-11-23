@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Analytics Catalogs Must Go Beyond Metadata | ZenOptics</title>
+  <meta name="description" content="Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-catalogs-beyond-metadata/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why Analytics Catalogs Must Go Beyond Metadata | ZenOptics">
+  <meta property="og:description" content="Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-catalogs-beyond-metadata/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-catalogs-beyond-metadata/cover.webp">
+  <meta property="article:published_time" content="2026-08-21">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Analytics Catalogs Must Go Beyond Metadata", "datePublished": "2026-08-21", "description": "Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.", "image": "https://zenoptics.com/assets/images/blog/analytics-catalogs-beyond-metadata/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-catalogs-beyond-metadata/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between an analytics catalog and a governed analytics catalog?", "acceptedAnswer": {"@type": "Answer", "text": "An analytics catalog inventories reports, dashboards, and KPIs and surfaces metadata and usage information about each asset. A governed analytics catalog adds the processes that make that metadata actionable: certification workflows that validate reports as authoritative, ownership records that track current accountability rather than creation history, and lifecycle governance that converts usage signals into documented retirement decisions. The catalog describes. The governance layer decides."}}, {"@type": "Question", "name": "Why can't certification be managed as a metadata field in an existing catalog?", "acceptedAnswer": {"@type": "Answer", "text": "A certification field in a catalog is only as reliable as the process behind it. Without a defined review workflow, a designated authority, and a record of what was validated and when, a certification tag is a label anyone can apply. Certification as a governance act means a specified person or team has reviewed the report, confirmed the metric definitions, validated the lineage, and recorded the outcome. The governance process is what makes the status meaningful rather than decorative."}}, {"@type": "Question", "name": "What does ownership succession mean in practice?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics catalogs typically record the creator of a report at the time of creation. Ownership succession means tracking who holds governance accountability for each report as the organization changes, including when the original creator moves to another team, changes roles, or leaves the organization. Without succession tracking, analysts who find a report may have no reliable way to determine who is currently responsible for maintaining the underlying data or answering questions about accuracy."}}, {"@type": "Question", "name": "How does lifecycle governance differ from usage analytics in a catalog?", "acceptedAnswer": {"@type": "Answer", "text": "Usage analytics show which reports are accessed frequently and which are not. Lifecycle governance uses those signals to initiate a defined process: a retirement review, notification to users who relied on the asset, a recorded decision about whether and when to retire, and a mechanism for preventing re-creation of the same content. Usage analytics surface the information. Lifecycle governance determines what to do with it and records the outcome."}}, {"@type": "Question", "name": "How does Atlas extend the analytics catalog layer?", "acceptedAnswer": {"@type": "Answer", "text": "Atlas provides the cross-platform analytics catalog: inventory, metadata, usage signals, and discovery across connected BI platforms, as well as the governance layer above it: certification workflows, current ownership tracking, lineage, and lifecycle management. Analysts searching in Atlas see governance context alongside catalog results. The inventory and the governance record are part of the same system, so catalog data can be acted on rather than only observed."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why Analytics Catalogs Must Go Beyond Metadata</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-08-21">August 21, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-catalogs-beyond-metadata/cover.webp" alt="" width="1600" height="836" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-an-analytics-catalog-delivers-at-the-metadata-layer" class="hover:underline">What an Analytics Catalog Delivers at the Metadata Layer</a></li>
+              <li><a href="#three-governance-gaps-metadata-cannot-close" class="hover:underline">Three Governance Gaps Metadata Cannot Close</a></li>
+              <li><a href="#what-a-governed-analytics-catalog-requires" class="hover:underline">What a Governed Analytics Catalog Requires</a></li>
+              <li><a href="#why-this-matters-more-in-the-age-of-ai" class="hover:underline">Why This Matters More in the Age of AI</a></li>
+              <li><a href="#how-an-analytics-system-of-record-extends-the-catalog" class="hover:underline">How an Analytics System of Record Extends the Catalog</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#from-analytics-catalog-to-governed-analytics-estate" class="hover:underline">From Analytics Catalog to Governed Analytics Estate</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-an-analytics-catalog-delivers-at-the-metadata-layer" class="hover:underline">What an Analytics Catalog Delivers at the Metadata Layer</a></li>
+              <li><a href="#three-governance-gaps-metadata-cannot-close" class="hover:underline">Three Governance Gaps Metadata Cannot Close</a></li>
+              <li><a href="#what-a-governed-analytics-catalog-requires" class="hover:underline">What a Governed Analytics Catalog Requires</a></li>
+              <li><a href="#why-this-matters-more-in-the-age-of-ai" class="hover:underline">Why This Matters More in the Age of AI</a></li>
+              <li><a href="#how-an-analytics-system-of-record-extends-the-catalog" class="hover:underline">How an Analytics System of Record Extends the Catalog</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#from-analytics-catalog-to-governed-analytics-estate" class="hover:underline">From Analytics Catalog to Governed Analytics Estate</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>An analytics catalog is a genuine improvement over ungoverned BI sprawl. It inventories reports, dashboards, and KPIs across platforms, surfaces metadata about each asset, and enables discovery across what was previously invisible or fragmented. For organizations managing a multi-platform analytics estate spanning Power BI, Tableau, SAP BusinessObjects, and Qlik, a catalog is a meaningful first step toward visibility.</p>
+<p>The limitation emerges at the second step. Metadata can tell you what an analytics asset is, where it came from, and how it has been used. It cannot, on its own, determine whether that asset should be trusted for a business decision. Certification requires a governance decision, not a metadata field. Ownership requires current accountability, not creation history. Retirement requires a recorded organizational decision, not a usage flag. An analytics catalog that stops at metadata gives the organization a description of its estate. A governed analytics catalog provides the processes that make that description actionable.</p>
+<h2 id="what-an-analytics-catalog-delivers-at-the-metadata-layer">What an Analytics Catalog Delivers at the Metadata Layer</h2>
+<p>Analytics catalogs solve the visibility problem. They index reports, dashboards, and KPIs from connected BI platforms and surface search results from a single interface, making it possible for analysts to find content across environments without logging into each platform separately. For organizations where cross-platform visibility was previously nonexistent, this is a meaningful capability.</p>
+<p>Good catalogs surface more than inventory. They capture usage signals: how often a report is accessed, when it was last viewed, which teams interact with it most. This context is genuinely useful. A report accessed by forty people every Monday morning presents a different governance question than one that has not been opened in two years.</p>
+<p>Metadata also supports basic accountability tracking. An analytics catalog records who created each report, the platform it lives on, and when it was last modified. For organizations that previously managed their analytics estate without a governed cross-platform record, this represents measurable progress toward <a href="../analytics-sprawl-cost/">reducing the cost of analytics sprawl</a>. For organizations evaluating how an <a href="../analytics-catalogs-vs-data-catalogs-what-business-leaders-know/">analytics catalog differs from a data catalog</a> in the first place, the distinction starts at this metadata layer.</p>
+<p>But the catalog&#x27;s metadata layer describes. It does not govern. And analytics governance is what the estate actually requires.</p>
+<h2 id="three-governance-gaps-metadata-cannot-close">Three Governance Gaps Metadata Cannot Close</h2>
+<p>Three specific governance gaps remain in organizations that have an analytics catalog without a governance layer above it.</p>
+<p>The first is the certification gap. Metadata can include a field labeled &quot;certified.&quot; Without the governance process behind it, including a defined authority, a review workflow, and a record of what was validated and when, the field is a label, not a governance record. Certification is the act of a designated person or team reviewing a report, confirming that the metric definitions align with business standards, validating the data lineage, and recording that decision as an accountable outcome. Metadata alone cannot establish governance authority. Automation can support the certification process, but certification still requires defined accountability, validation criteria, and an auditable governance process. Without it, analysts searching the catalog have no reliable basis for distinguishing content that has been validated from content that has merely been tagged.</p>
+<p>The second is the ownership succession gap. Analytics catalogs record who created a report. Creation is a historical fact that does not change. Accountability is not. When the analyst who built a quarterly revenue report moves to a different team or leaves the organization, the catalog metadata still shows their name. An analyst who finds the report and needs to know whether the underlying data source is being maintained has no reliable contact. Ownership is a governance responsibility that must be tracked, transferred, and maintained as the organization changes. Metadata can preserve the history of an asset. Governance establishes who is accountable for it today and ensures that accountability evolves as the organization changes.</p>
+<p>The third is the retirement governance gap. Catalog metadata surfaces usage signals that identify candidates for retirement: reports with low view counts, assets with no active users in recent months. These signals are informative inputs to a governance process. They are not retirement decisions. Retiring a report requires determining whether it carries regulatory or audit dependencies, notifying the teams that relied on it, documenting the retirement rationale, and preventing re-creation by an analyst who does not know the report was already reviewed and closed. Metadata identifies the candidate. A governance process closes the loop.</p>
+<h2 id="what-a-governed-analytics-catalog-requires">What a Governed Analytics Catalog Requires</h2>
+<p>The recognition that governance processes matter is reflected in enterprise priorities. In the BARC Data, BI and Analytics Trend Monitor 2026, data and AI governance ranked fourth in importance among 1,579 analytics professionals worldwide, behind only data quality management, data security, and data-driven culture. The governance layer is no longer a future consideration. It is already among the industry&#x27;s highest enterprise priorities.</p>
+<p>A governed analytics catalog adds three layers above the metadata foundation.</p>
+<p>Certification governance means a defined workflow for validating reports as authoritative. It specifies who can initiate a certification review, who holds the authority to certify, what the review confirms, including metric definitions, data lineage, and ownership, and where the certification record is maintained. The outcome is a certification status that represents a governance decision, not a tag applied without process. When analysts search for a report and see a certification status, that status is meaningful because the process behind it is defined and recorded.</p>
+<p>Ownership governance means maintaining a current owner for each analytics asset, not a historical creator. It requires defining governance accountability for each report, establishing how ownership transfers when roles change, and keeping that record in a system that persists as the organization changes. The difference matters when an analyst finds a report and needs to know whether someone is actively responsible for the underlying data and metric definitions.</p>
+<p>Lifecycle governance means converting the catalog&#x27;s usage signals into governed decisions. It requires a retirement workflow that takes a low-usage flag from the catalog, routes it through a review process, records the decision outcome, and closes the loop on re-creation. Lifecycle governance ensures the analytics estate can shrink as well as grow: reports leave the catalog through a recorded decision, not by being quietly forgotten while remaining technically present.</p>
+<h2 id="why-this-matters-more-in-the-age-of-ai">Why This Matters More in the Age of AI</h2>
+<p>As analytics increasingly becomes an input to AI agents and automated decision-making, discovery alone is no longer enough. An AI system may be able to find a report, but finding it does not establish whether the report is authoritative, whether its metrics are approved, who is accountable for it, or whether it should still be used.</p>
+<p>For AI to operate on enterprise analytics with confidence, those governance decisions need to be explicit and accessible as context. The catalog answers what exists. Governance provides the context for determining what should be trusted and acted upon.</p>
+<h2 id="how-an-analytics-system-of-record-extends-the-catalog">How an Analytics System of Record Extends the Catalog</h2>
+<p><a href="../../atlas/">Atlas</a>, the ZenOptics <a href="../analytics-system-of-record/">Analytics System of Record</a>, provides the Analytics Catalog layer, including cross-platform inventory, metadata, usage signals, and discovery, as well as the governance layer above it: certification workflows, ownership tracking, lifecycle management, and re-creation prevention.</p>
+<p>The distinction becomes important when organizations need to move from simply knowing what analytics assets exist to determining which ones can be trusted and acted upon. Atlas brings reports, dashboards, KPIs, and metrics from connected BI platforms into a governed <a href="../cross-tool-bi-inventory/">cross-platform inventory</a> through 100+ Smart Connectors. Analysts searching for content see what exists alongside its governance status: whether it is certified, who currently owns it, what the usage pattern shows, and what its lifecycle status is. The catalog and governance record exist within the same system, creating a consistent layer of context that can support both human analytics consumption and emerging AI-driven use cases.</p>
+<p>Atlas does not replace the organization&#x27;s governance decision-making. It provides the visibility and workflows needed to make governance decisions informed, accountable, and repeatable.</p>
+<p><a href="../duplicate-reports-elimination/">Duplicate reports</a> accumulate when governance is absent from the catalog layer. <a href="../report-discovery-not-enough/">Report discovery falls short</a> when certified content cannot be distinguished from uncertified content in search results. Both problems share the same root: an inventory without a governance layer above it. Atlas connects to existing BI environments without requiring platform consolidation, and the governance layer sits above the platforms and above the catalog, providing the certification, ownership, and lifecycle management that turn a described analytics estate into a governed one.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-an-analytics-catalog-and-a-governed-analytics-cat">What is the difference between an analytics catalog and a governed analytics catalog?</h3>
+<p>An analytics catalog inventories reports, dashboards, and KPIs and surfaces metadata and usage information about each asset. A governed analytics catalog adds the processes that make that metadata actionable: certification workflows that validate reports as authoritative, ownership records that track current accountability rather than creation history, and lifecycle governance that converts usage signals into documented retirement decisions. The catalog describes. The governance layer decides.</p>
+<h3 id="why-can-t-certification-be-managed-as-a-metadata-field-in-an-existing-catalog">Why can&#x27;t certification be managed as a metadata field in an existing catalog?</h3>
+<p>A certification field in a catalog is only as reliable as the process behind it. Without a defined review workflow, a designated authority, and a record of what was validated and when, a certification tag is a label anyone can apply. Certification as a governance act means a specified person or team has reviewed the report, confirmed the metric definitions, validated the lineage, and recorded the outcome. The governance process is what makes the status meaningful rather than decorative.</p>
+<h3 id="what-does-ownership-succession-mean-in-practice">What does ownership succession mean in practice?</h3>
+<p>Analytics catalogs typically record the creator of a report at the time of creation. Ownership succession means tracking who holds governance accountability for each report as the organization changes, including when the original creator moves to another team, changes roles, or leaves the organization. Without succession tracking, analysts who find a report may have no reliable way to determine who is currently responsible for maintaining the underlying data or answering questions about accuracy.</p>
+<h3 id="how-does-lifecycle-governance-differ-from-usage-analytics-in-a-catalog">How does lifecycle governance differ from usage analytics in a catalog?</h3>
+<p>Usage analytics show which reports are accessed frequently and which are not. Lifecycle governance uses those signals to initiate a defined process: a retirement review, notification to users who relied on the asset, a recorded decision about whether and when to retire, and a mechanism for preventing re-creation of the same content. Usage analytics surface the information. Lifecycle governance determines what to do with it and records the outcome.</p>
+<h3 id="how-does-atlas-extend-the-analytics-catalog-layer">How does Atlas extend the analytics catalog layer?</h3>
+<p>Atlas provides the cross-platform analytics catalog: inventory, metadata, usage signals, and discovery across connected BI platforms, as well as the governance layer above it: certification workflows, current ownership tracking, lineage, and lifecycle management. Analysts searching in Atlas see governance context alongside catalog results. The inventory and the governance record are part of the same system, so catalog data can be acted on rather than only observed.</p>
+<h2 id="from-analytics-catalog-to-governed-analytics-estate">From Analytics Catalog to Governed Analytics Estate</h2>
+<p>An analytics catalog tells an organization what exists. A governed analytics estate establishes what can be trusted, who is accountable for it, and whether it should still be used.</p>
+<p>As analytics increasingly informs both human and AI-driven decisions, the next generation of analytics infrastructure will not be defined by how much metadata an organization can collect. It will be defined by whether that metadata is connected to the governance decisions that determine what the enterprise can trust and act upon.</p>
+<p>Atlas connects that inventory, context, and governance into an Analytics System of Record.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request an Atlas Demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-hallucinations-analytics-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-28" class="text-sm text-navy/70">August 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-hallucinations-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Why AI Hallucinations Are Governance Failures</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise AI analytics trust failures trace to one of four analytics governance failures, not model behavior.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/certified-metrics-ai-grounding/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-24" class="text-sm text-navy/70">August 24, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../certified-metrics-ai-grounding/" class="after:absolute after:inset-0 focus-visible:outline-none">Defined Is Not Certified</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Defining a metric and certifying one are different acts. Learn why only certified metrics are reliable AI grounding inputs, and what certification actually…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/report-discovery-not-enough/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-17" class="text-sm text-navy/70">August 17, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../report-discovery-not-enough/" class="after:absolute after:inset-0 focus-visible:outline-none">Finding a Report Is Not the Same as Trusting It</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Report discovery tells you what exists. Certification, ownership, and lifecycle governance tell you what to trust. Learn what discovery tools cannot provide.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

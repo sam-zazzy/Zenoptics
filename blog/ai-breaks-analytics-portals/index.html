@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Breaks Traditional Analytics Portals | ZenOptics</title>
+  <meta name="description" content="Analytics portal AI integration fails not because of AI limitations, but because the portal was never a context layer. Here is what AI actually needs.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/ai-breaks-analytics-portals/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why AI Breaks Traditional Analytics Portals | ZenOptics">
+  <meta property="og:description" content="Analytics portal AI integration fails not because of AI limitations, but because the portal was never a context layer. Here is what AI actually needs.">
+  <meta property="og:url" content="https://zenoptics.com/blog/ai-breaks-analytics-portals/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/ai-breaks-analytics-portals/cover.webp">
+  <meta property="article:published_time" content="2026-08-03">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why AI Breaks Traditional Analytics Portals", "datePublished": "2026-08-03", "description": "Analytics portal AI integration fails not because of AI limitations, but because the portal was never a context layer. Here is what AI actually needs.", "image": "https://zenoptics.com/assets/images/blog/ai-breaks-analytics-portals/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/ai-breaks-analytics-portals/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does AI fail on an analytics portal if the portal already has access controls?", "acceptedAnswer": {"@type": "Answer", "text": "Portal access controls determine which reports a user can see in the portal interface. They do not tell AI which version of a metric is authoritative, who owns each report, or where the data comes from. AI needs all three to return reliable answers. Access control is one dimension of governance, not the whole of it."}}, {"@type": "Question", "name": "What is the difference between data governance and analytics governance?", "acceptedAnswer": {"@type": "Answer", "text": "Data governance addresses the data layer: data quality, pipelines, schema management, and master data. Analytics governance addresses the report and KPI layer: which version of a metric is certified, who owns each report, what data feeds it, and who has access to it across BI tools. AI deployed on an analytics estate needs analytics governance specifically, because the failures it surfaces are at the report layer, not the data layer."}}, {"@type": "Question", "name": "What is an analytics system of record?", "acceptedAnswer": {"@type": "Answer", "text": "An analytics system of record is a governed inventory of the full analytics estate: all reports, metrics, and KPIs across connected BI tools, with certification status, ownership, lineage, and access policy maintained for each. It is the layer that makes AI on the analytics estate reliable by providing the context AI needs before surfacing any result."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why AI Breaks Traditional Analytics Portals</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-08-03">August 3, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/ai-breaks-analytics-portals/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-the-portal-was-designed-to-do" class="hover:underline">What the Portal Was Designed to Do</a></li>
+              <li><a href="#the-three-governance-gaps-ai-exposes" class="hover:underline">The Three Governance Gaps AI Exposes</a></li>
+              <li><a href="#what-ai-actually-needs-from-the-analytics-layer" class="hover:underline">What AI Actually Needs from the Analytics Layer</a></li>
+              <li><a href="#the-sequence-that-determines-whether-ai-works" class="hover:underline">The Sequence That Determines Whether AI Works</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#see-what-ai-ready-analytics-governance-looks-like" class="hover:underline">See What AI-Ready Analytics Governance Looks Like</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-the-portal-was-designed-to-do" class="hover:underline">What the Portal Was Designed to Do</a></li>
+              <li><a href="#the-three-governance-gaps-ai-exposes" class="hover:underline">The Three Governance Gaps AI Exposes</a></li>
+              <li><a href="#what-ai-actually-needs-from-the-analytics-layer" class="hover:underline">What AI Actually Needs from the Analytics Layer</a></li>
+              <li><a href="#the-sequence-that-determines-whether-ai-works" class="hover:underline">The Sequence That Determines Whether AI Works</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#see-what-ai-ready-analytics-governance-looks-like" class="hover:underline">See What AI-Ready Analytics Governance Looks Like</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>The AI copilot is live. It can answer questions across the analytics estate in seconds—but only if it understands which reports, metrics, and KPIs it can trust. In the first weeks, it impresses. Then the failures start. The copilot surfaces a revenue report deprecated eight months ago. It returns two different figures for the same quarterly metric, because it found two versions in two different BI tools and had no way to determine which was authoritative. It returns a result that includes data a user&#x27;s role should not be able to see, because the portal does not hold a unified access model: each connected BI tool enforces its own permissions independently.</p>
+<p>These are not AI hallucinations. They are governance failures exposed by AI. The AI found real content in the analytics estate. The problem is that the estate it searched has no certified layer: no record of which report version is authoritative, no lineage tracing which data feeds which metric, no consolidated access policy the AI can check before surfacing a result. The portal was designed to present what is there. AI needs to know what is trustworthy, traceable, and permissioned, and no traditional analytics portal, homegrown or commercial, was built to provide that.</p>
+<h2 id="what-the-portal-was-designed-to-do">What the Portal Was Designed to Do</h2>
+<p>Traditional analytics portals were designed to help people discover reports—not to provide AI with trusted business context. It connects to BI tools, applies access rules through those integrations, and presents a searchable interface. For human-guided navigation, this architecture works. A user who opens a revenue dashboard exercises judgment. If they find two versions of the same metric, they know to ask the owning team which one to trust. If a report looks outdated, they can escalate.</p>
+<p>AI does not have that judgment, and it cannot escalate. It requires certified versus deprecated status, report ownership, lineage, and unified access policy to be present as structured data in the systems it queries. The portal was not designed to hold or serve this context. It was designed to display what exists, not to distinguish what is authoritative.</p>
+<p>As organizations embed copilots and AI agents into analytics workflows, this architectural boundary becomes impossible to ignore. As covered in <a href="../analytics-portal-governance-layer/">Why Modern Analytics Portals Fail Without a Governance Layer</a>, the display layer and the governance layer are architecturally separate functions. When the only users were humans, the absence of a governance layer created friction and inconsistency. When the user is AI, that absence creates answers that are actively wrong and delivered with confidence.</p>
+<h2 id="the-three-governance-gaps-ai-exposes">The Three Governance Gaps AI Exposes</h2>
+<p>Governance gaps have always existed. AI simply exposes them at enterprise scale.</p>
+<p>The first is the absence of certified truth. The analytics estate typically holds multiple versions of the same metric across connected BI tools. A quarterly revenue figure may exist in Tableau, Power BI, and a homegrown report, each fed by a different query, each last updated at a different time. A human user can ask which one to trust. AI cannot. Without a certification layer that marks the authoritative version, AI surfaces whatever it finds first or ranks highest. That may be a deprecated report, a duplicate, or a version that the owning team has already flagged for retirement.</p>
+<p>The second gap is lineage. When AI returns an answer, the value of that answer depends on its provenance. &quot;Revenue is $4.2M&quot; is an answer. &quot;Revenue is $4.2M, sourced from the March close report in Tableau, last refreshed 2026-07-15, owned by the Finance Analytics team&quot; is a trustworthy answer. Lineage is not stored in the portal. It requires a governed inventory that tracks which data source feeds which report, who owns it, and when it was last validated.</p>
+<p>The third gap is unified access context. Each BI tool connected to the portal enforces its own access model. The portal presents a unified surface, but it does not hold a consolidated record of what each user is permitted to see across all connected platforms. When AI searches across the estate and returns a result, it may be surfacing content from a platform where the requesting user&#x27;s access was never established, was revoked in one tool but not reflected across the others, or was granted with access scope that the user&#x27;s role was never meant to provide.</p>
+<p>These are not AI problems, and they are not data governance problems. Data governance addresses quality, lineage, and schema at the data layer. What AI exposes on an analytics portal are failures at the report and KPI layer: which version of a metric is authoritative, who owns it, and what access rules apply across connected BI tools. That is analytics governance, and it is a function that the portal was never designed to provide. As <a href="../intranet-vs-analytics-portal/">Your Intranet Isn&#x27;t Your Analytics Portal</a> establishes, each layer of the analytics architecture has a defined function. AI deployment makes the absence of a governance layer visible in a way that is hard to defer.</p>
+<h2 id="what-ai-actually-needs-from-the-analytics-layer">What AI Actually Needs from the Analytics Layer</h2>
+<p>The framing that AI needs a smarter search interface or a better query layer misses the structural problem. AI needs a governed context layer.</p>
+<p>A governed context layer provides capabilities the portal does not. A certified report registry tells AI, before returning any result, whether a report is certified, who owns it, and whether it is still active. Lineage context lets AI trace and disclose the provenance of any answer: where the data comes from, when it was last refreshed, and who is accountable for it. Access policy is maintained in the governance layer rather than distributed across individual BI tools, so AI checks permissions from a single source before surfacing any result, regardless of which connected platform holds the underlying report.</p>
+<p>AI is only as reliable as the business context surrounding the analytics it consumes. Without that context, faster answers simply mean faster mistakes.</p>
+<p>This is where an Analytics System of Record becomes essential. <a href="../../atlas/">Atlas</a> maintains the governed inventory across connected BI platforms, tracking certification status, ownership, lineage, and lifecycle state through direct integrations with each platform. <a href="../../nexus/">Nexus</a> is the AI context layer built on top of Atlas. It makes the governed inventory consumable for AI agents, copilots, and natural-language query interfaces, so that responses are grounded in certified, traceable, access-aware context rather than raw search results across an ungoverned estate.</p>
+<h2 id="the-sequence-that-determines-whether-ai-works">The Sequence That Determines Whether AI Works</h2>
+<p>Whether AI on the analytics estate delivers reliable results or accelerates the trust problem depends almost entirely on what it has access to when it searches.</p>
+<p>AI deployed on an ungoverned estate produces unreliable answers at speed. The pilot phase often masks this, because pilot evaluations use clean, well-known reports chosen by the team running the pilot. Production exposes the real analytics estate—duplicate reports, conflicting KPIs, inconsistent ownership, and fragmented governance. By the time the trust problem surfaces in production, the AI initiative has already delivered wrong answers to stakeholders who acted on them.</p>
+<p>AI doesn&#x27;t become trustworthy because the model improves. It becomes trustworthy because the context improves. When AI operates on a governed analytics system of record, it knows which version of a metric is authoritative, where the data comes from, and what each user is permitted to access before returning an answer.</p>
+<p>The governance layer does not need to be complete before AI is introduced. What matters is that the AI initiative and the governance initiative are treated as a sequenced pair, not as independent workstreams. Organizations that treat them separately consistently find that governance becomes urgent only after the AI initiative has already eroded trust in the analytics estate. <a href="../modernizing-homegrown-analytics-portals/">Modernizing Homegrown Analytics Portals</a> covers the transition architecture for organizations running governance and AI initiatives in parallel.</p>
+<p>Analytics portals help users find reports. Analytics governance helps AI trust them. As enterprises adopt AI at scale, separating these responsibilities is no longer optional.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="why-does-ai-fail-on-an-analytics-portal-if-the-portal-already-has-access-control">Why does AI fail on an analytics portal if the portal already has access controls?</h3>
+<p>Portal access controls determine which reports a user can see in the portal interface. They do not tell AI which version of a metric is authoritative, who owns each report, or where the data comes from. AI needs all three to return reliable answers. Access control is one dimension of governance, not the whole of it.</p>
+<h3 id="what-is-the-difference-between-data-governance-and-analytics-governance">What is the difference between data governance and analytics governance?</h3>
+<p>Data governance addresses the data layer: data quality, pipelines, schema management, and master data. Analytics governance addresses the report and KPI layer: which version of a metric is certified, who owns each report, what data feeds it, and who has access to it across BI tools. AI deployed on an analytics estate needs analytics governance specifically, because the failures it surfaces are at the report layer, not the data layer.</p>
+<h3 id="what-is-an-analytics-system-of-record">What is an analytics system of record?</h3>
+<p>An analytics system of record is a governed inventory of the full analytics estate: all reports, metrics, and KPIs across connected BI tools, with certification status, ownership, lineage, and access policy maintained for each. It is the layer that makes AI on the analytics estate reliable by providing the context AI needs before surfacing any result.</p>
+<h2 id="see-what-ai-ready-analytics-governance-looks-like">See What AI-Ready Analytics Governance Looks Like</h2>
+<p>ZenOptics Atlas builds a governed inventory across your existing BI tools, without replacing them. Nexus makes that inventory available to AI agents and copilots so that every answer is grounded in certified, traceable context.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request a demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/bi-tool-sprawl-cost/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-10" class="text-sm text-navy/70">August 10, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../bi-tool-sprawl-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of BI Tool Sprawl</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most large enterprises know they have BI tool sprawl. Power BI in finance. Tableau in marketing. SAP BusinessObjects in operations.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/cross-tool-bi-inventory/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-07" class="text-sm text-navy/70">August 7, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../cross-tool-bi-inventory/" class="after:absolute after:inset-0 focus-visible:outline-none">Your BI Tools Govern Themselves. But Who Governs the Analytics Estate?</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Individual BI tools govern their own content, but enterprise analytics governance requires a unified inventory across the entire analytics estate.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-system-of-record/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-31" class="text-sm text-navy/70">July 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-system-of-record/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Every Enterprise Needs an Analytics System of Record</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

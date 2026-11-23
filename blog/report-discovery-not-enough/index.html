@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding a Report Is Not the Same as Trusting It | ZenOptics</title>
+  <meta name="description" content="Report discovery tells you what exists. Certification, ownership, and lifecycle governance tell you what to trust. Learn what discovery tools cannot provide.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/report-discovery-not-enough/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Finding a Report Is Not the Same as Trusting It | ZenOptics">
+  <meta property="og:description" content="Report discovery tells you what exists. Certification, ownership, and lifecycle governance tell you what to trust. Learn what discovery tools cannot provide.">
+  <meta property="og:url" content="https://zenoptics.com/blog/report-discovery-not-enough/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/report-discovery-not-enough/cover.webp">
+  <meta property="article:published_time" content="2026-08-17">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Finding a Report Is Not the Same as Trusting It", "datePublished": "2026-08-17", "description": "Report discovery tells you what exists. Certification, ownership, and lifecycle governance tell you what to trust. Learn what discovery tools cannot provide.", "image": "https://zenoptics.com/assets/images/blog/report-discovery-not-enough/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/report-discovery-not-enough/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between report discovery and analytics governance?", "acceptedAnswer": {"@type": "Answer", "text": "Report discovery answers whether a report exists and where to find it. Analytics governance determines whether that report is certified, who is accountable for it, whether it should continue to exist, and what lifecycle decisions have been recorded about it. Discovery and governance are complementary. Discovery without governance context returns a list of results. Governed discovery returns results with the information needed to act on them."}}, {"@type": "Question", "name": "Why do analysts keep building new reports even when a discovery tool is in place?", "acceptedAnswer": {"@type": "Answer", "text": "The most common cause is the certification gap. When a discovery tool returns results without certification status, analysts have no reliable way to determine whether the reports they found are authoritative. Rather than verify each result manually, many default to building from a known trusted source. Governed discovery addresses this by surfacing certification status in search results, which gives analysts a basis for trusting what the catalog returns."}}, {"@type": "Question", "name": "Can a data catalog provide the governance context that discovery tools lack?", "acceptedAnswer": {"@type": "Answer", "text": "Data catalogs are built primarily for data assets: tables, schemas, pipelines, and data sets. When they index BI reports, they typically surface inventory metadata and usage signals, not analytics-specific governance context such as report certification status, cross-platform ownership accountability, or governed retirement workflows. An Analytics System of Record is designed for the analytics estate and the governance layer it requires."}}, {"@type": "Question", "name": "What does governed discovery look like in practice?", "acceptedAnswer": {"@type": "Answer", "text": "In a governed discovery environment, an analyst searching for a revenue report sees results that include certification status, current owner, last governance review date, usage count and pattern, lineage status, and lifecycle disposition. The analyst can identify which result is the certified authoritative version, who to contact with questions, and whether any results are retirement candidates. The search result is actionable rather than a starting point for a separate verification process."}}, {"@type": "Question", "name": "How does Atlas support governed discovery across BI platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Atlas connects to Power BI, Tableau, SAP BusinessObjects, Qlik, and other platforms through 100+ Smart Connectors and maintains a governed cross-platform inventory with certification, ownership, lineage, and usage context for each asset. Analysts searching across the estate see governance context alongside inventory results. The governed record also helps prevent duplicate report recreation by making existing certified content visible and trustworthy at the point of search."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Finding a Report Is Not the Same as Trusting It</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-08-17">August 17, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/report-discovery-not-enough/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-report-discovery-does-and-where-it-stops" class="hover:underline">What Report Discovery Does and Where It Stops</a></li>
+              <li><a href="#the-three-gaps-discovery-leaves-open" class="hover:underline">The Three Gaps Discovery Leaves Open</a></li>
+              <li><a href="#what-governed-discovery-requires" class="hover:underline">What Governed Discovery Requires</a></li>
+              <li><a href="#how-an-analytics-system-of-record-provides-the-governance-layer" class="hover:underline">How an Analytics System of Record Provides the Governance Layer</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#discovery-tells-you-what-exists-governance-tells-you-what-to-trust" class="hover:underline">Discovery Tells You What Exists. Governance Tells You What to Trust.</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-report-discovery-does-and-where-it-stops" class="hover:underline">What Report Discovery Does and Where It Stops</a></li>
+              <li><a href="#the-three-gaps-discovery-leaves-open" class="hover:underline">The Three Gaps Discovery Leaves Open</a></li>
+              <li><a href="#what-governed-discovery-requires" class="hover:underline">What Governed Discovery Requires</a></li>
+              <li><a href="#how-an-analytics-system-of-record-provides-the-governance-layer" class="hover:underline">How an Analytics System of Record Provides the Governance Layer</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#discovery-tells-you-what-exists-governance-tells-you-what-to-trust" class="hover:underline">Discovery Tells You What Exists. Governance Tells You What to Trust.</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>The analytics search problem has been largely solved. Enterprises running Power BI, Tableau, SAP BusinessObjects, and Qlik can now surface report inventories, index metadata, and return analytics report discovery results across platforms in a single interface. An analyst looking for a revenue dashboard no longer needs to log into four separate BI tools. The catalog finds it.</p>
+<p>The trust problem has not been solved. Finding a report tells an analyst that it exists. It does not tell them whether it is certified, who is responsible for its accuracy, whether the version they found is the authoritative one among three near-identical copies, whether the data lineage is current, or whether the report is a candidate for retirement that the governance team has not yet acted on. Discovery surfaces the inventory. Governance determines what to do with it.</p>
+<h2 id="what-report-discovery-does-and-where-it-stops">What Report Discovery Does and Where It Stops</h2>
+<p>Report discovery tools solve the inventory problem. They index reports, dashboards, and KPIs across platforms and return search results against natural language or keyword queries. When an analyst needs a sales report, a well-implemented discovery layer can surface relevant content from Power BI, Tableau, and SAP BusinessObjects without requiring the analyst to know which platform contains the answer.</p>
+<p>Good discovery tools surface more than names and locations. They capture usage signals: how often a report is accessed, when it was last viewed, and how many users interact with it. This is meaningful context. A report that nobody has opened in two years tells a different story than one accessed by forty people every Monday morning.</p>
+<p>But usage signals are not the same as governance context. A discovery tool can tell an analyst that a report exists and that it was accessed fifty times last month. It cannot tell them whether anyone has validated that the numbers are correct. It cannot tell them whether the metric definitions in that report match the definitions the finance organization treats as authoritative. And it cannot tell them whether the owner who built that report still works at the company, or whether the underlying data source was restructured three months ago.</p>
+<p>The question discovery answers is whether a report exists for a given business question. The questions it cannot answer are: Is this the right version? Is it certified? Who is responsible if the numbers are wrong?</p>
+<h2 id="the-three-gaps-discovery-leaves-open">The Three Gaps Discovery Leaves Open</h2>
+<p>In practice, three governance gaps consistently appear in organizations that have implemented analytics discovery without a governance layer above it.</p>
+<p>The first is the certification gap. Discovery surfaces reports; it cannot identify which have been validated as authoritative by a governance authority. Without certification status visible in search results, analysts face a decision every time they find a report: invest time verifying whether the content is accurate, or use it without verification and accept the risk that the numbers are wrong. Many organizations find that their analysts default to a third path, building a new report from a known, trusted data source rather than using what the catalog surfaced. The catalog reduced search time. It did not reduce the recreation rate, because the underlying trust problem was never addressed.</p>
+<p>The second is the ownership gap. Every report in a discovery index has a creator. That creator may have left the organization six months ago. Discovery tools surface creation metadata, not current governance accountability. When an analyst finds a report and has a question about whether the underlying data source has changed, there may be no one to contact. The owner is gone and no succession was recorded anywhere the discovery tool can surface. Accountability requires an original creator and a governance system that maintains ownership records as the organization changes.</p>
+<p>The third is the lifecycle gap. Discovery is a point-in-time search against the current inventory. It has no mechanism for identifying which reports are candidates for retirement, which are under active governance review, or which have been superseded by a newer certified version. The inventory grows because reports are easy to create. The governance layer that manages the inventory&#x27;s lifecycle does not exist inside the discovery tool. Content accumulates, and analysts searching for a report encounter an expanding result set without any signal about which assets are current and which belong to the past.</p>
+<h2 id="what-governed-discovery-requires">What Governed Discovery Requires</h2>
+<p>Governed discovery is discovery with governance context provided alongside the search result. When an analyst searches for a revenue dashboard, governed discovery surfaces the report&#x27;s inventory entry and its governance status together.</p>
+<p>That means certification status: whether a governance authority has validated this report as authoritative, and when that validation last occurred. It means ownership: who is currently accountable for the report&#x27;s accuracy and when they last reviewed it. It means usage context: how many people in which teams are actively relying on this report, and what that usage pattern suggests about operational dependency. It means lineage: whether the report connects to certified data sources or whether there are breaks in the chain between the report and the underlying data it claims to represent. And it means lifecycle status: whether this report is current, under governance review, or a retirement candidate that the organization has not yet formalized a decision on.</p>
+<p>These are not additional fields that can be appended to a search index. They are the product of governance processes, including certification workflows, ownership assignment, lineage tracking, and retirement procedures, that must exist organizationally before they can surface in search results. Discovery tools show what exists. Governance processes determine the status of each item.</p>
+<h2 id="how-an-analytics-system-of-record-provides-the-governance-layer">How an Analytics System of Record Provides the Governance Layer</h2>
+<p><a href="../../atlas/">Atlas</a>, the ZenOptics <a href="../analytics-system-of-record/">Analytics System of Record</a>, provides the cross-platform inventory and the governance context, including certification status, ownership records, lineage, usage, and lifecycle management, above all connected BI platforms.</p>
+<p>Where a discovery tool indexes what exists, Atlas maintains the governed record of what governance status each asset holds within the organization&#x27;s framework. Analysts searching for a report in Atlas see which versions are certified, who currently owns each, what the usage pattern looks like, and whether the lifecycle status is current or under review. The inventory and the governance context are the same system.</p>
+<p>Atlas does not replace the organization&#x27;s decision-making process. It provides the visibility and governance workflows needed to make that process informed, accountable, and repeatable.</p>
+<p>The <a href="../cross-tool-bi-inventory/">cross-tool BI inventory</a> Atlas maintains addresses the recreation problem at the point it begins. When an analyst looks for an existing certified report before building something new, governed discovery surfaces authoritative content across all connected platforms, with certification status and owner contact visible. Analysts build new reports when there is a genuine gap, not because they could not trust what the search returned.</p>
+<p><a href="../analytics-sprawl-cost/">The cost of ungoverned analytics sprawl</a> accumulates across Power BI, Tableau, SAP BusinessObjects, Qlik, and any other platform in the estate. <a href="../bi-tool-sprawl-cost/">The cost of BI tool sprawl</a> runs in parallel when duplicate and stale content crosses platform boundaries without a governance layer above them. Atlas connects to existing BI and analytics environments through 100+ Smart Connectors, maintaining the cross-platform inventory without requiring consolidation of tooling.</p>
+<p>Governed discovery does not replace the organization&#x27;s analytics experience. It provides the governance context that makes search results actionable, so that finding a report is the point at which a trust decision can actually be made.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-report-discovery-and-analytics-governance">What is the difference between report discovery and analytics governance?</h3>
+<p>Report discovery answers whether a report exists and where to find it. Analytics governance determines whether that report is certified, who is accountable for it, whether it should continue to exist, and what lifecycle decisions have been recorded about it. Discovery and governance are complementary. Discovery without governance context returns a list of results. Governed discovery returns results with the information needed to act on them.</p>
+<h3 id="why-do-analysts-keep-building-new-reports-even-when-a-discovery-tool-is-in-place">Why do analysts keep building new reports even when a discovery tool is in place?</h3>
+<p>The most common cause is the certification gap. When a discovery tool returns results without certification status, analysts have no reliable way to determine whether the reports they found are authoritative. Rather than verify each result manually, many default to building from a known trusted source. Governed discovery addresses this by surfacing certification status in search results, which gives analysts a basis for trusting what the catalog returns.</p>
+<h3 id="can-a-data-catalog-provide-the-governance-context-that-discovery-tools-lack">Can a data catalog provide the governance context that discovery tools lack?</h3>
+<p>Data catalogs are built primarily for data assets: tables, schemas, pipelines, and data sets. When they index BI reports, they typically surface inventory metadata and usage signals, not analytics-specific governance context such as report certification status, cross-platform ownership accountability, or governed retirement workflows. An Analytics System of Record is designed for the analytics estate and the governance layer it requires.</p>
+<h3 id="what-does-governed-discovery-look-like-in-practice">What does governed discovery look like in practice?</h3>
+<p>In a governed discovery environment, an analyst searching for a revenue report sees results that include certification status, current owner, last governance review date, usage count and pattern, lineage status, and lifecycle disposition. The analyst can identify which result is the certified authoritative version, who to contact with questions, and whether any results are retirement candidates. The search result is actionable rather than a starting point for a separate verification process.</p>
+<h3 id="how-does-atlas-support-governed-discovery-across-bi-platforms">How does Atlas support governed discovery across BI platforms?</h3>
+<p>Atlas connects to Power BI, Tableau, SAP BusinessObjects, Qlik, and other platforms through 100+ Smart Connectors and maintains a governed cross-platform inventory with certification, ownership, lineage, and usage context for each asset. Analysts searching across the estate see governance context alongside inventory results. The governed record also helps prevent <a href="../duplicate-reports-elimination/">duplicate report recreation</a> by making existing certified content visible and trustworthy at the point of search.</p>
+<h2 id="discovery-tells-you-what-exists-governance-tells-you-what-to-trust">Discovery Tells You What Exists. Governance Tells You What to Trust.</h2>
+<p>Atlas provides the governance layer that makes analytics discovery actionable: certification status, ownership accountability, usage context, lineage, and lifecycle management across every BI platform in your estate.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request an Atlas Demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/certified-metrics-ai-grounding/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-24" class="text-sm text-navy/70">August 24, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../certified-metrics-ai-grounding/" class="after:absolute after:inset-0 focus-visible:outline-none">Defined Is Not Certified</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Defining a metric and certifying one are different acts. Learn why only certified metrics are reliable AI grounding inputs, and what certification actually…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-catalogs-beyond-metadata/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-21" class="text-sm text-navy/70">August 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-catalogs-beyond-metadata/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Analytics Catalogs Must Go Beyond Metadata</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/duplicate-reports-elimination/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-14" class="text-sm text-navy/70">August 14, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../duplicate-reports-elimination/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Rationalize Duplicate Reports</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Duplicate detection finds the overlap. Governed elimination decides which version survives and prevents re-creation across Power BI, Tableau, SAP BO, and Qlik.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

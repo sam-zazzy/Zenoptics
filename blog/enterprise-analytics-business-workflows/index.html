@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Boardroom Questions to Business Action: A CIO’s Analytics Playbook | ZenOptics</title>
+  <meta name="description" content="Connect boardroom priorities with recurring business decisions. A CIO playbook for trusted analytics, clear ownership and practical workflows.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/enterprise-analytics-business-workflows/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="From Boardroom Questions to Business Action: A CIO’s Analytics Playbook | ZenOptics">
+  <meta property="og:description" content="Connect boardroom priorities with recurring business decisions. A CIO playbook for trusted analytics, clear ownership and practical workflows.">
+  <meta property="og:url" content="https://zenoptics.com/blog/enterprise-analytics-business-workflows/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/enterprise-analytics-business-workflows/cover.webp">
+  <meta property="article:published_time" content="2026-10-26">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "From Boardroom Questions to Business Action: A CIO’s Analytics Playbook", "datePublished": "2026-10-26", "description": "Connect boardroom priorities with recurring business decisions. A CIO playbook for trusted analytics, clear ownership and practical workflows.", "image": "https://zenoptics.com/assets/images/blog/enterprise-analytics-business-workflows/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/enterprise-analytics-business-workflows/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an enterprise analytics workflow?", "acceptedAnswer": {"@type": "Answer", "text": "It is a repeatable process that connects analytics evidence with a defined business decision, its owner and the action or review that follows."}}, {"@type": "Question", "name": "Which process should be selected first?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a recurring decision with accessible evidence, a willing owner and a manageable consequence. A process with visible handoff effort is often easier to evaluate."}}, {"@type": "Question", "name": "Does every workflow need AI?", "acceptedAnswer": {"@type": "Answer", "text": "No. Use AI where interpretation or preparation benefits from it. Rules and ordinary workflow steps may be more suitable for predictable tasks."}}, {"@type": "Question", "name": "How should success be assessed?", "acceptedAnswer": {"@type": "Answer", "text": "Evaluate evidence quality, review effort, completed actions and the relevant business outcome separately. Use the baseline and explain other factors that may influence results."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">From Boardroom Questions to Business Action: A CIO’s Analytics Playbook</h1>
+        <p class="mt-4 max-w-3xl text-lg text-white/90">Practical workflows for finance revenue and operations</p>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-26">October 26, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/enterprise-analytics-business-workflows/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-capability-the-cio-should-sponsor" class="hover:underline">The capability the CIO should sponsor</a></li>
+              <li><a href="#select-a-decision-with-an-owner-and-a-rhythm" class="hover:underline">Select a decision with an owner and a rhythm</a></li>
+              <li><a href="#write-a-decision-brief-before-building-automation" class="hover:underline">Write a decision brief before building automation</a></li>
+              <li><a href="#create-an-evidence-menu-for-each-decision" class="hover:underline">Create an evidence menu for each decision</a></li>
+              <li><a href="#distinguish-the-measure-from-its-interpretation" class="hover:underline">Distinguish the measure from its interpretation</a></li>
+              <li><a href="#use-a-compact-workflow-record" class="hover:underline">Use a compact workflow record</a></li>
+              <li><a href="#choose-where-ai-assistance-belongs" class="hover:underline">Choose where AI assistance belongs</a></li>
+              <li><a href="#design-the-meeting-around-decisions-and-exceptions" class="hover:underline">Design the meeting around decisions and exceptions</a></li>
+              <li><a href="#connect-the-review-with-practical-execution" class="hover:underline">Connect the review with practical execution</a></li>
+              <li><a href="#review-outcomes-with-the-right-comparison" class="hover:underline">Review outcomes with the right comparison</a></li>
+              <li><a href="#expand-through-a-shared-operating-pattern" class="hover:underline">Expand through a shared operating pattern</a></li>
+              <li><a href="#make-the-first-workflow-easy-to-evaluate" class="hover:underline">Make the first workflow easy to evaluate</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-capability-the-cio-should-sponsor" class="hover:underline">The capability the CIO should sponsor</a></li>
+              <li><a href="#select-a-decision-with-an-owner-and-a-rhythm" class="hover:underline">Select a decision with an owner and a rhythm</a></li>
+              <li><a href="#write-a-decision-brief-before-building-automation" class="hover:underline">Write a decision brief before building automation</a></li>
+              <li><a href="#create-an-evidence-menu-for-each-decision" class="hover:underline">Create an evidence menu for each decision</a></li>
+              <li><a href="#distinguish-the-measure-from-its-interpretation" class="hover:underline">Distinguish the measure from its interpretation</a></li>
+              <li><a href="#use-a-compact-workflow-record" class="hover:underline">Use a compact workflow record</a></li>
+              <li><a href="#choose-where-ai-assistance-belongs" class="hover:underline">Choose where AI assistance belongs</a></li>
+              <li><a href="#design-the-meeting-around-decisions-and-exceptions" class="hover:underline">Design the meeting around decisions and exceptions</a></li>
+              <li><a href="#connect-the-review-with-practical-execution" class="hover:underline">Connect the review with practical execution</a></li>
+              <li><a href="#review-outcomes-with-the-right-comparison" class="hover:underline">Review outcomes with the right comparison</a></li>
+              <li><a href="#expand-through-a-shared-operating-pattern" class="hover:underline">Expand through a shared operating pattern</a></li>
+              <li><a href="#make-the-first-workflow-easy-to-evaluate" class="hover:underline">Make the first workflow easy to evaluate</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>A board asks which growth priorities deserve more investment. An operating leader asks where capacity should move next week. The CIO’s opportunity is to make the evidence behind both decisions easier to find, interpret and use. That requires a repeatable connection between analytics and the business processes that depend on it.</p>
+<p>An enterprise analytics workflow supplies that connection. It specifies the business question, the evidence participants need, the accountable decision owner and the action or review that follows. For the CIO, the investment choice is how to establish a shared capability that different functions can use while keeping authority with the appropriate business leaders.</p>
+<p>This playbook shows how to sponsor that capability through a manageable first workflow. Finance, revenue and operations provide the practical settings. The CIO sets the enterprise requirements for evidence, access, interoperability and maintainability. The goal is a useful operating process whose value can be assessed through completed work and business review.</p>
+<h2 id="the-capability-the-cio-should-sponsor">The capability the CIO should sponsor</h2>
+<p>Select a business process that senior leaders already recognize and agree the outcome with its executive owner. Commission a reusable pattern for identifying evidence, applying access controls and recording the approved action. Let the process owner determine the business choice, with analytics teams accountable for the information service.</p>
+<p>Before expanding, ask whether another function could use the same pattern without rebuilding its basic controls. Review where local definitions and authority must remain different. That balance lets the CIO develop an enterprise capability while keeping the initial commitment small enough to evaluate.</p>
+<h2 id="select-a-decision-with-an-owner-and-a-rhythm">Select a decision with an owner and a rhythm</h2>
+<p>Start with a recurring decision that has recognizable participants. Examples include allocating service capacity, reviewing commercial exceptions or preparing a quarterly revenue discussion. The process should occur often enough for the team to observe and improve it.</p>
+<p>Name the person accountable for the decision, rather than assigning ownership to the dashboard alone. A BI developer may maintain the report, while an operations manager decides whether to add capacity. Both responsibilities belong in the design.</p>
+<p>Describe what the process is expected to produce. It might result in an approved allocation, a list of exceptions needing investigation or a decision to maintain the current plan. That last outcome is valid when the evidence supports it. A useful workflow does not require a change every time it runs.</p>
+<h2 id="write-a-decision-brief-before-building-automation">Write a decision brief before building automation</h2>
+<p>A short brief helps participants agree on the process. State the trigger, the decision deadline, the scope and the authority required. Identify the business outcome that the process can reasonably influence.</p>
+<p>For a service capacity review, the trigger might be a sustained demand increase. The decision concerns next week’s staffing, while customer satisfaction is a later outcome affected by several factors. Separating those elements prevents the team from attributing every change in satisfaction to the review itself.</p>
+<p>Gartner’s conference topics connect AI and technology strategy with enterprise outcomes. Applying that perspective here means describing the management choice before selecting the technology that will assist it.</p>
+<h2 id="create-an-evidence-menu-for-each-decision">Create an evidence menu for each decision</h2>
+<p>An evidence menu is a short list of the reports and measures participants need. For each item, record the owner, reporting period and conditions of use. Include the operational detail needed to understand exceptions, rather than adding every dashboard the department produces.</p>
+<p>Ask reviewers what would cause them to question a result. They may need to know whether a period is complete, whether a newly acquired business is included or whether a staffing figure contains temporary workers. Make those conditions visible next to the evidence.</p>
+<p>ZenOptics Atlas supports analytics inventory and certification. Those capabilities can help a process owner identify suitable assets across the BI estate. The enterprise still defines the review criteria for each business purpose.</p>
+<h2 id="distinguish-the-measure-from-its-interpretation">Distinguish the measure from its interpretation</h2>
+<p>A measure records something. An interpretation explains its significance for a decision. Rising service demand might justify additional capacity, but it could also reflect a temporary event or a change in how work is recorded.</p>
+<p>Give participants a way to record explanations with their supporting evidence. Mark uncertain explanations as hypotheses and identify who can validate them. This preserves the value of expert judgment without turning an untested assumption into an accepted cause.</p>
+<p>ZenOptics Nexus organizes business context from governed analytics metadata. In a workflow, that context helps clarify which definition and business relationship apply. It does not remove the need to evaluate the proposed explanation.</p>
+<h2 id="use-a-compact-workflow-record">Use a compact workflow record</h2>
+<p>The following template gives the team a common starting point. Complete it for one recurring process before creating a library of workflows.</p>
+<p>Include a link to the evidence and the relevant version or reporting snapshot where permitted. W3C’s provenance overview provides general concepts for relating information to the activities and people behind it. The template is an original application, not a W3C prescribed business process.</p>
+<h2 id="choose-where-ai-assistance-belongs">Choose where AI assistance belongs</h2>
+<p>Break the work into activities before deciding which ones benefit from AI. An assistant may help assemble relevant reports, draft a summary or identify questions for review. A deterministic rule may be more suitable for a straightforward threshold calculation.</p>
+<p>Keep approvals aligned with business authority. Preparing an internal briefing differs from changing a customer commitment or allocating a material budget. The process should specify what the assistant may prepare and what a named person must authorize.</p>
+<p>NIST’s AI Risk Management Framework offers a voluntary risk reference. Use it to inform the assessment of the assisted process, with tests appropriate to the evidence and actions involved. An accurate summary on routine examples is only part of that assessment.</p>
+<h2 id="design-the-meeting-around-decisions-and-exceptions">Design the meeting around decisions and exceptions</h2>
+<p>Distribute the evidence before the meeting when possible. Ask participants to flag questions that could change the decision. Reserve discussion time for those questions, the available options and the implications of choosing among them.</p>
+<p>Record unresolved issues with an owner and a next step. If a measure needs reconciliation, the record should say who will resolve it and whether the decision can proceed in a narrower scope. This makes uncertainty manageable instead of forcing premature agreement.</p>
+<p>For a quarterly revenue discussion, the supporting QBR article provides an agenda and preparation sequence. For operational financial exceptions, the margin review article develops a different cadence and approval pattern. These are separate workflow designs that can share the same evidence discipline.</p>
+<h2 id="connect-the-review-with-practical-execution">Connect the review with practical execution</h2>
+<p>An action record should identify what was approved, who owns it and when it will be reviewed. Link the action to the evidence considered so a later reviewer understands the original conditions.</p>
+<p>ZenOptics Maestro supports structured analytical workflows and decision provenance. Its public workflow examples include quarterly review preparation and financial processes. Specific configurations and integrations need to be evaluated for the intended environment.</p>
+<p>Use the workflow to preserve business responsibility as work moves between teams. If a finance review creates an operations task, the receiving owner should understand the decision and its limits. A dashboard link alone may not communicate the approved scope.</p>
+<h2 id="review-outcomes-with-the-right-comparison">Review outcomes with the right comparison</h2>
+<p>At the next cycle, compare the action with its intended effect. Was the allocation implemented? Did the exception receive the promised investigation? Did a temporary adjustment remain appropriate when conditions changed?</p>
+<p>Keep process performance separate from business outcomes. Timely reviews and completed actions indicate whether the workflow operates as designed. Revenue, margin and service outcomes require additional interpretation because other events may influence them.</p>
+<p>GAO’s AI accountability framework includes performance and monitoring in its organizing principles. For an assisted workflow, this supports maintaining an ongoing review rather than treating launch approval as the final management decision.</p>
+<h2 id="expand-through-a-shared-operating-pattern">Expand through a shared operating pattern</h2>
+<p>After several cycles, identify which parts are reusable. The evidence record, ownership fields and escalation process may apply across departments. The measures, consequences and decision rights will usually require local review.</p>
+<p>Give new process owners a completed example and the blank template. Ask them to explain how their decision differs before copying the workflow. A procurement review and a service capacity decision can share a structure while requiring different evidence and authority.</p>
+<p>Maintain the foundational reading already available on the website. The article on decision speed and trusted analytics explains the importance of dependable evidence. This playbook adds the operating steps that connect that evidence to recurring management work.</p>
+<h2 id="make-the-first-workflow-easy-to-evaluate">Make the first workflow easy to evaluate</h2>
+<p>Test one ordinary handoff in which the usual owner is unavailable. Give a designated colleague the evidence and decision record, then ask what remains unclear. The exercise can reveal missing assumptions, undocumented permissions or a task that depends on a private explanation. Add the necessary context to the maintained workflow and confirm who may act as the delegate. This makes the process easier to sustain as teams change, while preserving the original decision authority. Review the delegation arrangement when roles change rather than assuming that the first substitute remains appropriate indefinitely.</p>
+<p>Choose a scope that users can recognize and a process owner who will participate. Keep the first version simple enough that reviewers can explain how it works without an implementation specialist present. Ask them to identify where judgment is still required.</p>
+<p>Run the proposed workflow alongside the established process until the owner has sufficient evidence to change the operating approach. Capture the differences, including any useful human steps the initial design overlooked. Expansion should follow observed usefulness and maintainability.</p>
+<p>A practical starting conversation brings together one business owner, an analytics lead and the people who carry out the resulting actions. Ask each person what information and authority they need at the handoff. Contact ZenOptics to explore how analytics inventory, business context and structured workflows could support that process.</p>
+<h2 id="the-cio-action-agenda">The CIO action agenda</h2>
+<p>For the CIO, the first commitment is to one executive-sponsored workflow and the shared information requirements it will test. Name the business owner, fund the necessary analytics work and set an expansion review after several operating cycles. Ask that review to demonstrate usability, appropriate access and completed handoffs, alongside the business owner’s assessment of value. Those findings provide a concrete basis for extending the capability to another function.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="what-is-an-enterprise-analytics-workflow">What is an enterprise analytics workflow?</h3>
+<p>It is a repeatable process that connects analytics evidence with a defined business decision, its owner and the action or review that follows.</p>
+<h3 id="which-process-should-be-selected-first">Which process should be selected first?</h3>
+<p>Choose a recurring decision with accessible evidence, a willing owner and a manageable consequence. A process with visible handoff effort is often easier to evaluate.</p>
+<h3 id="does-every-workflow-need-ai">Does every workflow need AI?</h3>
+<p>No. Use AI where interpretation or preparation benefits from it. Rules and ordinary workflow steps may be more suitable for predictable tasks.</p>
+<h3 id="how-should-success-be-assessed">How should success be assessed?</h3>
+<p>Evaluate evidence quality, review effort, completed actions and the relevant business outcome separately. Use the baseline and explain other factors that may influence results.</p>
+<h2 id="references">References</h2>
+<div class="refs">
+<p>1. Gartner conference topics — enterprise outcome context.</p>
+<p>2. W3C PROV Overview — provenance concepts.</p>
+<p>3. NIST AI Risk Management Framework — voluntary risk reference.</p>
+<p>4. GAO AI Accountability Framework — performance and monitoring.</p>
+<p>5. AFP Finance Business Partnering — planning, reporting and decision support context.</p>
+</div>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/margin-exception-review-workflow/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-30" class="text-sm text-navy/70">October 30, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../margin-exception-review-workflow/" class="after:absolute after:inset-0 focus-visible:outline-none">Bringing Finance and Operations Together: The CIO’s Role in Better Margin Decisions</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Help finance and operations act on shared evidence. A CIO guide to margin review workflows, trusted measures and clear business accountability.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-assisted-quarterly-business-review/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-28" class="text-sm text-navy/70">October 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-assisted-quarterly-business-review/" class="after:absolute after:inset-0 focus-visible:outline-none">Better Quarterly Business Reviews: How CIOs Connect Analytics with Business Priorities</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Connect quarterly business reviews with business priorities. A CIO guide to trusted metrics, AI assisted preparation and accountable decisions.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/decision-speed-analytics-trust/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-23" class="text-sm text-navy/70">October 23, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../decision-speed-analytics-trust/" class="after:absolute after:inset-0 focus-visible:outline-none">Decision Clock Speed and the Case for Trusted Analytics</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Improve decision clock speed with trusted analytics. Learn five checks for approved sources, clear metric definitions and accountable AI-supported decisions.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

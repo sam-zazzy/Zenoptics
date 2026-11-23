@@ -135,3 +135,8 @@
 }
 .res-reveal { animation: res-reveal 0.45s ease-out both; }
 @media (prefers-reduced-motion: reduce) { .res-reveal { animation: none; } }
+
+/* Call to action at the end of posts built from the Blog Content Archive */
+.prose-zo .post-cta { margin-top: 2rem; }
+.prose-zo .post-cta a { display: inline-block; border-radius: 9999px; background: var(--color-brand-orange); color: var(--color-navy-deep); padding: .75rem 1.4rem; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.prose-zo .post-cta a:hover { background: var(--color-navy); color: #fff; }

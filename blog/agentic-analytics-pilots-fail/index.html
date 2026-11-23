@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Agentic Analytics Pilots Fail: The Three Gaps Between Proof of Concept and Production | ZenOptics</title>
+  <meta name="description" content="Most agentic analytics pilots look promising. Few survive contact with the real enterprise environment. The cause is almost never the AI model.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/agentic-analytics-pilots-fail/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Why Agentic Analytics Pilots Fail: The Three Gaps Between Proof of Concept and Production | ZenOptics">
+  <meta property="og:description" content="Most agentic analytics pilots look promising. Few survive contact with the real enterprise environment. The cause is almost never the AI model.">
+  <meta property="og:url" content="https://zenoptics.com/blog/agentic-analytics-pilots-fail/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/agentic-analytics-pilots-fail/cover.webp">
+  <meta property="article:published_time" content="2026-05-29">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Agentic Analytics Pilots Fail: The Three Gaps Between Proof of Concept and Production", "datePublished": "2026-05-29", "description": "Most agentic analytics pilots look promising. Few survive contact with the real enterprise environment. The cause is almost never the AI model.", "image": "https://zenoptics.com/assets/images/blog/agentic-analytics-pilots-fail/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/agentic-analytics-pilots-fail/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What percentage of agentic AI projects make it to production?", "acceptedAnswer": {"@type": "Answer", "text": "Industry-wide data on pilot-to-production conversion rates is still emerging, but Gartner's projection is direct: more than 40% of agentic AI projects will be canceled by end of 2027, citing escalating costs, security concerns, and failure to demonstrate business value. The implication is that the majority of organizations currently running pilots will not complete the transition to production without addressing the structural gaps that pilots conceal."}}, {"@type": "Question", "name": "What is the most common reason agentic analytics fails in enterprise deployments?", "acceptedAnswer": {"@type": "Answer", "text": "The most common failure is not a technology failure. It is an infrastructure failure. Specifically: the analytics estate the agent queries is ungoverned, so the agent surfaces inconsistent or uncertified outputs. The AI operates without a machine-readable context layer, so its responses are statistically reasonable but contextually wrong in ways that erode stakeholder trust. And the deployment lacks a governed execution layer, so agent actions cannot be audited or attributed. Any one of these gaps is sufficient to stall a deployment; they tend to appear together."}}, {"@type": "Question", "name": "How do you assess whether your analytics estate is ready for agentic AI?", "acceptedAnswer": {"@type": "Answer", "text": "Three indicators determine readiness. First, certification coverage: what percentage of analytics assets in your environment are certified as authoritative, with a designated owner and a known last-review date? If the answer is below 60 to 70 percent, the estate is not agent-ready. Second, context availability: does your organization have machine-readable business definitions for the KPIs and metrics AI agents will query? If that context lives only in documents and institutional knowledge, the context layer is absent. Third, governance architecture: does your execution environment capture decision lineage from AI-driven actions, map those actions to approved business processes, and monitor agent behavior against defined boundaries? If not, the governed execution layer is missing."}}, {"@type": "Question", "name": "Why does governance matter more for agentic analytics than for traditional BI?", "acceptedAnswer": {"@type": "Answer", "text": "In traditional BI, a human reviews every output before acting on it. The human provides an implicit governance layer: catching errors, checking context, and taking accountability for the decision. In agentic analytics, the agent acts continuously, often across multiple steps, without a human reviewing each output. The governance that was implicit in human review has to become explicit in the platform. Without it, the agent operates as a black box, producing outputs that cannot be attributed, audited, or traced back to the certified metrics and approved processes that should govern them."}}, {"@type": "Question", "name": "Can a failing agentic analytics deployment be fixed by switching AI models?", "acceptedAnswer": {"@type": "Answer", "text": "Almost never. If the pilot produced inconsistent outputs or failed to gain stakeholder trust, the cause is almost always in the estate and context layers, not in the model. A better model querying an ungoverned estate returns better-articulated wrong answers. Switching models without addressing the underlying infrastructure gaps is the analytics equivalent of upgrading the engine in a car with no roads. The investment in the model is wasted until the foundation is in place."}}, {"@type": "Question", "name": "How does a missing analytics context layer differ from a data quality problem?", "acceptedAnswer": {"@type": "Answer", "text": "Data quality problems affect the accuracy of the underlying data records. A missing analytics context layer affects the AI's ability to interpret what those records mean. An organization can have high-quality, accurate data and still produce wrong AI outputs if the agent does not understand what \"revenue\" means in the context of this business, how it differs from \"net revenue,\" or which version of the metric is authoritative for a given reporting context. The two problems have different symptoms and different fixes: data quality requires data engineering; context requires structured business definitions, KPI relationships, and semantic metadata that AI agents can consume."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Why Agentic Analytics Pilots Fail: The Three Gaps Between Proof of Concept and Production</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-05-29">May 29, 2026</time></span>
+          <span>9 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/agentic-analytics-pilots-fail/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-gap-between-a-demo-and-a-deployment" class="hover:underline">The Gap Between a Demo and a Deployment</a></li>
+              <li><a href="#gap-one-the-agent-finds-everything-including-what-it-shouldn-t-trust" class="hover:underline">Gap One: The Agent Finds Everything, Including What It Shouldn&#x27;t Trust</a></li>
+              <li><a href="#gap-two-statistical-probability-is-not-business-context" class="hover:underline">Gap Two: Statistical Probability Is Not Business Context</a></li>
+              <li><a href="#gap-three-what-ungoverned-agent-actions-cost-in-regulated-environments" class="hover:underline">Gap Three: What Ungoverned Agent Actions Cost in Regulated Environments</a></li>
+              <li><a href="#the-three-gaps-almost-always-appear-together" class="hover:underline">The Three Gaps Almost Always Appear Together</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-gap-between-a-demo-and-a-deployment" class="hover:underline">The Gap Between a Demo and a Deployment</a></li>
+              <li><a href="#gap-one-the-agent-finds-everything-including-what-it-shouldn-t-trust" class="hover:underline">Gap One: The Agent Finds Everything, Including What It Shouldn&#x27;t Trust</a></li>
+              <li><a href="#gap-two-statistical-probability-is-not-business-context" class="hover:underline">Gap Two: Statistical Probability Is Not Business Context</a></li>
+              <li><a href="#gap-three-what-ungoverned-agent-actions-cost-in-regulated-environments" class="hover:underline">Gap Three: What Ungoverned Agent Actions Cost in Regulated Environments</a></li>
+              <li><a href="#the-three-gaps-almost-always-appear-together" class="hover:underline">The Three Gaps Almost Always Appear Together</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>The enterprise analytics industry has spent two years watching agentic AI demos succeed. Every major BI vendor has one. Most enterprises have run one. The story that does not make the conference keynote is what happens next: why so few of those demos become production deployments, and why the organizations that shut them down rarely understand the actual cause of failure. <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" target="_blank" rel="noopener">Gartner predicts</a> that more than 40% of agentic AI projects will be canceled by end of 2027. Most of those cancellations will not happen because the technology failed. They will happen because the enterprise environment underneath it was not ready.</p>
+<h2 id="the-gap-between-a-demo-and-a-deployment">The Gap Between a Demo and a Deployment</h2>
+<p>An agentic analytics demo proves one thing: given a clean dataset and a well-scoped prompt, the AI model can return a structured output. That is a real capability, but it is not what production deployment requires.</p>
+<p>A production deployment has to do something considerably harder. It has to produce outputs that are consistently trusted by the people who use them to make real decisions: not once, with a curated dataset, in a controlled environment, but reliably, across the full complexity of an enterprise analytics estate, against questions that were not in the demo script, grounded in business context the team was not aware of during the pilot, and with every action auditable by risk and compliance stakeholders who were not in the room.</p>
+<p>The gap between those two things is where most pilots stall. It is not usually a model problem, a data pipeline problem, or an integration problem. It is three structural gaps in the enterprise environment that a pilot does not surface and a production deployment cannot survive without.</p>
+<h2 id="gap-one-the-agent-finds-everything-including-what-it-shouldn-t-trust">Gap One: The Agent Finds Everything, Including What It Shouldn&#x27;t Trust</h2>
+<p>A pilot environment is curated. Before the demo, the team selects a set of certified reports, defines which KPIs are in scope, and builds the pilot on that controlled subset. The agent performs well because it has been given trustworthy inputs.</p>
+<p>Production is different. In production, the agent queries the full analytics estate, and most enterprise analytics estates are not curated. Organizations implementing ZenOptics typically find that 30 to 40 percent of their analytics estate consists of duplicate or conflicting reports. That means for every clean, certified version of a metric or dashboard, there are likely one or more shadow versions in the environment: built by different teams, using different calculation logic, for purposes that may have been relevant three years ago and are not today.</p>
+<p>The agent has no visibility into any of this. It cannot see certification status. It cannot see that a report has no active owner. It cannot distinguish the revenue figure the CFO uses for quarterly reporting from the revenue figure a regional team built for a campaign analysis that never reconciled with finance. It queries what it finds. All of it looks equivalent to the agent.</p>
+<p>The failure mode is predictable: the agent surfaces an answer that does not match the figure the stakeholder already knows to be correct. The stakeholder does not conclude that the agent found an uncertified report. The stakeholder concludes that AI cannot be trusted. That perception is sticky. Recovering stakeholder confidence after it is lost is significantly harder than establishing it in the first place.</p>
+<p><a href="../analytics-sprawl-cost/">The Hidden Cost of Analytics Sprawl</a> examines how estate debt accumulates and why it becomes the primary blocker to AI adoption, not because AI doesn&#x27;t work, but because the estate it runs on was never designed with AI access in mind.</p>
+<h2 id="gap-two-statistical-probability-is-not-business-context">Gap Two: Statistical Probability Is Not Business Context</h2>
+<p>The second gap is the one that vendor presentations routinely treat as already solved: the AI understands what the data means.</p>
+<p>It does not. Not in the way enterprise analytics requires.</p>
+<p>Without a machine-readable analytics context layer to ground it in business meaning, what an AI agent understands is statistical relationships. It can infer that &quot;revenue&quot; and &quot;net revenue&quot; are related. It can observe that they appear near the same dashboards and are referenced together in similar queries. It can produce a coherent response that treats them as related concepts. What it cannot do is apply the business definition the CFO has approved for quarterly reporting. It cannot apply the rule that net revenue for the commercial team excludes contra-revenue items that the finance team includes. It cannot know that a particular metric rolls up to a specific KPI that feeds a specific forecast model, or that the definition of that KPI was revised eighteen months ago and only applies to transactions after a certain date.</p>
+<p>That information exists in the organization. It lives in governance documents that were written for humans, in the institutional knowledge of senior analysts who have been there long enough to remember the revision history, and in spreadsheets that function as unofficial business glossaries because no one ever built the formal version. None of it is machine-readable. The agent fills the gaps with statistical inference. The output is coherent. It sounds right. It is wrong in ways that only someone with deep organizational context would catch, and it is wrong inconsistently, which makes the pattern hard to diagnose.</p>
+<p>The downstream effect is not a single incorrect answer that gets corrected. It is a pattern of answers that are sometimes right, sometimes wrong in ways that are hard to predict, and that erode trust systematically over time. Stakeholders learn that they cannot rely on AI-generated analytics without manually verifying against their own knowledge. At that point, the agent has added work, not removed it.</p>
+<p>Automated context generation (deriving the business definitions, KPI relationships, and semantic structure that already exist within the organization&#x27;s BI metadata and making that machine-readable) removes this gap. Organizations implementing ZenOptics typically see AI deployment timelines compress two to three times once that context layer is in place, because the months of manual semantic build work that previously preceded any AI deployment are replaced by automated derivation from existing BI metadata.</p>
+<h2 id="gap-three-what-ungoverned-agent-actions-cost-in-regulated-environments">Gap Three: What Ungoverned Agent Actions Cost in Regulated Environments</h2>
+<p>The third gap surfaces last. In a demo, it is invisible. In a regulated enterprise, it is the one that makes the deployment unviable.</p>
+<p>A demo proves that an agent can answer questions. A production deployment in a regulated industry requires the agent to do something additional: everything it produces and every action it triggers must be auditable. What data informed this response? Which certified metric did this recommendation draw on? What business process rules governed the agent&#x27;s action? What was the outcome, and who is accountable for it?</p>
+<p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-10-21-gartner-unveils-top-predictions-for-it-organizations-and-users-in-2026-and-beyond" target="_blank" rel="noopener">Gartner projects</a> that by 2030, 50 percent of AI agent deployment failures will be due to insufficient governance platform runtime enforcement. The organizations behind those failures are not running ungoverned agents by accident. They are running agents that were designed for demo environments, where governance is not a requirement, and discovered in production that governance cannot be retrofitted.</p>
+<p>The problem with retrofitting is not technical complexity alone. It is the nature of decision lineage. If the trace from input to recommendation to action was not captured from the start, it cannot be reconstructed. When an AI-influenced decision needs to be explained to a regulator, an auditor, or a board risk committee, the absence of that trace is not a documentation gap. It is evidence that the decision process was not auditable. In financial services, insurance, healthcare, and other regulated contexts, that is not a recoverable position.</p>
+<p>Governing agent actions from the beginning (mapping every AI-driven step to approved business processes, capturing decision lineage continuously, and monitoring agent behavior within defined boundaries) is not optional overhead. It is the infrastructure that makes the deployment possible in the first place. For a deeper treatment of what enterprise-scale AI governance requires in the analytics context, <a href="../autonomous-analytics-ai-governance/">Governing Autonomous Analytics AI at Enterprise Scale</a> covers the architecture and the regulatory pressures driving it.</p>
+<h2 id="the-three-gaps-almost-always-appear-together">The Three Gaps Almost Always Appear Together</h2>
+<p>The pattern across stalled agentic analytics deployments is consistent: the three gaps are not independent. An ungoverned estate almost always means an absent context layer, because organizations that have not certified their analytics assets have typically not structured the business definitions those assets carry either. A missing context layer almost always means ungoverned execution follows, because agents operating without business context take action on outputs that have not been validated against the business rules that should govern them.</p>
+<p>Organizations that address only one gap get further in the pilot. They do not make it to production. The organizations that have completed the transition consistently report the same finding: what changed was not the AI model and not the BI tooling. What changed was the three layers of infrastructure underneath: a certified analytics estate the agent can trust, an analytics context layer that makes its outputs accurate, and a governed execution environment that makes those outputs deployable in the organization&#x27;s real operating context.</p>
+<p>What that infrastructure looks like, and how <a href="../../atlas/">Atlas</a>, <a href="../../nexus/">Nexus</a>, and <a href="../../maestro/">Maestro</a> close each gap, is mapped out in <a href="../agentic-analytics-enterprise/">Agentic Analytics in the Enterprise: From Pilot to Production</a>.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-percentage-of-agentic-ai-projects-make-it-to-production">What percentage of agentic AI projects make it to production?</h3>
+<p>Industry-wide data on pilot-to-production conversion rates is still emerging, but Gartner&#x27;s projection is direct: more than 40% of agentic AI projects will be canceled by end of 2027, citing escalating costs, security concerns, and failure to demonstrate business value. The implication is that the majority of organizations currently running pilots will not complete the transition to production without addressing the structural gaps that pilots conceal.</p>
+<h3 id="what-is-the-most-common-reason-agentic-analytics-fails-in-enterprise-deployments">What is the most common reason agentic analytics fails in enterprise deployments?</h3>
+<p>The most common failure is not a technology failure. It is an infrastructure failure. Specifically: the analytics estate the agent queries is ungoverned, so the agent surfaces inconsistent or uncertified outputs. The AI operates without a machine-readable context layer, so its responses are statistically reasonable but contextually wrong in ways that erode stakeholder trust. And the deployment lacks a governed execution layer, so agent actions cannot be audited or attributed. Any one of these gaps is sufficient to stall a deployment; they tend to appear together.</p>
+<h3 id="how-do-you-assess-whether-your-analytics-estate-is-ready-for-agentic-ai">How do you assess whether your analytics estate is ready for agentic AI?</h3>
+<p>Three indicators determine readiness. First, certification coverage: what percentage of analytics assets in your environment are certified as authoritative, with a designated owner and a known last-review date? If the answer is below 60 to 70 percent, the estate is not agent-ready. Second, context availability: does your organization have machine-readable business definitions for the KPIs and metrics AI agents will query? If that context lives only in documents and institutional knowledge, the context layer is absent. Third, governance architecture: does your execution environment capture decision lineage from AI-driven actions, map those actions to approved business processes, and monitor agent behavior against defined boundaries? If not, the governed execution layer is missing.</p>
+<h3 id="why-does-governance-matter-more-for-agentic-analytics-than-for-traditional-bi">Why does governance matter more for agentic analytics than for traditional BI?</h3>
+<p>In traditional BI, a human reviews every output before acting on it. The human provides an implicit governance layer: catching errors, checking context, and taking accountability for the decision. In agentic analytics, the agent acts continuously, often across multiple steps, without a human reviewing each output. The governance that was implicit in human review has to become explicit in the platform. Without it, the agent operates as a black box, producing outputs that cannot be attributed, audited, or traced back to the certified metrics and approved processes that should govern them.</p>
+<h3 id="can-a-failing-agentic-analytics-deployment-be-fixed-by-switching-ai-models">Can a failing agentic analytics deployment be fixed by switching AI models?</h3>
+<p>Almost never. If the pilot produced inconsistent outputs or failed to gain stakeholder trust, the cause is almost always in the estate and context layers, not in the model. A better model querying an ungoverned estate returns better-articulated wrong answers. Switching models without addressing the underlying infrastructure gaps is the analytics equivalent of upgrading the engine in a car with no roads. The investment in the model is wasted until the foundation is in place.</p>
+<h3 id="how-does-a-missing-analytics-context-layer-differ-from-a-data-quality-problem">How does a missing analytics context layer differ from a data quality problem?</h3>
+<p>Data quality problems affect the accuracy of the underlying data records. A missing analytics context layer affects the AI&#x27;s ability to interpret what those records mean. An organization can have high-quality, accurate data and still produce wrong AI outputs if the agent does not understand what &quot;revenue&quot; means in the context of this business, how it differs from &quot;net revenue,&quot; or which version of the metric is authoritative for a given reporting context. The two problems have different symptoms and different fixes: data quality requires data engineering; context requires structured business definitions, KPI relationships, and semantic metadata that AI agents can consume.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Ready to identify which of the three gaps is stalling your agentic analytics deployment? Schedule a conversation with the ZenOptics team</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-context-layer-enterprise/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-05" class="text-sm text-navy/70">June 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-context-layer-enterprise/" class="after:absolute after:inset-0 focus-visible:outline-none">The Analytics Context Layer: The Missing Infrastructure for Enterprise AI</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Enterprise AI tools have access to more data than ever. Most still produce outputs teams cannot trust. The missing layer is not the model and not the pipeline.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-agent-governance-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-01" class="text-sm text-navy/70">June 1, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-agent-governance-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">AI Agent Governance for Enterprise Analytics: Why Decision Traceability Is Non-Negotiable</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">As AI agents enter enterprise analytics workflows, the governance question moves from planning to execution. Decision traceability is the mechanism.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/agentic-analytics-enterprise/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-22" class="text-sm text-navy/70">May 22, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../agentic-analytics-enterprise/" class="after:absolute after:inset-0 focus-visible:outline-none">Agentic Analytics in the Enterprise: From Pilot to Production</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises can run an agentic analytics pilot. Very few make it to production. The gap is not the technology.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

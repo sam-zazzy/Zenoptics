@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Measure Analytics Estate Maturity | ZenOptics</title>
+  <meta name="description" content="Standard analytics maturity models measure what your organization does with data. Analytics estate maturity measures whether AI can reliably use your…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-estate-maturity/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="How to Measure Analytics Estate Maturity | ZenOptics">
+  <meta property="og:description" content="Standard analytics maturity models measure what your organization does with data. Analytics estate maturity measures whether AI can reliably use your…">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-estate-maturity/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-estate-maturity/cover.webp">
+  <meta property="article:published_time" content="2026-07-17">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Measure Analytics Estate Maturity", "datePublished": "2026-07-17", "description": "Standard analytics maturity models measure what your organization does with data. Analytics estate maturity measures whether AI can reliably use your…", "image": "https://zenoptics.com/assets/images/blog/analytics-estate-maturity/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-estate-maturity/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between analytics estate maturity and analytics capability maturity?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics capability maturity measures how sophisticated your analytics are: descriptive, diagnostic, predictive, prescriptive. Analytics estate maturity measures how reliably AI can use your analytics assets: whether the estate AI reads from is inventoried, certified, governed, and context-encoded. A Stage 5 capability organization can have a Stage 1 estate if the assets AI reads from are ungoverned. The two models measure different things and should be tracked separately."}}, {"@type": "Question", "name": "How is analytics estate maturity different from data governance maturity?", "acceptedAnswer": {"@type": "Answer", "text": "Data governance maturity addresses raw data quality, lineage, and access at the source layer. Analytics estate maturity addresses the artifacts built on top of that data: reports, dashboards, KPIs, and certified metrics, and whether those artifacts are reliable for AI use. Both matter. Neither substitutes for the other. An organization can have strong data governance maturity and a Stage 1 analytics estate if the analytics layer above the data has not been governed."}}, {"@type": "Question", "name": "What is the first dimension to address for an organization at Stage 1?", "acceptedAnswer": {"@type": "Answer", "text": "Inventory Completeness. Certification, metric governance, and context encoding all require a complete, current view of the estate to be meaningful. Without cross-tool inventory, governance programs certify only what they can see, which is typically a fraction of the full active estate in multi-BI-tool environments. A complete cross-tool inventory is the prerequisite for every other dimension to progress beyond Stage 1."}}, {"@type": "Question", "name": "How long does it take to move from Stage 1 to Stage 4?", "acceptedAnswer": {"@type": "Answer", "text": "The Stage 1 to Stage 2 transition is fastest when inventory is automated rather than manual: a complete cross-tool inventory can be operational within weeks. Stage 2 to Stage 3 requires systematic certification coverage to be applied across the estate, organizational work that technology supports but does not replace. Stage 3 to Stage 4 depends on how much business context already exists in the governed estate. When context encoding is derived automatically from BI metadata, the timeline compresses significantly compared to manual semantic build approaches."}}, {"@type": "Question", "name": "How does this model relate to the broader analytics governance maturity model?", "acceptedAnswer": {"@type": "Answer", "text": "The five-level analytics governance maturity model measures how mature the governance program is: policies, structure, tooling, enforcement cadence. The analytics estate maturity model measures how AI-ready the estate output is across four specific dimensions. The two frameworks are complementary. Organizations can use both in parallel: the governance model to track program maturity, the estate model to track AI-readiness outcomes as a direct measure of what AI deployments will experience. The Analytics Estate Assessment identifies your current stage across all four dimensions and shows which gap to close first. Schedule a 15-minute session to run it with ZenOptics."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">How to Measure Analytics Estate Maturity</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-17">July 17, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-estate-maturity/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#why-analytics-capability-maturity-doesn-t-answer-the-ai-readiness-question" class="hover:underline">Why Analytics Capability Maturity Doesn&#x27;t Answer the AI Readiness Question</a></li>
+              <li><a href="#the-four-dimensions-of-analytics-estate-maturity" class="hover:underline">The Four Dimensions of Analytics Estate Maturity</a></li>
+              <li><a href="#the-four-stages-of-analytics-estate-maturity" class="hover:underline">The Four Stages of Analytics Estate Maturity</a></li>
+              <li><a href="#your-stage-is-the-lowest-score-across-all-four-dimensions" class="hover:underline">Your Stage Is the Lowest Score Across All Four Dimensions</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#why-analytics-capability-maturity-doesn-t-answer-the-ai-readiness-question" class="hover:underline">Why Analytics Capability Maturity Doesn&#x27;t Answer the AI Readiness Question</a></li>
+              <li><a href="#the-four-dimensions-of-analytics-estate-maturity" class="hover:underline">The Four Dimensions of Analytics Estate Maturity</a></li>
+              <li><a href="#the-four-stages-of-analytics-estate-maturity" class="hover:underline">The Four Stages of Analytics Estate Maturity</a></li>
+              <li><a href="#your-stage-is-the-lowest-score-across-all-four-dimensions" class="hover:underline">Your Stage Is the Lowest Score Across All Four Dimensions</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Most analytics leaders can tell you where their organization sits on an analytics maturity model. They know whether the BI stack is primarily descriptive, whether predictive capability has been reached, whether AI is embedded in decision workflows. What most cannot answer with similar precision is a different question: what stage is the analytics estate that AI is reading from? The two questions look alike. They measure different things, and the cost of confusing them is documented in <a href="../ungoverned-analytics-estate-cost/">The Hidden Cost of an Ungoverned Analytics Estate</a>.</p>
+<h2 id="why-analytics-capability-maturity-doesn-t-answer-the-ai-readiness-question">Why Analytics Capability Maturity Doesn&#x27;t Answer the AI Readiness Question</h2>
+<p>Gartner&#x27;s five-stage model, TDWI&#x27;s assessment, and the McKinsey five-dimension approach all measure what organizations do with analytics: how sophisticated the analysis is, how embedded data is in strategic decision-making, and how consistently insights move from generation to action. These are the right measures for analytics strategy.</p>
+<p>They are the wrong measures for a specific question AI deployment makes urgent: will AI produce reliable outputs from this estate?</p>
+<p><a href="../ai-agents-analytics-estates/">AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates.</a> established the architecture: enterprise AI copilots and agents do not query raw data. They read from the analytics estate: the reports, dashboards, KPI definitions, and certified metrics that sit above the data. <a href="../ai-readiness-assessments-analytics-layer/">Why Most AI Readiness Assessments Miss the Analytics Layer</a> confirmed that standard readiness frameworks do not assess this layer. The governance state of the estate is absent from most assessments. As enterprise AI deployments have expanded through the first half of 2026, the practical cost of this gap has become measurable rather than theoretical.</p>
+<p>A CDO with Stage 4 analytical capability (predictive models in production, AI copilots deployed, executive reporting automated) can still have an analytics estate where those copilots return conflicting answers to the same business question. The analytical capability is real. The estate AI reads from is ungoverned. These are separate problems, and capability maturity frameworks do not surface the second one.</p>
+<p>The dimensions that determine AI output reliability are not sophistication dimensions. They are governance dimensions.</p>
+<h2 id="the-four-dimensions-of-analytics-estate-maturity">The Four Dimensions of Analytics Estate Maturity</h2>
+<p>Four dimensions determine whether an analytics estate can reliably serve AI.</p>
+<p><strong>Inventory Completeness.</strong> Whether every active analytics asset across all BI tools is visible and tracked. This is the foundational dimension. Without a complete, cross-tool inventory, governance programs certify and govern only the fraction of assets that a single tool or manually maintained catalog can see.</p>
+<p><strong>Certification Coverage.</strong> The percentage of active analytics assets that have been formally reviewed, validated, and designated as authoritative. AI systems have no built-in mechanism to distinguish a certified metric from an abandoned or conflicting one. Certification coverage is the signal AI reads when determining which output to return.</p>
+<p><strong>Metric Governance.</strong> Whether KPI definitions, ownership, and calculation logic are formally assigned, documented, and consistently applied across tools and teams. This dimension determines whether AI returns one answer or several conflicting versions of the same answer. Inconsistent metric definitions across BI tools are the governance gap most directly responsible for reconciliation cycles that follow AI outputs.</p>
+<p><strong>Context Encoding.</strong> Whether the relationships between metrics, KPI definitions, and business logic are captured in machine-readable form. This is what allows AI to follow business reasoning rather than approximate it. Without encoded context, AI locates data; it cannot resolve business intent. (This dimension tends to surface an uncomfortable reality: business logic that analytics leaders assume is documented often exists primarily in the institutional knowledge of whoever built the original reports.)</p>
+<h2 id="the-four-stages-of-analytics-estate-maturity">The Four Stages of Analytics Estate Maturity</h2>
+<p>Each dimension progresses through four stages. An organization&#x27;s overall AI-readiness stage is its lowest score across all four dimensions. The weakest dimension sets the ceiling.</p>
+<p><strong>Stage 1: Uncharted</strong></p>
+<p>No cross-tool inventory exists. Each BI tool maintains its own catalog or none at all. Certification is informal and inconsistent: some high-profile reports may be labeled authoritative, but the process is person-dependent. Metric ownership resides with whoever built the report; when that person moves on, the definition may be unrecoverable. Context encoding is zero. Business logic exists in documentation at best, in individual expertise at worst.</p>
+<p>What AI experiences: AI reads whichever asset it locates first. There is no signal distinguishing an authoritative metric from an abandoned one. Every AI-generated output requires manual reconciliation before it can be acted on. This is the AI waste cost that accumulates across every active deployment at Stage 1. See <a href="../ungoverned-analytics-estate-cost/">The Hidden Cost of an Ungoverned Analytics Estate</a> for the full breakdown.</p>
+<p><strong>Stage 2: Inventoried</strong></p>
+<p>A cross-tool view of the estate has been established. Active assets are distinguished from dormant or orphaned ones across BI tools. Some certification exists but is not systematic: major reports in high-visibility functions may be certified; the majority of the estate is not. Metric ownership is partially assigned; definitions often remain inconsistent across tools. Context encoding, if present, exists in documentation only.</p>
+<p>From AI&#x27;s perspective: AI locates assets more reliably and can identify some certified resources. For the bulk of the estate, it still cannot distinguish certified from uncertified at query time. Outputs improve compared to Stage 1, but reconciliation is still required for any metric that carries more than one definition across the BI environment.</p>
+<p><strong>Stage 3: Governed</strong></p>
+<p>Certification is applied systematically to the most-used analytics assets, with a review cadence established and maintained. Metric ownership is formally assigned; KPI calculation logic is documented and linked to certified assets. New assets enter a certification process before reaching end users. Context encoding is partial: some metric relationships are machine-readable; the full estate is not yet encoded.</p>
+<p>What AI experiences: AI returns consistently certified outputs for the most-queried metrics. Conflicting answers still appear on lower-priority assets where governance has not yet reached. The gap between what AI can reliably answer and what the estate covers is visible and, in most cases, narrowing.</p>
+<p><strong>Stage 4: AI-Ready</strong></p>
+<p>Inventory is complete and continuously maintained through automated cross-tool ingestion. Certification coverage applies to the full active estate. All KPI definitions, metric ownership, and calculation logic are assigned, documented, and current. Context encoding is complete: machine-readable business logic is derived from the governed estate and kept in sync as the estate evolves. AI agents can follow business reasoning, not just locate data.</p>
+<p>What AI experiences: AI reads from certified assets with full context. Business logic is accessible and encoded. Trusted answers are the default. The reconciliation cycles characteristic of Stages 1 through 3 close.</p>
+<p><strong>Analytics estate maturity at a glance:</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Dimension</th><th>Stage 1: Uncharted</th><th>Stage 2: Inventoried</th><th>Stage 3: Governed</th><th>Stage 4: AI-Ready</th></tr></thead>
+<tbody>
+<tr><td>Inventory Completeness</td><td>Per-tool or none</td><td>Cross-tool view established</td><td>Complete and actively tracked</td><td>Automated, continuously synced</td></tr>
+<tr><td>Certification Coverage</td><td>Informal or none</td><td>Partial, high-visibility only</td><td>Systematic across most-used assets</td><td>Full active estate</td></tr>
+<tr><td>Metric Governance</td><td>Person-dependent</td><td>Partially assigned</td><td>Formally assigned and documented</td><td>Comprehensive, linked to context</td></tr>
+<tr><td>Context Encoding</td><td>None</td><td>Documentation only</td><td>Partial machine-readable</td><td>Full, AI-actionable</td></tr>
+</tbody>
+</table></div>
+<h2 id="your-stage-is-the-lowest-score-across-all-four-dimensions">Your Stage Is the Lowest Score Across All Four Dimensions</h2>
+<p>An organization at Stage 3 on Certification Coverage, Stage 3 on Metric Governance, Stage 2 on Inventory Completeness, and Stage 1 on Context Encoding is at Stage 1 for AI-readiness purposes. The weakest dimension determines the ceiling.</p>
+<p>Some organizations run parallel workstreams across multiple dimensions rather than addressing them in sequence. That can work when the dimensions are loosely coupled. Inventory Completeness is rarely loosely coupled with the others: certification, metric governance, and context encoding each require a complete estate view to be meaningful. Until inventory is resolved, progress in the other three dimensions applies only to the fraction of the estate that is currently visible. Governing a fraction of the estate does not govern the estate.</p>
+<p>Three questions locate your current stage without a formal assessment:</p>
+<p>Can you produce a complete inventory of every active analytics asset across all BI tools within 24 hours? If not, Inventory Completeness is at Stage 1 or early Stage 2.</p>
+<p>Do your AI copilots return the same answer to the same business question regardless of which report they locate first? If not, Certification Coverage or Metric Governance is below Stage 3.</p>
+<p>When a senior analyst leaves after several years, does the business logic for their key metrics go with them? If yes, Context Encoding is at Stage 1 or Stage 2.</p>
+<p>Stage transitions each have a concrete first move. The Stage 1 to Stage 2 transition requires cross-tool inventory: a complete, current view of every active analytics asset across all BI tools. <a href="../../atlas/">Atlas</a> builds this automatically through 100+ Smart Connectors, establishing continuous inventory from Power BI, Tableau, SAP BO, Qlik, and others. The estate becomes visible before governance begins, not after.</p>
+<p>The Stage 3 to Stage 4 transition requires context encoding at estate scale. <a href="../../nexus/">Nexus</a> derives the analytics context layer automatically from the governed estate Atlas produces. Metric relationships, business logic, and KPI definitions are encoded from existing BI metadata without requiring a manual semantic rebuild from scratch. Organizations implementing this approach typically see a 20 to 40% improvement in analytics discovery speed and a 30 to 40% reduction in duplicate reports as they progress through the stages.</p>
+<p>The full self-assessment across all four dimensions is in <a href="../analytics-readiness-checklist/">The AI Readiness Checklist Every Analytics Leader Should Complete</a>.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-analytics-estate-maturity-and-analytics-capabilit">What is the difference between analytics estate maturity and analytics capability maturity?</h3>
+<p>Analytics capability maturity measures how sophisticated your analytics are: descriptive, diagnostic, predictive, prescriptive. Analytics estate maturity measures how reliably AI can use your analytics assets: whether the estate AI reads from is inventoried, certified, governed, and context-encoded. A Stage 5 capability organization can have a Stage 1 estate if the assets AI reads from are ungoverned. The two models measure different things and should be tracked separately.</p>
+<h3 id="how-is-analytics-estate-maturity-different-from-data-governance-maturity">How is analytics estate maturity different from data governance maturity?</h3>
+<p>Data governance maturity addresses raw data quality, lineage, and access at the source layer. Analytics estate maturity addresses the artifacts built on top of that data: reports, dashboards, KPIs, and certified metrics, and whether those artifacts are reliable for AI use. Both matter. Neither substitutes for the other. An organization can have strong data governance maturity and a Stage 1 analytics estate if the analytics layer above the data has not been governed.</p>
+<h3 id="what-is-the-first-dimension-to-address-for-an-organization-at-stage-1">What is the first dimension to address for an organization at Stage 1?</h3>
+<p>Inventory Completeness. Certification, metric governance, and context encoding all require a complete, current view of the estate to be meaningful. Without cross-tool inventory, governance programs certify only what they can see, which is typically a fraction of the full active estate in multi-BI-tool environments. A complete cross-tool inventory is the prerequisite for every other dimension to progress beyond Stage 1.</p>
+<h3 id="how-long-does-it-take-to-move-from-stage-1-to-stage-4">How long does it take to move from Stage 1 to Stage 4?</h3>
+<p>The Stage 1 to Stage 2 transition is fastest when inventory is automated rather than manual: a complete cross-tool inventory can be operational within weeks. Stage 2 to Stage 3 requires systematic certification coverage to be applied across the estate, organizational work that technology supports but does not replace. Stage 3 to Stage 4 depends on how much business context already exists in the governed estate. When context encoding is derived automatically from BI metadata, the timeline compresses significantly compared to manual semantic build approaches.</p>
+<h3 id="how-does-this-model-relate-to-the-broader-analytics-governance-maturity-model">How does this model relate to the broader </strong>analytics governance maturity model<strong>?</h3>
+<p>The five-level analytics governance maturity model measures how mature the governance program is: policies, structure, tooling, enforcement cadence. The analytics estate maturity model measures how AI-ready the estate output is across four specific dimensions. The two frameworks are complementary. Organizations can use both in parallel: the governance model to track program maturity, the estate model to track AI-readiness outcomes as a direct measure of what AI deployments will experience.</p>
+<p>The Analytics Estate Assessment identifies your current stage across all four dimensions and shows which gap to close first. <a href="../../schedule-a-demo/">Schedule a 15-minute session</a> to run it with ZenOptics.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/intranet-vs-analytics-portal/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-24" class="text-sm text-navy/70">July 24, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../intranet-vs-analytics-portal/" class="after:absolute after:inset-0 focus-visible:outline-none">Your Intranet Isn&#x27;t Your Analytics Portal</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An intranet can publish BI reports. An analytics portal helps users discover them. Learn why enterprise AI also needs a governed analytics system of record.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/modernizing-homegrown-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-20" class="text-sm text-navy/70">July 20, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../modernizing-homegrown-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">Modernizing Homegrown Analytics Portals: A Reference Architecture for SharePoint, .NET &amp; Custom Intranets</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises built a SharePoint site, .NET portal, or custom intranet to centralize analytics access. These solved the discovery problem.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ungoverned-analytics-estate-cost/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-13" class="text-sm text-navy/70">July 13, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ungoverned-analytics-estate-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of an Ungoverned Analytics Estate</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An ungoverned analytics estate generates three hidden costs: AI waste, decision latency, and compounding remediation.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

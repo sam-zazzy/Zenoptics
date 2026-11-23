@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Intranet Isn&#x27;t Your Analytics Portal | ZenOptics</title>
+  <meta name="description" content="An intranet can publish BI reports. An analytics portal helps users discover them. Learn why enterprise AI also needs a governed analytics system of record.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/intranet-vs-analytics-portal/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Your Intranet Isn&#x27;t Your Analytics Portal | ZenOptics">
+  <meta property="og:description" content="An intranet can publish BI reports. An analytics portal helps users discover them. Learn why enterprise AI also needs a governed analytics system of record.">
+  <meta property="og:url" content="https://zenoptics.com/blog/intranet-vs-analytics-portal/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/intranet-vs-analytics-portal/cover.webp">
+  <meta property="article:published_time" content="2026-07-24">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Your Intranet Isn't Your Analytics Portal", "datePublished": "2026-07-24", "description": "An intranet can publish BI reports. An analytics portal helps users discover them. Learn why enterprise AI also needs a governed analytics system of record.", "image": "https://zenoptics.com/assets/images/blog/intranet-vs-analytics-portal/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/intranet-vs-analytics-portal/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between an intranet and an analytics portal?", "acceptedAnswer": {"@type": "Answer", "text": "An intranet is an internal communication and collaboration platform, designed for content publishing, document management, and employee communication. An analytics portal is a discovery and access layer built specifically for analytics assets across multiple BI tools. The two serve different architectural purposes. An intranet can embed BI reports as content items. An analytics portal is built to catalog, organize, and surface analytics assets with awareness of the BI context they come from, including certification status, tool of origin, and usage."}}, {"@type": "Question", "name": "Can SharePoint serve as an enterprise analytics portal?", "acceptedAnswer": {"@type": "Answer", "text": "SharePoint can host embedded BI reports and function as a basic analytics access layer for teams that already know where to look. SharePoint can provide a useful analytics access experience, but it is not natively designed to deliver cross-platform analytics cataloging, certification, ownership, lineage, and usage intelligence at enterprise scale.Delivering cross-platform cataloging, BI-level certification signals, analytics-aware search, ownership, lineage, and usage intelligence through SharePoint generally requires custom integrations and ongoing engineering.. Organizations that rely on SharePoint as their primary analytics access layer typically find that discovery gaps, duplicate content, and certification ambiguity compound as the estate grows."}}, {"@type": "Question", "name": "Why does an analytics portal still fall short of what AI agents need?", "acceptedAnswer": {"@type": "Answer", "text": "An access-only analytics portal primarily organizes and surfaces existing analytics assets. Without an integrated governance foundation, it may not resolve conflicting metric definitions, establish cross-platform ownership, or determine which analytics are authoritative. It does not certify which assets are authoritative, assign ownership to KPI definitions, or resolve inconsistencies between the same metric as defined across different BI tools. When an AI agent reads from an analytics portal, it finds assets it cannot evaluate for trustworthiness. The result is conflicting outputs that require manual reconciliation, which is precisely the problem AI was deployed to solve."}}, {"@type": "Question", "name": "Do we need to replace our intranet to build a governed analytics estate?", "acceptedAnswer": {"@type": "Answer", "text": "No. Building an analytics system of record does not require replacing an intranet or retiring an existing analytics portal. The governance layer operates beneath whatever distribution surface already exists. Atlas connects to existing BI environments through Smart Connectors, builds a governed cross-tool inventory, and applies certification and metric governance across the full estate. The intranet or portal above it continues to function, but what it surfaces becomes a governed estate rather than an unverified collection of reports."}}, {"@type": "Question", "name": "What is the first step to moving from an intranet-based analytics setup to a governed analytics estate?", "acceptedAnswer": {"@type": "Answer", "text": "The first step is cross-tool inventory: a complete, current view of every active analytics asset across all BI tools in the estate. Organizations that begin certification or governance before completing a cross-tool inventory risk governing only the portion of the analytics estate they can currently see. Inventory completeness is the prerequisite for every subsequent governance and AI readiness step."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Your Intranet Isn&#x27;t Your Analytics Portal</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-24">July 24, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/intranet-vs-analytics-portal/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-intranet-was-not-built-for-analytics" class="hover:underline">The Intranet Was Not Built for Analytics</a></li>
+              <li><a href="#what-an-analytics-portal-actually-does-differently" class="hover:underline">What an Analytics Portal Actually Does Differently</a></li>
+              <li><a href="#why-access-only-portals-still-need-a-governance-foundation" class="hover:underline">Why Access-Only Portals Still Need a Governance Foundation</a></li>
+              <li><a href="#the-architecture-that-closes-the-gap" class="hover:underline">The Architecture That Closes the Gap</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-intranet-was-not-built-for-analytics" class="hover:underline">The Intranet Was Not Built for Analytics</a></li>
+              <li><a href="#what-an-analytics-portal-actually-does-differently" class="hover:underline">What an Analytics Portal Actually Does Differently</a></li>
+              <li><a href="#why-access-only-portals-still-need-a-governance-foundation" class="hover:underline">Why Access-Only Portals Still Need a Governance Foundation</a></li>
+              <li><a href="#the-architecture-that-closes-the-gap" class="hover:underline">The Architecture That Closes the Gap</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>When enterprises are asked to modernize analytics access, the starting point is almost always the same: a SharePoint site, a Confluence page, or an intranet hub with reports embedded from Power BI or Tableau. This setup can help employees access reports, but it is not natively designed to provide cross-platform analytics governance, certification, ownership, and usage intelligence. These are different problems, and the distinction becomes more important as organizations connect AI copilots and agents to their analytics environments.</p>
+<h2 id="the-intranet-was-not-built-for-analytics">The Intranet Was Not Built for Analytics</h2>
+<p>Intranets exist for internal communication, collaboration, document sharing, and knowledge management. SharePoint is the dominant platform: a content management and publishing system that became the default enterprise intranet across industries over the past two decades. When analytics teams needed to make BI reports accessible, SharePoint was the path of least resistance. Employees were already there. IT already managed the platform. Embedding a Power BI report in a SharePoint page required no new procurement, no new training, and no new vendor relationship.</p>
+<p>The result is functional but architecturally limited. The intranet has no concept of an analytics estate. It treats a Power BI dashboard the same way it treats a quarterly HR update or a policy document: as a piece of content to be published and linked. Without custom integrations and analytics-specific metadata models, it does not provide a unified catalog across multiple BI tools. Unless organizations build and maintain custom governance logic, certified and actively maintained reports may appear alongside outdated or ad hoc content without a consistent trust signal. Organizing analytics assets by certification status, ownership, lineage, and usage generally requires custom development and ongoing governance processes.</p>
+<p>What organizations end up with is a collection of department pages with embedded BI links. Employees who know where to look can find reports. Employees who don&#x27;t know what they are looking for cannot. The BI team may still lack a complete cross-platform view of which reports are authoritative, who owns them, how they are used, and where duplicates exist.</p>
+<h2 id="what-an-analytics-portal-actually-does-differently">What an Analytics Portal Actually Does Differently</h2>
+<p>An analytics portal is a discovery and access layer built specifically for analytics assets, not for general content publishing. The architectural difference is meaningful.</p>
+<p>Where an intranet treats a BI report as a content item to link, an analytics portal understands that its contents are analytics assets with specific properties: which BI tool produced them, whether they are certified, who uses them, and what role they serve. It organizes reports, dashboards, and KPIs across multiple BI tools simultaneously (Power BI, Tableau, SAP Business Objects, Qlik, and others) without requiring users to know which tool produced which report. It applies analytics-aware search: a user looking for &quot;revenue by region&quot; finds the right report, not a PDF that happens to contain that phrase.</p>
+<p>A purpose-built analytics portal can respect permissions from connected BI platforms while providing a consistent discovery experience across tools..Certified reports can be surfaced distinctly from unverified ad hoc content. Usage patterns inform which reports get promoted to the front of the experience.</p>
+<p>Organizations that moved from intranet-embedded analytics to a purpose-built analytics portal saw the improvement clearly. Analytics became findable and organized for non-technical users who had never known which BI tool to open. Discovery time dropped. Analyst time spent answering routine &quot;where is the report?&quot; questions decreased. These outcomes are real, and the improvement over an intranet-based setup is not marginal.</p>
+<p><a href="../modernizing-homegrown-analytics-portals/">Modernizing Homegrown Analytics Portals: A Reference Architecture for SharePoint, .NET &amp; Custom Intranets</a> covers the full transition architecture for organizations starting from a homegrown portal setup.</p>
+<h2 id="why-access-only-portals-still-need-a-governance-foundation">Why Access-Only Portals Still Need a Governance Foundation</h2>
+<p>An intranet and an access-only analytics portal primarily function as distribution and discovery layers. Without an underlying analytics system of record, neither provides complete cross-platform governance of the analytics estate.. They organize and surface what already exists in the analytics estate. Unless governance capabilities are built into the architecture, these access layers may not consistently identify authoritative reports, assign KPI ownership, or manage conflicting definitions across BI platforms. The inconsistency when &quot;revenue&quot; means different things in the Power BI sales dashboard and the SAP Business Objects finance report goes unresolved. Both reports may be certified within their respective BI tools, while an access-only portal may lack the cross-platform governance needed to resolve the inconsistency.</p>
+<p>For most of the past decade, this gap was manageable. Manual reconciliation absorbed it: finance teams comparing dashboards before every board deck, analytics teams maintaining a master metric definition document that was always slightly out of date. The process was expensive and slow, but organizations could absorb it. Many still do.</p>
+<p>AI cannot absorb this gap.When an AI copilot or agent is connected to an ungoverned intranet or access-only portal, it may encounter analytics assets without sufficient certification, ownership, and business context to evaluate their trustworthiness. It encounters multiple versions of the same metric with no signal about which is authoritative. The output requires the same manual reconciliation the AI was supposed to eliminate. <a href="../ungoverned-analytics-estate-cost/">The Hidden Cost of an Ungoverned Analytics Estate</a> documents what organizations pay for this. <a href="../ai-agents-analytics-estates/">AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates.</a> explains the specific architectural reason.</p>
+<p>The gap cannot be solved by access and discovery alone. It requires an analytics governance foundation that establishes trust across the entire analytics estate.</p>
+<h2 id="the-architecture-that-closes-the-gap">The Architecture That Closes the Gap</h2>
+<p>The analytics system of record underpins the access experience and governs the analytics assets that the portal surfaces.. An analytics system of record catalogs, certifies, and governs analytics assets across connected BI tools. The portal can then surface a governed estate with clearer signals for certification, ownership, relevance, and usage.</p>
+<p>The foundation of this architecture begins with two connected capabilities: an analytics system of record and an AI-ready context layer.</p>
+<p>The analytics system of record maintains a complete cross-tool inventory of every active report, dashboard, and KPI across Power BI, Tableau, SAP Business Objects, Qlik, and other BI environments. It applies certification, designating which assets are authoritative and tracking ownership over time. It governs KPI definitions, ensuring &quot;revenue&quot; resolves to a consistent calculation regardless of which tool it originates from. <a href="../../atlas/">Atlas</a> connects across leading BI and analytics environments to build a governed, cross-platform inventory of reports, dashboards, KPIs, and metrics.</p>
+<p>The AI context layer converts the governed estate into machine-readable form, encoding metric relationships, business logic, and ownership so AI agents can follow reasoning rather than simply locate data. <a href="../../nexus/">Nexus</a> builds this layer from governed Atlas metadata, using AI-assisted curation and human verification to establish business definitions, semantic relationships, and trusted context.</p>
+<p>Organizations do not need to retire their intranet or replace their existing analytics portal to make this shift.The governed analytics foundation can support the distribution experience that already exists, including SharePoint, a custom intranet, or an enterprise analytics portal.. What changes is what that surface draws from: a governed, certified estate instead of an unverified collection of reports. <a href="../analytics-estate-maturity/">How to Measure Analytics Estate Maturity</a> defines the four stages that track progress from an uncharted estate to a governed, AI-ready one.</p>
+<p>Atlas and Nexus establish the governed analytics and business-context foundation. From there, organizations can use Maestro to connect trusted analytics to governed workflows, approvals, actions, and decision provenance—extending the architecture from analytics discovery to traceable execution.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-difference-between-an-intranet-and-an-analytics-portal">What is the difference between an intranet and an analytics portal?</h3>
+<p>An intranet is an internal communication and collaboration platform, designed for content publishing, document management, and employee communication. An analytics portal is a discovery and access layer built specifically for analytics assets across multiple BI tools. The two serve different architectural purposes. An intranet can embed BI reports as content items. An analytics portal is built to catalog, organize, and surface analytics assets with awareness of the BI context they come from, including certification status, tool of origin, and usage.</p>
+<h3 id="can-sharepoint-serve-as-an-enterprise-analytics-portal">Can SharePoint serve as an enterprise analytics portal?</h3>
+<p>SharePoint can host embedded BI reports and function as a basic analytics access layer for teams that already know where to look. SharePoint can provide a useful analytics access experience, but it is not natively designed to deliver cross-platform analytics cataloging, certification, ownership, lineage, and usage intelligence at enterprise scale.Delivering cross-platform cataloging, BI-level certification signals, analytics-aware search, ownership, lineage, and usage intelligence through SharePoint generally requires custom integrations and ongoing engineering.. Organizations that rely on SharePoint as their primary analytics access layer typically find that discovery gaps, duplicate content, and certification ambiguity compound as the estate grows.</p>
+<h3 id="why-does-an-analytics-portal-still-fall-short-of-what-ai-agents-need">Why does an analytics portal still fall short of what AI agents need?</h3>
+<p>An access-only analytics portal primarily organizes and surfaces existing analytics assets. Without an integrated governance foundation, it may not resolve conflicting metric definitions, establish cross-platform ownership, or determine which analytics are authoritative. It does not certify which assets are authoritative, assign ownership to KPI definitions, or resolve inconsistencies between the same metric as defined across different BI tools. When an AI agent reads from an analytics portal, it finds assets it cannot evaluate for trustworthiness. The result is conflicting outputs that require manual reconciliation, which is precisely the problem AI was deployed to solve.</p>
+<h3 id="do-we-need-to-replace-our-intranet-to-build-a-governed-analytics-estate">Do we need to replace our intranet to build a governed analytics estate?</h3>
+<p>No. Building an analytics system of record does not require replacing an intranet or retiring an existing analytics portal. The governance layer operates beneath whatever distribution surface already exists. Atlas connects to existing BI environments through Smart Connectors, builds a governed cross-tool inventory, and applies certification and metric governance across the full estate. The intranet or portal above it continues to function, but what it surfaces becomes a governed estate rather than an unverified collection of reports.</p>
+<h3 id="what-is-the-first-step-to-moving-from-an-intranet-based-analytics-setup-to-a-gov">What is the first step to moving from an intranet-based analytics setup to a governed analytics estate?</h3>
+<p>The first step is cross-tool inventory: a complete, current view of every active analytics asset across all BI tools in the estate. Organizations that begin certification or governance before completing a cross-tool inventory risk governing only the portion of the analytics estate they can currently see. Inventory completeness is the prerequisite for every subsequent governance and AI readiness step.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Discover where your analytics estate stands across inventory, certification, metric governance, ownership, and AI-ready context. Schedule a 15-minute ZenOptics Analytics Estate Assessment to identify the gaps affecting trust, efficiency, and AI readiness</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-system-of-record/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-31" class="text-sm text-navy/70">July 31, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-system-of-record/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Every Enterprise Needs an Analytics System of Record</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics system of record: what it is, why the analytics estate needs one, and how it differs from data governance, data catalogs, and BI tools.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-portal-governance-layer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-28" class="text-sm text-navy/70">July 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-portal-governance-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Modern Analytics Portals Fail Without a Governance Layer</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">The build-vs.-buy analytics portal debate misses the real issue. Learn why lasting modernization requires a governed analytics system of record.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/modernizing-homegrown-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-20" class="text-sm text-navy/70">July 20, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../modernizing-homegrown-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">Modernizing Homegrown Analytics Portals: A Reference Architecture for SharePoint, .NET &amp; Custom Intranets</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises built a SharePoint site, .NET portal, or custom intranet to centralize analytics access. These solved the discovery problem.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

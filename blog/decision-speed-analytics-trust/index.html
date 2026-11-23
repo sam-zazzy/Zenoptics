@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision Clock Speed and the Case for Trusted Analytics | ZenOptics</title>
+  <meta name="description" content="Improve decision clock speed with trusted analytics. Learn five checks for approved sources, clear metric definitions and accountable AI-supported decisions.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/decision-speed-analytics-trust/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Decision Clock Speed and the Case for Trusted Analytics | ZenOptics">
+  <meta property="og:description" content="Improve decision clock speed with trusted analytics. Learn five checks for approved sources, clear metric definitions and accountable AI-supported decisions.">
+  <meta property="og:url" content="https://zenoptics.com/blog/decision-speed-analytics-trust/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/decision-speed-analytics-trust/cover.webp">
+  <meta property="article:published_time" content="2026-10-23">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Decision Clock Speed and the Case for Trusted Analytics", "datePublished": "2026-10-23", "description": "Improve decision clock speed with trusted analytics. Learn five checks for approved sources, clear metric definitions and accountable AI-supported decisions.", "image": "https://zenoptics.com/assets/images/blog/decision-speed-analytics-trust/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/decision-speed-analytics-trust/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can companies improve decision clock speed", "acceptedAnswer": {"@type": "Answer", "text": "Reduce time spent locating reports, reconciling definitions and routing reviews. Start with one recurring decision, establish suitable sources and ownership, and measure cycle time alongside rework and business outcomes."}}, {"@type": "Question", "name": "Does faster decision making reduce decision quality", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Faster cycles can be valuable when evidence and review processes are appropriate. Quality can suffer when acceleration bypasses unresolved source conflicts, outdated assumptions or necessary oversight."}}, {"@type": "Question", "name": "How does analytics governance support AI decisions", "acceptedAnswer": {"@type": "Answer", "text": "It makes ownership, definitions, certification and usage context available around analytics assets. That helps people and AI systems select and interpret sources, while workflows can preserve reviews and actions."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Decision Clock Speed and the Case for Trusted Analytics</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-23">October 23, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/decision-speed-analytics-trust/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-is-decision-clock-speed" class="hover:underline">What is decision clock speed</a></li>
+              <li><a href="#measure-decision-quality-alongside-speed" class="hover:underline">Measure decision quality alongside speed</a></li>
+              <li><a href="#where-analytics-context-breaks-down" class="hover:underline">Where analytics context breaks down</a></li>
+              <li><a href="#why-clean-data-is-only-part-of-the-answer" class="hover:underline">Why clean data is only part of the answer</a></li>
+              <li><a href="#a-pricing-example-shows-why-context-matters" class="hover:underline">A pricing example shows why context matters</a></li>
+              <li><a href="#five-checks-before-shortening-a-decision-cycle" class="hover:underline">Five checks before shortening a decision cycle</a></li>
+              <li><a href="#build-the-foundation-while-pursuing-early-ai-returns" class="hover:underline">Build the foundation while pursuing early AI returns</a></li>
+              <li><a href="#how-zenoptics-supports-faster-decisions-with-trusted-analytics" class="hover:underline">How ZenOptics supports faster decisions with trusted analytics</a></li>
+              <li><a href="#start-with-one-decision-your-team-needs-to-make-faster" class="hover:underline">Start with one decision your team needs to make faster</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-is-decision-clock-speed" class="hover:underline">What is decision clock speed</a></li>
+              <li><a href="#measure-decision-quality-alongside-speed" class="hover:underline">Measure decision quality alongside speed</a></li>
+              <li><a href="#where-analytics-context-breaks-down" class="hover:underline">Where analytics context breaks down</a></li>
+              <li><a href="#why-clean-data-is-only-part-of-the-answer" class="hover:underline">Why clean data is only part of the answer</a></li>
+              <li><a href="#a-pricing-example-shows-why-context-matters" class="hover:underline">A pricing example shows why context matters</a></li>
+              <li><a href="#five-checks-before-shortening-a-decision-cycle" class="hover:underline">Five checks before shortening a decision cycle</a></li>
+              <li><a href="#build-the-foundation-while-pursuing-early-ai-returns" class="hover:underline">Build the foundation while pursuing early AI returns</a></li>
+              <li><a href="#how-zenoptics-supports-faster-decisions-with-trusted-analytics" class="hover:underline">How ZenOptics supports faster decisions with trusted analytics</a></li>
+              <li><a href="#start-with-one-decision-your-team-needs-to-make-faster" class="hover:underline">Start with one decision your team needs to make faster</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>A pricing decision that once took two weeks now takes two days. Finance can model scenarios overnight, commercial teams can compare options before the morning meeting, and managers can approve a change while the opportunity is still open.</p>
+<p>That shorter cycle matters. But if the recommendation uses the wrong margin definition or an outdated reporting period, the business can act sooner on evidence it should have questioned.</p>
+<p>Decision clock speed is becoming an executive priority as AI accelerates analysis and execution. To turn that speed into business value, organizations need a reliable way to identify the analytics behind a recommendation, understand their intended use, and record who authorized the action.</p>
+<h2 id="what-is-decision-clock-speed">What is decision clock speed</h2>
+<p>Decision clock speed describes how long an organization takes to move from a business question to action. In its <a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-09-gartner-says-frontier-finance-teams-will-overhaul-enterprise-decision-making-by-2030" target="_blank" rel="noopener">June 2026 outlook on frontier finance teams</a>, Gartner describes the journey from “what if?” to “do it” and says its speed can become a competitive advantage or a liability.</p>
+<p>Gartner also calls for finance teams to address barriers including opaque data, misaligned KPIs and inefficient processes. For analytics leaders, one practical implication is to make source selection and metric interpretation easier before accelerating the decisions that depend on them.</p>
+<p>This does not mean every decision needs another approval. It means people and AI systems need enough context to distinguish an appropriate source from one that simply returns an answer quickly.</p>
+<h2 id="measure-decision-quality-alongside-speed">Measure decision quality alongside speed</h2>
+<p>Shorter cycle times can help a company respond to changing demand, adjust spending or resolve an operational issue. Yet cycle time alone does not show whether the resulting action improved performance.</p>
+<p>In its <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-28-gartner-says-cfos-must-stop-mistaking-finance-ai-deployment-for-value-creation" target="_blank" rel="noopener">May 2026 guidance on finance AI value creation</a>, Gartner warns that deployment activity does not establish business impact. The same discipline applies to decision acceleration: count the time saved, then assess whether the decision achieved its intended outcome.</p>
+<p>Research also cautions against assuming that adding AI and human review automatically improves judgment. <a href="https://mitsloan.mit.edu/press/humans-and-ai-do-they-work-better-together-or-alone" target="_blank" rel="noopener">MIT Sloan research published in October 2024</a> found that human and AI combinations often performed worse on decision tasks than the better of humans or AI alone. Results differed by task, with more promising findings for creative work. This does not establish how a particular enterprise workflow will perform; it reinforces the need to test the design rather than assume collaboration guarantees improvement.</p>
+<p>A useful scorecard tracks elapsed time, rework caused by disputed evidence, and a relevant business outcome. For a pricing decision, that outcome might be realized margin, assessed alongside demand and other factors that could explain the result.</p>
+<h2 id="where-analytics-context-breaks-down">Where analytics context breaks down</h2>
+<p>Even a correctly calculated number can be unsuitable for a particular decision. Four gaps deserve attention when teams shorten their review cycles.</p>
+<p><strong>An available report is mistaken for an authoritative one.</strong> A dashboard appears in search results, but its certification status or intended audience is unclear. Familiarity becomes the reason to use it.</p>
+<p><strong>The same metric name carries different definitions.</strong> Sales uses booked revenue while finance uses recognized revenue. Both can be valid, but substituting one for the other changes the question being answered.</p>
+<p><strong>The reporting period or scope does not match.</strong> A current forecast is compared with an incomplete actuals period, or a regional result is used to justify a global recommendation. The calculation may be correct while the comparison is misleading.</p>
+<p><strong>Conflicting sources have no clear escalation route.</strong> Two teams defend different figures. Without an accountable owner and a resolution process, the decision can proceed on whichever number arrives first.</p>
+<p>These problems can exist in slow processes too. Compressing a cycle can leave less opportunity to catch them unless the checks are built into everyday work.</p>
+<h2 id="why-clean-data-is-only-part-of-the-answer">Why clean data is only part of the answer</h2>
+<p>Data quality remains essential. Missing records, faulty transformations and stale inputs can directly undermine a decision. But fixing those issues does not by itself establish which dashboard is approved for a business purpose or who owns a disputed definition.</p>
+<p>Analytics governance adds that context at the level people consume: reports, dashboards, KPIs and metrics. It connects an asset to its definition, ownership, certification and relevant usage conditions.</p>
+<p>The <a href="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/" target="_blank" rel="noopener">NIST AI Risk Management Framework</a> treats trustworthiness as broader than accuracy, including accountability, transparency and interpretation in context. Applied to analytics-supported decisions, the practical lesson is to make the source and its limitations visible where someone evaluates the recommendation.</p>
+<p>Certification is useful evidence of review. It still needs a defined scope, responsible owner and a process for reassessment when business conditions change.</p>
+<h2 id="a-pricing-example-shows-why-context-matters">A pricing example shows why context matters</h2>
+<p>Consider an illustrative weekly pricing review. An AI assistant recommends a discount based on a dashboard showing a strong product margin. The dashboard excludes distribution costs; the finance definition used for discount approval includes them.</p>
+<p>The assistant has retrieved a real number. The problem is that the number answers a different business question.</p>
+<p>A better process identifies the margin definition required for discount approval, links the recommendation to the appropriate analytics asset, and checks its period and product scope. The finance owner resolves a definition conflict before approval. The reviewer can then see the evidence, assumptions and proposed action together.</p>
+<p>The aim is to reduce repeated investigation. Once the relevant sources and responsibilities are established, later reviews can reuse them while checking for changes and exceptions.</p>
+<h2 id="five-checks-before-shortening-a-decision-cycle">Five checks before shortening a decision cycle</h2>
+<p>Start with one recurring decision and test the following conditions with the people who actually make it.</p>
+<h3 id="identify-the-approved-source">Identify the approved source</h3>
+<p>Record the reports and metrics suitable for the decision, their owners and their certification scope. Ask a user to locate the source without relying on a colleague to remember where it lives.</p>
+<h3 id="make-the-business-definition-visible">Make the business definition visible</h3>
+<p>Document the calculation, reporting period, units, filters and exclusions that affect interpretation. Test whether a reviewer can distinguish similar metrics used by different functions.</p>
+<h3 id="define-how-changes-are-reviewed">Define how changes are reviewed</h3>
+<p>Set responsibility for reviewing material changes to definitions and analytics assets. Establish how affected users will be notified and when a source needs reassessment.</p>
+<h3 id="assign-a-route-for-disagreements">Assign a route for disagreements</h3>
+<p>Name the owner who coordinates resolution when sources conflict. Shared KPIs may require agreement across finance, sales or operations, so specify who participates and who has decision authority.</p>
+<h3 id="preserve-the-evidence-and-approval">Preserve the evidence and approval</h3>
+<p>Retain the source reference, relevant version or dated evidence, assumptions, reviewer and action. Pause or escalate when an essential source is unavailable, its suitability is unresolved, or the proposed action exceeds delegated authority.</p>
+<p>These are practical readiness checks, not a guarantee that every decision will be correct. They make the evidence easier to examine and the process easier to improve.</p>
+<h2 id="build-the-foundation-while-pursuing-early-ai-returns">Build the foundation while pursuing early AI returns</h2>
+<p>There is a useful window to establish these practices while teams pursue productivity gains. In <a href="https://www.gartner.com/en/newsroom/press-releases/2026-09-24-gartner-says-cfos-must-take-a-more-disciplined-approach" target="_blank" rel="noopener">September 2026 research on finance AI investment</a>, Gartner reported a survey of 160 senior finance function leaders conducted from January through April 2026. Data extraction, accounts payable and receivable automation, and report creation generally delivered returns within nine to 10 months, while more complex uses such as forecasting and insight generation required longer to realize value.</p>
+<p>That finding is not a timetable for every company. It does support a balanced investment approach: pursue near-term efficiencies while developing the capabilities needed for more demanding decisions.</p>
+<p>For a first pilot, choose one recurring decision, document its current cycle time and evidence problems, and apply the five checks. Compare subsequent cycles for time saved, source disputes, rework and the business outcome. Expand when the process demonstrates value and exceptions have a clear owner.</p>
+<h2 id="how-zenoptics-supports-faster-decisions-with-trusted-analytics">How ZenOptics supports faster decisions with trusted analytics</h2>
+<p>ZenOptics connects analytics governance, business context and workflows through Atlas, Nexus and Maestro.</p>
+<p><a href="../../atlas/">Atlas provides an analytics system of record</a> across connected BI platforms. It helps teams discover analytics assets, manage certification, and understand ownership, definitions, lineage and usage. This gives reviewers a foundation for identifying which report or metric to use.</p>
+<p><a href="../../nexus/">Nexus adds business context for AI</a> by using metadata from Atlas and modeling relationships between analytics assets, metrics and business domains. Curated definitions and relationships help AI systems interpret analytics in the context of how the organization measures performance.</p>
+<p><a href="../../maestro/">Maestro connects insights to governed workflows</a>, with defined reviews, approvals, escalations and records of actions. This helps teams keep accountability visible as work moves from analysis to execution.</p>
+<p>Together, these capabilities support a more traceable decision process. Business owners still need to define appropriate sources, maintain the context and evaluate the outcome. Our guide to <a href="../measure-ai-impact-business-decisions/">measuring AI’s impact on business decisions</a> explains how to connect that process to a baseline and scorecard.</p>
+<h2 id="start-with-one-decision-your-team-needs-to-make-faster">Start with one decision your team needs to make faster</h2>
+<p>Choose a recurring pricing, forecasting or operational decision. Can the team identify its approved sources, explain the definitions and show who authorized the action?</p>
+<p>Answering those questions gives an acceleration program a clearer starting point. It also helps distinguish delays caused by unnecessary handoffs from checks that protect the business.</p>
+<p><a href="../../atlas/">Explore Atlas and request a ZenOptics demo</a> to discuss the analytics foundation behind your next decision.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="how-can-companies-improve-decision-clock-speed">How can companies improve decision clock speed</h3>
+<p>Reduce time spent locating reports, reconciling definitions and routing reviews. Start with one recurring decision, establish suitable sources and ownership, and measure cycle time alongside rework and business outcomes.</p>
+<h3 id="does-faster-decision-making-reduce-decision-quality">Does faster decision making reduce decision quality</h3>
+<p>Not necessarily. Faster cycles can be valuable when evidence and review processes are appropriate. Quality can suffer when acceleration bypasses unresolved source conflicts, outdated assumptions or necessary oversight.</p>
+<h3 id="how-does-analytics-governance-support-ai-decisions">How does analytics governance support AI decisions</h3>
+<p>It makes ownership, definitions, certification and usage context available around analytics assets. That helps people and AI systems select and interpret sources, while workflows can preserve reviews and actions.</p>
+<h2 id="references">References</h2>
+<div class="refs">
+<p>1. Gartner, June 9, 2026. <a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-09-gartner-says-frontier-finance-teams-will-overhaul-enterprise-decision-making-by-2030" target="_blank" rel="noopener">Gartner Says Frontier Finance Teams Will Overhaul Enterprise Decision Making by 2030</a>.</p>
+<p>2. Gartner, May 28, 2026. <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-28-gartner-says-cfos-must-stop-mistaking-finance-ai-deployment-for-value-creation" target="_blank" rel="noopener">Gartner Says CFOs Must Stop Mistaking Finance AI Deployment for Value Creation</a>.</p>
+<p>3. MIT Sloan, October 28, 2024. <a href="https://mitsloan.mit.edu/press/humans-and-ai-do-they-work-better-together-or-alone" target="_blank" rel="noopener">Humans and AI: Do they work better together or alone?</a></p>
+<p>4. NIST, AI Risk Management Framework 1.0, 2023. <a href="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/" target="_blank" rel="noopener">AI Risks and Trustworthiness</a>.</p>
+<p>5. Gartner, September 24, 2026. <a href="https://www.gartner.com/en/newsroom/press-releases/2026-09-24-gartner-says-cfos-must-take-a-more-disciplined-approach" target="_blank" rel="noopener">Gartner Says CFOs Must Take a More Disciplined Approach to Finance AI Investment</a>.</p>
+</div>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-assisted-quarterly-business-review/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-28" class="text-sm text-navy/70">October 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-assisted-quarterly-business-review/" class="after:absolute after:inset-0 focus-visible:outline-none">Better Quarterly Business Reviews: How CIOs Connect Analytics with Business Priorities</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Connect quarterly business reviews with business priorities. A CIO guide to trusted metrics, AI assisted preparation and accountable decisions.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/enterprise-analytics-business-workflows/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-26" class="text-sm text-navy/70">October 26, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../enterprise-analytics-business-workflows/" class="after:absolute after:inset-0 focus-visible:outline-none">From Boardroom Questions to Business Action: A CIO’s Analytics Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Connect boardroom priorities with recurring business decisions. A CIO playbook for trusted analytics, clear ownership and practical workflows.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/measure-ai-impact-business-decisions/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-19" class="text-sm text-navy/70">October 19, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../measure-ai-impact-business-decisions/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Measure AI’s Impact on Business Decisions</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Learn how to measure AI’s impact on business decisions with practical metrics, trusted analytics, and governed workflows supported by ZenOptics.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

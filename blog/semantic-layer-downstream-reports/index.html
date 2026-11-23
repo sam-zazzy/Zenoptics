@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Semantic Layer Governs Your Model, Not Your Dashboards | ZenOptics</title>
+  <meta name="description" content="A governed semantic model enforces definitions, row-level security and access control wherever it is queried.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/semantic-layer-downstream-reports/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="A Semantic Layer Governs Your Model, Not Your Dashboards | ZenOptics">
+  <meta property="og:description" content="A governed semantic model enforces definitions, row-level security and access control wherever it is queried.">
+  <meta property="og:url" content="https://zenoptics.com/blog/semantic-layer-downstream-reports/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/semantic-layer-downstream-reports/cover.webp">
+  <meta property="article:published_time" content="2026-10-05">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "A Semantic Layer Governs Your Model, Not Your Dashboards", "datePublished": "2026-10-05", "description": "A governed semantic model enforces definitions, row-level security and access control wherever it is queried.", "image": "https://zenoptics.com/assets/images/blog/semantic-layer-downstream-reports/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/semantic-layer-downstream-reports/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are you arguing against semantic layers?", "acceptedAnswer": {"@type": "Answer", "text": "No. For the questions a semantic model covers, enforcing governance before SQL is emitted is the right architecture. The access controls that travel with a metric definition are real enforcement. The argument is about scope, not merit."}}, {"@type": "Question", "name": "Can we just put everything through the semantic model?", "acceptedAnswer": {"@type": "Answer", "text": "Over time, in part. In practice most enterprises carry reporting from systems the model does not cover and assets built before it existed. Extending the model is a multi-year program, and agents are being connected now."}}, {"@type": "Question", "name": "Does this mean our semantic layer investment was wrong?", "acceptedAnswer": {"@type": "Answer", "text": "No. It means it solves the model layer and not the asset layer. The two are complementary, and certified metrics remain the stronger grounding for anything the model does cover."}}, {"@type": "Question", "name": "How do we know which assets fall outside the model?", "acceptedAnswer": {"@type": "Answer", "text": "Inventory what the agent can reach across every connected platform, then trace which of those assets resolve through the model. The remainder is the set that needs certification at the asset level."}}, {"@type": "Question", "name": "Is this the same as a metrics store?", "acceptedAnswer": {"@type": "Answer", "text": "No. A metrics store holds definitions. The question here is different. It asks which of the many reports and dashboards containing a metric the business has approved for a given purpose. That is recorded against the asset rather than the definition."}}, {"@type": "Question", "name": "Where does this leave AI agent deployments?", "acceptedAnswer": {"@type": "Answer", "text": "Scope the agent to assets that have been reviewed for its domain, whether those come from the model or from the wider estate. Authoritative analytics for AI agents covers how that scoping works in practice."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">A Semantic Layer Governs Your Model, Not Your Dashboards</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-05">October 5, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/semantic-layer-downstream-reports/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-a-governed-semantic-model-actually-enforces" class="hover:underline">What a Governed Semantic Model Actually Enforces</a></li>
+              <li><a href="#where-the-model-s-reach-ends" class="hover:underline">Where the Model&#x27;s Reach Ends</a></li>
+              <li><a href="#the-two-questions-that-fall-outside-the-model" class="hover:underline">The Two Questions That Fall Outside the Model</a></li>
+              <li><a href="#why-agents-make-this-sharper-than-people-did" class="hover:underline">Why Agents Make This Sharper Than People Did</a></li>
+              <li><a href="#governing-the-layer-above-the-model" class="hover:underline">Governing the Layer Above the Model</a></li>
+              <li><a href="#what-to-check-in-your-own-estate" class="hover:underline">What to Check in Your Own Estate</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#govern-the-model-and-the-estate" class="hover:underline">Govern the Model and the Estate</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-a-governed-semantic-model-actually-enforces" class="hover:underline">What a Governed Semantic Model Actually Enforces</a></li>
+              <li><a href="#where-the-model-s-reach-ends" class="hover:underline">Where the Model&#x27;s Reach Ends</a></li>
+              <li><a href="#the-two-questions-that-fall-outside-the-model" class="hover:underline">The Two Questions That Fall Outside the Model</a></li>
+              <li><a href="#why-agents-make-this-sharper-than-people-did" class="hover:underline">Why Agents Make This Sharper Than People Did</a></li>
+              <li><a href="#governing-the-layer-above-the-model" class="hover:underline">Governing the Layer Above the Model</a></li>
+              <li><a href="#what-to-check-in-your-own-estate" class="hover:underline">What to Check in Your Own Estate</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#govern-the-model-and-the-estate" class="hover:underline">Govern the Model and the Estate</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Define revenue once in a semantic model, expose it to every consumer, and the number stops drifting between tools. That argument is correct. It is also narrower than it sounds, because the model is not the only place your business reads numbers from.</p>
+<p>Most enterprises run reports and dashboards that were built before the semantic model existed, or alongside it, or against source systems that never passed through it. A governed model does not reach those. When an AI agent is pointed at the estate rather than at the model, it reaches both.</p>
+<h2 id="what-a-governed-semantic-model-actually-enforces">What a Governed Semantic Model Actually Enforces</h2>
+<p>This section is the concession, and it deserves the space, because the semantic layer case is stronger than its critics usually allow.</p>
+<p>A semantic model does not just hold definitions. Databricks describes governance that travels with the metric itself. Its account names <a href="https://www.databricks.com/blog/semantic-layer-architecture-components-design-patterns-and-ai-integration" target="_blank" rel="noopener">&quot;row-level security, column masking, and certification policies&quot;</a> that travel with each metric definition. They are not re-implemented in every tool. The same account describes policies &quot;inherited by every consuming surface rather than recreated tool by tool.&quot;</p>
+<p>That is real access control, not documentation. A user who should see one region&#x27;s figures sees one region&#x27;s figures, whether the query arrives from a notebook, a dashboard, or an agent. The enforcement happens once, at the model, instead of being rebuilt per tool and drifting between them.</p>
+<p>Cube makes the agent case directly and makes it well. Its position is that <a href="https://cube.dev/articles/semantic-layer-for-ai-agents-2026" target="_blank" rel="noopener">&quot;governance should be enforced before SQL is emitted, not after&quot;</a>. The agent selects from a governed set instead of authoring SQL against raw tables. For questions the model covers, that is the right architecture.</p>
+<p>Gartner places the same bet on a longer horizon. Distinguished VP Analyst Rita Sallam is cited in its <a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-11-gartner-announces-top-predictions-for-data-and-analytics-in-2026" target="_blank" rel="noopener">March 11, 2026 data and analytics predictions</a>. &quot;By 2030, universal semantic layers will be treated as critical infrastructure, alongside data platforms and cybersecurity.&quot;</p>
+<p>Infrastructure is the right word. It is also a word that describes a foundation rather than a finished building.</p>
+<h2 id="where-the-model-s-reach-ends">Where the Model&#x27;s Reach Ends</h2>
+<p>Governance that travels with a metric definition reaches every consumer of that definition. It does not reach an asset that never consumed it.</p>
+<p>Three kinds of asset sit in that gap in most enterprises.</p>
+<p>Reports built before the model. Analytics estates accumulate over a decade. A semantic model introduced in year seven governs what is rebuilt on top of it, not the six years of reporting that preceded it.</p>
+<p>Reports built beside the model. A business unit with its own analyst, its own extract, and a deadline does not always route through a central model. The output still lands in the same portal and still gets read as a company number.</p>
+<p>Reports from systems the model does not cover. Finance, HR and operational platforms often ship their own reporting. Those outputs are authoritative inside their system and invisible to a model that was never connected to them.</p>
+<p>None of these are failures of the semantic layer. They sit outside its scope by construction.</p>
+<p>The practical consequence is uncomfortable. An enterprise can hold a fully governed model and still carry <a href="../duplicate-reports-elimination/">duplicate reports across several BI platforms</a> that disagree with each other and with the model. The governed number is correct and the ungoverned ones are still reachable.</p>
+<p>Extending the model to cover everything is the obvious answer and the slow one. Each asset brought in needs a source mapping, an owner, and a definition somebody will defend. That work is measured in quarters. Agents are being connected in weeks, which is why the gap matters now rather than later. <a href="../bi-tool-sprawl-cost/">The cost of running several BI platforms</a> is partly the cost of this reconciliation never being finished.</p>
+<h2 id="the-two-questions-that-fall-outside-the-model">The Two Questions That Fall Outside the Model</h2>
+<p>Two questions come up constantly in a multi-platform estate, and a semantic layer answers neither of them. This is the core of the semantic layer report governance limits problem.</p>
+<p><strong>Which of these dashboards is the one to use?</strong> A semantic model can tell you what revenue means. It cannot tell you which dashboard containing a revenue figure is the certified quarterly view, which are team variants, and which should have been retired two years ago. Certification at the asset level is a different record from definition at the model level. This is what a semantic layer does not govern.</p>
+<p><strong>Who owns the definition when two assets disagree?</strong> The model has an owner. So does each report. When a report built outside the model produces a different number, somebody has to decide which one the business stands behind. That decision is recorded against the assets rather than against the model.</p>
+<p>Governed model versus governed estate is not a competition between the two. It is a statement that they are different scopes and both need maintaining.</p>
+<h2 id="why-agents-make-this-sharper-than-people-did">Why Agents Make This Sharper Than People Did</h2>
+<p>This gap existed before AI agents and was survivable, because people carried the missing context in their heads.</p>
+<p>An analyst who has sat in finance for three years knows the close runs on one specific dashboard. They never look up its certification status, because they already know. The ungoverned assets around it are visible to them and simply ignored.</p>
+<p>An agent has no such memory. It evaluates what it can reach on the evidence the estate makes explicit. Point it at a governed model and it behaves well. Point it at the reporting estate, which is what most deployments actually do, and it treats a certified quarterly dashboard and an abandoned team copy as equally available.</p>
+<p>The failure is quiet, which is what makes it expensive. An agent reading an uncertified asset does not report an error. It returns a confident number from a source nobody has stood behind since the person who built it changed teams.</p>
+<p>The semantic layer AI agents enterprise argument holds for the first case. It was never designed for the second.</p>
+<h2 id="governing-the-layer-above-the-model">Governing the Layer Above the Model</h2>
+<p>Semantic layer versus report certification is a scope distinction with a practical answer. The two records do different jobs and an enterprise running agents needs both.</p>
+<p><a href="../../atlas/">Atlas</a> is the analytics system of record. It catalogs analytics assets across BI platforms and holds certification status, ownership, lineage and usage for each one, including the assets that never passed through a semantic model. That is dashboard governance across BI tools, maintained above the platforms rather than inside any one of them. A <a href="../cross-tool-bi-inventory/">cross-tool inventory</a> is where it starts, because nothing can be certified until it is known to exist.</p>
+<p><a href="../../nexus/">Nexus</a> builds business context on that governed record, so an agent can interpret what an asset means and which assets are approved for a given domain. Where a semantic model already supplies the definition, that definition is what the asset should be certified against rather than a second one invented alongside it.</p>
+<p>Neither replaces a semantic layer. Where a governed model exists, it remains the better answer for the questions it covers, and its definitions should be the ones the estate certifies against. ZenOptics governs the layer the model does not reach. The <a href="../analytics-context-layer-vs-semantic-layer/">difference between a semantic layer and an analytics context layer</a> sets out how the two fit together.</p>
+<h2 id="what-to-check-in-your-own-estate">What to Check in Your Own Estate</h2>
+<p>Start by measuring the gap rather than assuming it. Count the analytics assets an agent can currently reach, then count how many of those resolve through your semantic model. The difference is the ungoverned surface.</p>
+<p>Then check whether the assets outside the model carry a certification status at all, and whether that status means the same thing in every platform it came from. Where it does not, record which signal wins.</p>
+<p>Then decide whether to extend the model, certify the asset, or retire it. All three are valid outcomes and they carry different costs. Extending the model is the most durable and the slowest. Certifying the asset where it sits is faster and leaves the asset in the platform that owns it. Retiring it is cheapest when nobody has opened it in a year.</p>
+<p>Leaving the asset reachable and unlabeled is the only option that is not valid, because that is the state an agent cannot reason about.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="are-you-arguing-against-semantic-layers">Are you arguing against semantic layers?</h3>
+<p>No. For the questions a semantic model covers, enforcing governance before SQL is emitted is the right architecture. The access controls that travel with a metric definition are real enforcement. The argument is about scope, not merit.</p>
+<h3 id="can-we-just-put-everything-through-the-semantic-model">Can we just put everything through the semantic model?</h3>
+<p>Over time, in part. In practice most enterprises carry reporting from systems the model does not cover and assets built before it existed. Extending the model is a multi-year program, and agents are being connected now.</p>
+<h3 id="does-this-mean-our-semantic-layer-investment-was-wrong">Does this mean our semantic layer investment was wrong?</h3>
+<p>No. It means it solves the model layer and not the asset layer. The two are complementary, and <a href="../certified-metrics-ai-grounding/">certified metrics remain the stronger grounding</a> for anything the model does cover.</p>
+<h3 id="how-do-we-know-which-assets-fall-outside-the-model">How do we know which assets fall outside the model?</h3>
+<p>Inventory what the agent can reach across every connected platform, then trace which of those assets resolve through the model. The remainder is the set that needs certification at the asset level.</p>
+<h3 id="is-this-the-same-as-a-metrics-store">Is this the same as a metrics store?</h3>
+<p>No. A metrics store holds definitions. The question here is different. It asks which of the many reports and dashboards containing a metric the business has approved for a given purpose. That is recorded against the asset rather than the definition.</p>
+<h3 id="where-does-this-leave-ai-agent-deployments">Where does this leave AI agent deployments?</h3>
+<p>Scope the agent to assets that have been reviewed for its domain, whether those come from the model or from the wider estate. <a href="../authoritative-analytics-ai-agents/">Authoritative analytics for AI agents</a> covers how that scoping works in practice.</p>
+<h2 id="govern-the-model-and-the-estate">Govern the Model and the Estate</h2>
+<p>A governed semantic model is worth building. Gartner expects it to be treated as infrastructure by 2030. The governance that travels with a metric definition is the strongest answer available for the questions the model covers.</p>
+<p>It is not the whole of analytics governance, and an agent connected to your reporting estate will discover the difference before you do.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Talk to our experts about certifying the analytics assets your semantic model does not reach</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-ready-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-12" class="text-sm text-navy/70">October 12, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-ready-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Can Your AI Agent Trust the Reports It Reads</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/agent-analytics-provenance-record/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-09" class="text-sm text-navy/70">October 9, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../agent-analytics-provenance-record/" class="after:absolute after:inset-0 focus-visible:outline-none">AI Agent Analytics Provenance Audit</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Agent traces record the call, the tool and the source. BI audit logs record the access. Neither records whether the asset was certified at the moment the…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/authoritative-analytics-ai-agents/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-01" class="text-sm text-navy/70">October 1, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../authoritative-analytics-ai-agents/" class="after:absolute after:inset-0 focus-visible:outline-none">Authoritative Analytics for AI Agents Across Your BI Estate</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Connecting an AI agent to Power BI, Tableau and other platforms is getting easier. Deciding which report is authoritative for a business question is a…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

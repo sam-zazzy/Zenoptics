@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Readiness Checklist Every Analytics Leader Should Complete | ZenOptics</title>
+  <meta name="description" content="Every AI readiness framework circulating in mid-2026 assesses the same layer: data quality, infrastructure, governance controls at the pipeline level…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-readiness-checklist/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="The AI Readiness Checklist Every Analytics Leader Should Complete | ZenOptics">
+  <meta property="og:description" content="Every AI readiness framework circulating in mid-2026 assesses the same layer: data quality, infrastructure, governance controls at the pipeline level…">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-readiness-checklist/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-readiness-checklist/cover.webp">
+  <meta property="article:published_time" content="2026-07-03">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The AI Readiness Checklist Every Analytics Leader Should Complete", "datePublished": "2026-07-03", "description": "Every AI readiness framework circulating in mid-2026 assesses the same layer: data quality, infrastructure, governance controls at the pipeline level…", "image": "https://zenoptics.com/assets/images/blog/analytics-readiness-checklist/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-readiness-checklist/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this checklist a replacement for a standard AI readiness assessment?", "acceptedAnswer": {"@type": "Answer", "text": "No. Standard AI readiness assessments cover data quality, infrastructure, talent, and governance at the pipeline level. This checklist covers the analytics estate layer: the reports, dashboards, KPI definitions, and business context AI systems read from when answering business questions. Both assessments are necessary. Most organizations have completed a version of the standard assessment. Very few have completed this one. For a full explanation of why standard frameworks miss the analytics layer and which specific dimensions they leave uncovered, see Why Most AI Readiness Assessments Miss the Analytics Layer."}}, {"@type": "Question", "name": "Who should complete this checklist?", "acceptedAnswer": {"@type": "Answer", "text": "Accurate results require input from at least two or three people: the analytics or BI leader for Sections 1 and 2, a data governance lead or metric owner for Section 3, and whoever is responsible for AI deployment or the analytics context layer for Section 4. In most organizations, no single person holds all of this. Running the checklist as a group conversation often surfaces disagreements about ownership and certification coverage that are worth resolving before the next AI deployment."}}, {"@type": "Question", "name": "How often should this assessment be run?", "acceptedAnswer": {"@type": "Answer", "text": "Quarterly, at minimum, for organizations with active AI deployments. The analytics estate changes continuously: reports are added, metrics are recalculated, owners change roles, business logic evolves. An annual pass underestimates that rate of change considerably."}}, {"@type": "Question", "name": "How does this differ from a BI maturity assessment?", "acceptedAnswer": {"@type": "Answer", "text": "A BI maturity assessment measures how advanced the analytics function is: tools, processes, capability levels. This checklist assesses one specific property: whether AI systems can read from the analytics estate reliably and consistently. A high BI maturity score does not guarantee a high score here. An organization can have sophisticated analytics capabilities and still have low certification coverage across the full estate, or no machine-readable context encoding at all."}}, {"@type": "Question", "name": "Where can I find the full framework behind this checklist?", "acceptedAnswer": {"@type": "Answer", "text": "The four dimensions assessed here, along with the organizational patterns behind most analytics estate readiness failures, are covered in depth in Your Analytics Estate Isn't AI Ready. Here's How to Fix It. The Analytics Estate Assessment Scorecard walks through a structured version of this evaluation with your analytics leadership team. Schedule a 15-minute session to run it with ZenOptics."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">The AI Readiness Checklist Every Analytics Leader Should Complete</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-07-03">July 3, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-readiness-checklist/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-every-other-ai-readiness-checklist-misses" class="hover:underline">What Every Other AI Readiness Checklist Misses</a></li>
+              <li><a href="#the-analytics-estate-ai-readiness-checklist" class="hover:underline">The Analytics Estate AI Readiness Checklist</a></li>
+              <li><a href="#how-to-read-your-score" class="hover:underline">How to Read Your Score</a></li>
+              <li><a href="#where-to-start-if-your-score-is-low" class="hover:underline">Where to Start if Your Score Is Low</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-every-other-ai-readiness-checklist-misses" class="hover:underline">What Every Other AI Readiness Checklist Misses</a></li>
+              <li><a href="#the-analytics-estate-ai-readiness-checklist" class="hover:underline">The Analytics Estate AI Readiness Checklist</a></li>
+              <li><a href="#how-to-read-your-score" class="hover:underline">How to Read Your Score</a></li>
+              <li><a href="#where-to-start-if-your-score-is-low" class="hover:underline">Where to Start if Your Score Is Low</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Every AI readiness framework circulating in mid-2026 assesses the same layer: data quality, infrastructure, governance controls at the pipeline level, talent maturity. These frameworks are necessary. They are also incomplete in one specific, consequential way: none of them assess whether the analytics estate your AI systems will read from is ready. A <a href="https://newsroom.ibm.com/2025-11-13-ibm-study-chief-data-officers-redefine-strategies-as-ai-ambitions-outpace-readiness" target="_blank" rel="noopener">2025 IBM study of 1,700 CDOs</a> found that only 26% are confident their data can support new AI-enabled revenue streams. That confidence gap is real. The harder gap sits one layer above the data, where most readiness frameworks stop looking.</p>
+<h2 id="what-every-other-ai-readiness-checklist-misses">What Every Other AI Readiness Checklist Misses</h2>
+<p>Standard AI readiness frameworks address the data layer: what data the organization has, how clean it is, whether it is accessible, and whether the infrastructure can support AI workloads. All of this matters.</p>
+<p>What none of these frameworks address is whether the analytics estate your AI systems read from is in any condition to be trusted. When an AI agent or copilot answers a business question, it does not query the data warehouse. It reads from the reports, dashboards, KPI definitions, and certified datasets that sit above the data: the analytics estate. A clean data foundation feeding an ungoverned analytics estate produces the same inconsistent AI outputs as a poorly governed data layer, just at a different level. The architectural reasons for this, and what they mean for enterprise AI readiness, are covered in <a href="../ai-agents-analytics-estates/">AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates.</a></p>
+<p>This is <a href="../ai-ready-analytics-estate/">the readiness gap behind most enterprise AI trust failures</a>. If you have already run a standard AI readiness assessment and are still getting conflicting AI outputs, this is the assessment you have not completed yet.</p>
+<h2 id="the-analytics-estate-ai-readiness-checklist">The Analytics Estate AI Readiness Checklist</h2>
+<p>Four sections. Each corresponds to a dimension of analytics estate readiness. Score one point for every Yes. Total possible score: 18.</p>
+<h3 id="section-1-inventory-completeness">Section 1: Inventory Completeness</h3>
+<p><em>Can your AI see the full analytics estate, or only the part that lives in one tool&#x27;s catalog?</em></p>
+<ul>
+<li>[ ] We have a complete, current inventory of every active report and dashboard across all BI tools in use (Power BI, Tableau, SAP BO, Qlik, and any others), not just the inventory each tool maintains within its own catalog.</li>
+<li>[ ] Our inventory includes analytics assets outside formal BI tools: Excel-based reports, SharePoint-hosted dashboards, and embedded analytics in operational systems.</li>
+<li>[ ] Our inventory is continuously maintained and updates when assets are added, modified, or retired. It is not a one-time audit sitting in a spreadsheet.</li>
+<li>[ ] We know which reports are actively used versus <a href="../analytics-sprawl-cost/">orphaned</a>. The distinction is tracked, not estimated.</li>
+<li>[ ] Every active report has a designated owner: a current, accountable person, not whoever happened to create it two or three years ago.</li>
+</ul>
+<h3 id="section-2-certification-coverage">Section 2: Certification Coverage</h3>
+<p><em>Does your AI know which version of a metric to trust when it finds several?</em></p>
+<ul>
+<li>[ ] We have a formal certification process for analytics assets across every BI tool in use, not only within Power BI&#x27;s built-in promotion feature.</li>
+<li>[ ] Certification coverage extends across the full estate, not only a subset of finance-owned or executive-facing reports.</li>
+<li>[ ] When AI queries our estate, it can distinguish a certified metric from an uncertified variant. The certification status is machine-readable, not documented in a SharePoint wiki or a Word file.</li>
+<li>[ ] We track the proportion of our active analytics estate that carries certified status. The number is tracked, not guessed.</li>
+</ul>
+<h3 id="section-3-metric-governance">Section 3: Metric Governance</h3>
+<p><em>Does your AI know who owns each metric, when it was last verified, and what it actually calculates?</em></p>
+<ul>
+<li>[ ] Every certified metric has a designated owner: a specific person or team accountable for its accuracy, not the historical creator who may have moved on.</li>
+<li>[ ] Each certified metric has documented calculation logic: what it includes, what it excludes, and which version of which source it draws from.</li>
+<li>[ ] Certified metrics carry a last-reviewed date and a defined review cadence, not an informal understanding that someone will update them when policy changes.</li>
+<li>[ ] When a business policy change affects how a metric should be calculated, there is a formal process to update the certification record and propagate the change. The process does not depend on individual memory.</li>
+<li>[ ] The distinction between data governance and <a href="../data-governance-vs-analytics-governance/">analytics governance</a> is documented in our organization. They address different layers. Both programs exist.</li>
+</ul>
+<h3 id="section-4-context-encoding">Section 4: Context Encoding</h3>
+<p><em>When AI answers a question spanning multiple KPIs, does it follow your business logic, or reconstruct it by inference?</em></p>
+<ul>
+<li>[ ] The relationships between our certified metrics are encoded in a machine-readable format that AI agents can follow. They are not stored only in PDF documentation or held informally by a handful of senior analysts.</li>
+<li>[ ] When an AI agent asks a question spanning multiple KPIs, it can trace the approved relationship between those KPIs as our finance or analytics team has defined it, not approximate it from co-occurrence patterns in the data.</li>
+<li>[ ] Our <a href="../analytics-context-layer-enterprise/">analytics context layer</a> is derived automatically from our existing BI metadata. We are not building or maintaining it manually.</li>
+<li>[ ] The context layer stays current as business logic changes. It is not a static artifact from the last BI platform migration.</li>
+</ul>
+<h2 id="how-to-read-your-score">How to Read Your Score</h2>
+<p><strong>15–18:</strong> The analytics estate is in strong AI-ready condition. AI tools querying this estate will likely return consistent, trusted outputs. The primary task now is sustaining certification coverage and keeping the context layer current as the business evolves.</p>
+<p><strong>9–14:</strong> Partial readiness. AI outputs will be inconsistent: some queries will land on certified, well-governed assets; others will surface uncertified variants or follow inferred metric relationships that do not match your actual business logic. The sections where you scored lowest are where trust failures are most likely to originate.</p>
+<p><strong>0–8:</strong> The analytics estate is not AI-ready. This is the pattern behind most enterprise AI trust failures. Standard AI readiness assessments will not surface this gap; they do not assess this layer.</p>
+<p>One note worth stating clearly: this score is independent of your data readiness score. An organization can have strong data readiness and still score poorly here. Most enterprises have started data readiness programs. Very few have started analytics estate readiness programs. The two address different problems, and neither substitutes for the other.</p>
+<h2 id="where-to-start-if-your-score-is-low">Where to Start if Your Score Is Low</h2>
+<p>The four sections build on each other, and the sequencing matters more than most analytics leaders initially expect.</p>
+<p>Start with Section 1. You cannot govern what you cannot see. A complete, current cross-tool inventory is the prerequisite for everything else. Without it, your certification and governance scores in Sections 2 and 3 are incomplete by definition; they reflect only the portion of the estate visible to your current catalogs. In practice, most organizations discover three to four times more active analytics assets in this step than their single-tool catalogs had shown them.</p>
+<p>Address Sections 2 and 3 together. Certification without governance becomes stale: a metric certified eighteen months ago under a cost allocation policy that has since changed is not a reliable source of truth, regardless of its certification status. Governance without certification has nothing authoritative to apply to. The metric to track across both sections: what percentage of the active analytics estate carries a certified status with a current owner and a last-reviewed date within the past twelve months.</p>
+<p>Context encoding, Section 4, follows the estate. Building a machine-readable context layer before the underlying estate is certified and governed produces a context layer that reflects the estate&#x27;s disorder rather than the business&#x27;s intent. The context layer is derived from the estate. What goes in comes out.</p>
+<p><a href="../../atlas/">Atlas</a> addresses Sections 1 through 3 by maintaining the certified analytics estate across BI tools continuously: inventory, certification, ownership, and review cycle tracking across Power BI, Tableau, SAP BO, Qlik, and 100+ connected systems. <a href="../../nexus/">Nexus</a> addresses Section 4 by deriving the analytics context layer automatically from the governed estate Atlas produces. Together, they address all four dimensions without requiring a manual rebuild of the analytics estate from scratch. Organizations that bring their analytics estate under governance with this approach typically see a 20–40% improvement in analytics discovery speed and a 30–40% reduction in duplicate reports.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-this-checklist-a-replacement-for-a-standard-ai-readiness-assessment">Is this checklist a replacement for a standard AI readiness assessment?</h3>
+<p>No. Standard AI readiness assessments cover data quality, infrastructure, talent, and governance at the pipeline level. This checklist covers the analytics estate layer: the reports, dashboards, KPI definitions, and business context AI systems read from when answering business questions. Both assessments are necessary. Most organizations have completed a version of the standard assessment. Very few have completed this one. For a full explanation of why standard frameworks miss the analytics layer and which specific dimensions they leave uncovered, see <a href="../ai-readiness-assessments-analytics-layer/">Why Most AI Readiness Assessments Miss the Analytics Layer</a>.</p>
+<h3 id="who-should-complete-this-checklist">Who should complete this checklist?</h3>
+<p>Accurate results require input from at least two or three people: the analytics or BI leader for Sections 1 and 2, a data governance lead or metric owner for Section 3, and whoever is responsible for AI deployment or the analytics context layer for Section 4. In most organizations, no single person holds all of this. Running the checklist as a group conversation often surfaces disagreements about ownership and certification coverage that are worth resolving before the next AI deployment.</p>
+<h3 id="how-often-should-this-assessment-be-run">How often should this assessment be run?</h3>
+<p>Quarterly, at minimum, for organizations with active AI deployments. The analytics estate changes continuously: reports are added, metrics are recalculated, owners change roles, business logic evolves. An annual pass underestimates that rate of change considerably.</p>
+<h3 id="how-does-this-differ-from-a-bi-maturity-assessment">How does this differ from a BI maturity assessment?</h3>
+<p>A BI maturity assessment measures how advanced the analytics function is: tools, processes, capability levels. This checklist assesses one specific property: whether AI systems can read from the analytics estate reliably and consistently. A high BI maturity score does not guarantee a high score here. An organization can have sophisticated analytics capabilities and still have low certification coverage across the full estate, or no machine-readable context encoding at all.</p>
+<h3 id="where-can-i-find-the-full-framework-behind-this-checklist">Where can I find the full framework behind this checklist?</h3>
+<p>The four dimensions assessed here, along with the organizational patterns behind most analytics estate readiness failures, are covered in depth in <a href="../ai-ready-analytics-estate/">Your Analytics Estate Isn&#x27;t AI Ready. Here&#x27;s How to Fix It</a>.</p>
+<p>The Analytics Estate Assessment Scorecard walks through a structured version of this evaluation with your analytics leadership team. <a href="../../schedule-a-demo/">Schedule a 15-minute session</a> to run it with ZenOptics.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-agents-analytics-estates/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-10" class="text-sm text-navy/70">July 10, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-agents-analytics-estates/" class="after:absolute after:inset-0 focus-visible:outline-none">AI Agents Don&#x27;t Read Data Warehouses. They Read Analytics Estates.</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Enterprise AI agents don&#x27;t query the data warehouse. They read from analytics estates: the certified reports, dashboards, and metrics that sit above the data.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-readiness-assessments-analytics-layer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-07-06" class="text-sm text-navy/70">July 6, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-readiness-assessments-analytics-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Most AI Readiness Assessments Miss the Analytics Layer</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Standard AI readiness assessments check data quality, infrastructure, and talent. None assess the analytics estate your AI systems actually read from.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-ready-analytics-estate/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-29" class="text-sm text-navy/70">June 29, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-ready-analytics-estate/" class="after:absolute after:inset-0 focus-visible:outline-none">Your Analytics Estate Isn&#x27;t AI Ready. Here&#x27;s How to Fix It.</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Every major AI readiness framework published in the last two years assesses the same things: data infrastructure quality, pipeline reliability, talent…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

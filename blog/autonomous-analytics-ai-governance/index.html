@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Governing Autonomous Analytics AI at Enterprise Scale: Beyond Data Governance | ZenOptics</title>
+  <meta name="description" content="Autonomous analytics AI governance is not a data governance problem. Here is what runtime enforcement of analytics policy requires at the AI layer, and…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/autonomous-analytics-ai-governance/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Governing Autonomous Analytics AI at Enterprise Scale: Beyond Data Governance | ZenOptics">
+  <meta property="og:description" content="Autonomous analytics AI governance is not a data governance problem. Here is what runtime enforcement of analytics policy requires at the AI layer, and…">
+  <meta property="og:url" content="https://zenoptics.com/blog/autonomous-analytics-ai-governance/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/autonomous-analytics-ai-governance/cover.webp">
+  <meta property="article:published_time" content="2026-05-04">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Governing Autonomous Analytics AI at Enterprise Scale: Beyond Data Governance", "datePublished": "2026-05-04", "description": "Autonomous analytics AI governance is not a data governance problem. Here is what runtime enforcement of analytics policy requires at the AI layer, and…", "image": "https://zenoptics.com/assets/images/blog/autonomous-analytics-ai-governance/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/autonomous-analytics-ai-governance/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is autonomous analytics AI governance?", "acceptedAnswer": {"@type": "Answer", "text": "Autonomous analytics AI governance is the discipline of governing what analytics AI agents say, do, and decide at runtime. It covers definition certification, decision provenance, lineage at the decision layer, and runtime policy enforcement. It is distinct from data governance, which governs the data itself rather than the AI's behavior on top of it."}}, {"@type": "Question", "name": "Why does data governance not cover autonomous analytics AI?", "acceptedAnswer": {"@type": "Answer", "text": "Data governance governs the data: where it came from, who owns it, how it is classified, what quality it meets, who can access it. Analytics AI governance has to govern the answer: which business definitions the AI used, which policy constrained the action it triggered, and what trace each decision leaves. The two disciplines solve different problems. Mature data governance is necessary for autonomous analytics AI; it is not sufficient."}}, {"@type": "Question", "name": "What is decision provenance in analytics AI?", "acceptedAnswer": {"@type": "Answer", "text": "Decision provenance is the verifiable record of how an analytics AI answer was assembled: which certified definition grounded it, which metric it depended on, which runtime policy permitted the action, and which source data was referenced. Decision provenance turns AI-generated answers into answers a CFO can sign off on, because every decision is traceable from the answer back to the certified business definition."}}, {"@type": "Question", "name": "How does Maestro enforce governance at runtime?", "acceptedAnswer": {"@type": "Answer", "text": "Maestro enforces analytics AI policy at the moment of execution rather than at quarterly review. Policies that used to live in compliance documents become enforceable rules the runtime layer reads and applies before an agent acts. Maestro also captures decision provenance for every AI-generated answer and traces each decision back through the Analytics Context Layer to the certified metric in the analytics estate."}}, {"@type": "Question", "name": "What happens to autonomous analytics AI without runtime governance?", "acceptedAnswer": {"@type": "Answer", "text": "Without runtime governance, autonomous analytics AI agents act without enforcement of business policy, decisions accumulate without traceable lineage at the decision layer, and definition drift goes undetected. Gartner projects that by 2030, 50% of AI agent deployment failures will be tied to insufficient runtime governance enforcement. The cost of the gap is not a data quality breach; it is a steady accumulation of AI-generated decisions the business cannot stand behind."}}, {"@type": "Question", "name": "How is autonomous analytics AI governance different from model risk management?", "acceptedAnswer": {"@type": "Answer", "text": "Model risk management (MRM) governs the model itself: training data lineage, model validation, drift detection, behavior monitoring. Autonomous analytics AI governance covers what the AI says about the business: which certified definitions ground answers, which runtime policies constrain the actions taken on those answers, and what trace each business decision leaves. MRM is necessary for autonomous analytics AI; it does not replace the analytics-specific governance layer where most enterprise governance gaps live in 2026."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Governing Autonomous Analytics AI at Enterprise Scale: Beyond Data Governance</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-05-04">May 4, 2026</time></span>
+          <span>8 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/autonomous-analytics-ai-governance/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-autonomous-analytics-ai-governance-gap-is-real" class="hover:underline">The Autonomous Analytics AI Governance Gap Is Real</a></li>
+              <li><a href="#why-data-governance-does-not-solve-analytics-ai-governance" class="hover:underline">Why Data Governance Does Not Solve Analytics AI Governance</a></li>
+              <li><a href="#three-failure-modes-data-governance-does-not-catch" class="hover:underline">Three Failure Modes Data Governance Does Not Catch</a></li>
+              <li><a href="#the-runtime-governance-blueprint-for-autonomous-analytics-ai" class="hover:underline">The Runtime Governance Blueprint for Autonomous Analytics AI</a></li>
+              <li><a href="#what-governed-autonomous-analytics-ai-looks-like-in-production" class="hover:underline">What Governed Autonomous Analytics AI Looks Like in Production</a></li>
+              <li><a href="#where-to-go-next" class="hover:underline">Where to Go Next</a></li>
+              <li><a href="#faq-autonomous-analytics-ai-governance-at-enterprise-scale" class="hover:underline">FAQ: Autonomous Analytics AI Governance at Enterprise Scale</a></li>
+              <li><a href="#close-your-own-autonomous-analytics-ai-governance-gap" class="hover:underline">Close Your Own Autonomous Analytics AI Governance Gap</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-autonomous-analytics-ai-governance-gap-is-real" class="hover:underline">The Autonomous Analytics AI Governance Gap Is Real</a></li>
+              <li><a href="#why-data-governance-does-not-solve-analytics-ai-governance" class="hover:underline">Why Data Governance Does Not Solve Analytics AI Governance</a></li>
+              <li><a href="#three-failure-modes-data-governance-does-not-catch" class="hover:underline">Three Failure Modes Data Governance Does Not Catch</a></li>
+              <li><a href="#the-runtime-governance-blueprint-for-autonomous-analytics-ai" class="hover:underline">The Runtime Governance Blueprint for Autonomous Analytics AI</a></li>
+              <li><a href="#what-governed-autonomous-analytics-ai-looks-like-in-production" class="hover:underline">What Governed Autonomous Analytics AI Looks Like in Production</a></li>
+              <li><a href="#where-to-go-next" class="hover:underline">Where to Go Next</a></li>
+              <li><a href="#faq-autonomous-analytics-ai-governance-at-enterprise-scale" class="hover:underline">FAQ: Autonomous Analytics AI Governance at Enterprise Scale</a></li>
+              <li><a href="#close-your-own-autonomous-analytics-ai-governance-gap" class="hover:underline">Close Your Own Autonomous Analytics AI Governance Gap</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Autonomous analytics AI is moving into enterprise workflows faster than the governance practices most teams rely on. Data governance governs the data; it does not govern what the AI says about the data. The distinction matters more than most enterprise teams have yet realized.</p>
+<h2 id="the-autonomous-analytics-ai-governance-gap-is-real">The Autonomous Analytics AI Governance Gap Is Real</h2>
+<p>The autonomous analytics AI governance gap is the next category of risk landing on the CIO&#x27;s and Chief Data Officer&#x27;s desk. Most enterprises have spent a decade building mature data governance. Those practices were designed for a world where humans, not AI agents, made the decisions on top of the data. AI agents now make many of those decisions, and the governance frame did not change with them.</p>
+<p>The numbers behind the gap are concrete. Gartner predicts that <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank" rel="noopener">40% of enterprise applications will feature task-specific AI agents by 2026, up from less than 5% in 2025</a>. A second Gartner projection sets the failure rate to expect: <a href="https://www.gartner.com/en/newsroom/press-releases/2025-10-21-gartner-unveils-top-predictions-for-it-organizations-and-users-in-2026-and-beyond" target="_blank" rel="noopener">by 2030, 50% of AI agent deployment failures will be due to insufficient AI governance platform runtime enforcement for capabilities and multisystem interoperability</a>.</p>
+<p>Two trends are colliding. Autonomous analytics AI agents are scaling rapidly into enterprise applications, while the governance enforcement that should constrain their actions at runtime does not exist in most organizations. Data governance is the closest discipline most teams have, and it does not extend to that layer.</p>
+<h2 id="why-data-governance-does-not-solve-analytics-ai-governance">Why Data Governance Does Not Solve Analytics AI Governance</h2>
+<p>Most enterprises have mature data governance: data quality programs, master data management, data lineage, data stewardship, classification and access policies. None of this is wrong. All of it is necessary. None of it answers the questions analytics AI governance has to answer.</p>
+<p>Data governance governs what the data is, where it came from, who owns it, how it is classified, and who can access it. Analytics AI governance has to govern what an AI agent says, which definitions ground the answer, which policies constrain the action, and what trace each decision leaves. The first set is a data problem. The second set is a meaning problem.</p>
+<p>When an autonomous analytics AI agent answers a CFO&#x27;s question about Q3 revenue and triggers a downstream action based on that answer, the data governance stack confirms the underlying data is high quality, properly classified, and traceable to its source systems. It does not confirm that the revenue definition the agent used matches the certified business definition. It does not confirm that the answer is traceable through that certified definition to the underlying metric. It does not confirm that the runtime policy governing this class of action was enforced at the moment of execution.</p>
+<p>The gap between &quot;the data is governed&quot; and &quot;the answer is governed&quot; is the gap most enterprises are about to discover the hard way.</p>
+<h2 id="three-failure-modes-data-governance-does-not-catch">Three Failure Modes Data Governance Does Not Catch</h2>
+<p>Three specific failure modes show up repeatedly when autonomous analytics AI is deployed without an analytics-specific governance layer. None of them is a data governance failure. All of them are AI governance failures.</p>
+<p>The first is definition drift. The certified business definition for revenue, churn, or a customer-segment boundary is documented in data governance and stewarded by a domain owner. The AI may use a different one. Data governance has the definition; it does not enforce that the AI grounds in it. The CFO finds out when two AI-generated reports disagree on the same number.</p>
+<p>The second is lineage opacity at the decision layer. Data lineage tracks how data flowed from source systems through the pipeline. It does not track how the AI assembled an answer from definitions, metrics, and runtime policies. When an answer is challenged, data governance can show what data the AI saw. It cannot show how the AI reasoned to a specific answer or which certified definitions it grounded on.</p>
+<p>The third is the runtime policy gap. Data governance policies are static: ownership, classification, retention, access rules. They are not runtime enforcement of business rules at the moment an analytics AI agent acts. The agent acts. Data governance covers the data underneath. The analytics AI behavior on top of it remains ungoverned in real time.</p>
+<h2 id="the-runtime-governance-blueprint-for-autonomous-analytics-ai">The Runtime Governance Blueprint for Autonomous Analytics AI</h2>
+<p>Governing autonomous analytics AI at enterprise scale requires three layers, each of which closes one of the failure modes above. ZenOptics calls this The Decision Intelligence Platform. Together, the three layers extend governance from the data layer (where most enterprise practice stops) to the analytics AI layer (where the gap lives).</p>
+<h3 id="atlas-certified-analytics-system-of-record">Atlas: Certified Analytics System of Record</h3>
+<p><a href="../../atlas/">Atlas</a> is the analytics system of record. It inventories the BI estate across Tableau, Power BI, Looker, ThoughtSpot, and any combination of them, and it certifies which reports, definitions, and metrics are trusted. Without Atlas, governance has no anchor at the analytics layer. Every governance question begins with &quot;anchored to which version of the truth,&quot; and Atlas answers that question at the analytics layer, where data governance does not reach.</p>
+<h3 id="nexus-the-certified-analytics-context-substrate">Nexus: The Certified Analytics Context Substrate</h3>
+<p><a href="../../nexus/">Nexus</a> is the Analytics Context Layer. It captures certified business definitions, semantic relationships, and trusted metrics, and it grounds every analytics AI answer in those definitions. Definition drift cannot occur when every agent answer is grounded in the same certified context. Lineage opacity at the decision layer cannot occur when the answer carries the certified definition with it.</p>
+<h3 id="maestro-runtime-policy-enforcement-and-decision-provenance">Maestro: Runtime Policy Enforcement and Decision Provenance</h3>
+<p><a href="../../maestro/">Maestro</a> is the execution and governance layer for autonomous analytics AI. It enforces policy at runtime, captures decision provenance for every AI-generated answer, and traces each decision back through the context layer to the certified metric and source. Maestro is what closes the runtime policy gap. Policies that used to live in compliance documents become enforceable rules at the moment of execution. Every action an autonomous analytics AI agent takes carries a verifiable trace of which policy permitted it, which definition grounded it, and which metric it depended on.</p>
+<p>ZenOptics AI, or ZIVA, is the conversational surface that operationalizes the three layers for end users. A business leader asks a question and receives a governed answer. The substrate doing the governance work is invisible to the user and visible to the auditor.</p>
+<p>Organizations implementing ZenOptics typically see analytics AI deployments stand up two to three times faster, and the governance posture is intrinsic to the architecture rather than bolted on after the fact.</p>
+<h2 id="what-governed-autonomous-analytics-ai-looks-like-in-production">What Governed Autonomous Analytics AI Looks Like in Production</h2>
+<p>Governed autonomous analytics AI has recognizable signatures in production. Every AI-generated answer carries lineage back to a certified definition. Every action an agent takes is traceable to a runtime policy that permitted it. Every metric an agent grounds an answer in is a certified metric the business has already stood behind. The CFO can sign off on AI-generated numbers because the governance is intrinsic, not because someone manually validated the output.</p>
+<p>The inverse is the failure pattern Gartner is projecting. Agents act without runtime policy enforcement, decisions accumulate without traceable lineage at the decision layer, and definition drift goes undetected until two AI-generated reports contradict each other in a board meeting. The data governance stack has done its job correctly. The data is high quality, well-classified, and properly stewarded. The analytics AI governance gap remains the gap that matters.</p>
+<p>The path to governed autonomous analytics AI is not a new data discipline. It is a new layer of governance designed for the analytics AI layer specifically, enforced at runtime, integrated with certified definitions and a certified estate.</p>
+<h2 id="where-to-go-next">Where to Go Next</h2>
+<p>If you have not read the overview yet, start with <a href="../analytics-ai-value-gap/">Analytics AI at Enterprise Scale: Why the Value Gap Is a Context Gap</a> for the full value-realization framework behind this argument.</p>
+<p>If your governance concern is preceded by a velocity concern (analytics AI deployments moving slowly to begin with), read <a href="../analytics-ai-time-to-value/">Analytics AI Time-to-Value at Enterprise Scale: Why Context Is the Bottleneck</a>.</p>
+<p>If you are ready for the full architectural view across Know, Understand, and Act, read Architecting the AI-Ready Analytics Enterprise: The Decision Intelligence Blueprint.</p>
+<h2 id="faq-autonomous-analytics-ai-governance-at-enterprise-scale">FAQ: Autonomous Analytics AI Governance at Enterprise Scale</h2>
+<h3 id="what-is-autonomous-analytics-ai-governance">What is autonomous analytics AI governance?</h3>
+<p>Autonomous analytics AI governance is the discipline of governing what analytics AI agents say, do, and decide at runtime. It covers definition certification, decision provenance, lineage at the decision layer, and runtime policy enforcement. It is distinct from data governance, which governs the data itself rather than the AI&#x27;s behavior on top of it.</p>
+<h3 id="why-does-data-governance-not-cover-autonomous-analytics-ai">Why does data governance not cover autonomous analytics AI?</h3>
+<p>Data governance governs the data: where it came from, who owns it, how it is classified, what quality it meets, who can access it. Analytics AI governance has to govern the answer: which business definitions the AI used, which policy constrained the action it triggered, and what trace each decision leaves. The two disciplines solve different problems. Mature data governance is necessary for autonomous analytics AI; it is not sufficient.</p>
+<h3 id="what-is-decision-provenance-in-analytics-ai">What is decision provenance in analytics AI?</h3>
+<p>Decision provenance is the verifiable record of how an analytics AI answer was assembled: which certified definition grounded it, which metric it depended on, which runtime policy permitted the action, and which source data was referenced. Decision provenance turns AI-generated answers into answers a CFO can sign off on, because every decision is traceable from the answer back to the certified business definition.</p>
+<h3 id="how-does-maestro-enforce-governance-at-runtime">How does Maestro enforce governance at runtime?</h3>
+<p>Maestro enforces analytics AI policy at the moment of execution rather than at quarterly review. Policies that used to live in compliance documents become enforceable rules the runtime layer reads and applies before an agent acts. Maestro also captures decision provenance for every AI-generated answer and traces each decision back through the Analytics Context Layer to the certified metric in the analytics estate.</p>
+<h3 id="what-happens-to-autonomous-analytics-ai-without-runtime-governance">What happens to autonomous analytics AI without runtime governance?</h3>
+<p>Without runtime governance, autonomous analytics AI agents act without enforcement of business policy, decisions accumulate without traceable lineage at the decision layer, and definition drift goes undetected. Gartner projects that by 2030, 50% of AI agent deployment failures will be tied to insufficient runtime governance enforcement. The cost of the gap is not a data quality breach; it is a steady accumulation of AI-generated decisions the business cannot stand behind.</p>
+<h3 id="how-is-autonomous-analytics-ai-governance-different-from-model-risk-management">How is autonomous analytics AI governance different from model risk management?</h3>
+<p>Model risk management (MRM) governs the model itself: training data lineage, model validation, drift detection, behavior monitoring. Autonomous analytics AI governance covers what the AI says about the business: which certified definitions ground answers, which runtime policies constrain the actions taken on those answers, and what trace each business decision leaves. MRM is necessary for autonomous analytics AI; it does not replace the analytics-specific governance layer where most enterprise governance gaps live in 2026.</p>
+<h2 id="close-your-own-autonomous-analytics-ai-governance-gap">Close Your Own Autonomous Analytics AI Governance Gap</h2>
+<p>Every enterprise running autonomous analytics AI is exposed in a specific way: definitions that drift from the certified definition, decisions without traceable lineage at the AI layer, policies that exist on paper but not at runtime. A 15-minute conversation is enough to locate the highest-priority gap in your own analytics AI governance posture.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">See how The Decision Intelligence Platform closes the autonomous analytics AI governance gap in your enterprise. Book a 15-minute demo call</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-sprawl-cost/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-13" class="text-sm text-navy/70">May 13, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-sprawl-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of Analytics Sprawl: How BI Estate Debt Limits AI Scale</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Analytics sprawl costs more than most BI leaders account for. Duplicate reports, orphaned assets, and ungoverned metrics accumulate quietly, and then become…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-modernization-ai-era/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-11" class="text-sm text-navy/70">May 11, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-modernization-ai-era/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Modernization in the AI Era: Why Your BI Estate Is the New Starting Line</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises treat analytics modernization as a tool migration. It is not. Here is why the BI estate is the substrate AI needs, and the four-step…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-ai-time-to-value/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-04-28" class="text-sm text-navy/70">April 28, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-ai-time-to-value/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics AI Time-to-Value at Enterprise Scale: Why Context Is the Bottleneck</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise analytics AI time to value is lost to context work, not modeling. Here is why context is the bottleneck, and how a certified substrate…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

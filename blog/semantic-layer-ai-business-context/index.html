@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Have a Semantic Layer. Why Does AI Still Misread Your Business? | ZenOptics</title>
+  <meta name="description" content="A semantic layer defines your metrics, but AI can still misinterpret the question. Learn how analytics context connects calculations to business meaning.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/semantic-layer-ai-business-context/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="You Have a Semantic Layer. Why Does AI Still Misread Your Business? | ZenOptics">
+  <meta property="og:description" content="A semantic layer defines your metrics, but AI can still misinterpret the question. Learn how analytics context connects calculations to business meaning.">
+  <meta property="og:url" content="https://zenoptics.com/blog/semantic-layer-ai-business-context/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/semantic-layer-ai-business-context/cover.webp">
+  <meta property="article:published_time" content="2026-10-16">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "You Have a Semantic Layer. Why Does AI Still Misread Your Business?", "datePublished": "2026-10-16", "description": "A semantic layer defines your metrics, but AI can still misinterpret the question. Learn how analytics context connects calculations to business meaning.", "image": "https://zenoptics.com/assets/images/blog/semantic-layer-ai-business-context/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/semantic-layer-ai-business-context/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a semantic layer for AI?", "acceptedAnswer": {"@type": "Answer", "text": "A semantic layer for AI exposes business definitions, metric calculations, and relationships that an AI application can use when interpreting questions and requesting data."}}, {"@type": "Question", "name": "Why can AI return the wrong answer when a semantic layer exists?", "acceptedAnswer": {"@type": "Answer", "text": "The application may select the wrong metric, source, filters, or reporting period. It may also draw conclusions that the available evidence does not support."}}, {"@type": "Question", "name": "Is a semantic layer enough for enterprise AI analytics?", "acceptedAnswer": {"@type": "Answer", "text": "It provides an important foundation for consistent calculations. The application also needs appropriate business context, source selection, and evaluation against the intended questions."}}, {"@type": "Question", "name": "What is the difference between a semantic layer and an analytics context layer?", "acceptedAnswer": {"@type": "Answer", "text": "A semantic layer primarily defines how metrics are calculated and queried. An analytics context layer represents business meaning and relationships around analytics assets. Implementations may combine or overlap these capabilities."}}, {"@type": "Question", "name": "Can an analytics context layer eliminate AI hallucinations?", "acceptedAnswer": {"@type": "Answer", "text": "No architecture can guarantee that every answer is correct. Relevant context can help an application interpret analytics, but teams still need to evaluate its source selection, calculations, and explanations."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">You Have a Semantic Layer. Why Does AI Still Misread Your Business?</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-10-16">October 16, 2026</time></span>
+          <span>6 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/semantic-layer-ai-business-context/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-is-a-semantic-layer" class="hover:underline">What is a semantic layer?</a></li>
+              <li><a href="#why-semantic-layers-matter-more-as-ai-consumes-analytics" class="hover:underline">Why semantic layers matter more as AI consumes analytics</a></li>
+              <li><a href="#a-semantic-layer-example-with-two-legitimate-answers" class="hover:underline">A semantic layer example with two legitimate answers</a></li>
+              <li><a href="#four-ways-ai-can-misread-a-correctly-defined-metric" class="hover:underline">Four ways AI can misread a correctly defined metric</a></li>
+              <li><a href="#what-a-semantic-layer-is-not" class="hover:underline">What a semantic layer is not</a></li>
+              <li><a href="#semantic-layer-vs-analytics-context-layer" class="hover:underline">Semantic layer vs analytics context layer</a></li>
+              <li><a href="#how-nexus-connects-bi-meaning-to-ai-interpretation" class="hover:underline">How Nexus connects BI meaning to AI interpretation</a></li>
+              <li><a href="#three-questions-to-ask-before-expanding-ai-analytics" class="hover:underline">Three questions to ask before expanding AI analytics</a></li>
+              <li><a href="#bring-one-misunderstood-business-question-to-a-zenoptics-demo" class="hover:underline">Bring one misunderstood business question to a ZenOptics demo</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-is-a-semantic-layer" class="hover:underline">What is a semantic layer?</a></li>
+              <li><a href="#why-semantic-layers-matter-more-as-ai-consumes-analytics" class="hover:underline">Why semantic layers matter more as AI consumes analytics</a></li>
+              <li><a href="#a-semantic-layer-example-with-two-legitimate-answers" class="hover:underline">A semantic layer example with two legitimate answers</a></li>
+              <li><a href="#four-ways-ai-can-misread-a-correctly-defined-metric" class="hover:underline">Four ways AI can misread a correctly defined metric</a></li>
+              <li><a href="#what-a-semantic-layer-is-not" class="hover:underline">What a semantic layer is not</a></li>
+              <li><a href="#semantic-layer-vs-analytics-context-layer" class="hover:underline">Semantic layer vs analytics context layer</a></li>
+              <li><a href="#how-nexus-connects-bi-meaning-to-ai-interpretation" class="hover:underline">How Nexus connects BI meaning to AI interpretation</a></li>
+              <li><a href="#three-questions-to-ask-before-expanding-ai-analytics" class="hover:underline">Three questions to ask before expanding AI analytics</a></li>
+              <li><a href="#bring-one-misunderstood-business-question-to-a-zenoptics-demo" class="hover:underline">Bring one misunderstood business question to a ZenOptics demo</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Your company has agreed on its revenue definition. The calculation is documented. The semantic model is working.</p>
+<p>Then an executive asks the AI assistant a simple question:</p>
+<p>“Why did revenue fall last quarter?”</p>
+<p>The assistant returns a polished explanation. It identifies a region, compares performance, and suggests where to investigate.</p>
+<p>Finance reviews the answer and spots the problem. The assistant used an operational sales view that excludes discontinued products. The executive was asking about consolidated company performance.</p>
+<p>The calculation was valid for the selected view. The interpretation did not fit the question.</p>
+<p>This illustrative example explains why a semantic layer for AI is valuable, yet enterprise teams still need to examine the business context surrounding the metrics their agents consume.</p>
+<p>For CIOs and analytics leaders, the practical challenge is making existing business meaning available to AI when it chooses sources, applies filters, and explains results.</p>
+<h2 id="what-is-a-semantic-layer">What is a semantic layer?</h2>
+<p>A semantic layer maps technical data into shared business terms, metric definitions, and relationships. It allows connected applications to request information using concepts such as revenue, margin, customer retention, or product performance.</p>
+<p>For example, a revenue definition might specify which transactions count, how returns are treated, and which accounting date determines the reporting period.</p>
+<p>The layer can also represent dimensions and relationships so applications understand how to group a metric by region, product, or customer segment.</p>
+<p>This reduces the need to recreate calculation logic in every consuming application. Consistency still depends on consumers using the appropriate definition, model version, filters, and data.</p>
+<p>For AI, this provides an important foundation. It gives the application an explicit representation of business meaning rather than leaving it to infer calculations from table names.</p>
+<h2 id="why-semantic-layers-matter-more-as-ai-consumes-analytics">Why semantic layers matter more as AI consumes analytics</h2>
+<p>An AI application interpreting a business question must make several choices before it can produce a useful answer.</p>
+<p>It must identify the intended metric, select relevant evidence, establish the reporting period, and determine the scope of the comparison.</p>
+<p>A semantic layer helps with those choices by exposing modeled definitions and relationships. However, a correct formula does not automatically resolve every ambiguity in the question.</p>
+<p>In its <a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-11-gartner-announces-top-predictions-for-data-and-analytics-in-2026" target="_blank" rel="noopener">March 11, 2026 data and analytics predictions</a>, announced in Orlando, Gartner forecast that universal semantic layers would become critical infrastructure by 2030.</p>
+<p>For enterprise analytics teams, that forecast reinforces the importance of shared business meaning. The implementation question is how to connect that meaning to the reports, dashboards, and business questions AI actually encounters.</p>
+<h2 id="a-semantic-layer-example-with-two-legitimate-answers">A semantic layer example with two legitimate answers</h2>
+<p>Consider a hypothetical U.S. manufacturer.</p>
+<p>Finance tracks consolidated recognized revenue across all business units. Sales tracks revenue from active product lines to assess current selling performance.</p>
+<p>Both views can use the same underlying revenue calculation. Their filters and purposes differ.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Business question</th><th>Relevant reporting context</th></tr></thead>
+<tbody>
+<tr><td>How did total company revenue change?</td><td>Consolidated coverage, consistent accounting periods, and the treatment of discontinued products.</td></tr>
+<tr><td>How are active products performing?</td><td>Active-product scope, relevant sales dimensions, and the operational reporting period.</td></tr>
+<tr><td>Did regional performance improve?</td><td>Regional boundaries, comparable periods, and any changes in product coverage.</td></tr>
+</tbody>
+</table></div>
+<p>An assistant that chooses a source because its title contains “revenue” may miss these distinctions.</p>
+<p>An assistant with explicit context can identify the appropriate scope or ask a clarification question before answering.</p>
+<p>The goal is to make that interpretation dependable enough that employees spend less time reconstructing what the assistant meant.</p>
+<h2 id="four-ways-ai-can-misread-a-correctly-defined-metric">Four ways AI can misread a correctly defined metric</h2>
+<h3 id="it-selects-the-wrong-business-scope">It selects the wrong business scope</h3>
+<p>A regional dashboard may be suitable for a sales manager and unsuitable for a consolidated executive review.</p>
+<p>The AI application needs to understand which entities, products, customers, or locations the source includes. A familiar metric name does not establish that coverage.</p>
+<h3 id="it-compares-incompatible-reporting-periods">It compares incompatible reporting periods</h3>
+<p>“Last quarter” can mean the previous calendar quarter, the previous fiscal quarter, or the most recently closed accounting period.</p>
+<p>An application can apply a valid calculation to the wrong date range. The answer may look reasonable while failing to match the business request.</p>
+<h3 id="it-overlooks-the-purpose-of-a-report">It overlooks the purpose of a report</h3>
+<p>A dashboard created to monitor daily operations may use provisional figures. A financial review may require closed-period results.</p>
+<p>Both assets can be useful. Their intended use determines whether they are appropriate evidence for a particular question.</p>
+<h3 id="it-explains-a-relationship-the-evidence-does-not-establish">It explains a relationship the evidence does not establish</h3>
+<p>A revenue decline and a rise in delivery delays may occur together. That does not establish that delays caused the decline.</p>
+<p>The assistant must distinguish observed changes from explanations supported by the available analysis.</p>
+<p>NIST’s freely downloadable <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener">Generative AI Profile</a>, published by the U.S. Department of Commerce in July 2024, discusses confabulation and information integrity among generative AI risks. For analytics teams, a useful application of that guidance is to evaluate whether an explanation is supported by its sources, alongside checking the numerical result.</p>
+<h2 id="what-a-semantic-layer-is-not">What a semantic layer is not</h2>
+<p>A semantic layer is not automatically a complete inventory of every report the company uses. Assets built outside its consumption paths may contain independent calculations or additional assumptions.</p>
+<p>It is also not a guarantee that an AI application will interpret every question correctly. The application must retrieve the relevant definitions and apply them appropriately.</p>
+<p>A semantic model and a semantic layer are related terms, but their usage varies. A model describes a particular representation of metrics and relationships. A semantic layer describes the broader capability through which consumers access that business meaning.</p>
+<p>For buyers, the useful question is less about terminology and more about coverage: which definitions and relationships are exposed, which applications use them, and what context remains elsewhere?</p>
+<h2 id="semantic-layer-vs-analytics-context-layer">Semantic layer vs analytics context layer</h2>
+<p>A semantic layer primarily supports shared definitions and calculations. An analytics context layer represents business meaning and relationships around the analytics assets that people and AI consume.</p>
+<p>The capabilities can overlap. Their responsibilities help identify what is missing.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Capability</th><th>Question it helps answer</th></tr></thead>
+<tbody>
+<tr><td>Semantic layer</td><td>How is this metric defined and calculated?</td></tr>
+<tr><td>Analytics context layer</td><td>What does this metric or report mean in this business situation?</td></tr>
+<tr><td>AI application</td><td>Which evidence fits the question, and what can reasonably be concluded from it?</td></tr>
+</tbody>
+</table></div>
+<p>An enterprise may have a well-modeled revenue calculation while still lacking explicit information about which report supports consolidated performance reviews.</p>
+<p>Connecting those elements helps the AI application interpret the metric in the setting where it will be used.</p>
+<p>For a deeper architecture comparison, read <a href="../analytics-context-layer-vs-semantic-layer/">Analytics Context Layer vs. Semantic Layer</a>.</p>
+<h2 id="how-nexus-connects-bi-meaning-to-ai-interpretation">How Nexus connects BI meaning to AI interpretation</h2>
+<p>Your existing BI environment already contains valuable business knowledge.</p>
+<p>Dashboards encode filters. Models represent dimensions. Reports reflect reporting periods and business scope. Descriptions explain terminology. Relationships between metrics reveal how teams examine performance.</p>
+<p><a href="../../nexus/">Nexus, the ZenOptics analytics context layer</a>, uses BI metadata to model relationships among analytics assets, metrics, and business domains.</p>
+<p>This helps make business meaning represented in the analytics environment available for AI interpretation.</p>
+<p>Where a semantic model already defines a metric, that definition should remain connected to the surrounding context. Teams should avoid creating a competing explanation of the same metric in a separate AI implementation.</p>
+<p>The integration must then retrieve and apply the context appropriate to the question. The outcome should be evaluated against real business requests, including ambiguous questions and cases where the evidence cannot support a confident explanation.</p>
+<h2 id="three-questions-to-ask-before-expanding-ai-analytics">Three questions to ask before expanding AI analytics</h2>
+<p>First, can the assistant explain which definition and reporting scope it used?</p>
+<p>A source link alone may be insufficient if the reviewer cannot identify the relevant period, filters, or metric meaning.</p>
+<p>Second, can it distinguish between plausible alternatives?</p>
+<p>Present a consolidated financial report and a regional operational view. Ask questions that require the assistant to choose between them or clarify the request.</p>
+<p>Third, does it acknowledge when the evidence cannot answer “why”?</p>
+<p>A descriptive report can establish that performance changed. Explaining the cause may require additional analysis. The assistant should make that boundary clear.</p>
+<p>Track how often employees need an analyst to resolve these issues. That review effort is a useful measure of whether the application is making analytics easier to use.</p>
+<h2 id="bring-one-misunderstood-business-question-to-a-zenoptics-demo">Bring one misunderstood business question to a ZenOptics demo</h2>
+<p>Choose a question that repeatedly sends employees back to the BI team.</p>
+<p>It might concern revenue, customer retention, margin, or plant performance. Bring the metric definition and the reports people use to answer it.</p>
+<p>Ask how Nexus can help connect the question to the relevant business meaning, reporting scope, and relationships in your analytics environment.</p>
+<p>That gives the discussion a concrete objective: identifying the context the AI application needs to interpret the question correctly.</p>
+<p><a href="../../nexus/">Request a Nexus demo focused on a business question your AI struggles to answer</a>.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="what-is-a-semantic-layer-for-ai">What is a semantic layer for AI?</h3>
+<p>A semantic layer for AI exposes business definitions, metric calculations, and relationships that an AI application can use when interpreting questions and requesting data.</p>
+<h3 id="why-can-ai-return-the-wrong-answer-when-a-semantic-layer-exists">Why can AI return the wrong answer when a semantic layer exists?</h3>
+<p>The application may select the wrong metric, source, filters, or reporting period. It may also draw conclusions that the available evidence does not support.</p>
+<h3 id="is-a-semantic-layer-enough-for-enterprise-ai-analytics">Is a semantic layer enough for enterprise AI analytics?</h3>
+<p>It provides an important foundation for consistent calculations. The application also needs appropriate business context, source selection, and evaluation against the intended questions.</p>
+<h3 id="what-is-the-difference-between-a-semantic-layer-and-an-analytics-context-layer">What is the difference between a semantic layer and an analytics context layer?</h3>
+<p>A semantic layer primarily defines how metrics are calculated and queried. An analytics context layer represents business meaning and relationships around analytics assets. Implementations may combine or overlap these capabilities.</p>
+<h3 id="can-an-analytics-context-layer-eliminate-ai-hallucinations">Can an analytics context layer eliminate AI hallucinations?</h3>
+<p>No architecture can guarantee that every answer is correct. Relevant context can help an application interpret analytics, but teams still need to evaluate its source selection, calculations, and explanations.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/decision-speed-analytics-trust/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-23" class="text-sm text-navy/70">October 23, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../decision-speed-analytics-trust/" class="after:absolute after:inset-0 focus-visible:outline-none">Decision Clock Speed and the Case for Trusted Analytics</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Improve decision clock speed with trusted analytics. Learn five checks for approved sources, clear metric definitions and accountable AI-supported decisions.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/measure-ai-impact-business-decisions/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-19" class="text-sm text-navy/70">October 19, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../measure-ai-impact-business-decisions/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Measure AI’s Impact on Business Decisions</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Learn how to measure AI’s impact on business decisions with practical metrics, trusted analytics, and governed workflows supported by ZenOptics.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/ai-ready-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-10-12" class="text-sm text-navy/70">October 12, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../ai-ready-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Can Your AI Agent Trust the Reports It Reads</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">An AI agent can retrieve a number from a dashboard in seconds. Before that number supports a forecast, a board presentation, or an operational decision, the…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

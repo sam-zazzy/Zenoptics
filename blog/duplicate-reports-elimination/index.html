@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Rationalize Duplicate Reports | ZenOptics</title>
+  <meta name="description" content="Duplicate detection finds the overlap. Governed elimination decides which version survives and prevents re-creation across Power BI, Tableau, SAP BO, and Qlik.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/duplicate-reports-elimination/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="How to Rationalize Duplicate Reports | ZenOptics">
+  <meta property="og:description" content="Duplicate detection finds the overlap. Governed elimination decides which version survives and prevents re-creation across Power BI, Tableau, SAP BO, and Qlik.">
+  <meta property="og:url" content="https://zenoptics.com/blog/duplicate-reports-elimination/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/duplicate-reports-elimination/cover.webp">
+  <meta property="article:published_time" content="2026-08-14">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Rationalize Duplicate Reports", "datePublished": "2026-08-14", "description": "Duplicate detection finds the overlap. Governed elimination decides which version survives and prevents re-creation across Power BI, Tableau, SAP BO, and Qlik.", "image": "https://zenoptics.com/assets/images/blog/duplicate-reports-elimination/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/duplicate-reports-elimination/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do duplicate reports keep reappearing even after a cleanup?", "acceptedAnswer": {"@type": "Answer", "text": "Duplicate elimination without governed cross-platform discovery does not close the re-creation loop. When analysts cannot search a governed inventory of existing certified reports across all platforms before building something new, they recreate content that already exists elsewhere. A cleanup removes visible duplicates. Governed discovery prevents re-creation."}}, {"@type": "Question", "name": "What is the difference between duplicate report detection and duplicate report elimination?", "acceptedAnswer": {"@type": "Answer", "text": "Detection identifies which reports overlap, scores the degree of similarity, and surfaces the worst offenders. Elimination requires governance decisions: which version is authoritative, who owns the retirement, how the decision is recorded durably, and how users are informed. Detection produces a list. Elimination requires a governed lifecycle."}}, {"@type": "Question", "name": "Which version of a duplicate report should be retired?", "acceptedAnswer": {"@type": "Answer", "text": "The retirement decision depends on ownership, usage, certification status, and data lineage, all of which need to be visible across platforms. The report with higher usage and a certified, active owner typically survives. The less-used, uncertified, or orphaned version is retired. Without cross-platform ownership and usage data, this determination cannot be made reliably, and the decision often goes unmade."}}, {"@type": "Question", "name": "Does an Analytics System of Record replace the need for BI platform consolidation?", "acceptedAnswer": {"@type": "Answer", "text": "Consolidation reduces tool count, but it does not govern the elimination process. An organization that migrates from four platforms to two still needs to identify which reports are duplicated across the surviving platforms, decide which versions survive, and govern the retirement. An Analytics System of Record provides the inventory and lifecycle layer that makes this possible regardless of how many platforms remain."}}, {"@type": "Question", "name": "How does Atlas address duplicate reports across BI platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Atlas connects to existing BI and analytics platforms through 100+ Smart Connectors and establishes a cross-platform inventory of reports, dashboards, KPIs, ownership, certification, lineage, and usage. This enables organizations to identify duplicate content, make governed retirement decisions with full ownership and usage context, record those decisions durably, and give analysts governed discovery so they find existing certified reports before creating new ones."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">How to Rationalize Duplicate Reports</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-08-14">August 14, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/duplicate-reports-elimination/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#why-duplicate-reports-accumulate-across-bi-platforms" class="hover:underline">Why Duplicate Reports Accumulate Across BI Platforms</a></li>
+              <li><a href="#why-detection-alone-does-not-eliminate-duplicates" class="hover:underline">Why Detection Alone Does Not Eliminate Duplicates</a></li>
+              <li><a href="#the-governed-elimination-process" class="hover:underline">The Governed Elimination Process</a></li>
+              <li><a href="#how-an-analytics-system-of-record-supports-cross-platform-deduplication" class="hover:underline">How an Analytics System of Record Supports Cross-Platform Deduplication</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#do-you-know-what-duplicate-reports-are-costing-your-analytics-estate" class="hover:underline">Do You Know What Duplicate Reports Are Costing Your Analytics Estate?</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#why-duplicate-reports-accumulate-across-bi-platforms" class="hover:underline">Why Duplicate Reports Accumulate Across BI Platforms</a></li>
+              <li><a href="#why-detection-alone-does-not-eliminate-duplicates" class="hover:underline">Why Detection Alone Does Not Eliminate Duplicates</a></li>
+              <li><a href="#the-governed-elimination-process" class="hover:underline">The Governed Elimination Process</a></li>
+              <li><a href="#how-an-analytics-system-of-record-supports-cross-platform-deduplication" class="hover:underline">How an Analytics System of Record Supports Cross-Platform Deduplication</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+              <li><a href="#do-you-know-what-duplicate-reports-are-costing-your-analytics-estate" class="hover:underline">Do You Know What Duplicate Reports Are Costing Your Analytics Estate?</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Most enterprises running multiple BI tools already know they have duplicate reports. The Power BI dashboard that finance built mirrors the Tableau workbook that marketing created six months earlier. The SAP BusinessObjects report that operations uses daily covers the same regional sales data as the Qlik analysis built after an acquisition. The same business question answered multiple times, across multiple platforms, with results that do not always match.</p>
+<p>The instinct is to treat this as a detection problem: find the duplicates, eliminate them, move on. Cross-platform similarity analysis can identify overlapping reports and surface the worst offenders. What it cannot do is govern the elimination: decide which version is authoritative, assign retirement responsibility, record the decision in a durable governance record, notify users of what is changing, and prevent the same reports from being recreated the next time a new team arrives with the same business question. Duplicate detection produces a list. Duplicate elimination requires a governed lifecycle.</p>
+<h2 id="why-duplicate-reports-accumulate-across-bi-platforms">Why Duplicate Reports Accumulate Across BI Platforms</h2>
+<p>Duplicate reports are not created by carelessness. They are the structural outcome of running multiple BI platforms without a common inventory.</p>
+<p>When Power BI reports and Tableau workbooks exist in separate governance silos, each team builds what it needs because it cannot see what already exists in the other platform. Finance creates a revenue dashboard in Power BI. Marketing creates a revenue dashboard in Tableau, unaware that the first one exists. Operations creates a third version in SAP BusinessObjects because neither of the first two surfaces in a search it can run.</p>
+<p>Acquisitions compound the problem. The acquired company arrives with its own BI environment, its own reports, and its own definitions for shared business metrics. Those reports are embedded in operational workflows. They cannot be migrated or retired quickly, so they run alongside the acquiring company&#x27;s existing content for months, then years, with no clear record of which version is authoritative.</p>
+<p>Self-service analytics accelerates the accumulation. When the barrier to creating a new report is low, every team creates its own version of the metrics it needs. The result is not chaos within any individual platform. The gap is structural: the same measure exists in multiple forms across multiple tools, each with a different owner, a different refresh schedule, and potentially a different answer to the same business question.</p>
+<h2 id="why-detection-alone-does-not-eliminate-duplicates">Why Detection Alone Does Not Eliminate Duplicates</h2>
+<p>Identifying overlapping reports is a necessary first step. It is not elimination.</p>
+<p>A similarity analysis across Power BI and Tableau can flag two reports that cover the same data, the same business question, and the same user base. That finding does not answer the harder questions: which version is authoritative, which has higher usage, which is certified, and which owner is responsible for the retirement decision.</p>
+<p>Without cross-platform ownership data, there is no one accountable for the retirement. The finding sits in a spreadsheet or a review meeting, and neither report is retired because the decision belongs to no one specific enough to act on it.</p>
+<p>Without cross-platform usage data, the organization cannot confirm which version users actually rely on. Retiring the wrong report creates an immediate operational problem and a governance failure.</p>
+<p>Without a durable record of the retirement decision, the institutional memory of why a report was retired disappears. A new analyst arrives with the same business question and builds the same report again. The cleanup cycle repeats.</p>
+<p>In most organizations, duplicate elimination happens during significant events: a BI migration, an M&amp;A integration, a governance audit. These are episodic moments, not ongoing processes. When the event ends, duplicates begin accumulating again, because the root cause, the absence of governed cross-platform visibility, was never resolved.</p>
+<h2 id="the-governed-elimination-process">The Governed Elimination Process</h2>
+<p>Permanent duplicate elimination requires five things that detection alone does not provide.</p>
+<p>The first is a cross-platform inventory. Before any report can be retired, the organization needs a complete view of what exists across Power BI, Tableau, SAP BusinessObjects, and Qlik, including who owns each report, how often it is used, what data it connects to, and whether it carries a certified status. Without this inventory, similarity analysis has no governance context to act on.</p>
+<p>The second is cross-platform usage analysis. Usage data surfaces which reports are actually trusted and consumed by the business. A report with high usage, a certified owner, and confirmed data lineage has a different governance disposition than one built for a project three years ago that nobody has viewed since the analyst who created it left the organization.</p>
+<p>The third is ownership resolution. For any pair of overlapping reports, a specific person or team must own the retirement decision. This requires knowing who owns each report, whether those owners are still active in the organization, and which team is the appropriate decision authority when owners span different business units. Cross-platform ownership tracking makes this possible. Without it, the default outcome is inertia.</p>
+<p>The fourth is a durable retirement record. The retirement decision must be recorded in a governance system that persists beyond the cleanup project. A decision that exists only in a spreadsheet or a project ticket has a lifespan measured in months, not years.</p>
+<p>The fifth is governed discovery at the point of creation. Re-creation is rarely intentional. It is the absence of a searchable, governed inventory that analysts can consult before building something new. When a new report is requested and the analyst cannot search across Power BI, Tableau, SAP BusinessObjects, and Qlik to find whether an authoritative version already exists, the outcome is a new duplicate. Closing this loop requires making the governed estate visible at the moment of creation, not only after duplicates have already accumulated.</p>
+<h2 id="how-an-analytics-system-of-record-supports-cross-platform-deduplication">How an Analytics System of Record Supports Cross-Platform Deduplication</h2>
+<p><a href="../../atlas/">Atlas</a>, ZenOptics&#x27; <a href="../analytics-system-of-record/">Analytics System of Record</a>, provides the cross-platform inventory and lifecycle management the governed elimination process requires.</p>
+<p>Through 100+ Smart Connectors, Atlas indexes reports, dashboards, KPIs, ownership, certification status, lineage, and usage across Power BI, Tableau, SAP BusinessObjects, Qlik, Looker, and other analytics environments. This inventory is the foundation that makes all five elimination steps executable rather than aspirational.</p>
+<p>With Atlas in place, usage data is visible across platforms rather than siloed per tool. Ownership is tracked for every report across the full estate. Certification and lineage records establish which version of an overlapping report carries the higher governance standing. Retirement decisions are recorded in a governed lifecycle record that persists beyond any individual project.</p>
+<p>The <a href="../cross-tool-bi-inventory/">cross-tool inventory</a> Atlas maintains also closes the re-creation loop. Analysts searching for an existing certified report can find it across all connected platforms before creating a new version. This is how governed discovery prevents the next duplicate from appearing.</p>
+<p><a href="../bi-tool-sprawl-cost/">The Hidden Cost of BI Tool Sprawl</a> covers the full financial case for why this matters at scale. <a href="../analytics-sprawl-cost/">The Hidden Cost of Analytics Sprawl</a> covers the estate debt that accumulates when duplicate content goes ungoverned over time.</p>
+<p>The existing BI platforms remain in place. Atlas operates above them as the governed record of what exists, who owns it, which versions are certified, and what should be reviewed or retired. Duplicate elimination becomes a governed process rather than a periodic event, because the inventory and lifecycle management required to sustain it are part of the analytics estate itself.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="why-do-duplicate-reports-keep-reappearing-even-after-a-cleanup">Why do duplicate reports keep reappearing even after a cleanup?</h3>
+<p>Duplicate elimination without governed cross-platform discovery does not close the re-creation loop. When analysts cannot search a governed inventory of existing certified reports across all platforms before building something new, they recreate content that already exists elsewhere. A cleanup removes visible duplicates. Governed discovery prevents re-creation.</p>
+<h3 id="what-is-the-difference-between-duplicate-report-detection-and-duplicate-report-e">What is the difference between duplicate report detection and duplicate report elimination?</h3>
+<p>Detection identifies which reports overlap, scores the degree of similarity, and surfaces the worst offenders. Elimination requires governance decisions: which version is authoritative, who owns the retirement, how the decision is recorded durably, and how users are informed. Detection produces a list. Elimination requires a governed lifecycle.</p>
+<h3 id="which-version-of-a-duplicate-report-should-be-retired">Which version of a duplicate report should be retired?</h3>
+<p>The retirement decision depends on ownership, usage, certification status, and data lineage, all of which need to be visible across platforms. The report with higher usage and a certified, active owner typically survives. The less-used, uncertified, or orphaned version is retired. Without cross-platform ownership and usage data, this determination cannot be made reliably, and the decision often goes unmade.</p>
+<h3 id="does-an-analytics-system-of-record-replace-the-need-for-bi-platform-consolidatio">Does an Analytics System of Record replace the need for BI platform consolidation?</h3>
+<p>Consolidation reduces tool count, but it does not govern the elimination process. An organization that migrates from four platforms to two still needs to identify which reports are duplicated across the surviving platforms, decide which versions survive, and govern the retirement. An Analytics System of Record provides the inventory and lifecycle layer that makes this possible regardless of how many platforms remain.</p>
+<h3 id="how-does-atlas-address-duplicate-reports-across-bi-platforms">How does Atlas address duplicate reports across BI platforms?</h3>
+<p>Atlas connects to existing BI and analytics platforms through 100+ Smart Connectors and establishes a cross-platform inventory of reports, dashboards, KPIs, ownership, certification, lineage, and usage. This enables organizations to identify duplicate content, make governed retirement decisions with full ownership and usage context, record those decisions durably, and give analysts governed discovery so they find existing certified reports before creating new ones.</p>
+<h2 id="do-you-know-what-duplicate-reports-are-costing-your-analytics-estate">Do You Know What Duplicate Reports Are Costing Your Analytics Estate?</h2>
+<p>Atlas connects to your existing BI and analytics platforms through 100+ Smart Connectors, creating an authoritative cross-platform inventory that makes governed duplicate elimination possible without replacing the tools your teams already use.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Request an Atlas Demo</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-catalogs-beyond-metadata/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-21" class="text-sm text-navy/70">August 21, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-catalogs-beyond-metadata/" class="after:absolute after:inset-0 focus-visible:outline-none">Why Analytics Catalogs Must Go Beyond Metadata</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Metadata describes your analytics estate. Governed analytics catalogs add certification, ownership, and lifecycle governance. Learn what that requires.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/report-discovery-not-enough/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-17" class="text-sm text-navy/70">August 17, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../report-discovery-not-enough/" class="after:absolute after:inset-0 focus-visible:outline-none">Finding a Report Is Not the Same as Trusting It</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Report discovery tells you what exists. Certification, ownership, and lifecycle governance tell you what to trust. Learn what discovery tools cannot provide.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/bi-tool-sprawl-cost/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-08-10" class="text-sm text-navy/70">August 10, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../bi-tool-sprawl-cost/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Cost of BI Tool Sprawl</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most large enterprises know they have BI tool sprawl. Power BI in finance. Tableau in marketing. SAP BusinessObjects in operations.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

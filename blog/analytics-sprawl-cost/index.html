@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hidden Cost of Analytics Sprawl: How BI Estate Debt Limits AI Scale | ZenOptics</title>
+  <meta name="description" content="Analytics sprawl costs more than most BI leaders account for. Duplicate reports, orphaned assets, and ungoverned metrics accumulate quietly, and then become…">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-sprawl-cost/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="The Hidden Cost of Analytics Sprawl: How BI Estate Debt Limits AI Scale | ZenOptics">
+  <meta property="og:description" content="Analytics sprawl costs more than most BI leaders account for. Duplicate reports, orphaned assets, and ungoverned metrics accumulate quietly, and then become…">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-sprawl-cost/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-sprawl-cost/cover.webp">
+  <meta property="article:published_time" content="2026-05-13">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The Hidden Cost of Analytics Sprawl: How BI Estate Debt Limits AI Scale", "datePublished": "2026-05-13", "description": "Analytics sprawl costs more than most BI leaders account for. Duplicate reports, orphaned assets, and ungoverned metrics accumulate quietly, and then become…", "image": "https://zenoptics.com/assets/images/blog/analytics-sprawl-cost/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-sprawl-cost/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is analytics sprawl?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics sprawl is the uncontrolled proliferation of duplicate, unused, or conflicting analytics assets across an enterprise BI environment. It accumulates when reports and dashboards are created on demand without lifecycle management: assets are never retired, duplicates are never consolidated, and ownership is never formalized. The result is an estate where the volume of content grows faster than the organization's ability to govern it."}}, {"@type": "Question", "name": "What causes analytics sprawl in enterprise organizations?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics sprawl has structural causes rather than individual ones. BI tools make content creation fast and low-friction. They rarely provide equivalent support for retirement, ownership tracking, or cross-tool visibility. As organizations add tools, migrate platforms, and support multiple business units, content accumulates in silos with no governing layer to identify duplication or enforce lifecycle management."}}, {"@type": "Question", "name": "What is an orphaned report in BI?", "acceptedAnswer": {"@type": "Answer", "text": "An orphaned report is an analytics asset that has no active owner, no recent verified usage, and no current connection to active business processes. Orphaned reports typically survive project endings, team reorganizations, and platform migrations. They are problematic because they consume capacity and because they are visually indistinguishable from authoritative assets to users who encounter them in search results."}}, {"@type": "Question", "name": "How much does analytics sprawl cost an organization?", "acceptedAnswer": {"@type": "Answer", "text": "The cost appears across three areas: BI tool licensing inflated by unused content, labor spent recreating reports that already exist, and decision latency caused by conflicting or unverifiable analytics outputs. Organizations implementing ZenOptics typically see 30 to 40 percent of their analytics estate comprised of duplicate or conflicting reports, which gives a concrete scale for the labor and licensing overhead that sprawl generates before any AI costs are factored in."}}, {"@type": "Question", "name": "How does analytics sprawl affect AI initiatives?", "acceptedAnswer": {"@type": "Answer", "text": "AI tools ground their outputs in whatever analytics information is available. When that information is ungoverned, sprawl means the AI model encounters conflicting metric definitions, duplicate assets, and no authoritative layer to distinguish trustworthy from orphaned content. The outputs it produces cannot be verified by teams that care about accountability. Gartner projects that over 60 percent of AI projects without an AI-ready data practice will fail to deliver on business SLAs through 2026. Sprawl is a direct contributor to that failure rate."}}, {"@type": "Question", "name": "What is BI estate rationalization?", "acceptedAnswer": {"@type": "Answer", "text": "BI estate rationalization is the process of inventorying, certifying, and governing an enterprise analytics environment to remove duplication, resolve conflicting definitions, and establish clear ownership of authoritative assets. It is distinct from a one-time cleanup project. Effective rationalization is a continuous practice: the estate changes constantly, so the inventory and governance layer must stay current to prevent sprawl from rebuilding."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">The Hidden Cost of Analytics Sprawl: How BI Estate Debt Limits AI Scale</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-05-13">May 13, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-sprawl-cost/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-analytics-sprawl-looks-like-inside-an-enterprise" class="hover:underline">What Analytics Sprawl Looks Like Inside an Enterprise</a></li>
+              <li><a href="#where-the-costs-actually-accumulate" class="hover:underline">Where the Costs Actually Accumulate</a></li>
+              <li><a href="#the-orphaned-report-problem" class="hover:underline">The Orphaned Report Problem</a></li>
+              <li><a href="#why-sprawl-cannot-be-resolved-without-inventory" class="hover:underline">Why Sprawl Cannot Be Resolved Without Inventory</a></li>
+              <li><a href="#what-rationalization-requires-at-the-estate-level" class="hover:underline">What Rationalization Requires at the Estate Level</a></li>
+              <li><a href="#why-sprawl-is-the-hidden-reason-ai-grounding-fails" class="hover:underline">Why Sprawl Is the Hidden Reason AI Grounding Fails</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-analytics-sprawl-looks-like-inside-an-enterprise" class="hover:underline">What Analytics Sprawl Looks Like Inside an Enterprise</a></li>
+              <li><a href="#where-the-costs-actually-accumulate" class="hover:underline">Where the Costs Actually Accumulate</a></li>
+              <li><a href="#the-orphaned-report-problem" class="hover:underline">The Orphaned Report Problem</a></li>
+              <li><a href="#why-sprawl-cannot-be-resolved-without-inventory" class="hover:underline">Why Sprawl Cannot Be Resolved Without Inventory</a></li>
+              <li><a href="#what-rationalization-requires-at-the-estate-level" class="hover:underline">What Rationalization Requires at the Estate Level</a></li>
+              <li><a href="#why-sprawl-is-the-hidden-reason-ai-grounding-fails" class="hover:underline">Why Sprawl Is the Hidden Reason AI Grounding Fails</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Most BI teams treat analytics sprawl as a deferred maintenance problem. The reports keep accumulating, the duplicates keep multiplying, and the response is usually the same: a cleanup project gets added to the backlog, pushed past each planning cycle, and never quite cleared. The assumption is that sprawl is cosmetic: untidy, low-priority, a problem for next quarter. That assumption is increasingly expensive. In environments where AI is being asked to operate on top of the BI estate, the cost of sprawl is not deferred. It arrives the moment an AI tool tries to ground its outputs in an uncharted, ungoverned analytics environment.</p>
+<h2 id="what-analytics-sprawl-looks-like-inside-an-enterprise">What Analytics Sprawl Looks Like Inside an Enterprise</h2>
+<p>Over the past two years, as enterprise AI investment has accelerated and new reporting demands have multiplied, the volume of BI content created in support of pilots, tool rollouts, and cross-functional requests has added to estates that were already managing years of accumulated technical debt. The pattern inside those estates is consistent.</p>
+<p>A report gets built for a quarterly business review. Six months later, someone builds a nearly identical version for a different audience. A project ends; its dashboards stay live. A migration happens; the old tool retains content nobody remembered to retire. A team clones a report to make minor customizations and forgets to link it back to the original.</p>
+<p>Each of those decisions made sense individually. None of them included a retirement plan. Over time, the result is an estate filled with analytics assets that nobody owns, nobody actively uses, and nobody can confidently retire without worrying about breaking something a downstream user depends on.</p>
+<p>Analytics sprawl is the uncontrolled proliferation of duplicate, unused, or conflicting analytics assets across an organization&#x27;s BI environment. It is not a sign of negligence. It is the predictable output of BI tools that make creation easy and lifecycle management nearly impossible at scale.</p>
+<h2 id="where-the-costs-actually-accumulate">Where the Costs Actually Accumulate</h2>
+<p>The costs are distributed across three areas, and most of them do not appear on a single budget line.</p>
+<p>BI tool licensing is the most visible. Many enterprise BI platforms price on consumption metrics that include content volume, user activity, and storage. An estate padded with orphaned reports and duplicate dashboards inflates those metrics without delivering proportional value. Organizations paying for capacity they are not using are subsidizing the growth of their own sprawl.</p>
+<p>Labor cost is less visible and typically larger. When analysts need a report and cannot find it, they build one. Organizations implementing ZenOptics typically see 30 to 40 percent of their analytics estate comprised of duplicate or conflicting reports. That means a significant share of BI production effort goes into recreating work that already exists in another corner of the estate. Discovery time compounds the problem: when searching for an existing asset takes longer than building a new one, the sprawl grows faster.</p>
+<p>Trust erosion is the hardest to quantify and the most consequential. When an analyst finds three versions of the pipeline report and cannot determine which is authoritative, the result is decision latency, escalations to BI teams, and a gradual retreat from self-service. The analytics investment produces outputs that stakeholders hedge rather than act on.</p>
+<h2 id="the-orphaned-report-problem">The Orphaned Report Problem</h2>
+<p>Orphaned analytics assets are reports and dashboards with no active owner, no verified usage, and no connection to current business processes. They are common in every multi-tool BI environment, and they accumulate for structural reasons.</p>
+<p>BI assets are created on demand, often without an assigned owner or a documented purpose that survives the project they supported. When team structures change, when stakeholders move on, and when business priorities shift, the reports they required remain. Lifecycle management is rarely built into the BI governance process because it is treated as a separate concern from content creation.</p>
+<p>The problem with orphaned reports is not just that they take up space. It is that they are indistinguishable from authoritative assets to anyone who does not already know the difference. When an analyst searches for a metric, the orphaned version surfaces alongside the current one. When governance teams try to certify the estate, orphaned assets create noise that slows the process and increases the risk of certifying the wrong version.</p>
+<h2 id="why-sprawl-cannot-be-resolved-without-inventory">Why Sprawl Cannot Be Resolved Without Inventory</h2>
+<p>The reason sprawl persists is structural. Rationalization requires knowing what exists. Most BI leaders have a reasonable picture of which tools their organization runs. Far fewer have a complete, current picture of every report, dashboard, and KPI definition those tools contain across all platforms simultaneously, with visibility into ownership, usage, and duplication.</p>
+<p>Without that inventory, cleanup efforts are limited to what individual teams happen to know about their own corners of the estate. Consolidation conversations stall because nobody can say with confidence what is safe to retire. Migration projects inherit sprawl from the platforms they replace. Each tool refresh moves content forward without clearing the backlog.</p>
+<p>The inventory is not a one-time project. The estate changes continuously as teams create, modify, and abandon content. Maintaining a current, cross-tool picture of the analytics environment requires automation rather than periodic manual audits.</p>
+<h2 id="what-rationalization-requires-at-the-estate-level">What Rationalization Requires at the Estate Level</h2>
+<p>Rationalization is the process of moving from an uncharted analytics estate to one that is inventoried, governed, and certified. It requires four things: a complete picture of what exists, usage data to identify what is actively being used, ownership assignment for everything that remains, and a certification process that distinguishes authoritative assets from duplicates and orphans.</p>
+<p><a href="../../atlas/">Atlas</a>, ZenOptics&#x27;s Analytics System of Record, provides this infrastructure across the existing BI environment. It surfaces every analytics asset across tools including Power BI, Tableau, and Looker without requiring those tools to be replaced. Usage data and ownership are tracked continuously, so the inventory stays current rather than decaying between review cycles. Certification is managed at the estate level, not tool by tool.</p>
+<p>Organizations implementing ZenOptics typically see 20 to 40 percent faster analytics discovery once the estate is inventoried and governed, because assets become searchable and structured rather than scattered across tool-specific libraries with no cross-tool visibility.</p>
+<h2 id="why-sprawl-is-the-hidden-reason-ai-grounding-fails">Why Sprawl Is the Hidden Reason AI Grounding Fails</h2>
+<p>AI tools that operate on top of a BI estate ground their outputs in whatever analytics information is available to them. That grounding is only reliable if the underlying estate is governed. When the estate contains conflicting metric definitions, duplicate assets, and no certification layer, the AI model cannot distinguish an authoritative version from an orphaned one. That distinction lives in governance, not in the model.</p>
+<p><a href="https://www.gartner.com/en/articles/cio-agenda" target="_blank" rel="noopener">Gartner is direct on the consequence</a>: through 2026, organizations that do not support their AI use cases through an AI-ready data practice will see over 60 percent of those projects fail to deliver on business SLAs and be abandoned. Sprawl is a direct contributor to that failure rate. The AI project is not underperforming. The estate it is grounding in is ungoverned, and ungoverned estates produce unverifiable outputs.</p>
+<p>Analytics sprawl feels like a BI housekeeping problem until the AI initiative arrives. At that point, it becomes a blocker. Rationalizing the estate before AI is introduced is not preliminary work. It is what determines whether the AI investment delivers anything the organization can act on. Atlas addresses the rationalization layer. <a href="../../nexus/">Nexus</a> converts the certified estate into machine-readable business context so AI workflows have the grounding they need to produce trusted, decision-ready outputs. For a broader view of what that readiness requires, <a href="../analytics-modernization-ai-era/">analytics modernization in the AI era</a> covers the full framework.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-analytics-sprawl">What is analytics sprawl?</h3>
+<p>Analytics sprawl is the uncontrolled proliferation of duplicate, unused, or conflicting analytics assets across an enterprise BI environment. It accumulates when reports and dashboards are created on demand without lifecycle management: assets are never retired, duplicates are never consolidated, and ownership is never formalized. The result is an estate where the volume of content grows faster than the organization&#x27;s ability to govern it.</p>
+<h3 id="what-causes-analytics-sprawl-in-enterprise-organizations">What causes analytics sprawl in enterprise organizations?</h3>
+<p>Analytics sprawl has structural causes rather than individual ones. BI tools make content creation fast and low-friction. They rarely provide equivalent support for retirement, ownership tracking, or cross-tool visibility. As organizations add tools, migrate platforms, and support multiple business units, content accumulates in silos with no governing layer to identify duplication or enforce lifecycle management.</p>
+<h3 id="what-is-an-orphaned-report-in-bi">What is an orphaned report in BI?</h3>
+<p>An orphaned report is an analytics asset that has no active owner, no recent verified usage, and no current connection to active business processes. Orphaned reports typically survive project endings, team reorganizations, and platform migrations. They are problematic because they consume capacity and because they are visually indistinguishable from authoritative assets to users who encounter them in search results.</p>
+<h3 id="how-much-does-analytics-sprawl-cost-an-organization">How much does analytics sprawl cost an organization?</h3>
+<p>The cost appears across three areas: BI tool licensing inflated by unused content, labor spent recreating reports that already exist, and decision latency caused by conflicting or unverifiable analytics outputs. Organizations implementing ZenOptics typically see 30 to 40 percent of their analytics estate comprised of duplicate or conflicting reports, which gives a concrete scale for the labor and licensing overhead that sprawl generates before any AI costs are factored in.</p>
+<h3 id="how-does-analytics-sprawl-affect-ai-initiatives">How does analytics sprawl affect AI initiatives?</h3>
+<p>AI tools ground their outputs in whatever analytics information is available. When that information is ungoverned, sprawl means the AI model encounters conflicting metric definitions, duplicate assets, and no authoritative layer to distinguish trustworthy from orphaned content. The outputs it produces cannot be verified by teams that care about accountability. Gartner projects that over 60 percent of AI projects without an AI-ready data practice will fail to deliver on business SLAs through 2026. Sprawl is a direct contributor to that failure rate.</p>
+<h3 id="what-is-bi-estate-rationalization">What is BI estate rationalization?</h3>
+<p>BI estate rationalization is the process of inventorying, certifying, and governing an enterprise analytics environment to remove duplication, resolve conflicting definitions, and establish clear ownership of authoritative assets. It is distinct from a one-time cleanup project. Effective rationalization is a continuous practice: the estate changes constantly, so the inventory and governance layer must stay current to prevent sprawl from rebuilding.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Ready to see what is actually in your analytics estate? Schedule a conversation with the ZenOptics team</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/agentic-analytics-enterprise/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-22" class="text-sm text-navy/70">May 22, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../agentic-analytics-enterprise/" class="after:absolute after:inset-0 focus-visible:outline-none">Agentic Analytics in the Enterprise: From Pilot to Production</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises can run an agentic analytics pilot. Very few make it to production. The gap is not the technology.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/enterprise-analytics-modernization-playbook/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-18" class="text-sm text-navy/70">May 18, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../enterprise-analytics-modernization-playbook/" class="after:absolute after:inset-0 focus-visible:outline-none">Modernizing the Enterprise Analytics Estate: A Pre-AI Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">The analytics modernization framework is well understood. Executing it at enterprise scale is not. Here is the sequencing logic, the failure modes at each…</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-modernization-ai-era/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-05-11" class="text-sm text-navy/70">May 11, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-modernization-ai-era/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Modernization in the AI Era: Why Your BI Estate Is the New Starting Line</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprises treat analytics modernization as a tool migration. It is not. Here is why the BI estate is the substrate AI needs, and the four-step…</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

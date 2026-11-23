@@ -10,8 +10,9 @@ Prepared 17 November 2026. This folder is the static site served at zenoptics.co
 | Atlas | `atlas/index.html` | New. Copy approved by the client, with their change document applied |
 | Nexus | `nexus/index.html` | New. Copy approved by the client, with their change document applied |
 | Maestro | `maestro/index.html` | New. Copy approved by the client, with their change document applied |
-| Blog listing | `blog/index.html` | New template with sample content. Not ready to launch (see Blog) |
-| Blog post | `blog/insight-to-governed-execution/index.html` | New template, one sample post. Not ready to launch |
+| Blog listing | `blog/index.html` | 115 posts. Not launched yet (see Blog) |
+| Blog posts | `blog/<slug>/index.html` | Generated, see Blog |
+| Thank you | `thankyou/index.html` | After a form is sent. noindex. Built by `tools/build-pages.py` |
 | Privacy policy | `privacy-policy/index.html` | Existing |
 | Not found | `404.html` | Existing |
 
@@ -37,15 +38,19 @@ Product screenshots are not in the folder yet. Each product folder has a guide w
 `assets/images/atlas/README.md`, `assets/images/nexus/README.md`, `assets/images/maestro/README.md`.
 Until a file is added, the page shows a grey placeholder in its place.
 
-## Blog (sample content, not ready to launch)
+## Blog (not launched yet)
 
-- The listing shows 25 real post titles and dates. The excerpts are placeholder text and the photos are sample photos loaded from picsum.photos.
-- Only one post page exists. The other 24 cards link to `/blog/<slug>/` pages that do not exist yet.
-- Both blog pages carry `<meta name="robots" content="noindex">`. Remove it when the real posts are in.
-- 59 posts from the previous site (published Nov 2020 – Dec 2025) are moved, each at its old address `/blog/<slug>/`. Text, covers and in-post images came from the old WordPress dev copy on Pantheon (`dev-zenoptics-new-2024.pantheonsite.io`), which stopped updating in Dec 2025. Images are in `assets/images/blog/<slug>/`. Their cards are listed after the sample cards in `blog/index.html`, between the `MOVED POSTS` comments.
-- 4 in-post images no longer exist anywhere; those figures carry the class `hidden`.
-- Links inside the moved posts that point to old pages not on the new site (`/analytics-catalog/`, `/contact/`, `/platform/`, old PDFs and others) still point to www.zenoptics.com and will 404 until those pages exist or the links are changed.
-- The 35 posts published in 2026 are not moved yet: their text is only in the Wayback Machine and their covers are not archived anywhere.
+- 115 posts, listing newest first (`blog/index.html`, latest post on top, "Show more posts" in batches of 12). The old sample cards and picsum photos are gone.
+- All blog pages carry `<meta name="robots" content="noindex">` and the top menu shows "Blog" on blog pages only. Remove both when the blog launches.
+- **2026 posts (56, 23 Apr – 9 Nov 2026)** are built from the Word documents in `Blog Content Archive/` (kept out of git on purpose; ask the team for the folder) by `tools/build-blog-archive.py`:
+  `python3 tools/build-blog-archive.py && python3 tools/build-pages.py && python3 tools/seo.py && npm run build`
+  (needs `pip install python-docx openpyxl`, and `playwright-core` + Google Chrome for the covers). Edit the document and run it again; do not edit those post pages by hand.
+  - Documents flagged NOT PUBLISHED, CANCELLED, UNCONFIRMED or ZAZZY DRAFT are skipped; the PUBLISHED TEXT version wins where two exist.
+  - 16 posts use the real banner (from inside the document, or `Blog Images/`). 40 have a generated title cover until the real banner is found (list: `Blog Content Archive/GENERATED_COVERS.txt`). To swap one: add the file to `COVERS` in the script and rerun.
+  - Demo links (Calendly, /request-demo/) point to `/schedule-a-demo/`. Links to posts that were never published are removed (the script prints them).
+  - FAQ sections also go out as FAQPage structured data.
+- **Posts from Nov 2020 – Dec 2025 (59)** came from the old WordPress dev copy on Pantheon (`dev-zenoptics-new-2024.pantheonsite.io`). Images are in `assets/images/blog/<slug>/`. 4 in-post images no longer exist anywhere; those figures carry the class `hidden`. Links inside them to old pages (`/analytics-catalog/`, `/contact/`, `/platform/`, old PDFs) still point to www.zenoptics.com and will 404 until those pages exist.
+- **Not moved yet: 15 posts from 8 Jan – 14 Apr 2026.** There is no document for them in the archive and they were not on the dev copy; a WordPress export of the old site is the only full source.
 
 ## Before launch
 

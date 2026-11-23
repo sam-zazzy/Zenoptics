@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Analytics Context Engineering? The Discipline Enterprise AI Teams Are Missing | ZenOptics</title>
+  <meta name="description" content="Enterprise AI teams have data engineers and prompt engineers. Most are missing the function that sits between the two.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-context-engineering/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="What Is Analytics Context Engineering? The Discipline Enterprise AI Teams Are Missing | ZenOptics">
+  <meta property="og:description" content="Enterprise AI teams have data engineers and prompt engineers. Most are missing the function that sits between the two.">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-context-engineering/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-context-engineering/cover.webp">
+  <meta property="article:published_time" content="2026-06-12">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "What Is Analytics Context Engineering? The Discipline Enterprise AI Teams Are Missing", "datePublished": "2026-06-12", "description": "Enterprise AI teams have data engineers and prompt engineers. Most are missing the function that sits between the two.", "image": "https://zenoptics.com/assets/images/blog/analytics-context-engineering/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-context-engineering/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is analytics context engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics context engineering is the discipline of structuring, governing, and continuously maintaining the business meaning behind enterprise metrics so that AI systems can consume it reliably. It covers three core practices: deriving the context layer from existing BI metadata, governing it through ownership and certification cycles, and maintaining it continuously as the analytics estate evolves. It is the function that builds and maintains the analytics context layer that AI tools need to produce trusted, business-grounded outputs."}}, {"@type": "Question", "name": "How is analytics context engineering different from data engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Data engineering governs the technical infrastructure layer: pipelines, schemas, data quality at the record level. It ensures data arrives correctly. Analytics context engineering governs the meaning layer: how metrics are defined, who owns those definitions, how they relate to each other in a governed hierarchy, and whether AI systems will interpret them correctly. Both are required for enterprise AI; they address different problems and require different practices."}}, {"@type": "Question", "name": "Why can't prompt engineering replace analytics context engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt engineering addresses individual AI interactions by encoding business context into the instructions sent to AI systems. It works for specific, controlled use cases but does not scale to enterprise analytics: prompts cannot encode the full complexity of an enterprise's metric definitions, cannot keep that context current automatically, and do not produce the auditability that compliance requirements demand. Analytics context engineering builds the persistent, governed infrastructure that eliminates the need to re-encode business context in every prompt."}}, {"@type": "Question", "name": "Who owns analytics context engineering in a typical enterprise?", "acceptedAnswer": {"@type": "Answer", "text": "In most enterprises, analytics context engineering sits at the intersection of analytics operations, data governance, and AI program leadership. In smaller organizations, it is typically owned by the Head of Analytics or Director of BI. In larger organizations, dedicated analytics engineering or analytics ops teams take responsibility for the derivation and maintenance practices, with governance policies set by the data governance function. The function does not require a separate department. It requires a defined owner and a clear process."}}, {"@type": "Question", "name": "How does analytics context engineering connect to the analytics context layer?", "acceptedAnswer": {"@type": "Answer", "text": "The analytics context layer is the output that analytics context engineering produces and maintains. The context layer is the machine-readable, structured representation of what enterprise metrics mean. Analytics context engineering is the discipline responsible for building that layer from existing BI metadata, governing it so it stays authoritative, and integrating it with the AI tools and agentic workflows that need to consume it."}}, {"@type": "Question", "name": "What tools support analytics context engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics context engineering requires tooling that can derive business context automatically from BI metadata, manage certification and ownership workflows, and maintain the context layer as the analytics estate changes. ZenOptics Nexus is built for this purpose: it onboards BI metadata, automatically derives the analytics context layer, and maintains it continuously through integration with the certified analytics estate managed by Atlas. The combination gives analytics context engineering teams the automated derivation and sync capabilities that manual approaches cannot provide at enterprise scale."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">What Is Analytics Context Engineering? The Discipline Enterprise AI Teams Are Missing</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-06-12">June 12, 2026</time></span>
+          <span>9 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-context-engineering/cover.webp" alt="" width="1600" height="900" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-gap-that-created-the-discipline" class="hover:underline">The Gap That Created the Discipline</a></li>
+              <li><a href="#what-analytics-context-engineering-actually-involves" class="hover:underline">What Analytics Context Engineering Actually Involves</a></li>
+              <li><a href="#why-this-is-different-from-data-engineering" class="hover:underline">Why This Is Different from Data Engineering</a></li>
+              <li><a href="#why-prompt-engineering-does-not-scale" class="hover:underline">Why Prompt Engineering Does Not Scale</a></li>
+              <li><a href="#the-three-practices-that-define-analytics-context-engineering" class="hover:underline">The Three Practices That Define Analytics Context Engineering</a></li>
+              <li><a href="#where-this-function-lives-in-the-enterprise" class="hover:underline">Where This Function Lives in the Enterprise</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-gap-that-created-the-discipline" class="hover:underline">The Gap That Created the Discipline</a></li>
+              <li><a href="#what-analytics-context-engineering-actually-involves" class="hover:underline">What Analytics Context Engineering Actually Involves</a></li>
+              <li><a href="#why-this-is-different-from-data-engineering" class="hover:underline">Why This Is Different from Data Engineering</a></li>
+              <li><a href="#why-prompt-engineering-does-not-scale" class="hover:underline">Why Prompt Engineering Does Not Scale</a></li>
+              <li><a href="#the-three-practices-that-define-analytics-context-engineering" class="hover:underline">The Three Practices That Define Analytics Context Engineering</a></li>
+              <li><a href="#where-this-function-lives-in-the-enterprise" class="hover:underline">Where This Function Lives in the Enterprise</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently Asked Questions</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Enterprise organizations have invested heavily in two engineering disciplines to support their AI programs. Data engineering builds and maintains the infrastructure that stores, moves, and transforms data. Prompt engineering crafts the queries and instructions that help AI systems produce better outputs for specific tasks. Both are necessary. Neither addresses the foundational requirement that makes AI outputs trusted across an enterprise: structured, governed, continuously maintained business meaning that AI systems can consume reliably.</p>
+<p>Analytics context engineering is the discipline that fills that gap. It is the practice of structuring the business meaning behind enterprise metrics, governing that meaning with ownership and certification, and maintaining it continuously so that AI systems can act on it with accuracy and auditability. Without it, AI tools have access to data but not to understanding. Prompt engineering patches individual queries; analytics context engineering builds the infrastructure that eliminates the need for the patch.</p>
+<h2 id="the-gap-that-created-the-discipline">The Gap That Created the Discipline</h2>
+<p>The context gap is the most consistently cited reason <a href="../analytics-ai-value-gap/">analytics AI investments stall in enterprise environments</a>. Organizations deploy AI tools against their BI estate, the tools connect successfully, and the outputs are still not trusted. Teams find that AI answers are sometimes right, sometimes plausible-but-wrong, and rarely consistent enough to be acted on without manual verification.</p>
+<p>The diagnosis is almost always the same: the AI tool has access to data but not to the organizational meaning behind it. It does not know which version of a metric is authoritative. It does not know how a KPI is defined in this business unit versus that one. It does not know who owns a metric&#x27;s definition, whether it has been reviewed recently, or what process governs decisions made with it. The AI fills those gaps with statistical inference, producing outputs grounded in statistical inference rather than in what the organization has decided its metrics mean.</p>
+<p>Data engineering does not address this gap. Data engineering governs infrastructure: pipeline reliability, schema integrity, data quality at the record level. It ensures data arrives correctly. It does not ensure that metrics are interpreted correctly.</p>
+<p>Prompt engineering does not address this gap either. A well-crafted prompt can instruct an AI system to use a specific metric definition for a specific query. That approach works in a controlled context for a known question. It does not scale across an enterprise where hundreds of metrics, dozens of teams, and multiple AI tools need consistent, governed business context that no prompt can encode comprehensively.</p>
+<p>Analytics context engineering addresses the gap directly. It is the discipline responsible for making the organization&#x27;s business meaning machine-readable, kept current, and available to every AI system that needs it.</p>
+<h2 id="what-analytics-context-engineering-actually-involves">What Analytics Context Engineering Actually Involves</h2>
+<p>Analytics context engineering is not a single task. It is an ongoing operational practice with three core activities.</p>
+<p>The first is automated context generation: extracting the business meaning that already exists within the organization&#x27;s BI metadata and structuring it so AI systems can consume it. Enterprise analytics estates contain decades of accumulated business knowledge: metric definitions embedded in report logic, KPI relationships encoded in dashboard hierarchies, ownership patterns visible in certification records and usage data. Analytics context engineering surfaces and formalizes that knowledge rather than constructing it from scratch.</p>
+<p>The second is governance: establishing and maintaining the certification, ownership, and review cycles that determine which business definitions are authoritative, who is responsible for them, and how conflicts are resolved when multiple definitions exist for the same term. This is not a one-time exercise. Analytics context engineering treats the context layer the way data engineering treats the data warehouse: as a living system that requires ongoing maintenance to remain reliable.</p>
+<p>The third is activation: making the structured business context available to AI systems in a machine-readable format, and integrating it with the BI tools, AI agents, and agentic workflows that need to act on certified business intelligence. Activation includes connecting the context layer to specific AI use cases, verifying that AI outputs reflect the governed definitions rather than statistical inference, and monitoring the context layer for gaps as the business evolves.</p>
+<p>Together, these three activities produce what <a href="../analytics-context-layer-enterprise/">an analytics context layer</a> is: the machine-readable, continuously governed representation of what enterprise metrics mean. Analytics context engineering is the discipline that builds and maintains it.</p>
+<h2 id="why-this-is-different-from-data-engineering">Why This Is Different from Data Engineering</h2>
+<p>Data engineering and analytics context engineering address fundamentally different problems. Understanding the distinction matters because organizations that treat context engineering as a data engineering responsibility consistently produce incomplete results.</p>
+<p>Data engineering governs the technical layer: whether data arrives in the warehouse correctly, whether schemas are consistent, whether pipelines are reliable, whether data quality at the record level meets defined standards. The question data engineering asks is whether the data is accurate.</p>
+<p>Analytics context engineering governs the meaning layer: whether metrics are defined consistently across teams, whether the definitions are current and certified, whether AI systems applying those definitions will produce outputs aligned with the organization&#x27;s business logic, and whether the decisions AI influences are traceable to authoritative sources. The question analytics context engineering asks is whether the data is understood correctly.</p>
+<p>An organization with strong data engineering and no analytics context engineering has accurate data that AI interprets inconsistently. The infrastructure is correct; the meaning is ungoverned. The outputs are plausible and unreliable.</p>
+<p>The full distinction between the analytics context layer and infrastructure-level approaches is covered in detail in <a href="../analytics-context-layer-vs-semantic-layer/">Analytics Context Layer vs. Semantic Layer</a>.</p>
+<h2 id="why-prompt-engineering-does-not-scale">Why Prompt Engineering Does Not Scale</h2>
+<p>Prompt engineering has a defined and legitimate role in AI deployment: crafting the instructions that guide individual AI interactions toward more accurate and useful outputs. For specific, controlled use cases with known inputs and well-understood business context, prompt engineering is effective.</p>
+<p>It does not scale to enterprise analytics for three reasons.</p>
+<p>First, the enterprise analytics environment is too large and too varied for comprehensive prompt encoding. A single organization might have thousands of metrics, hundreds of reports, dozens of business units with variant definitions, and multiple AI tools that need consistent business context. No set of prompts can encode all of that comprehensively, keep it current, or apply it consistently across every query and every AI system.</p>
+<p>Second, prompts do not persist. The business context embedded in a prompt exists for the duration of that interaction. When the next query is run, the prompt must re-encode the same context. When a metric definition changes, every related prompt must be updated. When a new AI tool is added to the stack, its prompts must be constructed from scratch.</p>
+<p>Third, prompts do not produce auditability. A governed analytics context layer makes AI actions traceable to certified business definitions. A prompt does not. Organizations operating under compliance or audit requirements cannot satisfy them with prompt-based context alone.</p>
+<p>Analytics context engineering builds the infrastructure that replaces these workarounds: a persistent, governed, machine-readable context layer that every AI tool in the organization&#x27;s stack can consume, and that stays current as the business evolves.</p>
+<h2 id="the-three-practices-that-define-analytics-context-engineering">The Three Practices That Define Analytics Context Engineering</h2>
+<p>Analytics context engineering as a discipline is defined by three operational practices that distinguish it from adjacent functions.</p>
+<p>Automated context generation. Rather than building the business context layer from scratch, analytics context engineering derives it from the BI metadata that already exists: the report structures, metric definitions, ownership records, certification status, and usage patterns that accumulate within the analytics estate over time. This approach produces a context layer that reflects actual organizational usage rather than a theorized specification, and that can be maintained continuously rather than rebuilt periodically.</p>
+<p>Governance through ownership cycles. Every element of the context layer (every metric definition, every KPI relationship, every certification record) is owned by an accountable person and subject to a defined review cycle. Analytics context engineering establishes and enforces those ownership and review processes, ensuring that the context layer reflects the organization&#x27;s current business logic rather than its historical approximation.</p>
+<p>Continuous sync with the analytics estate. The context layer must stay current as the organization evolves: as new metrics are added, old ones retired, definitions revised, and BI tools changed. Analytics context engineering treats the context layer as a continuously maintained system rather than a point-in-time deliverable, with automated mechanisms to detect changes in the underlying BI estate and surface them for review and update.</p>
+<p><a href="../../nexus/">Nexus</a>, ZenOptics&#x27;s AI Context Layer for Analytics, automates the first and third of these practices: it derives the context layer from existing BI metadata and maintains it continuously as the estate changes. The governance practice in the middle (ownership assignment, certification, and review) is where the analytics context engineering function within the organization sets the policies that Nexus enforces.</p>
+<h2 id="where-this-function-lives-in-the-enterprise">Where This Function Lives in the Enterprise</h2>
+<p>Analytics context engineering is an emerging function. In organizations that have defined it explicitly, it sits at the intersection of three existing functions: analytics operations (which manages the BI estate), data governance (which manages ownership and certification policies), and AI program leadership (which owns AI deployment readiness and outcomes).</p>
+<p>In smaller analytics organizations, analytics context engineering is typically a responsibility held by the Head of Analytics or Director of BI, often in close coordination with the data governance function. In larger organizations, dedicated analytics ops or analytics engineering teams take ownership of the derivation and maintenance practices, with governance policies set by the data governance office.</p>
+<p>The function does not require a new department. It requires a defined owner for the analytics context layer, a clear process for deriving and governing business definitions, and the tooling to automate derivation and continuous sync. Organizations implementing ZenOptics typically see analytics discovery improve 20 to 40 percent and AI deployment timelines compress two to three times once the analytics context engineering function is established and the context layer is in place, because AI teams can deploy against a trusted, governed foundation rather than building context from scratch for each new use case.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-analytics-context-engineering">What is analytics context engineering?</h3>
+<p>Analytics context engineering is the discipline of structuring, governing, and continuously maintaining the business meaning behind enterprise metrics so that AI systems can consume it reliably. It covers three core practices: deriving the context layer from existing BI metadata, governing it through ownership and certification cycles, and maintaining it continuously as the analytics estate evolves. It is the function that builds and maintains the analytics context layer that AI tools need to produce trusted, business-grounded outputs.</p>
+<h3 id="how-is-analytics-context-engineering-different-from-data-engineering">How is analytics context engineering different from data engineering?</h3>
+<p>Data engineering governs the technical infrastructure layer: pipelines, schemas, data quality at the record level. It ensures data arrives correctly. Analytics context engineering governs the meaning layer: how metrics are defined, who owns those definitions, how they relate to each other in a governed hierarchy, and whether AI systems will interpret them correctly. Both are required for enterprise AI; they address different problems and require different practices.</p>
+<h3 id="why-can-t-prompt-engineering-replace-analytics-context-engineering">Why can&#x27;t prompt engineering replace analytics context engineering?</h3>
+<p>Prompt engineering addresses individual AI interactions by encoding business context into the instructions sent to AI systems. It works for specific, controlled use cases but does not scale to enterprise analytics: prompts cannot encode the full complexity of an enterprise&#x27;s metric definitions, cannot keep that context current automatically, and do not produce the auditability that compliance requirements demand. Analytics context engineering builds the persistent, governed infrastructure that eliminates the need to re-encode business context in every prompt.</p>
+<h3 id="who-owns-analytics-context-engineering-in-a-typical-enterprise">Who owns analytics context engineering in a typical enterprise?</h3>
+<p>In most enterprises, analytics context engineering sits at the intersection of analytics operations, data governance, and AI program leadership. In smaller organizations, it is typically owned by the Head of Analytics or Director of BI. In larger organizations, dedicated analytics engineering or analytics ops teams take responsibility for the derivation and maintenance practices, with governance policies set by the data governance function. The function does not require a separate department. It requires a defined owner and a clear process.</p>
+<h3 id="how-does-analytics-context-engineering-connect-to-the-analytics-context-layer">How does analytics context engineering connect to the analytics context layer?</h3>
+<p>The analytics context layer is the output that analytics context engineering produces and maintains. The context layer is the machine-readable, structured representation of what enterprise metrics mean. Analytics context engineering is the discipline responsible for building that layer from existing BI metadata, governing it so it stays authoritative, and integrating it with the AI tools and agentic workflows that need to consume it.</p>
+<h3 id="what-tools-support-analytics-context-engineering">What tools support analytics context engineering?</h3>
+<p>Analytics context engineering requires tooling that can derive business context automatically from BI metadata, manage certification and ownership workflows, and maintain the context layer as the analytics estate changes. ZenOptics Nexus is built for this purpose: it onboards BI metadata, automatically derives the analytics context layer, and maintains it continuously through integration with the certified analytics estate managed by Atlas. The combination gives analytics context engineering teams the automated derivation and sync capabilities that manual approaches cannot provide at enterprise scale.</p>
+<p class="post-cta"><a href="../../schedule-a-demo/">Ready to establish the analytics context engineering function in your organization? Schedule a conversation with the ZenOptics team</a></p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-knowledge-graph-enterprise-ai/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-19" class="text-sm text-navy/70">June 19, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-knowledge-graph-enterprise-ai/" class="after:absolute after:inset-0 focus-visible:outline-none">How Enterprise AI Reasons Across Metrics: The Role of the Analytics Knowledge Graph</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise analytics teams now understand that AI needs certified metric definitions to produce trusted outputs.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/data-governance-vs-analytics-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-15" class="text-sm text-navy/70">June 15, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../data-governance-vs-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Data Governance vs. Analytics Governance: Why Enterprise AI Needs Both and Why They Are Not the Same</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise AI programs are built on data governance. Data governance is necessary. It does not govern the analytics layer where AI most commonly fails.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-context-layer-vs-semantic-layer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-06-08" class="text-sm text-navy/70">June 8, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-context-layer-vs-semantic-layer/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Context Layer vs. Semantic Layer: What the Difference Means for Your AI Deployment</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Most enterprise analytics teams have a semantic layer. Many assume that covers the AI context requirement. It does not.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

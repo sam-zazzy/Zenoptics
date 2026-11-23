@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 assets/images/Product images/
+
+# Source documents for the blog (internal notes and links). Not published: GitHub Pages would serve them.
+Blog Content Archive/
