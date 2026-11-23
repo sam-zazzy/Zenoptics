@@ -98,3 +98,40 @@
   #hubspot-newsletter .legal-consent-container { @apply mb-3 text-center text-xs text-white/60; }
   #hubspot-newsletter .submitted-message { @apply text-center text-sm text-brand-green; }
 }
+
+/* Blog post body (blog/<slug>/index.html: <article class="prose-zo">) */
+@layer components {
+  .prose-zo { @apply text-[17px] leading-relaxed text-navy/90; }
+  .prose-zo > * + * { margin-top: 1.25em; }
+  .prose-zo h2 { @apply mt-12 scroll-mt-28 text-2xl leading-snug font-semibold text-navy; }
+  .prose-zo h3 { @apply mt-9 scroll-mt-28 text-xl leading-snug font-semibold text-navy; }
+  .prose-zo h2 + *, .prose-zo h3 + * { margin-top: 0.75em; }
+  .prose-zo a { @apply font-medium break-words text-navy underline decoration-brand-orange decoration-2 underline-offset-2 hover:decoration-navy; }
+  .prose-zo strong, .prose-zo b { @apply font-semibold text-navy; }
+  .prose-zo ul { @apply list-disc space-y-2 pl-6; }
+  .prose-zo ol { @apply list-decimal space-y-2 pl-6; }
+  .prose-zo li > ul, .prose-zo li > ol { @apply mt-2; }
+  .prose-zo li::marker { @apply text-brand-blue; }
+  .prose-zo figure img, .prose-zo > img { @apply mx-auto h-auto max-w-full rounded-xl ring-1 ring-slate-200; }
+  .prose-zo sub { @apply block text-center text-sm text-navy/70; vertical-align: baseline; }
+  .prose-zo blockquote { @apply border-l-4 border-brand-orange pl-5 italic; }
+  .prose-zo .table-wrap, .prose-zo > table, .prose-zo figure:has(> table) { @apply block max-w-full overflow-x-auto; }
+  .prose-zo table { @apply w-full border-collapse text-left text-[15px]; }
+  .prose-zo th, .prose-zo td { @apply border border-slate-200 px-3 py-2 align-top; }
+  .prose-zo th, .prose-zo thead td { @apply bg-soft font-semibold text-navy; }
+  .prose-zo .checklist { @apply space-y-3 rounded-2xl bg-soft p-6; }
+  .prose-zo .check { @apply flex items-start gap-3; }
+  .prose-zo .check input { @apply mt-1.5 size-4 shrink-0 accent-navy; }
+  .prose-zo .callout { @apply rounded-2xl bg-soft p-6; }
+  .prose-zo .callout > * + * { margin-top: 1em; }
+  .prose-zo .refs { @apply mt-12 border-t border-slate-200 pt-6 text-sm text-navy/80; }
+  .prose-zo .refs p + p { @apply mt-2; }
+}
+
+/* Resources page: cards added by "See more" fade and slide in */
+@keyframes res-reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.res-reveal { animation: res-reveal 0.45s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .res-reveal { animation: none; } }

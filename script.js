@@ -449,3 +449,153 @@ if (postList && showMoreWrap) {
   });
   update();
 }
+
+// ---------- Resources page: tabs (All / Blogs / Guides / Webinars / White papers) ----------
+// All: every section, first 6 cards each, "View all …" when a section has more.
+// One tab: only that section, first 9 cards, then "See more …" adds 6 at a time.
+// The chosen tab is kept in the URL hash (#blog, #guides, #webinars, #whitepapers); All has no hash.
+const resTabs = document.querySelector("[data-res-tabs]");
+if (resTabs) {
+  const ALL_COUNT = 6, TAB_COUNT = 9, STEP = 6;
+  const tabs = Array.from(resTabs.querySelectorAll("[data-res-tab]"));
+  const sections = Array.from(document.querySelectorAll("[data-res-section]"));
+  const keys = sections.map((s) => s.dataset.resSection);
+  const shown = {}; // cards shown per section in single-tab view
+
+  const show = (el, on, display = "flex") => {
+    el.classList.toggle("hidden", !on);
+    el.classList.toggle(display, on);
+  };
+
+  const render = (key) => {
+    tabs.forEach((t) => {
+      const on = t.dataset.resTab === key;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    sections.forEach((sec) => {
+      const k = sec.dataset.resSection;
+      const items = Array.from(sec.querySelector("[data-res-list]").children);
+      const viewAll = sec.querySelector("[data-res-viewall]");
+      const moreWrap = sec.querySelector("[data-res-more-wrap]");
+      if (key === "all") {
+        sec.hidden = false;
+        items.forEach((li, i) => li.classList.toggle("hidden", i >= ALL_COUNT));
+        show(viewAll, items.length > ALL_COUNT);
+        show(moreWrap, false);
+      } else {
+        sec.hidden = k !== key;
+        if (k !== key) return;
+        shown[k] = shown[k] || TAB_COUNT;
+        items.forEach((li, i) => li.classList.toggle("hidden", i >= shown[k]));
+        show(viewAll, false);
+        show(moreWrap, shown[k] < items.length);
+      }
+    });
+  };
+
+  const keyFromHash = () => {
+    const h = location.hash.slice(1);
+    return keys.includes(h) ? h : "all";
+  };
+
+  const select = (key, scroll) => {
+    history.pushState(null, "", key === "all" ? location.pathname + location.search : "#" + key);
+    render(key);
+    // bring the cards back to the top when the visitor had scrolled past them (or asked via "View all")
+    const panels = document.querySelector("[data-res-panels]");
+    if (scroll || panels.getBoundingClientRect().top < 0) panels.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  };
+
+  tabs.forEach((t) =>
+    t.addEventListener("click", () => {
+      if (t.getAttribute("aria-selected") !== "true") delete shown[t.dataset.resTab]; // a tab opened again starts at 9 cards
+      select(t.dataset.resTab, false);
+    })
+  );
+  // Arrow keys move between tabs
+  resTabs.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const i = tabs.indexOf(document.activeElement);
+    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    next.focus();
+    next.click();
+  });
+  document.querySelectorAll("[data-res-viewall]").forEach((a) =>
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      delete shown[a.dataset.resViewall];
+      select(a.dataset.resViewall, true);
+    })
+  );
+  document.querySelectorAll("[data-res-more]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const sec = btn.closest("[data-res-section]");
+      const k = sec.dataset.resSection;
+      const items = Array.from(sec.querySelector("[data-res-list]").children);
+      const from = shown[k];
+      shown[k] += STEP;
+      render(k);
+      items.slice(from, shown[k]).forEach((li, i) => {
+        li.classList.remove("res-reveal");
+        void li.offsetWidth; // restart the animation
+        li.style.animationDelay = reduceMotion ? "0ms" : `${(i % 3) * 70 + Math.floor(i / 3) * 90}ms`;
+        li.classList.add("res-reveal");
+      });
+      items[from]?.querySelector("a")?.focus({ preventScroll: true }); // keyboard users continue from the first new card
+    })
+  );
+  window.addEventListener("popstate", () => render(keyFromHash()));
+  render(keyFromHash());
+}
+
+// ---------- Video player (webinar cards on Resources) ----------
+// A link with data-video opens the video over a dark overlay instead of a new tab.
+// The player has no download button, no picture-in-picture and no right-click menu.
+const videoModal = document.getElementById("video-modal");
+if (videoModal) {
+  const player = videoModal.querySelector("[data-video-player]");
+  const titleEl = videoModal.querySelector("[data-video-title]");
+  const closeBtn = videoModal.querySelector("[data-video-close]");
+  let opener = null;
+
+  const closeVideo = () => {
+    if (videoModal.classList.contains("hidden")) return;
+    player.pause();
+    player.removeAttribute("src");
+    player.load(); // stop downloading the rest of the file
+    videoModal.classList.add("hidden");
+    videoModal.classList.remove("flex");
+    document.documentElement.style.overflow = "";
+    opener?.focus({ preventScroll: true });
+  };
+
+  document.querySelectorAll("a[data-video]").forEach((link) =>
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      opener = link;
+      titleEl.textContent = link.textContent.trim();
+      player.src = link.dataset.video;
+      videoModal.classList.remove("hidden");
+      videoModal.classList.add("flex");
+      document.documentElement.style.overflow = "hidden";
+      closeBtn.focus();
+      player.play().catch(() => {}); // autoplay can be refused; the controls are there
+    })
+  );
+  closeBtn.addEventListener("click", closeVideo);
+  videoModal.addEventListener("click", (e) => {
+    if (e.target === videoModal) closeVideo(); // click on the dark area
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeVideo();
+    // keep Tab inside the player while it is open
+    if (e.key === "Tab" && !videoModal.classList.contains("hidden")) {
+      const items = [closeBtn, player];
+      const i = items.indexOf(document.activeElement);
+      e.preventDefault();
+      items[(i + (e.shiftKey ? items.length - 1 : 1)) % items.length].focus();
+    }
+  });
+  player.addEventListener("contextmenu", (e) => e.preventDefault());
+}

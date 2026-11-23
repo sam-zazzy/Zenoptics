@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO (tools/seo.py) -->
   <title>Thought Leadership and Resource Library | ZenOptics</title>
-  <meta name="description" content="Blogs, white papers and webinars to guide Analytics leaders and teams who desire to improve efficiency, productivity and value from their analytics investments.">
+  <meta name="description" content="Guides, webinars and white papers for analytics leaders who want more efficiency, productivity and value from their BI and analytics investments.">
   <link rel="canonical" href="https://zenoptics.com/resources/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ZenOptics">
   <meta property="og:title" content="Thought Leadership and Resource Library | ZenOptics">
-  <meta property="og:description" content="Blogs, white papers and webinars to guide Analytics leaders and teams who desire to improve efficiency, productivity and value from their analytics investments.">
+  <meta property="og:description" content="Guides, webinars and white papers for analytics leaders who want more efficiency, productivity and value from their BI and analytics investments.">
   <meta property="og:url" content="https://zenoptics.com/resources/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/og-zenoptics.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +36,6 @@
           <li><a href="../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
           <li><a href="../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
           <li><a href="../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
-          <li><a href="../blog/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Blog</a></li>
           <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
         </ul>
       </nav>
@@ -63,106 +67,717 @@
       </div>
     </section>
 
-    <!-- To add a resource: copy a card (<li>…</li>) in the right section and change the link, label and title. -->
+    <!-- ============ TABS (script.js: data-res-tabs). All = 6 cards per section; one tab = 9 cards, then 6 more per "See more".
+         The tab is kept in the URL hash: #blog, #guides, #webinars, #whitepapers. ============ -->
+    <div class="sticky top-[72px] z-30 border-b border-slate-200 bg-soft/95 backdrop-blur">
+      <div class="overflow-x-auto">
+        <div role="tablist" aria-label="Resource types" data-res-tabs class="mx-auto flex w-max gap-0 px-2 py-3 sm:gap-1 sm:px-4">
+          <button type="button" role="tab" id="tab-all" aria-selected="true" data-res-tab="all" class="shrink-0 rounded-full px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm font-medium text-navy/80 transition hover:bg-white hover:text-navy aria-selected:bg-navy aria-selected:text-white">All</button>
+          <button type="button" role="tab" id="tab-blog" aria-selected="false" data-res-tab="blog" class="shrink-0 rounded-full px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm font-medium text-navy/80 transition hover:bg-white hover:text-navy aria-selected:bg-navy aria-selected:text-white">Blogs</button>
+          <button type="button" role="tab" id="tab-guides" aria-selected="false" data-res-tab="guides" class="shrink-0 rounded-full px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm font-medium text-navy/80 transition hover:bg-white hover:text-navy aria-selected:bg-navy aria-selected:text-white">Guides</button>
+          <button type="button" role="tab" id="tab-webinars" aria-selected="false" data-res-tab="webinars" class="shrink-0 rounded-full px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm font-medium text-navy/80 transition hover:bg-white hover:text-navy aria-selected:bg-navy aria-selected:text-white">Webinars</button>
+          <button type="button" role="tab" id="tab-whitepapers" aria-selected="false" data-res-tab="whitepapers" class="shrink-0 rounded-full px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm font-medium text-navy/80 transition hover:bg-white hover:text-navy aria-selected:bg-navy aria-selected:text-white">White papers</button>
+        </div>
+      </div>
+    </div>
 
-    <section class="container-x pt-14 lg:pt-16" aria-labelledby="guides">
-      <h2 id="guides" class="text-2xl font-semibold sm:text-3xl">Guides</h2>
-      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- To add a resource: copy a card (<li>…</li>) in the right section and change the link, label and title. -->
+    <div data-res-panels class="scroll-mt-[8.5rem] pb-16 lg:pb-20">
+
+    <section class="container-x pt-12 lg:pt-14" data-res-section="blog" aria-labelledby="res-blog-h">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 id="res-blog-h" class="text-2xl font-semibold sm:text-3xl">Blogs</h2>
+        <a href="#blog" data-res-viewall="blog" class="hidden items-center gap-1.5 font-medium text-navy underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all blogs <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-res-list>
           <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/future-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/future-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">The Future of Analytics Portals</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics transforms analytics portals beyond dashboards by unifying BI tools, enforcing governance, and delivering real-time insights that drive confident enterprise decision making.</p>
+              <time datetime="2025-12-15" class="mt-5 text-sm text-navy/70">December 15, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/modernizing-analytics-automotive-fleets-unified-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/modernizing-analytics-automotive-fleets-unified-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Modernizing Analytics for Automotive Fleets</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Modern analytics empower fleet leaders to reduce costs, strengthen compliance, improve driver safety, and gain predictive insights by unifying telematics diagnostics and safety data on one platform.</p>
+              <time datetime="2025-12-08" class="mt-5 text-sm text-navy/70">December 8, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/streamlining-claims-reporting-insurers-unified-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/streamlining-claims-reporting-insurers-unified-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Streamlining Claims Reporting for Insurers</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Unified analytics empower insurers to streamline claims reporting by eliminating data silos, accelerating decision-making, and strengthening compliance as regulations and customer demands grow.</p>
+              <time datetime="2025-12-02" class="mt-5 text-sm text-navy/70">December 2, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/how-unified-view-analytics-drives-faster-decisions-manufacturing/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/how-unified-view-analytics-drives-faster-decisions-manufacturing/" class="after:absolute after:inset-0 focus-visible:outline-none">How a Unified View of Analytics Drive Faster Decisions in Manufacturing</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics delivers a unified analytics catalog platform that centralizes reports, dashboards, and KPIs, helping manufacturers eliminate data silos, accelerate decision making, and improve operational agility.</p>
+              <time datetime="2025-11-25" class="mt-5 text-sm text-navy/70">November 25, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/modern-analytics-governance-compliance-self-service-bi/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/modern-analytics-governance-compliance-self-service-bi/" class="after:absolute after:inset-0 focus-visible:outline-none">Modern Analytics Governance: Ensuring Compliance and Trust in Self-Service BI</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Modern analytics governance centralizes catalogs, governance, and operational insights across BI analytics tools, helping organizations ensure compliance, trust, and strengthen decision-making.</p>
+              <time datetime="2025-11-19" class="mt-5 text-sm text-navy/70">November 19, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Catalogs vs. Data Catalogs: What Business Leaders Need to Know</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Learn the differences between data and analytics catalogs, which help business leaders unify governance, insights, and decision-making across BI tools for trusted enterprise analytics.</p>
+              <time datetime="2025-11-11" class="mt-5 text-sm text-navy/70">November 11, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/5-steps-eliminating-report-chaos-analytics-intelligence-platform/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/5-steps-eliminating-report-chaos-analytics-intelligence-platform/" class="after:absolute after:inset-0 focus-visible:outline-none">5 Steps to Eliminating Report Chaos with an Analytics Intelligence Platform</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover 5 steps to eliminate report chaos using an Analytics Intelligence Platform that unifies BI tools, automates reports, improves governance, and empowers data-driven decision-making.</p>
+              <time datetime="2025-11-06" class="mt-5 text-sm text-navy/70">November 6, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/future-analytics-governance-data-driven-world/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/future-analytics-governance-data-driven-world/" class="after:absolute after:inset-0 focus-visible:outline-none">The Future of Analytics Governance in a Data‑Driven World</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics unifies all reports, dashboards, and KPIs into a single analytics catalog platform that empowers leaders to align teams, enhance collaboration, and streamline analytics governance across enterprises.</p>
+              <time datetime="2025-10-29" class="mt-5 text-sm text-navy/70">October 29, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/how-lead-intelligence-turning-ai-chaos-business-clarity/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/how-lead-intelligence-turning-ai-chaos-business-clarity/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Lead Through Intelligence: Turning AI Chaos into Business Clarity</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics empowers leaders to turn AI and analytics chaos into business growth and operational clarity by unifying data, strengthening governance, and driving confident insight-based decisions.</p>
+              <time datetime="2025-10-21" class="mt-5 text-sm text-navy/70">October 21, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/foundation-ai-success-analytics-governance-matters/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/foundation-ai-success-analytics-governance-matters/" class="after:absolute after:inset-0 focus-visible:outline-none">The Foundation of AI Success: Why Analytics Governance Matters More Than Ever</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics helps enterprises achieve clarity, compliance, and agility by unifying analytics governance to automate workflows, powering AI with clean data, and driving data intelligence at scale.</p>
+              <time datetime="2025-10-21" class="mt-5 text-sm text-navy/70">October 21, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/cross-functional-alignment-analytics-catalog/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/cross-functional-alignment-analytics-catalog/" class="after:absolute after:inset-0 focus-visible:outline-none">How Cross-Functional Alignment with an Analytics Catalog Drives Business Outcomes</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">An analytics catalog unifies data, enhances governance, and enables smarter decisions, empowering IT and business teams by connecting analytics insights for strategic business outcomes.</p>
+              <time datetime="2025-10-07" class="mt-5 text-sm text-navy/70">October 7, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/value-unified-analytics-platform-modern-enterprise/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/value-unified-analytics-platform-modern-enterprise/" class="after:absolute after:inset-0 focus-visible:outline-none">The Value of a Unified Analytics Platform for the Modern Enterprise</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">A unified analytics platform with an Analytics Catalog centralizes BI, eliminates silos, reduces duplication, and enhances governance to help modern enterprises build trust and accelerate decision-making.</p>
+              <time datetime="2025-10-01" class="mt-5 text-sm text-navy/70">October 1, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/empowering-information-consumers-shared-data-language/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/empowering-information-consumers-shared-data-language/" class="after:absolute after:inset-0 focus-visible:outline-none">Empowering Information Consumers with Consistent Terminology and Knowledge Sharing</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Empower business users with consistent data terminology, knowledge sharing, and an analytics catalog to streamline reporting, strengthen governance, and drive smarter decision-making.</p>
+              <time datetime="2025-09-16" class="mt-5 text-sm text-navy/70">September 16, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/self-service-analytics-catalog-empowers-business-units/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/self-service-analytics-catalog-empowers-business-units/" class="after:absolute after:inset-0 focus-visible:outline-none">How Self-Service Analytics Catalog Empowers Business Units</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover how a self-service analytics catalog eliminates bottlenecks, accelerates decision-making, reduces IT dependency, and empowers business users with trusted insights.</p>
+              <time datetime="2025-09-12" class="mt-5 text-sm text-navy/70">September 12, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/future-proofing-business-analytics-catalog/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/future-proofing-business-analytics-catalog/" class="after:absolute after:inset-0 focus-visible:outline-none">Future-Proofing Your Business with an Analytics Catalog</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">The analytics catalog unifies BI data assets, strengthens governance, improves data literacy, and empowers employees with trusted insights to prepare your business for the future.</p>
+              <time datetime="2025-08-27" class="mt-5 text-sm text-navy/70">August 27, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-catalog-strengthens-governance-compliance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-catalog-strengthens-governance-compliance/" class="after:absolute after:inset-0 focus-visible:outline-none">How an Analytics Catalog Strengthens Governance and Compliance</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Analytics catalogs strengthen governance and compliance by centralizing reports, providing audit trails, supporting GDPR and HIPAA, and ensuring transparency with lineage across BI tools.</p>
+              <time datetime="2025-08-19" class="mt-5 text-sm text-navy/70">August 19, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/reducing-report-redundancy-analytics-ops/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/reducing-report-redundancy-analytics-ops/" class="after:absolute after:inset-0 focus-visible:outline-none">Reducing Report Redundancy with Analytics Ops</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Analytics Ops identifies duplicate dashboards, reduces BI spend, reclaims unused licenses, and improves governance to cut costs &amp; maximize business value from BI tools.</p>
+              <time datetime="2025-08-15" class="mt-5 text-sm text-navy/70">August 15, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/strategic-value-analytics-catalog-data-driven-world/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/strategic-value-analytics-catalog-data-driven-world/" class="after:absolute after:inset-0 focus-visible:outline-none">The Strategic Value of an Analytics Catalog in Today’s Data-Driven World</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">An analytics catalog unifies data, boosts governance, centralizes reporting, and helps teams make faster, more confident decisions across BI tools in your enterprise.</p>
+              <time datetime="2025-08-07" class="mt-5 text-sm text-navy/70">August 7, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/5-tipping-points-enterprise-analytics-catalog/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/5-tipping-points-enterprise-analytics-catalog/" class="after:absolute after:inset-0 focus-visible:outline-none">5 Tipping Points in the Enterprise that Demand an Analytics Catalog</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics streamlines enterprise analytics with an AI-powered catalog that unifies scattered BI tools, eliminates duplication, reduces costs, and enhances governance and compliance.</p>
+              <time datetime="2025-07-08" class="mt-5 text-sm text-navy/70">July 8, 2025</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/best-practices-implementing-analytics-catalog/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/best-practices-implementing-analytics-catalog/" class="after:absolute after:inset-0 focus-visible:outline-none">Best Practices for Implementing an Analytics Catalog in Large Organizations</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover best practices for implementing an analytics catalog in large organizations to boost productivity, enhance governance, and improve decision-making for seamless adoption and success.</p>
+              <time datetime="2024-11-21" class="mt-5 text-sm text-navy/70">November 21, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-catalog-role-modern-enterprise/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-catalog-role-modern-enterprise/" class="after:absolute after:inset-0 focus-visible:outline-none">What Is an Analytics Catalog and Why Does It Matter for Modern Enterprises?</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Understanding the role of analytics catalogs in modern enterprises to improve data-driven decision-making, enhance governance, simplify data management, and organize analytics assets.</p>
+              <time datetime="2024-10-23" class="mt-5 text-sm text-navy/70">October 23, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/preparing-organization-ai-zenoptics-key-insights/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/preparing-organization-ai-zenoptics-key-insights/" class="after:absolute after:inset-0 focus-visible:outline-none">Preparing Your Organization for AI with ZenOptics: Key Insights from ZenTalk 9</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Explore expert insights from ZenTalk 9 on preparing your data and analytics programs for AI integration, learning strategies to tackle technical debt, and optimizing D&amp;A for AI technologies.</p>
+              <time datetime="2024-09-05" class="mt-5 text-sm text-navy/70">September 5, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/evolving-enterprise-data-management-insights/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/evolving-enterprise-data-management-insights/" class="after:absolute after:inset-0 focus-visible:outline-none">Evolving Enterprise Data Management: Insights from Steve Dine and Saurbh Khera</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Explore industry expert insights on the evolving landscape of enterprise data management and discover strategies for integrating AI, navigating data complexity, enhancing user experience, and future-proofing analytics platforms.</p>
+              <time datetime="2024-07-17" class="mt-5 text-sm text-navy/70">July 17, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/navigating-organizational-change-continuity-insights/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/navigating-organizational-change-continuity-insights/" class="after:absolute after:inset-0 focus-visible:outline-none">Navigating Organizational Change with Continuity: Insights from Stephen Dine and Saurbh Khera</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Learn how to manage organizational change effectively with insights from Stephen Dine and Saurbh Khera and discover strategies for ensuring continuity and efficiency in data and analytics programs.</p>
+              <time datetime="2024-06-19" class="mt-5 text-sm text-navy/70">June 19, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/navigating-report-chaos-challenges-solutions-modern-bi/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/navigating-report-chaos-challenges-solutions-modern-bi/" class="after:absolute after:inset-0 focus-visible:outline-none">Navigating Report Chaos: Challenges and Solutions for Modern BI</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics platform streamlines reporting chaos and navigates the complexities of self-service BI tools. It allows business users to centralize reports and enhance productivity, collaboration, and governance through an intuitive interface.</p>
+              <time datetime="2024-06-12" class="mt-5 text-sm text-navy/70">June 12, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/how-to-deliver-analytics-governance-in-a-decentralized-world/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/how-to-deliver-analytics-governance-in-a-decentralized-world/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Deliver Analytics Governance in a Decentralized World: Thoughts and Experiences from Donald Farmer and Heena Sood</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Learn about the trend of decentralized analytics governance from Donald Farmer and Heena Sood as they delved into strategic approaches, activities, and essential platform capabilities recommended for effective decentralized stewardship.</p>
+              <time datetime="2024-05-03" class="mt-5 text-sm text-navy/70">May 3, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/understanding-the-impact-of-analytics-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/understanding-the-impact-of-analytics-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Understanding the Impact of Analytics Governance: Insights from Donald Farmer</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Enhance decision-making and foster innovation through analytics governance. Gain insights from Donald Farmer on strategic data management. Contact us for solutions.</p>
+              <time datetime="2024-04-10" class="mt-5 text-sm text-navy/70">April 10, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/enhancing-business-decision-making-analytics-governance-donald-farmer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/enhancing-business-decision-making-analytics-governance-donald-farmer/" class="after:absolute after:inset-0 focus-visible:outline-none">Enhancing Business Decision-Making Through Analytics Governance: Key Takeaways from Donald Farmer</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Explore the significance of analytics governance in enhancing business decision-making with insights and understand the pivotal role of governance processes and technology in driving data-driven strategies.</p>
+              <time datetime="2024-03-27" class="mt-5 text-sm text-navy/70">March 27, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/exploring-the-impact-ai-on-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/exploring-the-impact-ai-on-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Exploring the Impact of AI in Analytics</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover AI&#x27;s impact on analytics as we explore AI evolution, AI Adoption Strategies, and Enhancing Analytics workflow with AI. Learn how augmented intelligence optimizes performance to drive organizational success.</p>
+              <time datetime="2024-03-21" class="mt-5 text-sm text-navy/70">March 21, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/enhancing-self-service-analytics-balancing-empowerment-governance/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/enhancing-self-service-analytics-balancing-empowerment-governance/" class="after:absolute after:inset-0 focus-visible:outline-none">Enhancing Self-Service Analytics: Balancing Empowerment and Governance</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Explore the delicate balance between empowerment and governance in self-service analytics. Learn about governance&#x27;s goals, challenges, and critical role in enabling meaningful access to data-driven insights.</p>
+              <time datetime="2024-02-21" class="mt-5 text-sm text-navy/70">February 21, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/top-4-challenges-of-self-service-bi-and-analytics-mounting-problems/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/top-4-challenges-of-self-service-bi-and-analytics-mounting-problems/" class="after:absolute after:inset-0 focus-visible:outline-none">Top 4 Challenges of Self-Service BI and Analytics: Understanding the Mounting Problems</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Learn the top 4 challenges of Self-Service BI &amp; Analytics—from data inconsistency to governance gaps</p>
+              <time datetime="2024-02-09" class="mt-5 text-sm text-navy/70">February 9, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/7-factors-driving-success-key-performance-indicators/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/7-factors-driving-success-key-performance-indicators/" class="after:absolute after:inset-0 focus-visible:outline-none">7 Factors in Driving Success with Key Performance Indicators</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">While KPIs present individuals with meaningful information for decision-making purposes, there are several factors that one must consider, including defining, calculating and presenting the information for efficient decision making</p>
+              <time datetime="2024-01-24" class="mt-5 text-sm text-navy/70">January 24, 2024</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-automation-enhancing-analytical-processes-and-outcomes/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-automation-enhancing-analytical-processes-and-outcomes/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Automation—Enhancing Analytical Processes and Outcomes</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">The analytics automation functionality in ZenOptics Analytics Hub enables businesses to unlock the full potential of their data and analytics.</p>
+              <time datetime="2023-11-28" class="mt-5 text-sm text-navy/70">November 28, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/advancing-analytics-governance-achieve-organizational-success/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/advancing-analytics-governance-achieve-organizational-success/" class="after:absolute after:inset-0 focus-visible:outline-none">Advancing Analytics Governance to Achieve Organizational Success</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">By centralizing analytics governance processes, ensuring analytics integrity, and promoting transparency, ZenOptics empowers individuals to make timely and confident information-driven decisions.</p>
+              <time datetime="2023-11-14" class="mt-5 text-sm text-navy/70">November 14, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/challenges-hinder-analytics-adoption/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/challenges-hinder-analytics-adoption/" class="after:absolute after:inset-0 focus-visible:outline-none">Top Challenges That Hinder Analytics Adoption—and How to Overcome Them</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Unlock your organization&#x27;s potential with data-driven transformation. Read our blog to discover how ZenOptics can accelerate your journey toward successful analytics adoption.</p>
+              <time datetime="2023-07-24" class="mt-5 text-sm text-navy/70">July 24, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/empowering-analytics-teams/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/empowering-analytics-teams/" class="after:absolute after:inset-0 focus-visible:outline-none">Empowering Analytics Teams: How To Centralize, Stabilize, and Streamline Analytics for Quick and Confident Decision-Making</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Empower your Analytics teams with data-driven decision-making. Discover how to centralize, stabilize, and streamline your analytics processes in our latest blog</p>
+              <time datetime="2023-06-28" class="mt-5 text-sm text-navy/70">June 28, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/unleashing-the-power-of-analytics-software/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/unleashing-the-power-of-analytics-software/" class="after:absolute after:inset-0 focus-visible:outline-none">ZenOptics: Unleashing the Power of Analytics Software</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">In this blog, we will explore the reasons why ZenOptics stands out as the best analytics software in the market, unleashing the power of analytics software</p>
+              <time datetime="2023-06-14" class="mt-5 text-sm text-navy/70">June 14, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-collaboration-delivers-increased-understanding-improved-analysis-and-better-decision-making/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-collaboration-delivers-increased-understanding-improved-analysis-and-better-decision-making/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Collaboration Delivers Increased Understanding, Improved Analysis, and Better Decision-Making</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Analytics collaboration facilitates the ability to provide understanding by gathering ratings, feedback, comments, metadata, sourcing, and other relevant information and combining it with each analytics asset within an analytics hub.</p>
+              <time datetime="2023-05-08" class="mt-5 text-sm text-navy/70">May 8, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/less-is-more-how-to-eliminate-report-clutter-and-simplify-access-to-trusted-reports-and-dashboards/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/less-is-more-how-to-eliminate-report-clutter-and-simplify-access-to-trusted-reports-and-dashboards/" class="after:absolute after:inset-0 focus-visible:outline-none">Less Is More: How to Eliminate Report S</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics Analytics Hub helps organizations make data-driven decisions faster by eliminating report clutter and simplifying access to trusted reports and dashboards.</p>
+              <time datetime="2023-02-15" class="mt-5 text-sm text-navy/70">February 15, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-catalogs-curating-organizing-and-categorizing-enterprise-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-catalogs-curating-organizing-and-categorizing-enterprise-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Catalogs: Curating, Organizing, and Categorizing Enterprise Analytics</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">The analytics catalog was created to compile a listing of analytic assets that are rendered or made available via a BI portal. Behind the scenes of the technology, an analytics catalog captures and stores the metadata about each of the analytic assets to provide standardization and additional context for consumers of the information</p>
+              <time datetime="2023-01-27" class="mt-5 text-sm text-navy/70">January 27, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/the-impact-of-report-sprawl-on-your-organization/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/the-impact-of-report-sprawl-on-your-organization/" class="after:absolute after:inset-0 focus-visible:outline-none">The Impact of Report Sprawl on Your Organization</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Report sprawl can significantly impact your organization&#x27;s efficiency, analytics governance, employee satisfaction, and the ability to make consistent, fully informed decisions.</p>
+              <time datetime="2023-01-19" class="mt-5 text-sm text-navy/70">January 19, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/business-intelligence-portals-a-single-interface-for-accessing-reports-dashboards-and-visualizations/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/business-intelligence-portals-a-single-interface-for-accessing-reports-dashboards-and-visualizations/" class="after:absolute after:inset-0 focus-visible:outline-none">Business Intelligence Portals: A Single Interface for Accessing Reports, Dashboards, and Visualizations</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Most organizations have multiple BI applications that require individuals to log onto each of those applications separately in order to find and access the desired report, dashboard, or visualization. A BI portal simplifies access by providing a single interface to multiple BI applications and their content.</p>
+              <time datetime="2023-01-11" class="mt-5 text-sm text-navy/70">January 11, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/analytics-hub-a-single-source-for-trusted-enterprise-analytics-assets/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/analytics-hub-a-single-source-for-trusted-enterprise-analytics-assets/" class="after:absolute after:inset-0 focus-visible:outline-none">Analytics Hub: A Single Source for Trusted Enterprise Analytics</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">The components of an analytics hub are application layers that enhance and provide rich capabilities for business users to search, discover, interact, and analyze information that facilitate decision making. These components are all critical to deliver a cohesive, intuitive analytics experience for users.</p>
+              <time datetime="2023-01-03" class="mt-5 text-sm text-navy/70">January 3, 2023</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/why-your-analytics-strategy-is-not-working/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/why-your-analytics-strategy-is-not-working/" class="after:absolute after:inset-0 focus-visible:outline-none">Why your analytics strategy is not working…it’s not what you would think</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Learn why many organizations fail with analytics strategy adoption and discover the essential elements of access, awareness, and experience necessary for effective digital transformation.</p>
+              <time datetime="2022-04-06" class="mt-5 text-sm text-navy/70">April 6, 2022</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/a-cpos-perspective-insights-decisions-and-the-unified-view-that-powers-them/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/a-cpos-perspective-insights-decisions-and-the-unified-view-that-powers-them/" class="after:absolute after:inset-0 focus-visible:outline-none">Founder Perspective: Insights, Decisions, and the Unified View that Powers Them</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">How can organizations ensure that all users can find the analytics assets that they need to make informed decisions? How can you make sure that the data strategy is supported by an overarching information strategy? This challenge certainly isn’t new. But how organizations solve this challenge needs to change. And that’s where ZenOptics comes in.</p>
+              <time datetime="2022-02-28" class="mt-5 text-sm text-navy/70">February 28, 2022</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/the-new-normal-realities-of-working-from-home-old/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/the-new-normal-realities-of-working-from-home-old/" class="after:absolute after:inset-0 focus-visible:outline-none">Report Clutter Kills Productivity – What to Do?</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">As remote work becomes the new normal, ZenOptics solutions can facilitate seamless communication, enhance productivity and overcome the challenges of virtual collaboration.</p>
+              <time datetime="2022-02-16" class="mt-5 text-sm text-navy/70">February 16, 2022</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/dont-ignore-your-analytics-blindspot-the-consumer/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/dont-ignore-your-analytics-blindspot-the-consumer/" class="after:absolute after:inset-0 focus-visible:outline-none">Who is your Analytics Consumer?</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics provides an intuitive user experience for analytics consumers, enabling them to find and use analytics to make data-driven decisions and efficiently support their daily work.</p>
+              <time datetime="2022-02-02" class="mt-5 text-sm text-navy/70">February 2, 2022</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/how-to-control-report-sprawl/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/how-to-control-report-sprawl/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Control Report Sprawl</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Using an analytics catalog, analytics consumers can discover the analytics assets that best meet their needs, within an experience designed for them.</p>
+              <time datetime="2021-12-07" class="mt-5 text-sm text-navy/70">December 7, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/keys-to-successful-tool-migration/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/keys-to-successful-tool-migration/" class="after:absolute after:inset-0 focus-visible:outline-none">Keys to Successful Tool Migration</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics provides keys to successful tool migration and unified access to cross-platform analytics assets for business evolution. Learn how to structure your migration for success and ensure seamless digital transformation.</p>
+              <time datetime="2021-09-09" class="mt-5 text-sm text-navy/70">September 9, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/report-and-analytics-governance-why-do-i-need-it/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/report-and-analytics-governance-why-do-i-need-it/" class="after:absolute after:inset-0 focus-visible:outline-none">Report and Analytics Governance – Why Do I Need It?</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover why reporting and analytics governance is essential for businesses in a data-driven world and how ZenOptics&#x27; decision confidence platform can streamline your governance initiatives to drive business outcomes.</p>
+              <time datetime="2021-04-09" class="mt-5 text-sm text-navy/70">April 9, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/beyond-data-three-keys-to-organized-and-governed-information-assets/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/beyond-data-three-keys-to-organized-and-governed-information-assets/" class="after:absolute after:inset-0 focus-visible:outline-none">Beyond Data: Three Keys to Organized and Governed Reports</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics decision confidence platform provides three keys to organizing and governing information assets that drive better decision-making and efficiently deliver valuable insight to your organization.</p>
+              <time datetime="2021-03-29" class="mt-5 text-sm text-navy/70">March 29, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/the-rise-of-bi-tools-and-data-sources-risks-and-opportunities/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/the-rise-of-bi-tools-and-data-sources-risks-and-opportunities/" class="after:absolute after:inset-0 focus-visible:outline-none">Too Many Information Sources: Risks and Opportunities</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Empower your business with insights from the rise of BI tools and data sources. Learn how ZenOptics decision confidence platform overcomes risks and seizes opportunities to drive your business forward with data-driven decision-making.</p>
+              <time datetime="2021-03-19" class="mt-5 text-sm text-navy/70">March 19, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/solving-problems-caused-by-disparate-systems-with-zenoptics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/solving-problems-caused-by-disparate-systems-with-zenoptics/" class="after:absolute after:inset-0 focus-visible:outline-none">Solving Reporting Problems Caused by Disparate Systems</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics resolves the challenges of scattered data across disparate systems, enabling businesses to make informed decisions confidently by offering a single point of access, governance, and analytics acceleration.</p>
+              <time datetime="2021-03-03" class="mt-5 text-sm text-navy/70">March 3, 2021</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/how-to-navigate-the-complexities-of-todays-bi-environment/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/how-to-navigate-the-complexities-of-todays-bi-environment/" class="after:absolute after:inset-0 focus-visible:outline-none">How to Navigate the Complexities of Today’s BI Environment</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">ZenOptics BI analytics catalog effectively manages the complexities of today&#x27;s business intelligence environment. Gain practical insights and strategies to streamline your BI processes and drive better business outcomes.</p>
+              <time datetime="2020-11-17" class="mt-5 text-sm text-navy/70">November 17, 2020</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/bi-investment-mistakes-that-need-proactive-correction/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/bi-investment-mistakes-that-need-proactive-correction/" class="after:absolute after:inset-0 focus-visible:outline-none">BI Mistakes That Need Your Attention</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover the top BI investment mistakes and proactive correction strategies to ensure optimal ROI with ZenOptics analytics catalog&#x27;s comprehensive functionality and expert guidance.</p>
+              <time datetime="2020-11-16" class="mt-5 text-sm text-navy/70">November 16, 2020</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/self-service-bi-governance-the-key-to-streamlining-report-management/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/self-service-bi-governance-the-key-to-streamlining-report-management/" class="after:absolute after:inset-0 focus-visible:outline-none">Self-Service BI Governance: The Key to Streamlining Report Management</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover the power of self-service BI governance in streamlining report management and harnessing actionable insights. Empower data strategy and optimize decision-making processes effortlessly with ZenOptics BI Analytics catalog.</p>
+              <time datetime="2020-11-16" class="mt-5 text-sm text-navy/70">November 16, 2020</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/the-whys-and-hows-of-enabling-a-bi-governance-model/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/the-whys-and-hows-of-enabling-a-bi-governance-model/" class="after:absolute after:inset-0 focus-visible:outline-none">The Whys and Hows of Enabling a BI Governance Model</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Discover the essential steps to enable a BI governance model for your business and learn how ZenOptics BI analytics catalog empowers organizations with productivity, collaboration, and effective governance.</p>
+              <time datetime="2020-11-09" class="mt-5 text-sm text-navy/70">November 9, 2020</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/top-bi-challenges-that-are-hurting-your-organizations-productivity/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/top-bi-challenges-that-are-hurting-your-organizations-productivity/" class="after:absolute after:inset-0 focus-visible:outline-none">Top BI Challenges That Are Hurting Your Organization’s Productivity</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Explore the top business intelligence challenges and learn how ZenOptics analytics catalog can revolutionize your organization’s productivity with our comprehensive Business Intelligence solutions.</p>
+              <time datetime="2020-11-05" class="mt-5 text-sm text-navy/70">November 5, 2020</time>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../assets/images/blog/the-hidden-costs-of-siloed-report-management/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Blog</span>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../blog/the-hidden-costs-of-siloed-report-management/" class="after:absolute after:inset-0 focus-visible:outline-none">The Hidden Costs of Siloed Report Management</a></h3>
+              <p class="mt-3 line-clamp-3 flex-1 text-navy/80">Hidden data carry their own penalties. Siloed report management can result in anything from a slight inconvenience to an expensive nightmare.</p>
+              <time datetime="2020-11-03" class="mt-5 text-sm text-navy/70">November 3, 2020</time>
+            </div>
+          </li>
+      </ul>
+      <div class="mt-10 hidden justify-center" data-res-more-wrap>
+        <button type="button" data-res-more class="btn border border-navy text-navy after:hidden hover:bg-navy hover:text-white">See more blogs <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+      </div>
+    </section>
+
+    <section class="container-x pt-12 lg:pt-14" data-res-section="guides" aria-labelledby="res-guides-h">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 id="res-guides-h" class="text-2xl font-semibold sm:text-3xl">Guides</h2>
+        <a href="#guides" data-res-viewall="guides" class="hidden items-center gap-1.5 font-medium text-navy underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all guides <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-res-list>
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/guide-build-vs-buy.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Executive guide</span>
               <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../build-vs-buy-guide/" class="after:absolute after:inset-0 focus-visible:outline-none">Build vs Buy: The portal you consider free is actually your most expensive system</a></h3>
-              <p class="mt-3 flex-1 text-navy/80">Your homegrown portal solved report discovery but lacked governance for KPIs and dashboard certification, which has led to annual compounding costs and inaccurate data for your copilots. This guide presents a build‑vs‑buy framework to address these issues.</p>
+              <p class="mt-3 line-clamp-4 flex-1 text-navy/80">Your homegrown portal solved report discovery but lacked governance for KPIs and dashboard certification, which has led to annual compounding costs and inaccurate data for your copilots. This guide presents a build‑vs‑buy framework to address these issues.</p>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Read the guide</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/guide-bi-estate-assessment.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Assessment</span>
               <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../bi-estate-assessment/" class="after:absolute after:inset-0 focus-visible:outline-none">BI Rationalization &amp; BI Estate Assessment</a></h3>
-              <p class="mt-3 flex-1 text-navy/80">Identify reports to retain, consolidate or retire. Explore reporting maintenance costs and discuss a focused BI Estate Assessment with ZenOptics.</p>
+              <p class="mt-3 line-clamp-4 flex-1 text-navy/80">Identify reports to retain, consolidate or retire. Explore reporting maintenance costs and discuss a focused BI Estate Assessment with ZenOptics.</p>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Learn more</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/guide-trusted-ai.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Workshop</span>
               <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../trusted-ai/" class="after:absolute after:inset-0 focus-visible:outline-none">Trusted AI for Enterprise Analytics</a></h3>
-              <p class="mt-3 flex-1 text-navy/80">Help AI copilots and agents use the right KPI definitions, owners and governed analytics sources. Discuss a ZenOptics AI Context Workshop.</p>
+              <p class="mt-3 line-clamp-4 flex-1 text-navy/80">Help AI copilots and agents use the right KPI definitions, owners and governed analytics sources. Discuss a ZenOptics AI Context Workshop.</p>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Learn more</p>
             </div>
           </li>
       </ul>
+      <div class="mt-10 hidden justify-center" data-res-more-wrap>
+        <button type="button" data-res-more class="btn border border-navy text-navy after:hidden hover:bg-navy hover:text-white">See more guides <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+      </div>
     </section>
 
-
-    <section class="container-x pt-14 lg:pt-16" aria-labelledby="webinars">
-      <h2 id="webinars" class="text-2xl font-semibold sm:text-3xl">Webinars</h2>
-      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+    <section class="container-x pt-12 lg:pt-14" data-res-section="webinars" aria-labelledby="res-webinars-h">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 id="res-webinars-h" class="text-2xl font-semibold sm:text-3xl">Webinars</h2>
+        <a href="#webinars" data-res-viewall="webinars" class="hidden items-center gap-1.5 font-medium text-navy underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all webinars <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-res-list>
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-data-consumers.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://info.zenoptics.com/hubfs/ZO_Zenoptics%20Partner%20Premium%20IQ%20webinar-_1.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">How To Help Data Consumers Find What They’re Looking For</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://info.zenoptics.com/hubfs/ZO_Zenoptics%20Partner%20Premium%20IQ%20webinar-_1.mp4" data-video="https://info.zenoptics.com/hubfs/ZO_Zenoptics%20Partner%20Premium%20IQ%20webinar-_1.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">How To Help Data Consumers Find What They’re Looking For</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-increase-adoption.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinar%20Video/Increase%20Analytics%20Adoption%20webinar%20.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">How to Increase Analytics Adoption</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinar%20Video/Increase%20Analytics%20Adoption%20webinar%20.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinar%20Video/Increase%20Analytics%20Adoption%20webinar%20.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">How to Increase Analytics Adoption</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-financial-services.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/VIDEO%20Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services/_Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services%20.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">Streamlining Analytics and KPIs for Financial Services</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/VIDEO%20Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services/_Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services%20.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/VIDEO%20Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services/_Streamlining%20Analytics%20and%20KPIs%20for%20Financial%20Services%20.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">Streamlining Analytics and KPIs for Financial Services</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-adoption-catalog.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Zenoptics_IncreasingAdoption.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">Increasing Adoption and Value of Data with An Analytics Catalog</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Zenoptics_IncreasingAdoption.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Zenoptics_IncreasingAdoption.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">Increasing Adoption and Value of Data with An Analytics Catalog</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-what-is-catalog.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Analytics%20Catalog.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">What is an Analytics Catalog?</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Analytics%20Catalog.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Analytics%20Catalog.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">What is an Analytics Catalog?</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-brown-forman.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar%20Brown%20Forman.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">Brown-Forman Discusses their Analytics Catalog Journey and Demos their Implementation</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar%20Brown%20Forman.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar%20Brown%20Forman.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">Brown-Forman Discusses their Analytics Catalog Journey and Demos their Implementation</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/webinar-3-ways.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+              <span class="absolute right-3 bottom-3" aria-hidden="true"><span class="flex size-11 items-center justify-center rounded-full bg-navy/90 text-white shadow-lg ring-2 ring-white/70 transition group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-navy"><svg class="ml-0.5 size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">Webinar</span>
-              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar_3-Steps-Your-Analytics-Action-Plan-Needs-Today.mp4" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">3 Ways to Boost Your Analytics Action Plan Today</a></h3>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar_3-Steps-Your-Analytics-Action-Plan-Needs-Today.mp4" data-video="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Webinars/Webinar_3-Steps-Your-Analytics-Action-Plan-Needs-Today.mp4" class="after:absolute after:inset-0 focus-visible:outline-none">3 Ways to Boost Your Analytics Action Plan Today</a></h3>
               <div class="flex-1"></div>
               <p class="mt-5 font-medium underline decoration-brand-orange decoration-2 underline-offset-4" aria-hidden="true">Watch the webinar</p>
             </div>
           </li>
       </ul>
+      <div class="mt-10 hidden justify-center" data-res-more-wrap>
+        <button type="button" data-res-more class="btn border border-navy text-navy after:hidden hover:bg-navy hover:text-white">See more webinars <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+      </div>
     </section>
 
-
-    <section class="container-x pt-14 lg:pt-16" aria-labelledby="white-papers">
-      <h2 id="white-papers" class="text-2xl font-semibold sm:text-3xl">White papers</h2>
-      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+    <section class="container-x pt-12 lg:pt-14" data-res-section="whitepapers" aria-labelledby="res-whitepapers-h">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 id="res-whitepapers-h" class="text-2xl font-semibold sm:text-3xl">White papers</h2>
+        <a href="#whitepapers" data-res-viewall="whitepapers" class="hidden items-center gap-1.5 font-medium text-navy underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all white papers <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-res-list>
+          <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <div class="relative">
+              <img src="../assets/images/resources/whitepaper-power-of-informed-decision-making.webp" alt="" width="960" height="540" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            </div>
             <div class="flex flex-1 flex-col p-6">
               <span class="text-xs font-semibold tracking-wider text-brand-blue uppercase">White paper</span>
               <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="https://2836830.fs1.hubspotusercontent-na2.net/hubfs/2836830/Whitepapers/Whitepaper_The-Power-of-Informed-Decision-Making.pdf" target="_blank" rel="noopener" class="after:absolute after:inset-0 focus-visible:outline-none">The Power of Informed Decision Making</a></h3>
@@ -171,19 +786,27 @@
             </div>
           </li>
       </ul>
-    </section>
-
-    <section class="container-x py-14 lg:py-16" aria-labelledby="blog-h">
-      <div class="flex flex-col items-start gap-5 rounded-2xl bg-slate-50 p-8 ring-1 ring-slate-200 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h2 id="blog-h" class="text-2xl font-semibold">Blog</h2>
-          <p class="mt-2 text-navy/80">Articles on analytics governance, AI context, and governed workflows from the ZenOptics team.</p>
-        </div>
-        <a href="../blog/" class="btn shrink-0 bg-navy text-white hover:bg-navy-deep">Read the blog</a>
+      <div class="mt-10 hidden justify-center" data-res-more-wrap>
+        <button type="button" data-res-more class="btn border border-navy text-navy after:hidden hover:bg-navy hover:text-white">See more white papers <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
       </div>
     </section>
 
+    </div>
+
   </main>
+  <!-- ============ VIDEO PLAYER (webinar cards; script.js data-video). No download button, no picture-in-picture. ============ -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="video-title">
+    <div class="relative w-full max-w-5xl">
+      <div class="mb-3 flex items-start justify-between gap-4">
+        <h2 id="video-title" class="text-base font-medium text-white sm:text-lg" data-video-title></h2>
+        <button type="button" data-video-close class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close video">
+          <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <video class="aspect-video max-h-[80vh] w-full rounded-xl bg-black" controls controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback playsinline preload="none" data-video-player></video>
+    </div>
+  </div>
+
 
   <!-- ============ FOOTER ============ -->
   <footer class="bg-navy-deep text-white">
@@ -211,7 +834,7 @@
         <li><a href="../atlas/" class="hover:text-white">Atlas</a></li>
         <li><a href="../nexus/" class="hover:text-white">Nexus</a></li>
         <li><a href="../maestro/" class="hover:text-white">Maestro</a></li>
-        <li><a href="../blog/" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../blog/" class="hover:text-white">Blog</a></li>
         <li class="hidden"><a href="../about/" class="hover:text-white">About Us</a></li>
         <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
         <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>

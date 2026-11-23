@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Catalogs vs. Data Catalogs: What Business Leaders Need to Know | ZenOptics</title>
+  <meta name="description" content="Learn the differences between data and analytics catalogs, which help business leaders unify governance, insights, and decision-making across BI tools for trusted enterprise analytics.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Analytics Catalogs vs. Data Catalogs: What Business Leaders Need to Know | ZenOptics">
+  <meta property="og:description" content="Learn the differences between data and analytics catalogs, which help business leaders unify governance, insights, and decision-making across BI tools for trusted enterprise analytics.">
+  <meta property="og:url" content="https://zenoptics.com/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/cover.webp">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Analytics Catalogs vs. Data Catalogs: What Business Leaders Need to Know", "datePublished": "2025-11-11", "description": "Learn the differences between data and analytics catalogs, which help business leaders unify governance, insights, and decision-making across BI tools for trusted enterprise analytics.", "image": "https://zenoptics.com/assets/images/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/", "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Moved from the previous WordPress site (dev copy on Pantheon), November 2026 -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Analytics Catalogs vs. Data Catalogs: What Business Leaders Need to Know</h1>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2025-11-11">November 11, 2025</time></span>
+          <span>6 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/analytics-catalogs-vs-data-catalogs-what-business-leaders-know/cover.webp" alt="" width="1200" height="628" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#what-is-a-data-catalog" class="hover:underline">What Is a Data Catalog?</a></li>
+              <li><a href="#what-is-an-analytics-catalog" class="hover:underline">What Is an Analytics Catalog?</a></li>
+              <li><a href="#data-catalog-vs-analytics-catalog-key-differences" class="hover:underline">Data Catalog vs. Analytics Catalog: Key Differences</a></li>
+              <li><a href="#complementary-roles-of-data-catalog-and-analytics-catalog" class="hover:underline">Complementary Roles of Data Catalog and Analytics Catalog</a></li>
+              <li><a href="#why-business-leaders-should-care-about-bi-asset-inventory" class="hover:underline">Why Business Leaders Should Care About BI Asset Inventory</a></li>
+              <li><a href="#business-impact-how-zenoptics-delivers-results" class="hover:underline">Business Impact: How ZenOptics Delivers Results</a></li>
+              <li><a href="#ready-to-turn-your-data-investment-into-trusted-intelligence" class="hover:underline">Ready to Turn Your Data Investment into Trusted Intelligence?</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#what-is-a-data-catalog" class="hover:underline">What Is a Data Catalog?</a></li>
+              <li><a href="#what-is-an-analytics-catalog" class="hover:underline">What Is an Analytics Catalog?</a></li>
+              <li><a href="#data-catalog-vs-analytics-catalog-key-differences" class="hover:underline">Data Catalog vs. Analytics Catalog: Key Differences</a></li>
+              <li><a href="#complementary-roles-of-data-catalog-and-analytics-catalog" class="hover:underline">Complementary Roles of Data Catalog and Analytics Catalog</a></li>
+              <li><a href="#why-business-leaders-should-care-about-bi-asset-inventory" class="hover:underline">Why Business Leaders Should Care About BI Asset Inventory</a></li>
+              <li><a href="#business-impact-how-zenoptics-delivers-results" class="hover:underline">Business Impact: How ZenOptics Delivers Results</a></li>
+              <li><a href="#ready-to-turn-your-data-investment-into-trusted-intelligence" class="hover:underline">Ready to Turn Your Data Investment into Trusted Intelligence?</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>Even with modern business intelligence (BI) tools and clean data, decision-makers still struggle to find trusted and up‑to‑date insights. Research shows that BI adoption remains low, with only about <a href="https://barc.com/infographic-bi-analytics-adoption-strategies/" target="_blank" rel="noopener">25% of potential users</a> actively using analytics. The same report highlights several barriers to adoption, including lack of proper training (50%), poor data quality (41%), budget constraints (36%), and usability challenges (33%). These issues continue to limit analytics engagement across the enterprise, proving that even with BI tools in place, most employees still face difficulty accessing the information they need and insights efficiently.</p>
+<p>The current reality shows that information is often spread across multiple BI tools, KPIs overlap, and ownership is unclear. This leads to redundant reports and dashboards that unnecessarily consume budget and effort while creating confusion. Many organizations turn to data catalogs to regain order, yet the deeper challenge lies beyond data management. What’s missing is visibility into the analytics layer. Analytics catalogs fill that gap by providing the governance, transparency, and trust that traditional data catalogs do not or cannot.</p>
+<h2 id="what-is-a-data-catalog">What Is a Data Catalog?</h2>
+<p>A data catalog is a centralized inventory of an organization’s data assets, including datasets, schemas, tables, and data pipelines. It enables data engineers, architects, and stewards to manage and understand their data by capturing technical metadata, lineage, quality scores, and access controls.</p>
+<p>Modern <a href="https://www.informatica.com/resources/articles/what-is-a-data-catalog-benefits-and-use-cases.html" target="_blank" rel="noopener">data catalogs</a> automate core functions such as data discovery, profiling, lineage tracking, governance, and metadata management. These capabilities promote consistency, support compliance, and accelerate analytics by making it easier for report developers and BI specialists to locate and trust relevant data.</p>
+<p>However, while data catalogs provide visibility into the structure and quality of data, they often fall short in one critical area: showing how data is actually used. They rarely provide insight into how data flows into dashboards, reports, or decision-making processes, leaving a gap between raw data and business context.</p>
+<h2 id="what-is-an-analytics-catalog">What Is an Analytics Catalog?</h2>
+<p>An <a href="https://www.zenoptics.com/analytics-catalog/">analytics catalog</a> operates at the presentation layer, not the raw data layer. It inventories and organizes dashboards, reports, KPIs, and visualizations from multiple BI tools, giving users a single, centralized portal to search for insights. By connecting people, content, and context, it unifies reports from different systems into one governed environment where teams can easily find and understand the information they need.</p>
+<p>While data catalogs focus on technical metadata and data lineage, analytics catalogs extend governance downstream by managing the BI assets that turn data into decisions. They provide essential context, such as report descriptions, KPI definitions, ownership, and usage, so business users can distinguish between duplicate content and certified insights. The result is a searchable, governed inventory that simplifies discovery and builds trust in enterprise analytics.</p>
+<h2 id="data-catalog-vs-analytics-catalog-key-differences">Data Catalog vs. Analytics Catalog: Key Differences</h2>
+<p>While both catalogs improve visibility, they serve different audiences and scopes:</p>
+<ul>
+ 	<li><b>Focus and Scope:</b> A data catalog organizes data assets, such as tables, fields, and sources, serving as the foundation for data trust. It helps technical teams locate and understand reliable, well‑documented data. An analytics catalog, on the other hand, manages analytics assets like reports, dashboards, and metrics, forming the foundation for insight trust. It enables business users to identify authoritative content and the single source of truth for each KPI.</li>
+ 	<li><b>Primary Users:</b> Data catalogs are primarily used by technical teams, such as data engineers, architects, and governance officers, who manage metadata and compliance. Analytics catalogs cater to a broader audience of BI teams, analysts, and business leaders. They make it easier for both technical and non-technical users to find, understand, and use insights. In practice, a data catalog may support a governance team managing sensitive data, while an analytics catalog helps a finance director locate the latest revenue report.</li>
+ 	<li><b>Content Managed:</b> A data catalog manages technical metadata such as schemas, lineage, quality metrics, and definitions of data elements. An analytics catalog manages BI content metadata, including report descriptions, dashboard ownership, KPI definitions, and usage frequency. A data catalog shows where a data field originates, while an analytics catalog shows which analytics asset use it and who relies on it. Both improve transparency, but at different layers of the data and analytics ecosystem.</li>
+ 	<li><b>Value Proposition:</b> Data catalogs improve data quality, compliance, and trust in the creation of analytics. Analytics catalogs enhance discovery, BI governance, and confidence in the analytic assets that drive decisions. While the data catalog ensures the data is reliable, the analytics catalog ensures that analytic assets built on that data are accurate and accessible. For data-mature organizations, analytics catalogs are often the next step in ensuring clean data translates into informed decisions. Together, they complete the data-to-insight pipeline and serve as complementary parts of a unified strategy.</li>
+</ul>
+<p>Quick Overview: Data Catalog vs. Analytics Catalog</p>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr>
+<th>Factor</th>
+<th>Data Catalog</th>
+<th>Analytics Catalog</th>
+</tr>
+<tr>
+<td>Focus and Scope</td>
+<td>Datasets, schemas, pipelines</td>
+<td>Dashboards, reports, KPIs</td>
+</tr>
+<tr>
+<td>Primary Users</td>
+<td>Data engineers, architects, governance teams</td>
+<td>BI teams, analysts, business leaders</td>
+</tr>
+<tr>
+<td>Content Managed</td>
+<td>Technical metadata such as schemas, data lineage, and quality</td>
+<td>BI content metadata such as report ownership, KPI definitions, and usage</td>
+</tr>
+<tr>
+<td>Value Proposition</td>
+<td>Builds trust in data inputs</td>
+<td>Builds trust in analytics outputs</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="complementary-roles-of-data-catalog-and-analytics-catalog">Complementary Roles of Data Catalog and Analytics Catalog</h2>
+<p>Data and analytics catalogs serve different layers of information management, yet they work together seamlessly. Data catalogs focus on the underlying data sources, while <a href="https://www.zenoptics.com/infographic/5-key-benefits-analytics-catalog.pdf" target="_blank" rel="noopener">analytics catalogs</a> concentrate on BI and reporting assets. When combined, they offer a complete and governed view of all information assets, supporting end-to-end lineage from raw data to business decisions.</p>
+<p>Used in tandem, these catalogs give teams visibility across the entire analytics lifecycle. A data catalog helps users understand where data originates and how it flows, while an analytics catalog shows how that data is used in dashboards and reports. This connection strengthens auditability, compliance, and governance, ensuring both technical and business teams work from consistent, trusted insights.</p>
+<p>Together, data and analytics catalogs establish a foundation for deeper visibility, which reaches its full potential when paired with a well‑maintained BI asset inventory.</p>
+<h2 id="why-business-leaders-should-care-about-bi-asset-inventory">Why Business Leaders Should Care About BI Asset Inventory</h2>
+<p>For business leaders, making confident decisions requires more than just access to data. They need clear visibility into the analytics built on that data. This is where the BI asset inventory, the core of an analytics catalog, becomes essential.</p>
+<p>While data catalogs focus on datasets and metadata, analytics catalogs provide visibility into the dashboards, reports, and KPIs that drive business decisions. The BI asset inventory unifies all analytic assets across BI tools like Tableau, Power BI, Qlik, and Looker, helping organizations uncover duplication, conflicting metrics, and gaps in governance that often go unnoticed.</p>
+<p>This level of visibility turns the analytics catalog into a powerful decision-support tool. It simplifies analytic asset management, reduces maintenance costs, and helps teams focus on the reports and dashboards that matter most. Business leaders gain a clearer understanding of which analytics exist, how they are used, and which ones truly evaluate and highlight performance.</p>
+<h2 id="business-impact-how-zenoptics-delivers-results">Business Impact: How ZenOptics Delivers Results</h2>
+<p><a href="../../">ZenOptics</a>, a trusted analytics catalog platform, delivers measurable results by transforming how organizations manage and trust their analytic assets. It impacts businesses through:</p>
+<ul>
+ 	<li><b>Faster insight discovery:</b> ZenOptics simplifies report search and access across BI tools, enabling users to quickly find trusted reports and dashboards while making timely decisions.</li>
+ 	<li><b>Lower BI costs:</b> By identifying duplicates and providing usage information, ZenOptics helps organizations reduce maintenance efforts and licensing expenses.</li>
+ 	<li><b>Improved compliance:</b> Built-in governance and lineage tracking provide audit-ready visibility into data sources, ownership, and report usage.</li>
+</ul>
+<p>Across industries, ZenOptics helps enterprises trust the analytic assets that shape their strategies and drive performance.</p>
+<h2 id="ready-to-turn-your-data-investment-into-trusted-intelligence">Ready to Turn Your Data Investment into Trusted Intelligence?</h2>
+<p>Data catalogs bring structure to your data. Analytics catalogs take it further by turning insights into action, closing the gap between information and decisions, especially in complex and regulated industries.</p>
+<p>True data-driven enterprises go beyond data discovery. They ensure analytics are trusted, aligned, and easy to find. <a href="../../demo/">Schedule a ZenOptics demo</a> to see how it all comes together.</p>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG (the three newest other posts) ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/future-analytics-portals/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2025-12-15" class="text-sm text-navy/70">December 15, 2025</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../future-analytics-portals/" class="after:absolute after:inset-0 focus-visible:outline-none">The Future of Analytics Portals</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">ZenOptics transforms analytics portals beyond dashboards by unifying BI tools, enforcing governance, and delivering real-time insights that drive confident enterprise decision making.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/modernizing-analytics-automotive-fleets-unified-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2025-12-08" class="text-sm text-navy/70">December 8, 2025</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../modernizing-analytics-automotive-fleets-unified-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Modernizing Analytics for Automotive Fleets</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Modern analytics empower fleet leaders to reduce costs, strengthen compliance, improve driver safety, and gain predictive insights by unifying telematics diagnostics and safety data on one platform.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/streamlining-claims-reporting-insurers-unified-analytics/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2025-12-02" class="text-sm text-navy/70">December 2, 2025</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../streamlining-claims-reporting-insurers-unified-analytics/" class="after:absolute after:inset-0 focus-visible:outline-none">Streamlining Claims Reporting for Insurers</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Unified analytics empower insurers to streamline claims reporting by eliminating data silos, accelerating decision-making, and strengthening compliance as regulations and customer demands grow.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

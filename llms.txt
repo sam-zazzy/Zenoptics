@@ -1,0 +1,22 @@
+# ZenOptics
+
+> ZenOptics is the decision intelligence platform for enterprise analytics. It brings reports, dashboards and KPIs from many BI tools into one governed catalog (Atlas), gives AI copilots and agents the business context behind that analytics (Nexus), and runs governed, auditable business workflows on top of it (Maestro).
+
+ZenOptics, Inc. is based in San Jose, California. Contact: info@zenoptics.com. Request a demo: https://zenoptics.com/schedule-a-demo/
+
+## Products
+
+- [Atlas | Analytics System of Record](https://zenoptics.com/atlas/): Atlas brings reports, dashboards and KPIs from every BI tool into one governed catalog, so teams find trusted analytics and manage certification and ownership.
+- [Nexus | Analytics Context Layer for AI](https://zenoptics.com/nexus/): Nexus gives AI copilots and agents the business context behind your reports and KPIs, turning governed BI metadata and KPI definitions into a context layer.
+- [Maestro | Govern Analytics-Driven Decisions](https://zenoptics.com/maestro/): Maestro connects trusted analytics to business workflows. Define what people and AI agents do, require reviews and approvals, and keep a record of decisions.
+
+## Guides and resources
+
+- [Build vs Buy a BI Portal: Executive Guide](https://zenoptics.com/build-vs-buy-guide/): Is your homegrown BI portal really free? This executive guide gives a build-vs-buy framework for KPI governance, dashboard certification and AI readiness.
+- [Thought Leadership and Resource Library](https://zenoptics.com/resources/): Guides, webinars and white papers for analytics leaders who want more efficiency, productivity and value from their BI and analytics investments.
+- [Schedule a Demo - Unify Analytics with ZenOptics](https://zenoptics.com/schedule-a-demo/): Schedule a demo to see how ZenOptics unifies reports, dashboards, and analytics in a single portal, enhancing efficiency, governance, and data accessibility.
+- [Privacy Policy](https://zenoptics.com/privacy-policy/): How ZenOptics collects, uses, shares and protects personal information from our website, events and gated content, and the choices and rights you have.
+
+## Home
+
+- [ZenOptics | The Decision Intelligence Platform](https://zenoptics.com/): ZenOptics is the decision intelligence platform for enterprise analytics: catalog and govern BI assets with Atlas, add AI context with Nexus, act with Maestro.
