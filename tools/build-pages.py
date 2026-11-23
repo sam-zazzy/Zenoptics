@@ -1,4 +1,4 @@
-"""Builds schedule-a-demo/, demo/ and resources/ from the header and footer of blog/index.html.
+"""Builds schedule-a-demo/, demo/, thankyou/ and resources/ from the header and footer of blog/index.html.
 Run from the repo root, then run tools/seo.py (it sets the SEO tags of these pages):
 
     python3 tools/build-pages.py && python3 tools/seo.py && npm run build
@@ -152,6 +152,55 @@ open("demo/index.html", "w", encoding="utf-8").write("""<!DOCTYPE html>
 </body>
 </html>
 """)
+
+# ---------------- /thankyou/ ----------------
+# Shown after a form is sent. noindex: it is not a page people should land on from search.
+CHECK = '<svg class="size-8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>'
+next_links = [
+    ("../atlas/", "Atlas", "Find, trust and govern every report across your BI tools."),
+    ("../nexus/", "Nexus", "Connect your analytics estate in one governed context layer."),
+    ("../maestro/", "Maestro", "Turn insight into governed, repeatable action."),
+]
+next_cards = "\n".join(f"""          <li class="{CARD}">
+            <a href="{href}" class="flex flex-1 flex-col p-6 focus:outline-none">
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              <span class="text-lg font-semibold">{name}</span>
+              <span class="mt-2 flex-1 text-navy/75">{text}</span>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">Explore {name} <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>""" for href, name, text in next_links)
+
+thanks_main = f"""
+    <!-- ============ THANK YOU ============ -->
+    <section class="relative overflow-hidden bg-navy text-white">
+{ARCS}
+      <div class="container-x relative mx-auto max-w-3xl py-16 text-center sm:py-24">
+        <span class="mx-auto flex size-16 items-center justify-center rounded-full bg-brand-orange text-white">{CHECK}</span>
+        <h1 class="mt-6 text-3xl leading-tight font-semibold sm:text-[42px]">Thank you!</h1>
+        <p class="mt-5 text-lg text-white/90">We have received your request. A member of the ZenOptics team will get in touch with you shortly.</p>
+        <p class="mt-3 text-white/75">In the meantime, explore our resources or learn more about the platform.</p>
+        <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="../resources/" class="btn bg-brand-orange text-navy-deep hover:opacity-90">Browse resources</a>
+          <a href="../" class="btn border border-white/40 text-white hover:bg-white hover:text-navy">Back to home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLORE THE PLATFORM ============ -->
+    <section class="container-x py-14 lg:py-20" aria-labelledby="explore-heading">
+      <h2 id="explore-heading" class="text-center text-2xl font-semibold sm:text-3xl">Explore the ZenOptics platform</h2>
+      <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+{next_cards}
+      </ul>
+    </section>
+"""
+page = (head("Thank You | ZenOptics",
+             "Thank you for contacting ZenOptics. A member of our team will get in touch with you shortly.",
+             "https://zenoptics.com/thankyou/").replace('  <link rel="canonical"', '  <meta name="robots" content="noindex, follow">\n  <link rel="canonical"', 1)
+        + header + '<main id="main">\n' + thanks_main + "\n  </main>" + footer)
+import os
+os.makedirs("thankyou", exist_ok=True)
+open("thankyou/index.html", "w", encoding="utf-8").write(page)
 
 # ---------------- /resources/ ----------------
 def card(href, kind, title, text, external=False, cta="Open", img=None, video=False):

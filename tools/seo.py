@@ -125,7 +125,7 @@ def all_pages():
 def lastmod(f):
     dirty = subprocess.run(["git", "status", "--porcelain", "--", f], capture_output=True, text=True).stdout.strip()
     if not dirty:
-        d = subprocess.run(["git", "log", "-1", "--format=%cs", "--", f], capture_output=True, text=True).stdout.strip()
+        d = subprocess.run(["git", "log", "-1", "--format=%cI", "--", f], capture_output=True, text=True).stdout.strip()[:10]
         if d: return d
     return datetime.date.today().isoformat()
 
