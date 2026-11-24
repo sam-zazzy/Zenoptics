@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Companies, One Management View: A CIO’s Analytics Plan After an Acquisition | ZenOptics</title>
+  <meta name="description" content="Connect two companies through one management view. A CIO guide to analytics integration, KPI bridges and reporting continuity after acquisition.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://zenoptics.com/blog/post-acquisition-analytics-integration/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ZenOptics">
+  <meta property="og:title" content="Two Companies, One Management View: A CIO’s Analytics Plan After an Acquisition | ZenOptics">
+  <meta property="og:description" content="Connect two companies through one management view. A CIO guide to analytics integration, KPI bridges and reporting continuity after acquisition.">
+  <meta property="og:url" content="https://zenoptics.com/blog/post-acquisition-analytics-integration/">
+  <meta property="og:image" content="https://zenoptics.com/assets/images/blog/post-acquisition-analytics-integration/cover.webp">
+  <meta property="article:published_time" content="2026-11-24">
+  <link rel="icon" href="../../assets/images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Two Companies, One Management View: A CIO’s Analytics Plan After an Acquisition", "datePublished": "2026-11-24", "description": "Connect two companies through one management view. A CIO guide to analytics integration, KPI bridges and reporting continuity after acquisition.", "image": "https://zenoptics.com/assets/images/blog/post-acquisition-analytics-integration/cover.webp", "mainEntityOfPage": "https://zenoptics.com/blog/post-acquisition-analytics-integration/", "author": {"@type": "Organization", "name": "ZenOptics"}, "publisher": {"@type": "Organization", "name": "ZenOptics"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do both businesses need the same BI platform immediately?", "acceptedAnswer": {"@type": "Answer", "text": "No. A shared management view can be developed across existing environments, subject to access, definition and integration requirements."}}, {"@type": "Question", "name": "What is a KPI bridge?", "acceptedAnswer": {"@type": "Answer", "text": "It documents how local measures relate to a shared management question, including the adjustments and limitations needed for interpretation."}}, {"@type": "Question", "name": "Is the ninety-day plan a delivery commitment?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is an illustrative sequence. Scope, access, reporting complexity and the availability of owners determine the actual timeline."}}, {"@type": "Question", "name": "When should AI be introduced?", "acceptedAnswer": {"@type": "Answer", "text": "Consider it for a defined task after the permitted evidence, business meaning and review requirements are established. A useful first view need not depend on AI."}}]}</script>
+</head>
+<body class="bg-white font-sans text-navy antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-navy focus:shadow-lg">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="container-x flex flex-wrap items-center justify-between gap-x-3 sm:gap-x-6">
+      <a href="../../" class="flex h-[72px] items-center" aria-label="ZenOptics home"><img src="../../assets/images/logo.svg" alt="ZenOptics" class="h-7 w-auto sm:h-8"></a>
+      <!-- Main menu. On phones it opens from the burger button (script.js). -->
+      <nav aria-label="Main" id="main-menu" class="order-last hidden w-full border-t border-slate-100 md:order-none md:block md:w-auto md:border-0">
+        <ul class="flex flex-col gap-1 py-3 text-base font-medium md:flex-row md:items-center md:gap-8 md:py-0 md:text-sm">
+          <li><a href="../../atlas/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Atlas</a></li>
+          <li><a href="../../nexus/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Nexus</a></li>
+          <li><a href="../../maestro/" class="border-b-2 border-transparent inline-block py-2 md:py-1 hover:border-slate-300">Maestro</a></li>
+          <li><a href="../" class="border-b-2 border-brand-orange inline-block py-2 md:py-1">Blog</a></li>
+          <li class="pt-2 md:hidden"><button type="button" data-demo-open class="btn w-full justify-center bg-brand-orange py-3 text-navy-deep">Get Demo</button></li>
+        </ul>
+      </nav>
+      <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep max-md:hidden">Get Demo</button>
+      <!-- Burger button: phones and small tablets only -->
+      <button type="button" data-menu-toggle aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="-mr-2 flex size-11 items-center justify-center rounded-lg text-navy hover:bg-slate-100 md:hidden">
+        <svg data-menu-icon="open" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon="close" class="hidden size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ ANNOUNCEMENT (hidden for now: remove the "hidden" class to show it again) ============ -->
+  <div class="hidden bg-brand-blue px-4 py-3 text-center text-sm text-white">
+    ZenOptics was recognized as a Sample Vendor in Gartner® Hype Cycle™ for Data and Analytics Governance, 2026
+    <span class="mx-1 opacity-70">|</span>
+    <a href="#" class="font-medium text-brand-orange underline underline-offset-2">Learn more</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ POST HEADER ============ -->
+    <!-- Built from the Blog Content Archive (Word document) by tools/build-blog-archive.py -->
+    <section class="relative overflow-hidden bg-navy text-white">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 size-64">
+      <img src="../../assets/images/imgi_52_circle.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-28 -bottom-24 size-80">
+      <div class="container-x relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb"><a href="../" class="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Blog</a></nav>
+        <h1 class="mt-4 max-w-4xl text-3xl leading-tight font-semibold [text-shadow:0_5px_19px_#1f7bc0] sm:text-[42px]">Two Companies, One Management View: A CIO’s Analytics Plan After an Acquisition</h1>
+        <p class="mt-4 max-w-3xl text-lg text-white/90">A practical integration sequence for the first 90 days</p>
+        <p class="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-white/85">
+          <span>Published <time datetime="2026-11-24">November 24, 2026</time></span>
+          <span>7 min read</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COVER IMAGE ============ -->
+    <div class="container-x pt-10">
+      <img src="../../assets/images/blog/post-acquisition-analytics-integration/cover.webp" alt="" width="1600" height="832" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-4xl rounded-2xl">
+    </div>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="container-x grid grid-cols-1 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16 lg:py-16">
+      <aside class="lg:order-last" aria-label="On this page">
+        <details class="rounded-2xl bg-soft p-5 lg:hidden">
+          <summary class="font-semibold">On this page</summary>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-sm">
+              <li><a href="#the-first-integration-choice-for-the-cio" class="hover:underline">The first integration choice for the CIO</a></li>
+              <li><a href="#agree-the-first-management-questions" class="hover:underline">Agree the first management questions</a></li>
+              <li><a href="#preserve-the-reporting-that-keeps-each-business-operating" class="hover:underline">Preserve the reporting that keeps each business operating</a></li>
+              <li><a href="#build-a-joint-inventory-around-the-selected-domain" class="hover:underline">Build a joint inventory around the selected domain</a></li>
+              <li><a href="#use-the-first-30-days-to-establish-a-shared-vocabulary" class="hover:underline">Use the first 30 days to establish a shared vocabulary</a></li>
+              <li><a href="#create-a-kpi-bridge-before-demanding-uniformity" class="hover:underline">Create a KPI bridge before demanding uniformity</a></li>
+              <li><a href="#establish-access-by-role-and-purpose" class="hover:underline">Establish access by role and purpose</a></li>
+              <li><a href="#use-days-31-to-60-to-validate-the-joint-view" class="hover:underline">Use days 31 to 60 to validate the joint view</a></li>
+              <li><a href="#give-local-experts-a-formal-review-role" class="hover:underline">Give local experts a formal review role</a></li>
+              <li><a href="#preserve-the-evidence-behind-integration-decisions" class="hover:underline">Preserve the evidence behind integration decisions</a></li>
+              <li><a href="#use-days-61-to-90-to-choose-the-next-priorities" class="hover:underline">Use days 61 to 90 to choose the next priorities</a></li>
+              <li><a href="#evaluate-progress-through-usable-management-outcomes" class="hover:underline">Evaluate progress through usable management outcomes</a></li>
+              <li><a href="#start-with-one-shared-decision" class="hover:underline">Start with one shared decision</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </details>
+        <div class="sticky top-28 hidden rounded-2xl bg-soft p-6 lg:block">
+          <p class="font-semibold">On this page</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-snug">
+              <li><a href="#the-first-integration-choice-for-the-cio" class="hover:underline">The first integration choice for the CIO</a></li>
+              <li><a href="#agree-the-first-management-questions" class="hover:underline">Agree the first management questions</a></li>
+              <li><a href="#preserve-the-reporting-that-keeps-each-business-operating" class="hover:underline">Preserve the reporting that keeps each business operating</a></li>
+              <li><a href="#build-a-joint-inventory-around-the-selected-domain" class="hover:underline">Build a joint inventory around the selected domain</a></li>
+              <li><a href="#use-the-first-30-days-to-establish-a-shared-vocabulary" class="hover:underline">Use the first 30 days to establish a shared vocabulary</a></li>
+              <li><a href="#create-a-kpi-bridge-before-demanding-uniformity" class="hover:underline">Create a KPI bridge before demanding uniformity</a></li>
+              <li><a href="#establish-access-by-role-and-purpose" class="hover:underline">Establish access by role and purpose</a></li>
+              <li><a href="#use-days-31-to-60-to-validate-the-joint-view" class="hover:underline">Use days 31 to 60 to validate the joint view</a></li>
+              <li><a href="#give-local-experts-a-formal-review-role" class="hover:underline">Give local experts a formal review role</a></li>
+              <li><a href="#preserve-the-evidence-behind-integration-decisions" class="hover:underline">Preserve the evidence behind integration decisions</a></li>
+              <li><a href="#use-days-61-to-90-to-choose-the-next-priorities" class="hover:underline">Use days 61 to 90 to choose the next priorities</a></li>
+              <li><a href="#evaluate-progress-through-usable-management-outcomes" class="hover:underline">Evaluate progress through usable management outcomes</a></li>
+              <li><a href="#start-with-one-shared-decision" class="hover:underline">Start with one shared decision</a></li>
+              <li><a href="#the-cio-action-agenda" class="hover:underline">The CIO action agenda</a></li>
+              <li><a href="#frequently-asked-questions" class="hover:underline">Frequently asked questions</a></li>
+              <li><a href="#references" class="hover:underline">References</a></li>
+          </ol>
+        </div>
+      </aside>
+      <article class="prose-zo max-w-[46rem]">
+<p>After an acquisition closes, leaders need a way to understand the combined business. The CIO can support that need by connecting the most important management questions with the reports, definitions and access arrangements required to answer them. A shared management view can begin before every technology platform is consolidated.</p>
+<p>The opportunity is to make local analytics useful to the combined leadership team while preserving the reporting each business needs to operate. Revenue, customer and service measures may each have valid local definitions. The CIO sponsors a process for making those differences understandable and assigning ownership of the shared interpretation.</p>
+<p>This guide provides an illustrative plan for the first ninety days after close and authorized information access. It addresses management analytics, with finance, integration and operating owners approving the relevant business meaning. Specialist financial consolidation, legal and transaction requirements remain with their responsible teams. The actual timetable depends on scope and readiness.</p>
+<h2 id="the-first-integration-choice-for-the-cio">The first integration choice for the CIO</h2>
+<p>Agree one combined management decision with the integration sponsor and name a business owner from each organization. Commission the minimum shared analytics view needed for that decision. Require clear definitions, permitted access and continuity for the local reports on which operations still depend.</p>
+<p>Decide separately which platform questions can wait. A common management view may need a definition bridge before it needs a tool migration. Use the first reporting cycles to gather evidence for the longer-term architecture and investment plan. This gives the CIO a practical integration sequence grounded in business use.</p>
+<h2 id="agree-the-first-management-questions">Agree the first management questions</h2>
+<p>Ask the integration sponsor which decisions need a combined view during the initial period. Priorities might include customer exposure, operating capacity or performance against the integration plan. Separate those requirements from longer-term platform preferences.</p>
+<p>Choose a small number of questions whose owners can participate. The combined organization may need to understand service capacity before it needs a common layout for every departmental dashboard. Focus the initial work on evidence that informs those decisions.</p>
+<p>Write the intended reporting audience and cadence. A weekly integration committee and a monthly executive review may require different levels of detail. The integration plan should make those needs visible so teams can assemble a useful first view without rebuilding every local report.</p>
+<h2 id="preserve-the-reporting-that-keeps-each-business-operating">Preserve the reporting that keeps each business operating</h2>
+<p>Identify critical reporting cycles in both organizations. Include operational reviews, scheduled distributions and the reporting needed by accountable control functions. Record the owners and the periods when interruptions would have material consequences.</p>
+<p>Avoid assuming that similarly named assets can replace one another immediately. A local report may reflect a contractual service measure or a specific operating process. Understand that purpose before changing where users obtain the information.</p>
+<p>The existing <a href="../enterprise-analytics-modernization-playbook/">analytics modernization guide</a> provides supporting estate principles. Acquisition integration adds a particular requirement: establish a shared management view while the combined business continues to operate through its existing reporting arrangements.</p>
+<h2 id="build-a-joint-inventory-around-the-selected-domain">Build a joint inventory around the selected domain</h2>
+<p>Collect the reports, dashboards and definitions relevant to the agreed questions. Retain the originating business and platform identifiers. Record owners, reporting calendars and source dependencies so reviewers can understand how each asset is produced.</p>
+<p><a href="../../atlas/">ZenOptics Atlas</a> supports inventory and governance of analytics assets. In an integration setting, source coverage and access arrangements need to be confirmed for both environments. The inventory should show any gaps rather than imply complete visibility prematurely.</p>
+<p>Keep local names available while adding an agreed description for the combined audience. Replacing every familiar label immediately can make it harder for local teams to validate what the joint inventory contains.</p>
+<h2 id="use-the-first-30-days-to-establish-a-shared-vocabulary">Use the first 30 days to establish a shared vocabulary</h2>
+<p>Select the measures required for the first management view. Compare their definitions, populations, reporting periods and exclusions. Ask the business owners to explain which differences are meaningful and which reflect terminology.</p>
+<p>For example, one business may count a customer as active after an order, while another uses a current service relationship. The integration team should not silently add the figures and present a single customer count. It needs either an agreed combined definition or a clearly explained bridge.</p>
+<p><a href="../../nexus/">ZenOptics Nexus</a> organizes business meaning and relationships from governed metadata. That capability is relevant to maintaining the distinction between local measures and a shared interpretation, with the actual curation process defined by the combined organization.</p>
+<h2 id="create-a-kpi-bridge-before-demanding-uniformity">Create a KPI bridge before demanding uniformity</h2>
+<p>A KPI bridge explains how local measures relate to the shared management question. It can preserve both source definitions while identifying the adjustments or limitations needed for a combined view.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Bridge field</th><th>Information to agree</th></tr></thead>
+<tbody>
+<tr><td>Management question</td><td>The decision the combined view must support</td></tr>
+<tr><td>Local measures</td><td>Definitions and owners from each business</td></tr>
+<tr><td>Shared interpretation</td><td>Agreed comparison or combined definition</td></tr>
+<tr><td>Adjustments</td><td>Mappings or exclusions required for the view</td></tr>
+<tr><td>Limitations</td><td>Differences that remain unresolved</td></tr>
+<tr><td>Review owner</td><td>Person accountable for approving the bridge</td></tr>
+</tbody>
+</table></div>
+<p>Treat the bridge as a maintained analytical asset. A source change in either business can affect the combined interpretation. A documented limitation is preferable to a total that appears comparable while combining different populations.</p>
+<h2 id="establish-access-by-role-and-purpose">Establish access by role and purpose</h2>
+<p>Confirm which people are authorized to view which information after close. Organizational integration does not by itself establish the permission design for every system. Work with the responsible security, privacy and business owners to define the approved scope.</p>
+<p>Include metadata and report descriptions in the review. An inventory can reveal sensitive business details even when it does not contain underlying transactions. Test the user experience through the identities that will actually consume the joint view.</p>
+<p>NIST’s AI Risk Management Framework is a reference where AI assistance is introduced. Before doing so, evaluate the permitted inputs and consequences of the specific use. The first shared reporting view may be useful without any AI component.</p>
+<h2 id="use-days-31-to-60-to-validate-the-joint-view">Use days 31 to 60 to validate the joint view</h2>
+<p>Build the selected management view and test it against the agreed questions. Ask local owners to reconcile their contributions and the integration owner to assess the combined interpretation. Keep the reporting periods and bridge limitations visible.</p>
+<p>Test scenarios that reveal boundary differences. A customer operating in both businesses, a changed reporting calendar or an intercompany relationship may require a specific treatment. The appropriate answer depends on the purpose of the management view and the approved definitions.</p>
+<p>AFP’s variance analysis guidance supplies background on interpreting comparisons. In the integration, the team’s task is to establish what is comparable and explain adjustments before leaders use the view to assess performance.</p>
+<h2 id="give-local-experts-a-formal-review-role">Give local experts a formal review role</h2>
+<p>Invite the people who understand how each business operates to validate the proposed mappings. Ask them to identify assumptions that would surprise a manager in their organization. Those questions can reveal differences that technical metadata does not fully explain.</p>
+<p>Record the decisions and give reviewers visibility into how their input was used. If a local definition is retained for a specific purpose, preserve that purpose in the combined record. Integration can establish common management language while respecting operating differences.</p>
+<p>AFP’s finance business partnering overview provides context for this cross-functional participation. The joint view needs financial and operating interpretation alongside the technical work of collecting and presenting information.</p>
+<h2 id="preserve-the-evidence-behind-integration-decisions">Preserve the evidence behind integration decisions</h2>
+<p>Record the source measures, bridge version and reviewers supporting the first shared view. Link decisions to the relevant evidence so a later team can understand why a mapping was accepted.</p>
+<p>W3C’s provenance overview provides general concepts for those relationships. Choose a versioning and retention approach appropriate to the information and reporting purpose. A changing live report may need additional context to explain an earlier management review.</p>
+<p>Where a joint review creates actions, assign an owner and review condition. <a href="../../maestro/">ZenOptics Maestro</a> supports structured analytical workflows and decision provenance. Its use in an integration process should be configured around the combined organization’s authority and operating requirements.</p>
+<h2 id="use-days-61-to-90-to-choose-the-next-priorities">Use days 61 to 90 to choose the next priorities</h2>
+<p>Evaluate what the shared view enables and which limitations still affect decisions. The next investment may concern a wider reporting domain, improved definitions or a specific platform transition. It should follow the evidence gathered during the initial period.</p>
+<p>Bring renewal dates and integration dependencies into that decision. A platform may need to remain available while a replacement is tested. A longer-term consolidation choice should include delivery capacity, business continuity and commercial arrangements.</p>
+<p>FinOps licensing and SaaS guidance provides a reference for the commercial assessment. Connect those choices with the broader analytics investment portfolio rather than treating a technology deadline as the only integration priority.</p>
+<h2 id="evaluate-progress-through-usable-management-outcomes">Evaluate progress through usable management outcomes</h2>
+<p>Ask whether leaders can answer the selected questions, understand the limits of the joint view and identify the person responsible for resolving a definition issue. Measure the effort required to prepare the recurring review and the corrections made after it.</p>
+<p>Track progress in ownership and approved KPI bridges, but keep asset counts in context. A large joint inventory is an intermediate capability. Its usefulness depends on whether the combined business can interpret the relevant evidence and use it in management decisions.</p>
+<h2 id="start-with-one-shared-decision">Start with one shared decision</h2>
+<p>Pay particular attention to names and identifiers in the first joint view. The same customer name may refer to different legal or operating relationships, while different local names may refer to the same organization. Agree the mapping needed for the selected management question and preserve its limitations. Do the same for reporting calendars and currencies where they affect interpretation. These mappings should have owners and version references, rather than being treated as one-off spreadsheet adjustments that only the preparer understands. A narrow, reviewed mapping can support the immediate decision while a broader master data program develops separately.</p>
+<p>Bring the integration sponsor, a business owner from each organization and the analytics leads together around a specific management question. Identify the local measures already used and the reporting the businesses must preserve. Use the bridge template to expose the interpretation work required.</p>
+<p><a href="../../schedule-a-demo/">Contact ZenOptics</a> to explore the inventory, context and workflow requirements for that initial domain.</p>
+<h2 id="the-cio-action-agenda">The CIO action agenda</h2>
+<p>At the end of the initial period, ask the integration sponsor whether the selected management questions can be answered and understood across both businesses. Review unresolved definitions, access constraints and operating dependencies with their owners. Use that evidence to fund the next domain or platform step. The CIO’s longer-term plan can then build on a shared view the business has actually used.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="do-both-businesses-need-the-same-bi-platform-immediately">Do both businesses need the same BI platform immediately?</h3>
+<p>No. A shared management view can be developed across existing environments, subject to access, definition and integration requirements.</p>
+<h3 id="what-is-a-kpi-bridge">What is a KPI bridge?</h3>
+<p>It documents how local measures relate to a shared management question, including the adjustments and limitations needed for interpretation.</p>
+<h3 id="is-the-ninety-day-plan-a-delivery-commitment">Is the ninety-day plan a delivery commitment?</h3>
+<p>No. It is an illustrative sequence. Scope, access, reporting complexity and the availability of owners determine the actual timeline.</p>
+<h3 id="when-should-ai-be-introduced">When should AI be introduced?</h3>
+<p>Consider it for a defined task after the permitted evidence, business meaning and review requirements are established. A useful first view need not depend on AI.</p>
+<h2 id="references">References</h2>
+<div class="refs">
+<p>1. AFP Variance Analysis — comparison context.</p>
+<p>2. AFP Finance Business Partnering — cross-functional interpretation.</p>
+<p>3. W3C PROV Overview — evidence and version relationships.</p>
+<p>4. NIST AI Risk Management Framework — reference for optional AI use.</p>
+<p>5. FinOps Licensing and SaaS — commercial planning context.</p>
+</div>
+      </article>
+    </div>
+
+    <!-- ============ ONE PLATFORM, THREE LAYERS (same card lines as the product pages) ============ -->
+    <section class="bg-soft">
+      <div class="container-x py-16 lg:py-20">
+        <h2 class="text-2xl font-semibold sm:text-3xl">One platform, three layers</h2>
+        <ol class="mt-10 grid gap-4 lg:grid-cols-3">
+          <li class="rounded-2xl bg-atlas-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">1</span>
+            <h3 class="mt-4 text-xl font-semibold">Atlas | Know</h3>
+            <p class="mt-2 text-navy/90">Catalog, certify, and govern reports, dashboards, and KPIs.</p>
+            <p class="mt-4"><a href="../../atlas/" class="font-medium underline underline-offset-2">Explore Atlas</a></p>
+          </li>
+          <li class="rounded-2xl bg-nexus-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">2</span>
+            <h3 class="mt-4 text-xl font-semibold">Nexus | Understand</h3>
+            <p class="mt-2 text-navy/90">Give AI the definitions and relationships it needs to interpret analytics.</p>
+            <p class="mt-4"><a href="../../nexus/" class="font-medium underline underline-offset-2">Explore Nexus</a></p>
+          </li>
+          <li class="rounded-2xl bg-maestro-light p-7">
+            <span class="flex size-8 items-center justify-center rounded-full bg-white text-sm font-semibold" aria-hidden="true">3</span>
+            <h3 class="mt-4 text-xl font-semibold">Maestro | Act</h3>
+            <p class="mt-2 text-navy/90">Run governed workflows and capture how decisions were made.</p>
+            <p class="mt-4"><a href="../../maestro/" class="font-medium underline underline-offset-2">Explore Maestro</a></p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <button type="button" data-demo-open class="btn bg-brand-orange text-navy-deep">Get Demo</button>
+          <button type="button" data-contact-open class="btn border border-navy text-navy hover:bg-navy hover:text-white">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE FROM THE BLOG ============ -->
+    <section class="container-x py-16 lg:py-20">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-semibold sm:text-3xl">More from the blog</h2>
+        <a href="../" class="font-medium underline decoration-brand-orange decoration-2 underline-offset-4 hover:decoration-navy">View all posts</a>
+      </div>
+      <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/bi-software-renewal-planning/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-09" class="text-sm text-navy/70">November 9, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../bi-software-renewal-planning/" class="after:absolute after:inset-0 focus-visible:outline-none">Turn Your Next BI Renewal into a Strategic Advantage: A CIO’s 60-Day Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Make your next BI renewal a strategic decision. A CIO playbook covering business needs, usage evidence, commercial options and continuity.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/analytics-investment-planning-portfolio/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-05" class="text-sm text-navy/70">November 5, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../analytics-investment-planning-portfolio/" class="after:absolute after:inset-0 focus-visible:outline-none">Where Should Your Next Analytics Dollar Go? A CIO’s Investment Playbook</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Decide where your next analytics dollar should go. A CIO playbook for investment choices, business value, dependencies and operating capacity.</p>
+            </div>
+          </li>
+          <li class="relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(30,48,95,0.08)] ring-1 ring-slate-200 transition hover:shadow-[0_12px_36px_rgba(30,48,95,0.16)] has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-navy">
+            <img src="../../assets/images/blog/kpi-rollout-plan-business-teams/cover-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async" class="aspect-video w-full object-cover">
+            <div class="flex flex-1 flex-col p-6">
+              <time datetime="2026-11-02" class="text-sm text-navy/70">November 2, 2026</time>
+              <h3 class="mt-2 text-lg leading-snug font-semibold"><a href="../kpi-rollout-plan-business-teams/" class="after:absolute after:inset-0 focus-visible:outline-none">Launching a New KPI? A CIO’s Plan for Business-Wide Adoption</a></h3>
+              <p class="mt-3 line-clamp-3 text-navy/80">Launch a new KPI across business teams with a CIO led rollout plan covering ownership, testing, historical comparisons and adoption.</p>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-navy-deep text-white">
+    <div class="container-x flex flex-col items-center justify-between gap-10 py-12 text-center md:flex-row md:text-left">
+      <!-- Left: white logo -->
+      <div>
+        <a href="../../" class="inline-block" aria-label="ZenOptics home"><img src="../../assets/images/imgi_42_footer-logo.svg" alt="ZenOptics" class="h-8 w-auto"></a>
+        <p class="mt-2 text-sm text-white/70">The Decision Intelligence Platform</p>
+      </div>
+
+      <!-- Right: newsletter -->
+      <div class="w-full max-w-sm">
+        <h4 class="text-center text-sm font-medium text-white/70">Stay up to date</h4>
+        <div class="mt-4 min-h-24" id="hubspot-newsletter">
+          <p class="py-4 text-center text-xs text-white/50" data-hs-loading>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links: the same set on every page.
+         A link with the "hidden" class has no page yet. Remove "hidden" when its page goes live. -->
+    <nav aria-label="Footer" class="container-x border-t border-white/10 py-6">
+      <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-white/80 md:justify-start">
+        <li><a href="../../" class="hover:text-white">Home</a></li>
+        <li class="hidden"><a href="#" class="hover:text-white">Products</a></li>
+        <li><a href="../../atlas/" class="hover:text-white">Atlas</a></li>
+        <li><a href="../../nexus/" class="hover:text-white">Nexus</a></li>
+        <li><a href="../../maestro/" class="hover:text-white">Maestro</a></li>
+        <li><a href="../" class="hover:text-white">Blog</a></li>
+        <li class="hidden"><a href="../../about/" class="hover:text-white">About Us</a></li>
+        <li><button type="button" data-contact-open class="hover:text-white">Contact Us</button></li>
+        <li><button type="button" data-demo-open class="hover:text-white">Get a Demo</button></li>
+        <li><a href="../../privacy-policy/" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="container-x flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/70 sm:flex-row">
+      <p>&copy; <span id="year"></span> Zenoptics Inc. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://twitter.com/ZENOPTICS" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on X" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/zenoptics/" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on LinkedIn" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.youtube.com/@zenoptics" target="_blank" rel="noopener noreferrer" aria-label="ZenOptics on YouTube" class="hover:text-white"><svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT US MODAL (HubSpot form, loaded on first open by script.js) ============ -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="contact-title" class="pr-10 text-2xl font-semibold">Contact Us</h2>
+      <p class="mt-1 text-sm text-slate-600">Tell us a little about you and we’ll get back to you shortly.</p>
+      <div class="hs-modal-form mt-6" id="hubspot-contact-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GET DEMO MODAL ============ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-deep/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+      <button type="button" data-demo-close data-modal-close class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="demo-title" class="pr-10 text-2xl font-semibold">Get a Demo</h2>
+      <p class="mt-1 text-sm text-slate-600">See how ZenOptics unifies your BI and analytics assets.</p>
+
+      <div class="mt-6" id="hubspot-demo-form">
+        <p class="py-10 text-center text-sm text-slate-500" data-hs-loading>Loading form…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/2836830.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>

@@ -27,26 +27,51 @@ nice_date = lambda d: datetime.date.fromisoformat(d).strftime("%B %-d, %Y")
 norm = lambda s: re.sub(r"[^a-z0-9]+", " ", (s or "").lower().replace("’", "'")).strip()
 
 # Extra images that are not inside the documents (Blog Images folder)
-COVERS = {"kpi-rollout-plan-business-teams": f"{ARCHIVE}/Blog Images/Blog_021126_Center.png"}
+COVERS = {"kpi-rollout-plan-business-teams": f"{ARCHIVE}/Blog Images/Blog_021126_Center.png",
+          "post-acquisition-analytics-integration": f"{ARCHIVE}/Blog Images/post-acquisition-analytics-integration.png"}
+
+# Posts published after the status sheet was made: {slug: date}. Their document may still carry a NOT YET PUBLISHED flag.
+PUBLISH = {"post-acquisition-analytics-integration": "2026-11-24"}
+
+# Content missing from a document but present in the reviewed PDF (ZenOptics_Enterprise_AI_Analytics_Blog_Series_REVIEWED.pdf)
+INSERT_AFTER = {"post-acquisition-analytics-integration": [("A KPI bridge explains how local measures relate", """<div class="table-wrap"><table>
+<thead><tr><th>Bridge field</th><th>Information to agree</th></tr></thead>
+<tbody>
+<tr><td>Management question</td><td>The decision the combined view must support</td></tr>
+<tr><td>Local measures</td><td>Definitions and owners from each business</td></tr>
+<tr><td>Shared interpretation</td><td>Agreed comparison or combined definition</td></tr>
+<tr><td>Adjustments</td><td>Mappings or exclusions required for the view</td></tr>
+<tr><td>Limitations</td><td>Differences that remain unresolved</td></tr>
+<tr><td>Review owner</td><td>Person accountable for approving the bridge</td></tr>
+</tbody>
+</table></div>""")]}
+# Links shown in the reviewed PDF but not in the document: (exact phrase, href), first match in a paragraph
+LINKS = {"post-acquisition-analytics-integration": [
+    ("analytics modernization guide", "../enterprise-analytics-modernization-playbook/"), ("ZenOptics Atlas", "../../atlas/"),
+    ("ZenOptics Nexus", "../../nexus/"), ("ZenOptics Maestro", "../../maestro/"), ("Contact ZenOptics", "../../schedule-a-demo/")]}
 INLINE = {"kpi-rollout-plan-business-teams": (f"{ARCHIVE}/Blog Images/Blog_021126_In-between.png", "Decide how historical comparisons will work",
                                               "Previous and updated KPI definitions bridged by an effective date for historical comparison")}
 
 # ---------------- status sheet ----------------
 wb = openpyxl.load_workbook(f"{ARCHIVE}/_STATUS - All published blogs, documents, images and links.xlsx")
-status = {}
+status = {}  # filled below; PUBLISH entries are added after the sheet
 for r in list(wb.active.iter_rows(values_only=True))[1:]:
     if r[1]: status[r[1]] = {"date": r[0].date().isoformat(), "title": r[2], "era": r[3]}
+
+for _slug, _date in PUBLISH.items():
+    status.setdefault(_slug, {"date": _date, "title": "", "era": "Zazzy engagement"}); status[_slug]["date"] = _date
 
 # ---------------- pick one document per published slug ----------------
 SKIP = re.compile(r"NOT PUBLISHED|NOT YET PUBLISHED|CANCELLED|UNCONFIRMED|ZAZZY DRAFT", re.I)
 docs = collections.defaultdict(list)
 for f in sorted(glob.glob(f"{ARCHIVE}/*.docx")):
     name = os.path.basename(f)
-    if name.startswith("_") or " - " not in name or SKIP.search(name): continue
+    if name.startswith("_") or " - " not in name: continue
+    if SKIP.search(name) and name.split(" - ")[0] not in PUBLISH: continue
     docs[name.split(" - ")[0]].append(f)
 chosen = {}
 for slug, fs in docs.items():
-    if slug not in status: continue
+    if slug not in status and slug not in PUBLISH: continue
     fs.sort(key=lambda f: "PUBLISHED TEXT" not in f)
     chosen[slug] = fs[0]
 
@@ -208,6 +233,11 @@ def convert(slug, path):
         h = re.sub(r"(?:\s*[:\-–]\s*)?https?://calendly\.com/\S+", "", h)
         out.append(f"<p>{h}</p>")
     close_list(); close_refs()
+    for prefix, extra in INSERT_AFTER.get(slug, []):
+        k = next(i for i, x in enumerate(out) if re.sub(r"<[^>]+>", "", x).lstrip().startswith(prefix)); out.insert(k + 1, extra)
+    for phrase, href in LINKS.get(slug, []):
+        k = next(i for i, x in enumerate(out) if x.startswith("<p>") and phrase in x and "<a " not in x)
+        out[k] = out[k].replace(esc(phrase), f'<a href="{href}">{esc(phrase)}</a>', 1)
     return {"doc_title": doc_title, "subtitle": subtitle, "meta": meta_desc, "html": out, "faq": faq, "words": words}
 
 def fit_desc(text):
